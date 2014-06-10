@@ -1,0 +1,10 @@
+{"name": "GamePlayers",
+ "type": "record",
+ "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+ "fields": [
+        {"name": "player_id", "type": "int", "default":0},
+        {"name": "player_name", "type": ["null","string"], "default":null},
+        {"name": "team_id", "type": "int", "default":0},
+        {"name": "team_city", "type": ["null","string"], "default":null}
+   ]
+}
