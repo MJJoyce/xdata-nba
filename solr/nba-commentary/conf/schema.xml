@@ -5,13 +5,14 @@
  <fields>
    <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
    <field name="game_id" type="string" indexed="true" stored="true"/>
-   <field name="preview" type="text" indexed="true" stored="true"/>
-   <field name="recap" type="text" indexed="true" stored="true"/>
-   <field name="notebook" type="text" indexed="true" stored="true"/>
+   <field name="preview" type="text_general" indexed="true" stored="true"/>
+   <field name="recap" type="text_general" indexed="true" stored="true"/>
+   <field name="notebook" type="text_general" indexed="true" stored="true"/>
  </fields>
 
  <uniqueKey>game_id</uniqueKey>
  
+   
   <types>
     <!-- field type definitions. The "name" attribute is
        just a label to be used by field definitions.  The "class"
