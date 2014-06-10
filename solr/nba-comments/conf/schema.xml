@@ -3,8 +3,11 @@
 <schema name="nba-comments" version="1.5">
 
  <fields>
-   <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
-   <field name="id" type="string" indexed="true" stored="true" required="true"/>
+   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+   <field name="game_id" type="string" indexed="true" stored="true"/>
+   <field name="commenter" type="string" indexed="true" stored="true"/>
+   <field name="comments" type="text_general" indexed="true" stored="true"/>
  </fields>
 
  <uniqueKey>id</uniqueKey>

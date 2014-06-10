@@ -81,7 +81,7 @@
        <str name="echoParams">explicit</str>
        <str name="wt">json</str>
        <str name="indent">true</str>
-       <str name="df">text</str>
+       <str name="df">id</str>
      </lst>
   </requestHandler>
 
@@ -94,6 +94,9 @@
   </requestHandler>
 
   <requestHandler name="/update" class="solr.UpdateRequestHandler">
+    <lst name="defaults">
+      <str name="update.chain">uuid</str>
+    </lst>
   </requestHandler>
   
    <!-- Admin Handlers
@@ -141,4 +144,11 @@
     <!-- <str name="healthcheckFile">server-enabled.txt</str> -->
   </requestHandler>
 
+  <updateRequestProcessorChain name="uuid">
+    <processor class="solr.UUIDUpdateProcessorFactory">
+      <str name="fieldName">id</str>
+    </processor>
+    <processor class="solr.RunUpdateProcessorFactory" />
+  </updateRequestProcessorChain>
+  
 </config>
