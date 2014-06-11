@@ -8,6 +8,7 @@
    <field name="game_id" type="string" indexed="true" stored="true"/>
    <field name="commenter" type="string" indexed="true" stored="true"/>
    <field name="comments" type="text_general" indexed="true" stored="true"/>
+   <field name="source" type="string" indexed="true" stored="true"/>
  </fields>
 
  <uniqueKey>id</uniqueKey>
@@ -26,9 +27,6 @@
        single-valued and either required or have a default value.
       -->
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
-    
-    
-    <fieldType name="uuid" class="solr.UUIDField" indexed="true" />
 
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
