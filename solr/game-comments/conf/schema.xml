@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="nba-comments" version="1.5">
+<schema name="game-comments" version="1.5">
 
  <fields>
    <field name="_version_" type="long" indexed="true" stored="true"/>
