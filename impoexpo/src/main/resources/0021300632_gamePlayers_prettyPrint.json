@@ -9,160 +9,160 @@
       ],
       "rowset": [
         [
-          201163,
-          "Wilson Chandler",
-          1610612743,
-          "Denver"
+          "player_id":201163,
+          "player_name":"Wilson Chandler",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          202702,
-          "Kenneth Faried",
-          1610612743,
-          "Denver"
+          "player_id":202702,
+          "player_name":"Kenneth Faried",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          201581,
-          "JJ Hickson",
-          1610612743,
-          "Denver"
+          "player_id":201581,
+          "player_name":"JJ Hickson",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          200751,
-          "Randy Foye",
-          1610612743,
-          "Denver"
+          "player_id":200751,
+          "player_name":"Randy Foye",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          201951,
-          "Ty Lawson",
-          1610612743,
-          "Denver"
+          "player_id":201951,
+          "player_name":"Ty Lawson",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          201576,
-          "Anthony Randolph",
-          1610612743,
-          "Denver"
+          "player_id":201576,
+          "player_name":"Anthony Randolph",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          203113,
-          "Quincy Miller",
-          1610612743,
-          "Denver"
+          "player_id":203113,
+          "player_name":"Quincy Miller",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          203095,
-          "Evan Fournier",
-          1610612743,
-          "Denver"
+          "player_id":203095,
+          "player_name":"Evan Fournier",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          202389,
-          "Timofey Mozgov",
-          1610612743,
-          "Denver"
+          "player_id":202389,
+          "player_name":"Timofey Mozgov",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          101126,
-          "Nate Robinson",
-          1610612743,
-          "Denver"
+          "player_id":101126,
+          "player_name":"Nate Robinson",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          201589,
-          "Darrell Arthur",
-          1610612743,
-          "Denver"
+          "player_id":201589,
+          "player_name":"Darrell Arthur",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          202706,
-          "Jordan Hamilton",
-          1610612743,
-          "Denver"
+          "player_id":202706,
+          "player_name":"Jordan Hamilton",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          1889,
-          "Andre Miller",
-          1610612743,
-          "Denver"
+          "player_id":1889,
+          "player_name":"Andre Miller",
+          "team_id":1610612743,
+          "team_city":"Denver"
         ],
         [
-          201587,
-          "Nicolas Batum",
-          1610612757,
-          "Portland"
+          "player_id":201587,
+          "player_name":"Nicolas Batum",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          200746,
-          "LaMarcus Aldridge",
-          1610612757,
-          "Portland"
+          "player_id":200746,
+          "player_name":"LaMarcus Aldridge",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          201577,
-          "Robin Lopez",
-          1610612757,
-          "Portland"
+          "player_id":201577,
+          "player_name":"Robin Lopez",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          202083,
-          "Wesley Matthews",
-          1610612757,
-          "Portland"
+          "player_id":202083,
+          "player_name":"Wesley Matthews",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          203081,
-          "Damian Lillard",
-          1610612757,
-          "Portland"
+          "player_id":203081,
+          "player_name":"Damian Lillard",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          2590,
-          "Mo Williams",
-          1610612757,
-          "Portland"
+          "player_id":2590,
+          "player_name":"Mo Williams",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          200777,
-          "Joel Freeland",
-          1610612757,
-          "Portland"
+          "player_id":200777,
+          "player_name":"Joel Freeland",
+          "team_id":1610612757,
+          "team_city":"player_id":"Portland"
         ],
         [
-          203468,
-          "CJ McCollum",
-          1610612757,
-          "Portland"
+          "player_id":203468,
+          "player_name":"CJ McCollum",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          203080,
-          "Thomas Robinson",
-          1610612757,
-          "Portland"
+          "player_id":203080,
+          "player_name":"Thomas Robinson",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          203115,
-          "Will Barton",
-          1610612757,
-          "Portland"
+          "player_id":203115,
+          "player_name":"Will Barton",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          203086,
-          "Meyers Leonard",
-          1610612757,
-          "Portland"
+          "player_id":203086,
+          "player_name":"Meyers Leonard",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          2248,
-          "Earl Watson",
-          1610612757,
-          "Portland"
+          "player_id":2248,
+          "player_name":"Earl Watson",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ],
         [
-          2748,
-          "Dorell Wright",
-          1610612757,
-          "Portland"
+          "player_id":2748,
+          "player_name":"Dorell Wright",
+          "team_id":1610612757,
+          "team_city":"Portland"
         ]
       ]
     }

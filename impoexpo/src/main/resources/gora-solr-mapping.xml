@@ -18,7 +18,7 @@
 
 <gora-orm>
   <class name="gov.nasa.jpl.xdata.nba.impoexpo.GamePlayers" keyClass="java.lang.String" table="players">
-    <primarykey column="game_id:player_id"/>
+    <primarykey column="id"/>
     <field name="player_id" column="player_id"/>
     <field name="player_name" column="player_name"/>
     <field name="team_id" column="team_id"/>
