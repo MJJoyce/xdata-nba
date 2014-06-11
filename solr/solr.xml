@@ -48,10 +48,10 @@
   You can read more about SolrCloud mode at http://wiki.apache.org/solr/SolrCloud
   -->
   <cores adminPath="/admin/cores" defaultCoreName="nba-comments" host="${host:}" hostPort="${jetty.port:8983}" hostContext="${hostContext:solr}" zkClientTimeout="${zkClientTimeout:15000}">
-    <core name="nba-comments" instanceDir="nba-comments" />
-    <core name="nba-gamestats" instanceDir="nba-gamestats" />
-    <core name="nba-play-by-play" instanceDir="nba-play-by-play" />
-    <core name="nba-commentary" instanceDir="nba-commentary" />
-    <core name="nba-gameplayers" instanceDir="nba-gameplayers" />
+    <core name="game-comments" instanceDir="game-comments" />
+    <core name="game-stats" instanceDir="game-stats" />
+    <core name="game-play-by-play" instanceDir="game-play-by-play" />
+    <core name="game-commentary" instanceDir="game-commentary" />
+    <core name="game-players" instanceDir="game-players" />
   </cores>
 </solr>
