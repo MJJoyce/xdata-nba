@@ -2,13 +2,13 @@
 
 ### Python Dependency Installation
 
-If you're on OS X Mavericks you need to run the following before <code>pip install</code>-ing the dependencies.
+If you're on OS X Mavericks you need to run the following before `pip install`-ing the dependencies.
 
-<code>export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future</code>
+`export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future`
 
-After cloning the code base, run <code>pip install -r requirements.txt</code> to install the necessary dependencies.
+After cloning the code base, run `pip install -r requirements.txt` to install the necessary dependencies.
 
-Open Python and run <code>import nltk; nltk.download()</code>. Pick the book identifier and download those packages.
+Then run `python -m nltk.downloader book` to download the corpus.
 
 ### Running Vagrant
 
@@ -18,9 +18,9 @@ Install VirtualBox from [here](https://www.virtualbox.org/).
 
 Run `vagrant up` in the root directory of this repo. This will take a while.
 
-This will install a 32 bit Ubuntu virtual machine and run vagrant_bootstrap.sh within it. Note that the `/vagrant` directory in the vm
+This will install a 64 bit Ubuntu virtual machine and run vagrant_bootstrap.sh within it. Note that the `/vagrant` directory in the VM
 is shared with the host machine (the same directory with the Vagrantfile, the root of this repo). vagrant_bootstrap.sh will only run the
-first time you do `vagrant up`, unless you run `vagrant reload --provision`.
+first time you do `vagrant up`. You can run it again with `vagrant reload --provision`.
 
 SSH into the VM by running `vagrant ssh`. 
 
