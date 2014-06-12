@@ -21,10 +21,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.StringTokenizer;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
-import org.apache.avro.util.Utf8;
 import org.apache.gora.store.DataStore;
 import org.apache.gora.store.DataStoreFactory;
 import org.apache.hadoop.conf.Configuration;
@@ -43,14 +42,14 @@ import com.fasterxml.jackson.core.JsonToken;
  * @param <GamePlayers>
  *
  */
-@SuppressWarnings("hiding")
 public class NBAManager<GamePlayers> {
-  
+
   private final static Logger LOG = Logger.getLogger(NBAManager.class.getName()); 
-  
+
   private DataStore<CharSequence, GamePlayer> dataStore;
-  
-  private static final String USAGE = "NBAManager -parse <input_player_json_file>\n" +
+
+  private static final String USAGE = 
+      "NBAManager -parse <p || ><input_player_json_file>\n" +
       "           -get <game_id:player_id>\n" +
       "           -query <game_id:player_id>\n" +
       "           -query <startGame_id:player_id> <endGame_id:player_id>\n" +
@@ -64,15 +63,15 @@ public class NBAManager<GamePlayers> {
       throw new RuntimeException(ex);
     }
   }
-  
+
   private void init() throws IOException {
     //Data store objects are created from a factory. It is necessary to 
     //provide the key and value class. The datastore class is optional, 
     //and if not specified it will be read from the properties file
     dataStore = DataStoreFactory.getDataStore(CharSequence.class, GamePlayer.class,
-            new Configuration());
+        new Configuration());
   }
-  
+
   /**
    * @param args
    */
@@ -81,10 +80,10 @@ public class NBAManager<GamePlayers> {
       System.err.println(USAGE);
       System.exit(1);
     }
-    
+
     @SuppressWarnings("rawtypes")
     NBAManager manager = new NBAManager();
-    
+
     if("-parse".equals(args[0])) {
       manager.parse(args[1]);
     } else if("-get".equals(args[0])) {
@@ -102,38 +101,40 @@ public class NBAManager<GamePlayers> {
       System.err.println(USAGE);
       System.exit(1);
     }
-    
+
     manager.close();
   }
 
   private void close() {
-    // TODO Auto-generated method stub
-    
+    //It is very important to close the datastore properly, otherwise
+    //some data loss might occur.
+    if(dataStore != null)
+      dataStore.close();
   }
 
   private void deleteByQuery(long parseLong, long parseLong2) {
     // TODO Auto-generated method stub
-    
+
   }
 
   private void delete(long parseLong) {
     // TODO Auto-generated method stub
-    
+
   }
 
   private void query(long parseLong, long parseLong2) {
     // TODO Auto-generated method stub
-    
+
   }
 
   private void query(long parseLong) {
     // TODO Auto-generated method stub
-    
+
   }
 
   private void get(long parseLong) {
     // TODO Auto-generated method stub
-    
+
   }
 
   private void parse(String input) throws IOException, ParseException, Exception {
@@ -142,28 +143,19 @@ public class NBAManager<GamePlayers> {
     long players = 0;
     try {
       JsonParser parser = new JsonFactory().createParser(reader);
-      do {
-        GamePlayer gamePlayer = read(parser);
-        
-        if(gamePlayer != null) {
+      ArrayList<GamePlayer> gamePlayers = read(parser);
+
+      if(gamePlayers != null) {
+        for (GamePlayer gamePlayer : gamePlayers) {
           //store the gamePlayers with key id == game_id:player_id
           storeGamePlayers(gamePlayer.getId(), gamePlayer);
           ++players;
         }
-        
-        //players = reader.readLine();
-      } while(players != 0L);
-      
+      }
     } finally {
       reader.close();  
     }
     LOG.info("finished parsing file. Total number of players:" + players);
-  }
-  
-  private void storeGamePlayers(CharSequence id, GamePlayer gamePlayer) {
-    LOG.info("Storing player with id: " + id + "in: " + dataStore.toString());
-    dataStore.put(id, gamePlayer);
-    
   }
 
   /** 
@@ -172,37 +164,48 @@ public class NBAManager<GamePlayers> {
    * @throws IOException 
    * @throws JsonParseException 
    */
-  private GamePlayer read(JsonParser jp) throws ParseException, JsonParseException, IOException {
+  private ArrayList<GamePlayer> read(JsonParser jp) throws ParseException, JsonParseException, IOException {
     // Sanity check: verify that we got "Json Object":
     if (jp.nextToken() != JsonToken.START_OBJECT) {
       throw new IOException("Expected data to start with an Object");
     }
-    GamePlayer gamePlayer = GamePlayer.newBuilder().build();
+    ArrayList<GamePlayer> playerList = new ArrayList<GamePlayer>();
     // Iterate over object fields:
     while (jp.nextToken() != JsonToken.END_OBJECT) {
-     //set variables for composite primary key which is game_id:player_id
-     String gameId = null;
-     String playerId = null;
-     
-     String fieldName = jp.getCurrentName();
-     // Let's move to value
-     jp.nextToken();
-     if (fieldName.equals("player_id")) {
-       gamePlayer.setPlayerId(jp.getIntValue());
-     } else if (fieldName.equals("player_name")) {
-       gamePlayer.setPlayerName(jp.getText());
-     } else if (fieldName.equals("team_id")) {
-       gamePlayer.setTeamId(jp.getIntValue());
-     } else if (fieldName.equals("team_city")) {
-       gamePlayer.setTeamCity(jp.getText());
-     } else { // ignore, or signal error?
-      throw new IOException("Unrecognized field '"+fieldName+"'");
-     }
-     gamePlayer.setId(gameId + ":" + playerId);
+      if (jp.getCurrentToken().isNumeric()) {
+        GamePlayer player = readGamePlayer(jp);
+        playerList.add(player);
+      }
     }
     jp.close(); // important to close both parser and underlying File reader
-    
+    return playerList;
+  }
+
+  private GamePlayer readGamePlayer(JsonParser jp) throws IOException {
+    GamePlayer gamePlayer = GamePlayer.newBuilder().build();
+    //set variables for composite primary key which is game_id:player_id
+    String gameId;
+    String playerId;
+
+    gamePlayer.setPlayerId(jp.getIntValue());
+    playerId = Integer.toString(jp.getIntValue());
+    jp.nextToken();
+    gamePlayer.setPlayerName(jp.getText());
+    jp.nextToken();
+    gamePlayer.setTeamId(jp.getIntValue());
+    jp.nextToken();
+    gamePlayer.setTeamCity(jp.getText());
+    jp.nextToken();
+    gamePlayer.setId("gameId" + ":" + playerId);
+    jp.nextToken();
     return gamePlayer;
+
+  }
+
+  private void storeGamePlayers(CharSequence id, GamePlayer gamePlayer) {
+    LOG.info("Storing player with id: " + id + "in: " + dataStore.toString());
+    dataStore.put(id, gamePlayer);
+
   }
 
 }

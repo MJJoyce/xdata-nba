@@ -1,0 +1,171 @@
+{
+  "resultSets": [
+    {
+      "headers": [
+        "PLAYER_ID",
+        "PLAYER_NAME",
+        "TEAM_ID",
+        "TEAM_CITY"
+      ],
+      "rowset": [
+        [
+          201163,
+          "Wilson Chandler",
+          1610612743,
+          "Denver"
+        ],
+        [
+          202702,
+          "Kenneth Faried",
+          1610612743,
+          "Denver"
+        ],
+        [
+          201581,
+          "JJ Hickson",
+          1610612743,
+          "Denver"
+        ],
+        [
+          200751,
+          "Randy Foye",
+          1610612743,
+          "Denver"
+        ],
+        [
+          201951,
+          "Ty Lawson",
+          1610612743,
+          "Denver"
+        ],
+        [
+          201576,
+          "Anthony Randolph",
+          1610612743,
+          "Denver"
+        ],
+        [
+          203113,
+          "Quincy Miller",
+          1610612743,
+          "Denver"
+        ],
+        [
+          203095,
+          "Evan Fournier",
+          1610612743,
+          "Denver"
+        ],
+        [
+          202389,
+          "Timofey Mozgov",
+          1610612743,
+          "Denver"
+        ],
+        [
+          101126,
+          "Nate Robinson",
+          1610612743,
+          "Denver"
+        ],
+        [
+          201589,
+          "Darrell Arthur",
+          1610612743,
+          "Denver"
+        ],
+        [
+          202706,
+          "Jordan Hamilton",
+          1610612743,
+          "Denver"
+        ],
+        [
+          1889,
+          "Andre Miller",
+          1610612743,
+          "Denver"
+        ],
+        [
+          201587,
+          "Nicolas Batum",
+          1610612757,
+          "Portland"
+        ],
+        [
+          200746,
+          "LaMarcus Aldridge",
+          1610612757,
+          "Portland"
+        ],
+        [
+          201577,
+          "Robin Lopez",
+          1610612757,
+          "Portland"
+        ],
+        [
+          202083,
+          "Wesley Matthews",
+          1610612757,
+          "Portland"
+        ],
+        [
+          203081,
+          "Damian Lillard",
+          1610612757,
+          "Portland"
+        ],
+        [
+          2590,
+          "Mo Williams",
+          1610612757,
+          "Portland"
+        ],
+        [
+          200777,
+          "Joel Freeland",
+          1610612757,
+          "Portland"
+        ],
+        [
+          203468,
+          "CJ McCollum",
+          1610612757,
+          "Portland"
+        ],
+        [
+          203080,
+          "Thomas Robinson",
+          1610612757,
+          "Portland"
+        ],
+        [
+          203115,
+          "Will Barton",
+          1610612757,
+          "Portland"
+        ],
+        [
+          203086,
+          "Meyers Leonard",
+          1610612757,
+          "Portland"
+        ],
+        [
+          2248,
+          "Earl Watson",
+          1610612757,
+          "Portland"
+        ],
+        [
+          2748,
+          "Dorell Wright",
+          1610612757,
+          "Portland"
+        ]
+      ]
+    }
+  ]
+}
+
