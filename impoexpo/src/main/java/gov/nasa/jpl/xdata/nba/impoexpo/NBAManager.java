@@ -183,7 +183,7 @@ public class NBAManager<GamePlayers> {
 
   private GamePlayer readGamePlayer(JsonParser jp) throws IOException {
     GamePlayer gamePlayer = GamePlayer.newBuilder().build();
-    //set variables for composite primary key which is game_id:player_id
+    //set variables for composite primary key which is game_id_player_id
     String gameId;
     String playerId;
 
@@ -196,7 +196,7 @@ public class NBAManager<GamePlayers> {
     jp.nextToken();
     gamePlayer.setTeamCity(jp.getText());
     jp.nextToken();
-    gamePlayer.setId("gameId" + ":" + playerId);
+    gamePlayer.setId("gameId" + "_" + playerId);
     jp.nextToken();
     return gamePlayer;
 
