@@ -102,7 +102,7 @@ fi
 # figure out which class to run
 if [ "$COMMAND" = "goracompiler" ] ; then
   CLASSPATH=$CLASSPATH:$IMPOEXPO_HOME/target/classes/
-  CLASS=org.apache.gora.compiler.GoraCompiler
+  CLASS=org.apache.gora.compiler.cli.GoraCompilerCLI
 elif [ "$COMMAND" = "nbamanager" ] ; then
   CLASSPATH=$CLASSPATH:$IMPOEXPO_HOME/target/classes/
   CLASS=gov.nasa.jpl.xdata.nba.impoexpo.NBAManager
