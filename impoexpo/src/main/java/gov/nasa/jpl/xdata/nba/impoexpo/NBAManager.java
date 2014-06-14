@@ -18,6 +18,7 @@
 package gov.nasa.jpl.xdata.nba.impoexpo;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
@@ -27,7 +28,6 @@ import java.util.logging.Logger;
 import org.apache.gora.store.DataStore;
 import org.apache.gora.store.DataStoreFactory;
 import org.apache.hadoop.conf.Configuration;
-
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
@@ -42,19 +42,19 @@ import com.fasterxml.jackson.core.JsonToken;
  * @param <GamePlayers>
  *
  */
-public class NBAManager<GamePlayers> {
+public class NBAManager<GamePlayers> implements Manager{
 
   private final static Logger LOG = Logger.getLogger(NBAManager.class.getName()); 
 
   private DataStore<CharSequence, GamePlayer> dataStore;
 
   private static final String USAGE = 
-      "NBAManager -parse <p || ><input_player_json_file>\n" +
-      "           -get <game_id:player_id>\n" +
-      "           -query <game_id:player_id>\n" +
-      "           -query <startGame_id:player_id> <endGame_id:player_id>\n" +
-      "           -delete <game_id:player_id>\n" +
-      "           -deleteByQuery <startGame_id:player_id> <endGame_id:player_id>\n";
+          "NBAManager -parse <input_player_json_file>\n" +
+          "           -get <game_id:player_id>\n" +
+          "           -query <game_id:player_id>\n" +
+          "           -query <startGame_id:player_id> <endGame_id:player_id>\n" +
+          "           -delete <game_id:player_id>\n" +
+          "           -deleteByQuery <startGame_id:player_id> <endGame_id:player_id>\n";
 
   public NBAManager() {
     try {
@@ -85,7 +85,7 @@ public class NBAManager<GamePlayers> {
     NBAManager manager = new NBAManager();
 
     if("-parse".equals(args[0])) {
-      manager.parse(args[1]);
+      manager.aquire(args[1]);
     } else if("-get".equals(args[0])) {
       manager.get(Long.parseLong(args[1]));
     } else if("-query".equals(args[0])) {
@@ -112,34 +112,16 @@ public class NBAManager<GamePlayers> {
       dataStore.close();
   }
 
-  private void deleteByQuery(long parseLong, long parseLong2) {
-    // TODO Auto-generated method stub
-
-  }
-
-  private void delete(long parseLong) {
-    // TODO Auto-generated method stub
-
-  }
-
-  private void query(long parseLong, long parseLong2) {
-    // TODO Auto-generated method stub
-
-  }
-
-  private void query(long parseLong) {
-    // TODO Auto-generated method stub
-
-  }
-
-  private void get(long parseLong) {
-    // TODO Auto-generated method stub
-
-  }
-
-  private void parse(String input) throws IOException, ParseException, Exception {
+  @Override
+  public void aquire(Object input) {
     LOG.info("Parsing file:" + input);
-    BufferedReader reader = new BufferedReader(new FileReader(input));
+    BufferedReader reader = null;
+    try {
+      reader = new BufferedReader(new FileReader((String) input));
+    } catch (FileNotFoundException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
     long players = 0;
     try {
       JsonParser parser = new JsonFactory().createParser(reader);
@@ -152,8 +134,18 @@ public class NBAManager<GamePlayers> {
           ++players;
         }
       }
+    } catch (JsonParseException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (ParseException e) {
+      e.printStackTrace();
     } finally {
-      reader.close();  
+      try {
+        reader.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }  
     }
     LOG.info("finished parsing file. Total number of players:" + players);
   }
@@ -205,6 +197,36 @@ public class NBAManager<GamePlayers> {
   private void storeGamePlayers(CharSequence id, GamePlayer gamePlayer) {
     LOG.info("Storing player with id: " + id + "in: " + dataStore.toString());
     dataStore.put(id, gamePlayer);
+
+  }
+
+  @Override
+  public void deleteByQuery(Object key, Object value) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void delete(Object key) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void query(Object key, Object value) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void query(Object key) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void get(Object key) {
+    // TODO Auto-generated method stub
 
   }
 
