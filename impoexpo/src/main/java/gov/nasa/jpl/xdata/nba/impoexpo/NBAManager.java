@@ -25,9 +25,12 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
+import org.apache.gora.query.Query;
+import org.apache.gora.query.Result;
 import org.apache.gora.store.DataStore;
 import org.apache.gora.store.DataStoreFactory;
 import org.apache.hadoop.conf.Configuration;
+
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
@@ -40,9 +43,10 @@ import com.fasterxml.jackson.core.JsonToken;
  * objects in-memory before flushing them out to 
  * a SolrCloud cluster.
  * @param <GamePlayers>
+ * @param <K>
  *
  */
-public class NBAManager<GamePlayers> implements Manager{
+public class NBAManager<GamePlayers, K> implements Manager{
 
   private final static Logger LOG = Logger.getLogger(NBAManager.class.getName()); 
 
@@ -119,7 +123,6 @@ public class NBAManager<GamePlayers> implements Manager{
     try {
       reader = new BufferedReader(new FileReader((String) input));
     } catch (FileNotFoundException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
     long players = 0;
@@ -202,32 +205,84 @@ public class NBAManager<GamePlayers> implements Manager{
 
   @Override
   public void deleteByQuery(Object key, Object value) {
-    // TODO Auto-generated method stub
+    //Constructs a query from the dataStore. The matching rows to this query will be deleted
+    Query<CharSequence, GamePlayer> query = dataStore.newQuery();
+    //set the properties of query
+    query.setStartKey((CharSequence) key);
+    query.setEndKey((CharSequence) value);
+    
+    dataStore.deleteByQuery(query);
+    LOG.info("GamePlayers with keys between " + key.toString() + " and " + value.toString() + " are deleted");
 
   }
 
   @Override
   public void delete(Object key) {
-    // TODO Auto-generated method stub
+    dataStore.delete((CharSequence) key);
+    dataStore.flush(); //write changes may need to be flushed before
+    //they are committed 
+    LOG.info("GamePlayer with key:" + key.toString() + " deleted");
 
   }
 
   @Override
   public void query(Object key, Object value) {
-    // TODO Auto-generated method stub
+    org.apache.gora.query.Query<CharSequence, GamePlayer> query = dataStore.newQuery();
+    query.setStartKey((CharSequence) key);
+    query.setEndKey((CharSequence) value);
+    Result<CharSequence, GamePlayer> result = query.execute();
+    try {
+      printResult(result);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
   }
 
   @Override
   public void query(Object key) {
-    // TODO Auto-generated method stub
-
+    org.apache.gora.query.Query<CharSequence, GamePlayer> query = dataStore.newQuery();
+    query.setStartKey((CharSequence) key);
+    Result<CharSequence, GamePlayer> result = query.execute();
+    try {
+      printResult(result);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   @Override
   public void get(Object key) {
-    // TODO Auto-generated method stub
+    GamePlayer player = dataStore.get((CharSequence) key);
+    printPlayer(player);
 
+  }
+  
+  /** Pretty prints the pageview object to stdout */
+  private void printPlayer(GamePlayer player) {
+    if(player == null) {
+      System.out.println("No result to show"); 
+    } else {
+      System.out.println(player.toString());
+    }
+  }
+  
+  private void printResult(Result<CharSequence, GamePlayer> result) throws IOException, Exception {
+    
+    while(result.next()) { //advances the Result object and breaks if at end
+      CharSequence resultKey = result.getKey(); //obtain current key
+      GamePlayer resultGameplayer = result.get(); //obtain current value object
+      
+      //print the results
+      System.out.println(resultKey + ":");
+      printPlayer(resultGameplayer);
+    }
+    
+    System.out.println("Number of pageviews from the query:" + result.getOffset());
   }
 
 }
