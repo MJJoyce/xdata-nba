@@ -53,7 +53,12 @@ public class NBAManager<GamePlayers, K> implements Manager{
   private DataStore<CharSequence, GamePlayer> dataStore;
 
   private static final String USAGE = 
-          "NBAManager -parse <input_player_json_file>\n" +
+          "NBAManager -parse <parserType> <input_player_json_file>\n" +
+          "              <parsePlayer> - " +
+          "              <parsePlayer> - " +
+          "              <parsePlayer> - " +
+          "              <parsePlayer> - " +
+          "              <parsePlayer> - " +
           "           -get <game_id:player_id>\n" +
           "           -query <game_id:player_id>\n" +
           "           -query <startGame_id:player_id> <endGame_id:player_id>\n" +

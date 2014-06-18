@@ -1,0 +1,26 @@
+{"name": "GamePlayer",
+ "type": "record",
+ "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+ "fields": [
+        {"name": "id", "type": ["null","string"], "default":null},
+        {"name": "player_id", "type": "int", "default":0},
+        {"name": "player_name", "type": ["null","string"], "default":null},
+        {"name": "team_id", "type": "int", "default":0},
+        {"name": "team_city", "type": ["null","string"], "default":null}
+   ]
+}
+
+        "GAME_DATE_EST",
+        "GAME_SEQUENCE",
+        "GAME_ID",
+        "GAME_STATUS_ID",
+        "GAME_STATUS_TEXT",
+        "GAMECODE",
+        "HOME_TEAM_ID",
+        "VISITOR_TEAM_ID",
+        "SEASON",
+        "LIVE_PERIOD",
+        "LIVE_PC_TIME",
+        "NATL_TV_BROADCASTER_ABBREVIATION",
+        "LIVE_PERIOD_TIME_BCAST",
+        "WH_STATUS"
