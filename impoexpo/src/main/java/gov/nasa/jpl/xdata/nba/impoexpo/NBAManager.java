@@ -53,17 +53,24 @@ public class NBAManager<GamePlayers, K> implements Manager{
   private DataStore<CharSequence, GamePlayer> dataStore;
 
   private static final String USAGE = 
-          "NBAManager -parse <parserType> <input_player_json_file>\n" +
-          "              <parsePlayer> - " +
-          "              <parsePlayer> - " +
-          "              <parsePlayer> - " +
-          "              <parsePlayer> - " +
-          "              <parsePlayer> - " +
-          "           -get <game_id:player_id>\n" +
-          "           -query <game_id:player_id>\n" +
-          "           -query <startGame_id:player_id> <endGame_id:player_id>\n" +
-          "           -delete <game_id:player_id>\n" +
-          "           -deleteByQuery <startGame_id:player_id> <endGame_id:player_id>\n";
+          "NBAManager -parse <parserType> <inputFile>\n" +
+          "             parserTypes    \n" +
+          "               <parsePreview>     - Parse unstructured .txt preview data\n" +
+          "               <parseRecap>       - Parse unstructured .txt recap data\n" +
+          "               <parseNotebook>    - Parse unstructured .txt notebook data\n" +
+          "               <parseGamestats>   - Parse structured .json gamestats data\n" +
+          "               <parsePlayerstats> - Parse structured .json players stats\n" +
+          "             inputFiles    \n" +
+          "               <preview.txt>      - e.g. 0021000001_preview.txt\n" +
+          "               <recap.txt>        - e.g. 0021000001_recap.txt\n" +
+          "               <notebook.txt>     - e.g. 0021000001_notebook.txt\n" +
+          "               <gamestats.json>   - e.g. 0021000001_gamestats.json\n" +
+          "               <playerstats.json> - e.g. 0021000001_gamePlayers.json\n" +
+          "           -get <id>\n" +
+          "           -query <id>\n" +
+          "           -query <id> <id>\n" +
+          "           -delete <id>\n" +
+          "           -deleteByQuery <id> <id>\n";
 
   public NBAManager() {
     try {
@@ -184,7 +191,7 @@ public class NBAManager<GamePlayers, K> implements Manager{
   private GamePlayer readGamePlayer(JsonParser jp) throws IOException {
     GamePlayer gamePlayer = GamePlayer.newBuilder().build();
     //set variables for composite primary key which is game_id_player_id
-    String gameId;
+    //String gameId;
     String playerId;
 
     gamePlayer.setPlayerId(jp.getIntValue());

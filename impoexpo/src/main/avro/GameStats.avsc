@@ -3,24 +3,19 @@
  "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
  "fields": [
         {"name": "id", "type": ["null","string"], "default":null},
-        {"name": "player_id", "type": "int", "default":0},
-        {"name": "player_name", "type": ["null","string"], "default":null},
-        {"name": "team_id", "type": "int", "default":0},
-        {"name": "team_city", "type": ["null","string"], "default":null}
+        {"name": "game_date_est", "type": ["null","string"], "default":null},
+        {"name": "game_sequence", "type": "int", "default":0},
+        {"name": "game_id", "type": "int", "default":0},
+        {"name": "game_status_id", "type": "int", "default":0},
+        {"name": "game_status_text", "type": ["null","string"], "default":null},
+        {"name": "gamecode", "type": ["null","string"], "default":null},
+        {"name": "home_team_id", "type": "int", "default":0},
+        {"name": "visitor_team_id", "type": "int", "default":0},
+        {"name": "season", "type": "int", "default":0},
+        {"name": "live_period", "type": "int", "default":0},
+        {"name": "live_pc_time", "type": ["null","string"], "default":null},
+        {"name": "natl_tv_broadcaster_abbreviation", "type": ["null","string"], "default":null},
+        {"name": "live_period_time_bcast", "type": ["null","string"], "default":null},
+        {"name": "wh_status", "type": "int", "default":0}
    ]
 }
-
-        "GAME_DATE_EST",
-        "GAME_SEQUENCE",
-        "GAME_ID",
-        "GAME_STATUS_ID",
-        "GAME_STATUS_TEXT",
-        "GAMECODE",
-        "HOME_TEAM_ID",
-        "VISITOR_TEAM_ID",
-        "SEASON",
-        "LIVE_PERIOD",
-        "LIVE_PC_TIME",
-        "NATL_TV_BROADCASTER_ABBREVIATION",
-        "LIVE_PERIOD_TIME_BCAST",
-        "WH_STATUS"

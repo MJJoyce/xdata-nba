@@ -1,0 +1,8 @@
+{"name": "Comments",
+ "type": "record",
+ "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+ "fields": [
+        {"name": "userId", "type": ["null","string"], "default":null},
+        {"name": "comment", "type": ["null","string"], "default":null}
+   ]
+}

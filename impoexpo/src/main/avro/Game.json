@@ -1,0 +1,41 @@
+{"name": "Game",
+ "type": "record",
+ "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+ "fields": [
+        {"name": "preview", "type": ["null", {
+            "name": "Preview",
+            "type": "record",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "fields": [
+                {"name": "previewText", "type": ["null","string"], "default":null}
+            ]
+            }], "default":null},
+        {"name": "recap", "type": ["null", {
+            "name": "Recap",
+            "type": "record",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "fields": [
+                {"name": "recapText", "type": ["null","string"], "default":null}
+            ]
+            }], "default":null},
+        {"name": "notebook", "type": ["null", {
+            "name": "Notebook",
+            "type": "record",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "fields": [
+                {"name": "teamNotebook", "type": ["null","string"], "default":null},
+                {"name": "notebookAuthor", "type": ["null","string"], "default":null},
+                {"name": "publishingBody", "type": ["null","string"], "default":null},
+                {"name": "postedDate", "type": ["null","string"], "default":null},
+                {"name": "theFacts", "type": ["null","string"], "default":null},
+                {"name": "theQuotes", "type": {"type": "array", "items": "string"}, "default":[]},
+                {"name": "theStat", "type": ["null","string"], "default":null},
+                {"name": "theTurningPoint", "type": ["null","string"], "default":null},
+                {"name": "hot", "type": ["null","string"], "default":null},
+                {"name": "not", "type": ["null","string"], "default":null},
+                {"name": "notable", "type": ["null","string"], "default":null},
+                {"name": "upNext", "type": {"type": "map", "values":{"type": "array", "items":{"type":"map", "values":"string"}}}, "default":{}}
+            ]
+            }], "default":null}
+   ]
+}
