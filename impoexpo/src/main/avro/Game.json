@@ -36,6 +36,232 @@
                 {"name": "notable", "type": ["null","string"], "default":null},
                 {"name": "upNext", "type": {"type": "map", "values":{"type": "array", "items":{"type":"map", "values":"string"}}}, "default":{}}
             ]
+            }], "default":null},
+         {"name": "gameStats", "type": ["null", {
+            "name": "GameStats",
+            "type": "record",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "fields": [
+                {"name": "gameSummary", "type": ["null", {
+                   "name": "GameSummary",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameDateEst", "type": ["null","string"], "default":null},
+                       {"name": "gameSequence", "type": "int", "default":0},
+                       {"name": "gameId", "type": "int", "default":0},
+                       {"name": "gameStatusId", "type": "int", "default":0},
+                       {"name": "gameStatusText", "type": ["null","string"], "default":null},
+                       {"name": "gameCode", "type": ["null","string"], "default":null},
+                       {"name": "homeTeamId", "type": "int", "default":0},
+                       {"name": "visitorTeamId", "type": "int", "default":0},
+                       {"name": "season", "type": "int", "default":0},
+                       {"name": "livePeriod", "type": "int", "default":0},
+                       {"name": "livePcTime", "type": "int", "default":0},
+                       {"name": "natlTvBroadcasterAbbreviation", "type": ["null","string"], "default":null},
+                       {"name": "livePeriodTimeBcast", "type": ["null","string"], "default":null},
+                       {"name": "whStatus", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "lineScore", "type": ["null", {
+                   "name": "LineScore",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameDateEst", "type": ["null","string"], "default":null},
+                       {"name": "gameSequence", "type": "int", "default":0},
+                       {"name": "gameId", "type": "int", "default":0},
+                       {"name": "teamId", "type": "int", "default":0},
+                       {"name": "teamAbbreviation", "type": ["null","string"], "default":null},
+                       {"name": "teamCityName", "type": ["null","string"], "default":null},
+                       {"name": "teamWinsLosses", "type": ["null","string"], "default":null},
+                       {"name": "ptsQtr1", "type": "int", "default":0},
+                       {"name": "ptsQtr2", "type": "int", "default":0},
+                       {"name": "ptsQtr3", "type": "int", "default":0},
+                       {"name": "ptsQtr4", "type": "int", "default":0},
+                       {"name": "ptsOt1", "type": "int", "default":0},
+                       {"name": "ptsOt2", "type": "int", "default":0},
+                       {"name": "ptsOt3", "type": "int", "default":0},
+                       {"name": "ptsOt4", "type": "int", "default":0},
+                       {"name": "ptsOt5", "type": "int", "default":0},
+                       {"name": "ptsOt6", "type": "int", "default":0},
+                       {"name": "ptsOt7", "type": "int", "default":0},
+                       {"name": "ptsOt8", "type": "int", "default":0},
+                       {"name": "ptsOt9", "type": "int", "default":0},
+                       {"name": "ptsOt10", "type": "int", "default":0},
+                       {"name": "pts", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "seasonSeries", "type": ["null", {
+                   "name": "SeasonSeries",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameId", "type": "int", "default":0},
+                       {"name": "homeTeamId", "type": "int", "default":0},
+                       {"name": "visitorTeamId", "type": "int", "default":0},
+                       {"name": "gameDateEst", "type": ["null","string"], "default":null},
+                       {"name": "homeTeamWins", "type": "int", "default":0},
+                       {"name": "homeTeamLosses", "type": "int", "default":0},
+                       {"name": "seriesLeader", "type": ["null","string"], "default":null}
+                   ]
+                   }], "default":null},
+                {"name": "lastMeeting", "type": ["null", {
+                   "name": "LastMeeting",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameId", "type": "int", "default":0},
+                       {"name": "lastGameId", "type": "int", "default":0},
+                       {"name": "lastGameDateEst", "type": ["null","string"], "default":null},
+                       {"name": "lastGameHomeTeamId", "type": "int", "default":0},
+                       {"name": "lastGameHomeTeamCity", "type": ["null","string"], "default":null},
+                       {"name": "lastGameHomeTeamName", "type": ["null","string"], "default":null},
+                       {"name": "lastGameHomeTeamAbbreviation", "type": ["null","string"], "default":null},
+                       {"name": "lastGameHomeTeamPoints", "type": "int", "default":0},
+                       {"name": "lastGameVisitorTeamId", "type": "int", "default":0},
+                       {"name": "lastGameVisitorTeamCity", "type": ["null","string"], "default":null},
+                       {"name": "lastGameVisitorTeamName", "type": ["null","string"], "default":null},
+                       {"name": "lastGameVisitorTeamCity1", "type": ["null","string"], "default":null},
+                       {"name": "lastGameVisitorTeamPoints", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "playerStats", "type": ["null", {
+                   "name": "PlayerStats",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameId", "type": "int", "default":0},
+                       {"name": "teamId", "type": "int", "default":0},
+                       {"name": "teamAbbreviation", "type": ["null","string"], "default":null},
+                       {"name": "teamCity", "type": ["null","string"], "default":null},
+                       {"name": "playerId", "type": "int", "default":0},
+                       {"name": "playerName", "type": ["null","string"], "default":null},
+                       {"name": "startPosition", "type": ["null","string"], "default":null},
+                       {"name": "comment", "type": ["null","string"], "default":null},
+                       {"name": "min", "type": ["null","string"], "default":null},
+                       {"name": "fgm", "type": "int", "default":0},
+                       {"name": "fga", "type": "int", "default":0},
+                       {"name": "fgPct", "type": "long", "default":0},
+                       {"name": "fg3m", "type": "int", "default":0},
+                       {"name": "fg3a", "type": "int", "default":0},
+                       {"name": "fg3Pct", "type": "long", "default":0},
+                       {"name": "ftm", "type": "int", "default":0},
+                       {"name": "fta", "type": "int", "default":0},
+                       {"name": "ftPct", "type": "int", "default":0},
+                       {"name": "oreb", "type": "int", "default":0},
+                       {"name": "dreb", "type": "int", "default":0},
+                       {"name": "reb", "type": "int", "default":0},
+                       {"name": "ast", "type": "int", "default":0},
+                       {"name": "stl", "type": "int", "default":0},
+                       {"name": "blk", "type": "int", "default":0},
+                       {"name": "to", "type": "int", "default":0},
+                       {"name": "pf", "type": "int", "default":0},
+                       {"name": "pts", "type": "int", "default":0},
+                       {"name": "plusMinus", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "teamStats", "type": ["null", {
+                   "name": "TeamStats",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameId", "type": "int", "default":0},
+                       {"name": "teamId", "type": "int", "default":0},
+                       {"name": "teamName", "type": ["null","string"], "default":null},
+                       {"name": "teamAbbreviation", "type": ["null","string"], "default":null},
+                       {"name": "teamCity", "type": ["null","string"], "default":null},
+                       {"name": "min", "type": ["null","string"], "default":null},
+                       {"name": "fgm", "type": "int", "default":0},
+                       {"name": "fga", "type": "int", "default":0},
+                       {"name": "fgPct", "type": "long", "default":0},
+                       {"name": "fg3m", "type": "int", "default":0},
+                       {"name": "fg3a", "type": "int", "default":0},
+                       {"name": "fg3Pct", "type": "long", "default":0},
+                       {"name": "ftm", "type": "int", "default":0},
+                       {"name": "fta", "type": "int", "default":0},
+                       {"name": "ftPct", "type": "int", "default":0},
+                       {"name": "oreb", "type": "int", "default":0},
+                       {"name": "dreb", "type": "int", "default":0},
+                       {"name": "reb", "type": "int", "default":0},
+                       {"name": "ast", "type": "int", "default":0},
+                       {"name": "stl", "type": "int", "default":0},
+                       {"name": "blk", "type": "int", "default":0},
+                       {"name": "to", "type": "int", "default":0},
+                       {"name": "pf", "type": "int", "default":0},
+                       {"name": "pts", "type": "int", "default":0},
+                       {"name": "plusMinus", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "otherStats", "type": ["null", {
+                   "name": "OtherStats",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "leagueId", "type": "int", "default":0},
+                       {"name": "seasonId", "type": "int", "default":0},
+                       {"name": "teamId", "type": "int", "default":0},
+                       {"name": "teamAbbreviation", "type": ["null","string"], "default":null},
+                       {"name": "teamCity", "type": ["null","string"], "default":null},
+                       {"name": "ptsPaint", "type": "int", "default":0},
+                       {"name": "pts2ndChance", "type": "int", "default":0},
+                       {"name": "ptsFb", "type": "long", "default":0},
+                       {"name": "largestLead", "type": "int", "default":0},
+                       {"name": "leadChanges", "type": "int", "default":0},
+                       {"name": "timesTied", "type": "long", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "officials", "type": ["null", {
+                   "name": "Officials",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "officialId", "type": "int", "default":0},
+                       {"name": "firstName", "type": ["null","string"], "default":null},
+                       {"name": "lastName", "type": ["null","string"], "default":null},
+                       {"name": "jerseyNum", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "gameInfo", "type": ["null", {
+                   "name": "GameInfo",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "gameDate", "type": ["null","string"], "default":null},
+                       {"name": "attendance", "type": "int", "default":0},
+                       {"name": "gameTime", "type": ["null","string"], "default":null}
+                   ]
+                   }], "default":null},
+                {"name": "inactivePlayers", "type": ["null", {
+                   "name": "InactivePlayers",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "playerId", "type": "int", "default":0},
+                       {"name": "firstName", "type": ["null","string"], "default":null},
+                       {"name": "lastName", "type": ["null","string"], "default":null},
+                       {"name": "jerseyNum", "type": "int", "default":0},
+                       {"name": "teamId", "type": "int", "default":0},
+                       {"name": "teamCity", "type": ["null","string"], "default":null},
+                       {"name": "teamName", "type": ["null","string"], "default":null},
+                       {"name": "teamAbbreviation", "type": ["null","string"], "default":null}
+                   ]
+                   }], "default":null},
+                {"name": "availableVideo", "type": ["null", {
+                   "name": "AvailableVideo",
+                   "type": "record",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "fields": [
+                       {"name": "videoAvailableFlag", "type": "int", "default":0}
+                   ]
+                   }], "default":null},
+                {"name": "gameId", "type": "int", "default":0},
+                {"name": "rangeType", "type": "int", "default":0},
+                {"name": "startPeriod", "type": "int", "default":0},
+                {"name": "startRange", "type": "int", "default":0},
+                {"name": "endPeriod", "type": "int", "default":0},
+                {"name": "endRange", "type": "int", "default":0}
+            ]
             }], "default":null}
    ]
 }
