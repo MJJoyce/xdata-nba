@@ -16,7 +16,7 @@
    limitations under the License.
 -->
 
-<gora-orm>
+<gora-otd>
   <class name="gov.nasa.jpl.xdata.nba.impoexpo.GamePlayers" keyClass="java.lang.String" table="players">
     <primarykey column="id"/>
     <field name="player_id" column="player_id"/>
@@ -48,5 +48,5 @@
     <field name="" column=""/>
     <field name="" column=""/>
   </class-->
-</gora-orm>
+</gora-otd>
 
