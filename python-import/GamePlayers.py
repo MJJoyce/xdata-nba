@@ -1,21 +1,20 @@
-import requests
 import json
-import sys
+import logging
 import os
-import re
-import solr
-import subprocess
-import string
+import sys
 import urllib2
 
-def parse_game_players_file(game_players_file):
+def parse_game_players_file(game_players_file, solr_url=None):
+    if not solr_url:
+        solr_url = 'http://localhost:8983/solr/game-players/update?commit=true'
+
     path, file_name = os.path.split(game_players_file)
     game_id = file_name.split('_')[0]
 
     with open(game_players_file) as json_in:
         data = json.load(json_in)
 
-    print "Processing file: ", file_name
+    logging.debug('Processing file: ' + file_name)
 
     records = []
     for record in data['resultSets'][0]['rowset']:
@@ -33,12 +32,14 @@ def parse_game_players_file(game_players_file):
             'team_city': team_city
         })
 
-    url = 'http://localhost:8983/solr/game-players/update?commit=true'
     data = json.dumps(records)
-    req = urllib2.Request(url, data, {'Content-Type': 'application/json'})
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
     urllib2.urlopen(req)
 
-    print "\tLoaded ", len(records), " records"
+    record_count = len(records)
+    logging.debug('\tLoaded ' + str(record_count) + ' records')
+
+    return record_count
 
 if __name__ == '__main__':
     parse_game_players_file(sys.argv[1])
