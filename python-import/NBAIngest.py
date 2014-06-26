@@ -5,7 +5,6 @@ import argparse
 import itertools
 import json
 import logging
-#from multiprocessing import Process
 import multiprocessing
 import os
 import urllib2
@@ -32,7 +31,7 @@ SOLR_URL = 'http://localhost:8983/solr/'
 GAME_PLAYERS_CORE = 'game-players/'
 GAME_PLAYER_FILES_PER_THREAD = 10
 GAME_COMMENTARY_CORE = 'game-commentary/'
-GAME_COMMENTARY_FILES_PER_THREAD = 40
+GAME_COMMENTARY_FILES_PER_THREAD = 10
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
@@ -64,7 +63,7 @@ def load_records(records_directory):
     }
 
     load_game_players(game_players_dir)
-    #load_commentary(commentary_dirs)
+    load_commentary(commentary_dirs)
 
     logger.info('Data ingest complete for: ' + records_directory)
 
@@ -152,10 +151,19 @@ def load_commentary(commentary_dirs):
                        for i in range(len(split_preview_files))]
 
     # Process all the files!
-    #thread_pool = multiprocessing.Pool(total_threads)
-    #thread_pool.map(load_commentary_files, split_data_files)
+    thread_pool = multiprocessing.Pool(total_threads)
+    results = thread_pool.map(load_commentary_files, split_data_files)
+    thread_pool.close()
+    thread_pool.join()
 
-    load_commentary_files(split_data_files[0])
+    # Join result set here
+    results = list(itertools.chain.from_iterable(results))
+
+    # Send single hit to Solr here
+    solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
+    data = json.dumps(results, encoding='latin-1')
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+    urllib2.urlopen(req)
 
     logger.info('Commentary ingestions complete')
 
@@ -169,16 +177,16 @@ def load_game_players_files(game_players_files):
 
 def load_commentary_files(commentary_data_files):
     ''''''
-    solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
     preview_files = commentary_data_files[0]
     recap_files = commentary_data_files[1]
     notebook_files = commentary_data_files[2]
 
-    for i in range(len(preview_files)):
-        parse_commentary_files(preview_files[i],
-                               recap_files[i],
-                               notebook_files[i],
-                               solr_url)
+    results = [parse_commentary_files(preview_files[i],
+                                       recap_files[i],
+                                       notebook_files[i])
+
+               for i in range(len(preview_files))]
+    return list(itertools.chain.from_iterable(results))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="XDATA NBA Ingester")
