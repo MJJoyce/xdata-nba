@@ -9,11 +9,24 @@ import os
 
 from GamePlayers import parse_game_players_file
 
-logging.basicConfig(filename='nba_ingest.log', level=logging.INFO)
+logger = logging.getLogger('nba_ingest_logger')
+logger.setLevel(logging.DEBUG)
+
+fh = logging.FileHandler('nba_ingest.log')
+fh.setLevel(logging.INFO)
+dh = logging.FileHandler('nba_ingest_debug.log')
+dh.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+dh.setFormatter(formatter)
+
+logger.addHandler(fh)
+logger.addHandler(dh)
 
 SOLR_URL = 'http://localhost:8983/solr/'
 GAME_PLAYERS_CORE = 'game-players/'
-GAME_PLAYER_FILES_PER_THREAD = 50
+GAME_PLAYER_FILES_PER_THREAD = 40
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
@@ -35,13 +48,13 @@ def load_records(records_directory):
         ├── teamdata.json
         └── yahoo_search_urls.txt
     '''
-    logging.info('Starting data ingest at: ' + records_directory)
+    logger.info('Starting data ingest at: ' + records_directory)
 
     game_players_dir = os.path.join(records_directory, 'gameplayers')
 
     load_game_players(game_players_dir)
 
-    logging.info('Data ingest complete for: ' + records_directory)
+    logger.info('Data ingest complete for: ' + records_directory)
 
 def load_game_players(game_players_dir):
     '''Load GamePlayers data into a solr instance.
@@ -49,7 +62,7 @@ def load_game_players(game_players_dir):
     :param game_players_dir: Directory containing XDATA NBA GamePlayers JSON
         JSOn files to load into a Solr instance.
     '''
-    logging.info('Starting GamePlayers ingestion: ' + game_players_dir)
+    logger.info('Starting GamePlayers ingestion: ' + game_players_dir)
 
     # Get a list of all the files we need to load
     data_files = [os.path.join(game_players_dir, f)
@@ -71,7 +84,7 @@ def load_game_players(game_players_dir):
     thread_pool = multiprocessing.Pool(total_threads)
     thread_pool.map(load_game_players_files, split_data_files)
 
-    logging.info('GamePlayers ingestions complete')
+    logger.info('GamePlayers ingestions complete')
 
 def load_game_players_files(game_players_files):
     '''Load XDATA NBA GamePlayers files into Solr

@@ -4,6 +4,8 @@ import os
 import sys
 import urllib2
 
+logger = logging.getLogger('nba_ingest_logger')
+
 def parse_game_players_file(game_players_file, solr_url=None):
     if not solr_url:
         solr_url = 'http://localhost:8983/solr/game-players/update?commit=true'
@@ -14,7 +16,7 @@ def parse_game_players_file(game_players_file, solr_url=None):
     with open(game_players_file) as json_in:
         data = json.load(json_in)
 
-    logging.debug('Processing file: ' + file_name)
+    logger.debug('Processing file: ' + file_name)
 
     records = []
     for record in data['resultSets'][0]['rowset']:
@@ -37,7 +39,7 @@ def parse_game_players_file(game_players_file, solr_url=None):
     urllib2.urlopen(req)
 
     record_count = len(records)
-    logging.debug('\tLoaded ' + str(record_count) + ' records')
+    logger.debug('\tLoaded ' + str(record_count) + ' records')
 
     return record_count
 
