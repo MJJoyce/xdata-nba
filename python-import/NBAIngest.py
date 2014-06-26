@@ -5,13 +5,13 @@ import argparse
 import itertools
 import json
 import logging
-#from multiprocessing import Process
 import multiprocessing
 import os
 import urllib2
 
 from GamePlayers import parse_game_players_file
 from GameCommentary import parse_commentary_files
+from GameComments import parse_comment_files
 
 logger = logging.getLogger('nba_ingest_logger')
 logger.setLevel(logging.DEBUG)
@@ -32,7 +32,9 @@ SOLR_URL = 'http://localhost:8983/solr/'
 GAME_PLAYERS_CORE = 'game-players/'
 GAME_PLAYER_FILES_PER_THREAD = 10
 GAME_COMMENTARY_CORE = 'game-commentary/'
-GAME_COMMENTARY_FILES_PER_THREAD = 40
+GAME_COMMENTARY_FILES_PER_THREAD = 10
+GAME_COMMENTS_CORE = 'game-comments/'
+GAME_COMMENTS_FILES_PER_THREAD = 10
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
@@ -62,9 +64,11 @@ def load_records(records_directory):
         'recap': os.path.join(records_directory, 'recaps'),
         'notebook': os.path.join(records_directory, 'notebook')
     }
+    comments_dir = os.path.join(records_directory, 'comments')
 
     load_game_players(game_players_dir)
-    #load_commentary(commentary_dirs)
+    load_commentary(commentary_dirs)
+    load_game_comments(comments_dir)
 
     logger.info('Data ingest complete for: ' + records_directory)
 
@@ -152,12 +156,62 @@ def load_commentary(commentary_dirs):
                        for i in range(len(split_preview_files))]
 
     # Process all the files!
-    #thread_pool = multiprocessing.Pool(total_threads)
-    #thread_pool.map(load_commentary_files, split_data_files)
+    thread_pool = multiprocessing.Pool(total_threads)
+    results = thread_pool.map(load_commentary_files, split_data_files)
+    thread_pool.close()
+    thread_pool.join()
 
-    load_commentary_files(split_data_files[0])
+    # Join result set here
+    results = list(itertools.chain.from_iterable(results))
+
+    # Send single hit to Solr here
+    solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
+    data = json.dumps(results, encoding='latin-1')
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+    urllib2.urlopen(req)
 
     logger.info('Commentary ingestions complete')
+
+def load_game_comments(game_comments_dir):
+    '''Load GameComments data into a solr instance.
+
+    :param game_comments_dir: Directory containing XDATA NBA GameComments JSON
+        files to load into a Solr instance.
+    '''
+    logger.info('Starting GameComments ingestion: ' + game_comments_dir)
+
+    # Get a list of all the files we need to load
+    data_files = [os.path.join(game_comments_dir, f)
+                  for f in os.listdir(game_comments_dir)
+                  if os.path.isfile(os.path.join(game_comments_dir, f))]
+
+    # Determine the number of threads it will take to process that many files
+    total_threads = len(data_files) / GAME_COMMENTS_FILES_PER_THREAD
+    # If the number of files isn't evenly divisible by the number of files
+    # per thread that we want to use we need to compensate for the remainder.
+    total_threads += 1 if len(data_files) % GAME_COMMENTS_FILES_PER_THREAD else 0
+
+    # Split the data files into chunks to pass to each thread.
+    fpt = GAME_COMMENTS_FILES_PER_THREAD
+    split_data_files = [data_files[(fpt * index):(fpt * index) + fpt]
+                        for index in range(total_threads)]
+
+    # Process all the files!
+    thread_pool = multiprocessing.Pool(total_threads)
+    results = thread_pool.map(load_game_comments_files, split_data_files)
+    thread_pool.close()
+    thread_pool.join()
+
+    # Join result set here
+    results = list(itertools.chain.from_iterable(results))
+
+    # Send single hit to Solr here
+    solr_url = SOLR_URL + GAME_COMMENTS_CORE + 'update?commit=true'
+    data = json.dumps(results, encoding='latin-1')
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+    urllib2.urlopen(req)
+
+    logger.info('GameComments ingestions complete')
 
 def load_game_players_files(game_players_files):
     '''Load XDATA NBA GamePlayers files into Solr
@@ -169,16 +223,20 @@ def load_game_players_files(game_players_files):
 
 def load_commentary_files(commentary_data_files):
     ''''''
-    solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
     preview_files = commentary_data_files[0]
     recap_files = commentary_data_files[1]
     notebook_files = commentary_data_files[2]
 
-    for i in range(len(preview_files)):
-        parse_commentary_files(preview_files[i],
-                               recap_files[i],
-                               notebook_files[i],
-                               solr_url)
+    results = [parse_commentary_files(preview_files[i],
+                                       recap_files[i],
+                                       notebook_files[i])
+
+               for i in range(len(preview_files))]
+    return list(itertools.chain.from_iterable(results))
+
+def load_game_comments_files(game_comment_files):
+    results = [parse_comment_files(f) for f in game_comment_files]
+    return list(itertools.chain.from_iterable(results))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="XDATA NBA Ingester")
