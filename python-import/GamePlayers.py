@@ -6,10 +6,7 @@ import urllib2
 
 logger = logging.getLogger('nba_ingest_logger')
 
-def parse_game_players_file(game_players_file, solr_url=None):
-    if not solr_url:
-        solr_url = 'http://localhost:8983/solr/game-players/update?commit=true'
-
+def parse_game_players_file(game_players_file):
     path, file_name = os.path.split(game_players_file)
     game_id = file_name.split('_')[0]
 
@@ -34,14 +31,7 @@ def parse_game_players_file(game_players_file, solr_url=None):
             'team_city': team_city
         })
 
-    data = json.dumps(records)
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
-
-    record_count = len(records)
-    logger.debug('\tLoaded ' + str(record_count) + ' records')
-
-    return record_count
+    return records
 
 if __name__ == '__main__':
     parse_game_players_file(sys.argv[1])
