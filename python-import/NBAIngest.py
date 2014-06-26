@@ -66,8 +66,8 @@ def load_records(records_directory):
     }
     comments_dir = os.path.join(records_directory, 'comments')
 
-    #load_game_players(game_players_dir)
-    #load_commentary(commentary_dirs)
+    load_game_players(game_players_dir)
+    load_commentary(commentary_dirs)
     load_game_comments(comments_dir)
 
     logger.info('Data ingest complete for: ' + records_directory)
