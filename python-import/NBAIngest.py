@@ -26,7 +26,7 @@ logger.addHandler(dh)
 
 SOLR_URL = 'http://localhost:8983/solr/'
 GAME_PLAYERS_CORE = 'game-players/'
-GAME_PLAYER_FILES_PER_THREAD = 40
+GAME_PLAYER_FILES_PER_THREAD = 25
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
