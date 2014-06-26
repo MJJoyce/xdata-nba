@@ -1,8 +1,6 @@
-import json
 import logging
 import os
 import sys
-import urllib2
 
 logger = logging.getLogger('nba_ingest_logger')
 
