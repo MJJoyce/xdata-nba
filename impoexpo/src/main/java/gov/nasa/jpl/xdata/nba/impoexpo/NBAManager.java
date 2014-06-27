@@ -285,7 +285,7 @@ public class NBAManager<GamePlayers, K> implements Manager{
   // }
 
   private void storeGamePlayers(CharSequence id, GamePlayer gamePlayer) {
-    LOG.info("Storing player with id: " + id + "in: " + dataStore.toString());
+    LOG.info("Storing player with id: " + id + " in: " + dataStore.toString());
     dataStore.put(id, gamePlayer);
 
   }
