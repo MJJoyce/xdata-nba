@@ -5,6 +5,18 @@
  <fields>
    <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
    <field name="id" type="string" indexed="true" stored="true" required="true"/>
+   <field name="game_id" type="string" indexed="true" stored="true"/>
+   <field name="event_num" type="int" indexed="true" stored="true"/>
+   <field name="event_msg_type" type="int" indexed="true" stored="true"/>
+   <field name="event_msg_action_type" type="int" indexed="true" stored="true"/>
+   <field name="period" type="int" indexed="true" stored="true"/>
+   <field name="sc_time_string" type="string" indexed="true" stored="true"/>
+   <field name="pc_time_string" type="string" indexed="true" stored="true"/>
+   <field name="home_description" type="string" indexed="true" stored="true"/>
+   <field name="neutral_description" type="string" indexed="true" stored="true"/>
+   <field name="visit_description" type="string" indexed="true" stored="true"/>
+   <field name="score" type="string" indexed="true" stored="true"/>
+   <field name="score_margin" type="string" indexed="true" stored="true"/>
  </fields>
 
  <uniqueKey>id</uniqueKey>
