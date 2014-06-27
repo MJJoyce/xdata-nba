@@ -5,6 +5,33 @@
  <fields>
    <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
    <field name="id" type="string" indexed="true" stored="true" required="true"/>
+   <field name="game_id" type="string" indexed="true" stored="true"/>
+   <!--From the Game Summary section-->
+   <field name="game_code" type="string" indexed="true" stored="true"/>
+   <field name="home_team_id" type="string" indexed="true" stored="true"/>
+   <field name="visitor_team_id" type="string" indexed="true" stored="true"/>
+   <field name="season" type="int" indexed="true" stored="true"/>
+   <field name="broadcaster" type="string" indexed="true" stored="true"/>
+   <!--From the Line Score section-->
+   <field name="team_id" type="int" indexed="true" stored="true"/>
+   <field name="team_abbreviation" type="string" indexed="true" stored="true"/>
+   <field name="team_city_name" type="string" indexed="true" stored="true"/>
+   <field name="team_wins_losses" type="string" indexed="true" stored="true"/>
+   <field name="pts_qtr1" type="int" indexed="true" stored="true"/>
+   <field name="pts_qtr2" type="int" indexed="true" stored="true"/>
+   <field name="pts_qtr3" type="int" indexed="true" stored="true"/>
+   <field name="pts_qtr4" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot1" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot2" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot3" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot4" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot5" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot6" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot7" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot8" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot9" type="int" indexed="true" stored="true"/>
+   <field name="pts_ot10" type="int" indexed="true" stored="true"/>
+   <field name="pts" type="int" indexed="true" stored="true"/>
  </fields>
 
  <uniqueKey>id</uniqueKey>
