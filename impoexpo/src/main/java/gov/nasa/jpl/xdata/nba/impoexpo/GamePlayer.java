@@ -232,7 +232,7 @@ public class GamePlayer extends org.apache.gora.persistency.impl.PersistentBase 
     return new gov.nasa.jpl.xdata.nba.impoexpo.GamePlayer.Builder(other);
   }
   
-  private static java.nio.ByteBuffer deepCopyToWriteOnlyBuffer(
+  private static java.nio.ByteBuffer deepCopyToReadOnlyBuffer(
       java.nio.ByteBuffer input) {
     java.nio.ByteBuffer copy = java.nio.ByteBuffer.allocate(input.capacity());
     int position = input.position();
@@ -580,3 +580,4 @@ public class GamePlayer extends org.apache.gora.persistency.impl.PersistentBase 
   }
   
 }
+

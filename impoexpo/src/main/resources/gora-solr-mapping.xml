@@ -17,30 +17,11 @@
 -->
 
 <gora-otd>
-  <class name="gov.nasa.jpl.xdata.nba.impoexpo.GamePlayers" keyClass="java.lang.String" table="players">
+  <class name="gov.nasa.jpl.xdata.nba.impoexpo.GamePlayers" keyClass="java.lang.String" table="game-players">
     <primarykey column="id"/>
-    <field name="player_id" column="player_id"/>
-    <field name="player_name" column="player_name"/>
-    <field name="team_id" column="team_id"/>
-    <field name="team_city" column="team_city"/>
   </class>
 
-  <class name="gov.nasa.jpl.xdata.nba.impoexpo." keyClass="java.lang.String" table="playbyplay">
-    <primarykey column="id"/>
-    <field name="game_id" column="game_id"/>
-    <field name="event_num" column="event_num"/>
-    <field name="event_msg_type" column="event_msg_type"/>
-    <field name="event_msg_action_type" column="event_msg_action_type"/>
-    <field name="period" column="period"/>
-    <field name="wc_time_str" column="wc_time_str"/>
-    <field name="pc_time_str" column="pc_time_str"/>
-    <field name="home_desc" column="home_desc"/>
-    <field name="neutral_desc" column="neutral_desc"/>
-    <field name="visitor_desc" column="visitor_desc"/>
-    <field name="score" column="score"/>
-    <field name="score_margin" column="score_margin"/>
-  </class>
-  <!--  class name="" keyClass="" table="">
+ <!--  class name="" keyClass="" table="">
     <primarykey column=""/>
     <field name="" column=""/>
     <field name="" column=""/>

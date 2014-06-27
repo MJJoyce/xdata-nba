@@ -21,7 +21,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
+// import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -31,10 +31,15 @@ import org.apache.gora.store.DataStore;
 import org.apache.gora.store.DataStoreFactory;
 import org.apache.hadoop.conf.Configuration;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
+// import com.fasterxml.jackson.core.JsonFactory;
+// import com.fasterxml.jackson.core.JsonParseException;
+// import com.fasterxml.jackson.core.JsonParser;
+// import com.fasterxml.jackson.core.JsonToken;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  * NBAManager provides a CLI for us to map NBA data to 
@@ -60,12 +65,14 @@ public class NBAManager<GamePlayers, K> implements Manager{
           "               <parseNotebook>    - Parse unstructured .txt notebook data\n" +
           "               <parseGamestats>   - Parse structured .json gamestats data\n" +
           "               <parsePlayerstats> - Parse structured .json players stats\n" +
+          "               <parsePlayByPlay>  - Parse structured .json play by play data\n" +
           "             inputFiles    \n" +
           "               <preview.txt>      - e.g. 0021000001_preview.txt\n" +
           "               <recap.txt>        - e.g. 0021000001_recap.txt\n" +
           "               <notebook.txt>     - e.g. 0021000001_notebook.txt\n" +
           "               <gamestats.json>   - e.g. 0021000001_gamestats.json\n" +
           "               <playerstats.json> - e.g. 0021000001_gamePlayers.json\n" +
+          "               <playbyplay.json>  - e.g. 0021000001_playbyplay.json\n" +
           "           -get <id>\n" +
           "           -query <id>\n" +
           "           -query <id> <id>\n" +
@@ -130,84 +137,152 @@ public class NBAManager<GamePlayers, K> implements Manager{
 
   @Override
   public void aquire(Object input) {
-    LOG.info("Parsing file:" + input);
-    BufferedReader reader = null;
-    try {
-      reader = new BufferedReader(new FileReader((String) input));
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-    long players = 0;
-    try {
-      JsonParser parser = new JsonFactory().createParser(reader);
-      ArrayList<GamePlayer> gamePlayers = read(parser);
 
-      if(gamePlayers != null) {
-        for (GamePlayer gamePlayer : gamePlayers) {
-          //store the gamePlayers with key id == game_id:player_id
-          storeGamePlayers(gamePlayer.getId(), gamePlayer);
-          ++players;
-        }
-      }
-    } catch (JsonParseException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (ParseException e) {
-      e.printStackTrace();
-    } finally {
-      try {
-        reader.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }  
+    try {
+      // read the json file
+      LOG.info("Parsing file:" + input);
+      FileReader reader = new FileReader((String) input);
+
+
+      JSONParser jsonParser = new JSONParser();
+      JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+
+      JSONArray result = (JSONArray) jsonObject.get("resultSets");
+      JSONObject jObj = (JSONObject) result.get(0);
+      JSONArray rows = (JSONArray) jObj.get("rowset");
+      System.out.println("Json object: " + rows.size());
+      
+      for (int i = 0; i < rows.size(); i++) {
+          System.out.println(rows.get(i) + " ");
+          GamePlayer gpGamePlayer = parseGamePlayer((JSONArray) rows.get(i));
+          storeGamePlayers(Integer.toString(i), gpGamePlayer);
+       }
+    } catch (FileNotFoundException ex) {
+      ex.printStackTrace();
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    } catch (ParseException ex) {
+      ex.printStackTrace();
+    } catch (NullPointerException ex) {
+      ex.printStackTrace();
     }
-    LOG.info("finished parsing file. Total number of players:" + players);
+
+
+    // BufferedReader reader = null;
+    // try {
+    //   reader = new BufferedReader(new FileReader((String) input));
+    // } catch (FileNotFoundException e) {
+    //   e.printStackTrace();
+    // }
+    // long players = 0;
+    // try {
+    //   JsonParser parser = new JsonFactory().createParser(reader);
+    //   ArrayList<GamePlayer> gamePlayers = read(parser);
+
+    //   if(gamePlayers != null) {
+    //     for (GamePlayer gamePlayer : gamePlayers) {
+    //       //store the gamePlayers with key id == game_id_player_id
+    //       storeGamePlayers(gamePlayer.getId(), gamePlayer);
+    //       ++players;
+    //     }
+    //   }
+    // } catch (JsonParseException e) {
+    //   e.printStackTrace();
+    // } catch (IOException e) {
+    //   e.printStackTrace();
+    // } catch (ParseException e) {
+    //   e.printStackTrace();
+    // } finally {
+    //   try {
+    //     reader.close();
+    //   } catch (IOException e) {
+    //     e.printStackTrace();
+    //   }  
+    // }
+    // LOG.info("finished parsing file. Total number of players:" + players);
   }
 
+  /** Parses a single log line in combined log format using StringTokenizers */
+  private GamePlayer parseGamePlayer(JSONArray object) throws ParseException {
+//    StringTokenizer matcher = new StringTokenizer(line);
+//    //parse the log line
+//    String ip = matcher.nextToken();
+//    matcher.nextToken(); //discard
+//    matcher.nextToken();
+//    long timestamp = dateFormat.parse(matcher.nextToken("]").substring(2)).getTime();
+//    matcher.nextToken("\"");
+//    String request = matcher.nextToken("\"");
+//    String[] requestParts = request.split(" ");
+//    String httpMethod = requestParts[0];
+//    String url = requestParts[1];
+//    matcher.nextToken(" ");
+//    int httpStatusCode = Integer.parseInt(matcher.nextToken());
+//    int responseSize = Integer.parseInt(matcher.nextToken());
+//    matcher.nextToken("\"");
+//    String referrer = matcher.nextToken("\"");
+//    matcher.nextToken("\"");
+//    String userAgent = matcher.nextToken("\"");
+    
+    //construct and return gameplayer object
+	GamePlayer gameplayer = new GamePlayer();
+    gameplayer.setId((String) object.get(0).toString());
+    Long long1 = (Long) object.get(0);
+    
+    gameplayer.setPlayerId(((Long) object.get(0)).intValue());
+    gameplayer.setPlayerName((String) object.get(1).toString());
+    gameplayer.setTeamId(((Long) object.get(2)).intValue());
+    gameplayer.setTeamCity((String) object.get(3).toString());
+//    gameplayer.setResponseSize(responseSize);
+//    gameplayer.setReferrer(new Utf8(referrer));
+//    gameplayer.setUserAgent(new Utf8(userAgent));
+    
+    return gameplayer;
+  }
+  
   /** 
    * Using the provided {@link org.codehaus.jackson.JsonParser}, which has
    * been constructed using input JSON, we parse out individual GamePlayer data.
    * @throws IOException 
    * @throws JsonParseException 
    */
-  private ArrayList<GamePlayer> read(JsonParser jp) throws ParseException, JsonParseException, IOException {
-    // Sanity check: verify that we got "Json Object":
-    if (jp.nextToken() != JsonToken.START_OBJECT) {
-      throw new IOException("Expected data to start with an Object");
-    }
-    ArrayList<GamePlayer> playerList = new ArrayList<GamePlayer>();
-    // Iterate over object fields:
-    while (jp.nextToken() != JsonToken.END_OBJECT) {
-      if (jp.getCurrentToken().isNumeric()) {
-        GamePlayer player = readGamePlayer(jp);
-        playerList.add(player);
-      }
-    }
-    jp.close(); // important to close both parser and underlying File reader
-    return playerList;
-  }
+  // private ArrayList<GamePlayer> read(JsonParser jp) throws ParseException, JsonParseException, IOException {
+  //   // Sanity check: verify that we got "Json Object":
+  //   if (jp.nextToken() != JsonToken.START_OBJECT) {
+  //     throw new IOException("Expected data to start with an Object");
+  //   }
+  //   ArrayList<GamePlayer> playerList = new ArrayList<GamePlayer>();
+  //   // Iterate over object fields:
+  //   while (jp.nextToken() != JsonToken.END_OBJECT) {
+      
+  //     if (jp.getCurrentToken().isNumeric()) {
+  //       GamePlayer player = readGamePlayer(jp);
+  //       playerList.add(player);
+  //     }
+  //   }
+  //   jp.close(); // important to close both parser and underlying File reader
+  //   return playerList;
+  // }
 
-  private GamePlayer readGamePlayer(JsonParser jp) throws IOException {
-    GamePlayer gamePlayer = GamePlayer.newBuilder().build();
-    //set variables for composite primary key which is game_id_player_id
-    //String gameId;
-    String playerId;
+  // private GamePlayer readGamePlayer(JsonParser jp) throws IOException {
+  //   GamePlayer gamePlayer = GamePlayer.newBuilder().build();
+  //   //set variables for composite primary key which is game_id_player_id
+  //   //String gameId;
+  //   String playerId;
 
-    gamePlayer.setPlayerId(jp.getIntValue());
-    playerId = Integer.toString(jp.getIntValue());
-    jp.nextToken();
-    gamePlayer.setPlayerName(jp.getText());
-    jp.nextToken();
-    gamePlayer.setTeamId(jp.getIntValue());
-    jp.nextToken();
-    gamePlayer.setTeamCity(jp.getText());
-    jp.nextToken();
-    gamePlayer.setId("gameId" + "_" + playerId);
-    jp.nextToken();
-    return gamePlayer;
+  //   gamePlayer.setPlayerId(jp.getIntValue());
+  //   playerId = Integer.toString(jp.getIntValue());
+  //   jp.nextToken();
+  //   gamePlayer.setPlayerName(jp.getText());
+  //   jp.nextToken();
+  //   gamePlayer.setTeamId(jp.getIntValue());
+  //   jp.nextToken();
+  //   gamePlayer.setTeamCity(jp.getText());
+  //   jp.nextToken();
+  //   gamePlayer.setId("gameId" + "_" + playerId);
+  //   jp.nextToken();
+  //   return gamePlayer;
 
-  }
+  // }
 
   private void storeGamePlayers(CharSequence id, GamePlayer gamePlayer) {
     LOG.info("Storing player with id: " + id + "in: " + dataStore.toString());
@@ -274,7 +349,7 @@ public class NBAManager<GamePlayers, K> implements Manager{
 
   }
   
-  /** Pretty prints the pageview object to stdout */
+  /** Pretty prints the gameplayer object to stdout */
   private void printPlayer(GamePlayer player) {
     if(player == null) {
       System.out.println("No result to show"); 
@@ -294,7 +369,7 @@ public class NBAManager<GamePlayers, K> implements Manager{
       printPlayer(resultGameplayer);
     }
     
-    System.out.println("Number of pageviews from the query:" + result.getOffset());
+    System.out.println("Number of gameplayers from the query:" + result.getOffset());
   }
 
 }
