@@ -15,42 +15,44 @@ def parse_game_stats_file(game_stats_file):
     logger.debug('Processing play-by-play file: ' + file_name)
 
     records = []
-    linescores = []
-    for obj in data['resultSets'][0]:
+
+    #for obj in data['resultSets'][0]:
+    for obj in data['resultSets']:
         if obj['name'] == 'GameSummary':
-            game_summary = obj
+            game_summary = obj['rowSet'][0]
         if obj['name'] == 'LineScore':
-            linescores.append(obj)
+            linescores = obj['rowSet']
 
     general_record = {}
-    general_record['game_id'] = game_summary['GAME_ID']
-    general_record['game_code'] = game_summary['GAMECODE']
-    general_record['home_team_id'] = game_summary['HOME_TEAM_ID']
-    general_record['visitor_team_id'] = game_summary['VISITOR_TEAM_ID']
-    general_record['season'] = game_summary['SEASON']
-    general_record['broadcaster'] = game_summary['NATL_TV_BROADCASTER_ABBREVIATION']
+    general_record['game_id'] = game_summary[2]
+    general_record['game_code'] = game_summary[5]
+    general_record['home_team_id'] = game_summary[6]
+    general_record['visitor_team_id'] = game_summary[7]
+    general_record['season'] = game_summary[8]
+    general_record['broadcaster'] = game_summary[11]
 
     for team_data in linescores:
         team_record = {}
-        team_record['team_id'] = team_data['TEAM_ID']
-        team_record['team_abbreviation'] = team_data['TEAM_ABBREVIATION']
-        team_record['team_city_name'] = team_data['TEAM_CITY_NAME']
-        team_record['team_wins_losses'] = team_data['TEAM_WINS_LOSSES']
-        team_record['pts_qtr1'] = team_data['PTS_QTR1']
-        team_record['pts_qtr2'] = team_data['PTS_QTR2']
-        team_record['pts_qtr3'] = team_data['PTS_QTR3']
-        team_record['pts_qtr4'] = team_data['PTS_QTR4']
-        team_record['pts_ot1'] = team_data['PTS_OT1']
-        team_record['pts_ot2'] = team_data['PTS_OT2']
-        team_record['pts_ot3'] = team_data['PTS_OT3']
-        team_record['pts_ot4'] = team_data['PTS_OT4']
-        team_record['pts_ot5'] = team_data['PTS_OT5']
-        team_record['pts_ot6'] = team_data['PTS_OT6']
-        team_record['pts_ot7'] = team_data['PTS_OT7']
-        team_record['pts_ot8'] = team_data['PTS_OT8']
-        team_record['pts_ot9'] = team_data['PTS_OT9']
-        team_record['pts_ot10'] = team_data['PTS_OT10']
-        team_record['pts'] = team_data['PTS']
+        team_record['id'] = str(general_record['game_id']) + '_' + str(team_data[3])
+        team_record['team_id'] = team_data[3]
+        team_record['team_abbreviation'] = team_data[4]
+        team_record['team_city_name'] = team_data[5]
+        team_record['team_wins_losses'] = team_data[6]
+        team_record['pts_qtr1'] = team_data[7]
+        team_record['pts_qtr2'] = team_data[8]
+        team_record['pts_qtr3'] = team_data[9]
+        team_record['pts_qtr4'] = team_data[10]
+        team_record['pts_ot1'] = team_data[11]
+        team_record['pts_ot2'] = team_data[12]
+        team_record['pts_ot3'] = team_data[13]
+        team_record['pts_ot4'] = team_data[14]
+        team_record['pts_ot5'] = team_data[15]
+        team_record['pts_ot6'] = team_data[16]
+        team_record['pts_ot7'] = team_data[17]
+        team_record['pts_ot8'] = team_data[18]
+        team_record['pts_ot9'] = team_data[19]
+        team_record['pts_ot10'] = team_data[20]
+        team_record['pts'] = team_data[21]
         records.append(team_record)
 
         team_record.update(general_record)
