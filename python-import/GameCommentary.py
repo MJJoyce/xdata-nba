@@ -5,7 +5,8 @@ import sys
 logger = logging.getLogger('nba_ingest_logger')
 
 def parse_commentary_files(preview_file, recap_file, notebook_file):
-    game_id = preview_file.split('_')[0]
+    path, file_name = os.path.split(preview_file)
+    game_id = file_name.split('_')[0]
     logger.debug('Processing commentary files for game: ' + str(game_id))
 
     try:
