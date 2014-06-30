@@ -1,17 +1,4 @@
 #! /bin/bash
-##### Provision check ######
-
-# The provision check is intended to not run the full provision script when a box has already been provisioned.
-# At the end of this script, a file is created on the vagrant box, we'll check if it exists now.
-echo "[vagrant provisioning] Checking if the box was already provisioned..."
-
-if [ -e "/home/vagrant/.vagrant_provision" ]
-then
-  # Skipping provisioning if the box is already provisioned
-  echo "[vagrant provisioning] The box is already provisioned..."
-  exit
-fi
-
 ##### Java installation #####
 echo "[vagrant provisioning] Installing Java..."]
 apt-get update
@@ -58,9 +45,3 @@ sleep 1
 while ! grep -m1 'Registered new searcher' < /tmp/solr-server-log.txt; do
   sleep 1
 done
-
-##### Provision check #####
-
-# Create .vagrant_provision for the script to check on during a next vargant up.
-echo "[vagrant provisioning] Creating .vagrant_provision file..."
-touch .vagrant_provision
