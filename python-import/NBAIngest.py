@@ -75,10 +75,10 @@ def load_records(records_directory):
     playbyplay_dir = os.path.join(records_directory, 'playbyplay')
     stats_dir = os.path.join(records_directory, 'gamestats')
 
+    load_game_play_by_plays(playbyplay_dir)
     load_game_players(game_players_dir)
     load_commentary(commentary_dirs)
     load_game_comments(comments_dir)
-    load_game_play_by_plays(playbyplay_dir)
     load_game_stats(stats_dir)
 
     logger.info('Data ingest complete for: ' + records_directory)
@@ -263,7 +263,7 @@ def load_game_play_by_plays(game_play_by_play_dir):
     for i in range(num_splits + 1):
         logger.info("Sending PlayByPlay split #" + str(i))
         if i == num_splits:
-            data = json.dumps(results[-1])
+            data = json.dumps([results[-1]])
         else:
             data = json.dumps(results[i*files_per_split:(i+1)*files_per_split])
 
