@@ -10,7 +10,7 @@ apt-get update
 # automatic install of the Oracle JDK 7
 echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 
-sudo apt-get -y install oracle-java7-set-default
+apt-get -y install oracle-java7-set-default
 
 export JAVA_HOME="/usr/lib/jvm/java-7-oracle/jre"
 
@@ -31,6 +31,7 @@ mvn clean install
 
 ##### Solr installation #####
 echo "[vagrant provisioning] Installing Apache Solr..."
+cd /home/vagrant
 curl -O http://mirror.reverse.net/pub/apache/lucene/solr/4.8.1/solr-4.8.1.tgz
 
 tar xzf solr-4.8.1.tgz
