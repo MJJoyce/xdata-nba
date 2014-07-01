@@ -33,8 +33,12 @@ all of the dependencies in vagrant_bootstrap next time you call `vagrant up`.
 If you need to manually start Solr, you can do so by running the following commands after SSH-ing into the VM.
 
 ```
-cd /solri-4.8.1/example/
-java -jar start.jar
+cd solr-4.8.1/example/
+java -Dsolr.solr.home=/vagrant/solr -jar start.jar > /tmp/solr-server-log.txt &
+
+To test that solr has started successfully open up your browser and navigate to http://localhost:8983/solr where you will see the Solr dashboard
+
+
 ```
 
 ### Loading the NBA dataset
