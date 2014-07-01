@@ -26,6 +26,8 @@ apt-get install -y maven
 echo "[vagrant provisioning] Installing and building Gora..."]
 cd /home/vagrant
 git clone http://git.apache.org/gora.git/
+chown -R vagrant gora
+chgrp -R vagrant gora
 cd gora
 mvn clean install
 
@@ -35,6 +37,8 @@ cd /home/vagrant
 curl -O http://mirror.reverse.net/pub/apache/lucene/solr/4.8.1/solr-4.8.1.tgz
 
 tar xzf solr-4.8.1.tgz
+chown -R vagrant solr-4.8.1
+chgrp -R vagrant solr-4.8.1
 cd solr-4.8.1/example
 
 ##### Solr startup #####
