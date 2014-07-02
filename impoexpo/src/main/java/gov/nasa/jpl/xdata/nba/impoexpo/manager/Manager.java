@@ -68,5 +68,12 @@ public interface Manager {
    * data.
    * @param input
    */
-  void aquire(String parseType, Object input) throws IOException;
+  void aquire(Object input) throws IOException;
+
+  /**
+   * 
+   * @param parseType
+   * @param input
+   */
+  void aquire(String parseType, Object input);
 }

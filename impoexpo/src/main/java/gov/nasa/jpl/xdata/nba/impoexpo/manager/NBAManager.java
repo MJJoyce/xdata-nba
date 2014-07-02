@@ -51,6 +51,14 @@ public class NBAManager<GamePlayers, K> implements Manager{
 
   private DataStore<CharSequence, GamePlayer> dataStore;
 
+  /*private static final String USAGE = 
+      "NBAManager -parse <inputFile>\n" +
+      "           -get <id>\n" +
+      "           -query <id>\n" +
+      "           -query <id> <id>\n" +
+      "           -delete <id>\n" +
+      "           -deleteByQuery <id> <id>\n";*/
+  
   private static final String USAGE = 
       "NBAManager -parse <parserType> <inputFile>\n" +
           "             parserTypes    \n" +
@@ -73,7 +81,7 @@ public class NBAManager<GamePlayers, K> implements Manager{
           "           -query <id>\n" +
           "           -query <id> <id>\n" +
           "           -delete <id>\n" +
-          "           -deleteByQuery <id> <id>\n";
+          "           -deleteByQuery <id> <id>\n"; 
 
   public NBAManager() {
     try {
@@ -290,6 +298,12 @@ public class NBAManager<GamePlayers, K> implements Manager{
     }
 
     System.out.println("Number of gameplayers from the query:" + result.getOffset());
+  }
+
+  @Override
+  public void aquire(Object input) throws IOException {
+    // TODO Auto-generated method stub
+    
   }
 
 }
