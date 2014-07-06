@@ -129,7 +129,14 @@ def load_game_players(game_players_dir):
     logger.info('GamePlayers ingestions complete')
 
 def load_commentary(commentary_dirs):
-    ''''''
+    '''Load commentary data into a solr instance.
+
+    :param commentary_dirs: A dict containing commentary directory
+        information for loading into solr. Assuming the standard
+        NBA data directory, commentary_dirs should contain keys
+        listing the matching folder names for 'notebook', 'preview',
+        and 'recaps'.
+    '''
     logger.info('Starting Commentary ingestion: ' + str(commentary_dirs))
 
     preview_dir = commentary_dirs['preview']
@@ -176,10 +183,10 @@ def load_commentary(commentary_dirs):
     thread_pool.close()
     thread_pool.join()
 
-    # Join result set here
+    # Join result set
     results = list(itertools.chain.from_iterable(results))
 
-    # Send single hit to Solr here
+    # Send single hit to Solr
     solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
     data = json.dumps(results, encoding='latin-1')
     req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
@@ -317,7 +324,11 @@ def load_game_stats(game_stats_dir):
     logger.info('GameStats ingestions complete')
 
 def load_game_player_stats(game_stats_dir):
-    ''''''
+    '''Load GameStats data into a solr instance.
+
+    :param game_stats_dir: Directory containing XDATA NBA GameStats JSON
+        JSOn files to load into a Solr instance.
+    '''
     logger.info('Starting GamePlayerStats ingestion: ' + game_stats_dir)
 
     # Get a list of all the files we need to load
@@ -359,7 +370,17 @@ def load_game_players_files(game_players_files):
     return list(itertools.chain.from_iterable(results))
 
 def load_commentary_files(commentary_data_files):
-    ''''''
+    '''Load XDATA NBA commentary files into Solr
+
+    :param files: Tuple of lists of files to load into Solr. Data should 
+        be of the form:
+
+        (
+            [preview_files],
+            [recap_files],
+            [notebook_files],
+        )
+    '''
     preview_files = commentary_data_files[0]
     recap_files = commentary_data_files[1]
     notebook_files = commentary_data_files[2]
@@ -367,26 +388,39 @@ def load_commentary_files(commentary_data_files):
     results = [parse_commentary_files(preview_files[i],
                                        recap_files[i],
                                        notebook_files[i])
-
                for i in range(len(preview_files))]
+
     return list(itertools.chain.from_iterable(results))
 
 def load_game_comments_files(game_comment_files):
+    '''Load XDATA NBA GameComments files into Solr
+
+    :param game_comment_files: List of GameComments files to load into Solr
+    '''
     results = [parse_comment_files(f) for f in game_comment_files]
     return list(itertools.chain.from_iterable(results))
 
 def load_game_play_by_play_files(game_play_by_play_files):
-    ''''''
+    '''Load XDATA NBA GamePlayByPlay files into Solr
+
+    :param game_players_files: List of GamePlayByPlay files to load into Solr
+    '''
     results = [parse_game_play_by_play_file(f) for f in game_play_by_play_files]
     return list(itertools.chain.from_iterable(results))
 
 def load_game_stats_files(game_stats_files):
-    ''''''
+    '''Load XDATA NBA GameStats files into Solr
+
+    :param game_stats_files: List of GameStats files to load into Solr
+    '''
     results = [parse_game_stats_file(f) for f in game_stats_files]
     return list(itertools.chain.from_iterable(results))
 
-def load_game_player_stats_file(game_stats_file):
-    ''''''
+def load_game_player_stats_file(game_stats_files):
+    '''Load XDATA NBA Player stats from GameStats files into Solr
+
+    :param game_stats_files: List of GameStats files to load into Solr
+    '''
     results = [parse_game_players_stats_file(f) for f in game_stats_files]
     return list(itertools.chain.from_iterable(results))
 
