@@ -14,6 +14,7 @@ from GameCommentary import parse_commentary_files
 from GameComments import parse_comment_files
 from GamePlayByPlay import parse_game_play_by_play_file
 from GameStats import parse_game_stats_file
+from GamePlayerStats import parse_game_players_stats_file
 
 logger = logging.getLogger('nba_ingest_logger')
 logger.setLevel(logging.DEBUG)
@@ -41,7 +42,8 @@ GAME_PLAY_BY_PLAY_CORE = 'game-play-by-play/'
 GAME_PLAY_BY_PLAY_FILES_PER_THREAD = 10
 GAME_STATS_CORE = 'game-stats/'
 GAME_STATS_FILES_PER_THREAD = 10
-
+GAME_PLAYER_STATS_CORE = None
+GAME_PLAYER_STATS_FILES_PER_THREAD = 10
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
@@ -80,6 +82,8 @@ def load_records(records_directory):
     load_commentary(commentary_dirs)
     load_game_comments(comments_dir)
     load_game_stats(stats_dir)
+    # Not implemented in Solr yet
+    # load_game_player_stats(stats_dir)
 
     logger.info('Data ingest complete for: ' + records_directory)
 
@@ -312,6 +316,40 @@ def load_game_stats(game_stats_dir):
 
     logger.info('GameStats ingestions complete')
 
+def load_game_player_stats(game_stats_dir):
+    ''''''
+    logger.info('Starting GamePlayerStats ingestion: ' + game_stats_dir)
+
+    # Get a list of all the files we need to load
+    data_files = [os.path.join(game_stats_dir, f)
+                  for f in os.listdir(game_stats_dir)
+                  if os.path.isfile(os.path.join(game_stats_dir, f))]
+
+    # Determine the number of threads it will take to process that many files
+    total_threads = len(data_files) / GAME_PLAYER_STATS_FILES_PER_THREAD
+    # If the number of files isn't evenly divisible by the number of files
+    # per thread that we want to use we need to compensate for the remainder.
+    total_threads += 1 if len(data_files) % GAME_PLAYER_STATS_FILES_PER_THREAD else 0
+
+    # Split the data files into chunks to pass to each thread.
+    fpt = GAME_PLAYER_STATS_FILES_PER_THREAD
+    split_data_files = [data_files[(fpt * index):(fpt * index) + fpt]
+                        for index in range(total_threads)]
+
+    # Process all the files!
+    thread_pool = multiprocessing.Pool(total_threads)
+    results = thread_pool.map(load_game_players_stats_files, split_data_files)
+    thread_pool.close()
+    thread_pool.join()
+
+    # Join result set here
+    results = list(itertools.chain.from_iterable(results))
+
+    solr_url = SOLR_URL + GAME_PLAYER_STATS_CORE + 'update?commit=true'
+    data = json.dumps(results, encoding='latin-1')
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+    urllib2.urlopen(req)
+
 def load_game_players_files(game_players_files):
     '''Load XDATA NBA GamePlayers files into Solr
 
@@ -345,6 +383,11 @@ def load_game_play_by_play_files(game_play_by_play_files):
 def load_game_stats_files(game_stats_files):
     ''''''
     results = [parse_game_stats_file(f) for f in game_stats_files]
+    return list(itertools.chain.from_iterable(results))
+
+def load_game_player_stats_file(game_stats_file):
+    ''''''
+    results = [parse_game_players_stats_file(f) for f in game_stats_files]
     return list(itertools.chain.from_iterable(results))
 
 if __name__ == '__main__':
