@@ -3,6 +3,8 @@ import logging
 import os
 import sys
 
+import SentimentAnalyser
+
 logger = logging.getLogger('nba_ingest_logger')
 
 def parse_comment_files(comment_file):
@@ -19,12 +21,16 @@ def parse_comment_files(comment_file):
     with open(comment_file, 'r') as comment_in:
         for index, line in enumerate(comment_in):
             split_line = line.split('::')
-            records.append({'id': str(game_id) + '_' + str(index),
+
+            records.append({
+               'id': str(game_id) + '_' + str(index),
                'game_id': game_id,
                'comment_order': index,
                'commenter': split_line[0],
                'comment': split_line[1],
-               'source': source})
+               'source': source,
+               #'sentiment': SentimentAnalyser.classify(split_line[1])
+            })
     return records
 
 if __name__ == '__main__':

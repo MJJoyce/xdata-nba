@@ -16,6 +16,8 @@ from GamePlayByPlay import parse_game_play_by_play_file
 from GameStats import parse_game_stats_file
 from GamePlayerStats import parse_game_players_stats_file
 
+import SentimentAnalyser
+
 logger = logging.getLogger('nba_ingest_logger')
 logger.setLevel(logging.DEBUG)
 
@@ -202,6 +204,12 @@ def load_game_comments(game_comments_dir):
     '''
     logger.info('Starting GameComments ingestion: ' + game_comments_dir)
 
+    # Train the sentiment analyser that we'll use when processing
+    # all the game comments.
+    logger.info('Training sentiment analyser for comment ingestion')
+    SentimentAnalyser.train()
+    logger.info('Sentiment analyser training complete')
+
     # Get a list of all the files we need to load
     data_files = [os.path.join(game_comments_dir, f)
                   for f in os.listdir(game_comments_dir)
@@ -231,6 +239,7 @@ def load_game_comments(game_comments_dir):
     solr_url = SOLR_URL + GAME_COMMENTS_CORE + 'update?commit=true'
     data = json.dumps(results, encoding='latin-1')
     req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+
     urllib2.urlopen(req)
 
     logger.info('GameComments ingestions complete')
