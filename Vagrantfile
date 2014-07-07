@@ -13,4 +13,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vagrant_nba.vm.network "forwarded_port", guest: 8983, host: 8983
     vagrant_nba.vm.hostname = "xdata.nba"
   end
+
+  config.vm.provider "virtualbox" do |v|
+      v.memory = 4096
+      v.cpus = 4
+  end
 end
