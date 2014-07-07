@@ -29,7 +29,7 @@ def parse_comment_files(comment_file):
                'commenter': split_line[0],
                'comment': split_line[1],
                'source': source,
-               #'sentiment': SentimentAnalyser.classify(split_line[1])
+               'sentiment': SentimentAnalyser.classify(split_line[1])
             })
     return records
 
