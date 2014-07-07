@@ -56,7 +56,7 @@ def parse_game_players_stats_file(game_stats_file):
             'to': record[24],
             'pf': record[25],
             'pts': record[26],
-            'PLUS_MINUS': record[27],
+            'plus_minus': record[27],
         })
 
     return records
