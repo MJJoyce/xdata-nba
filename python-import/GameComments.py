@@ -25,7 +25,6 @@ def parse_comment_files(comment_file):
                'commenter': split_line[0],
                'comment': split_line[1],
                'source': source})
-
     return records
 
 if __name__ == '__main__':
