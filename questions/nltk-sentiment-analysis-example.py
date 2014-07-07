@@ -28,5 +28,4 @@ with open(TEST_COMMENT_FILE) as comment_file:
     for line in comment_file:
         user, comment = line.split('::')
         print '-------'
-        #print classifier.classify(feature_extractor(comment)), comment
         print classifier.classify(word_feats(comment)), comment
