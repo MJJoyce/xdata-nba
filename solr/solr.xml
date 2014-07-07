@@ -53,5 +53,6 @@
     <core name="game-play-by-play" instanceDir="game-play-by-play" />
     <core name="game-commentary" instanceDir="game-commentary" />
     <core name="game-players" instanceDir="game-players" />
+    <core name="game-player-stats" instanceDir="game-player-stats" />
   </cores>
 </solr>
