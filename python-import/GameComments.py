@@ -14,23 +14,19 @@ def parse_comment_files(comment_file):
 
     logger.debug('Processing comment files for game: ' + str(game_id))
 
-    records = defaultdict(list)
+    records = []
 
     with open(comment_file, 'r') as comment_in:
-        for line in comment_in:
+        for index, line in enumerate(comment_in):
             split_line = line.split('::')
-            commenter_id = split_line[0]
-            comment = split_line[1]
-            records[commenter_id].append(comment)
-
-    record = [{'id': str(game_id) + '_' + str(commenter_id),
+            records.append({'id': str(game_id) + '_' + str(index),
                'game_id': game_id,
-               'commenter': commenter_id,
-               'comments': ' '.join(records[commenter_id]),
-               'source': source}
-              for commenter_id in records]
+               'comment_order': index,
+               'commenter': split_line[0],
+               'comment': split_line[1],
+               'source': source})
 
-    return record
+    return records
 
 if __name__ == '__main__':
     print parse_comment_files(sys.argv[1])

@@ -7,7 +7,8 @@
    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
    <field name="game_id" type="string" indexed="true" stored="true"/>
    <field name="commenter" type="string" indexed="true" stored="true"/>
-   <field name="comments" type="text_general" indexed="true" stored="true"/>
+   <field name="comment" type="text_en" indexed="true" stored="true"/>
+   <field name="comment_order" type="int" indexed="true" stored="true"/>
    <field name="source" type="string" indexed="true" stored="true"/>
  </fields>
 
