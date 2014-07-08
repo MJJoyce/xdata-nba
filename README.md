@@ -36,10 +36,11 @@ If you need to manually start Solr, you can do so by running the following comma
 cd solr-4.8.1/example/
 java -Dsolr.solr.home=/vagrant/solr -jar start.jar > /tmp/solr-server-log.txt &
 
-To test that solr has started successfully open up your browser and navigate to http://localhost:8983/solr where you will see the Solr dashboard
-
-
 ```
+
+To test that solr has started successfully open up your browser and navigate to http://localhost:8983/solr where you will see the Solr dashboard.
+
+
 
 ### Loading the NBA dataset
 
