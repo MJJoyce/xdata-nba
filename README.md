@@ -44,9 +44,9 @@ To test that solr has started successfully open up your browser and navigate to 
 
 ### Loading the NBA dataset
 
-There are scripts for ingesting the NBA data into Solr in the `/python-import`. You can run the scripts with the following to ingest all the NBA data.
+There are scripts for ingesting the NBA data into Solr in the `/vagrant/python-import`. To ingest all the NBA data simply run the following.
 
 ```
-cd python-import
+cd /vagrant/python-import
 python NBAIngest /path/to/nba/data
 ```
