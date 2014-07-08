@@ -44,7 +44,7 @@ GAME_PLAY_BY_PLAY_CORE = 'game-play-by-play/'
 GAME_PLAY_BY_PLAY_FILES_PER_THREAD = 10
 GAME_STATS_CORE = 'game-stats/'
 GAME_STATS_FILES_PER_THREAD = 10
-GAME_PLAYER_STATS_CORE = None
+GAME_PLAYER_STATS_CORE = 'game-player-stats/'
 GAME_PLAYER_STATS_FILES_PER_THREAD = 10
 
 def load_records(records_directory):
@@ -84,8 +84,7 @@ def load_records(records_directory):
     load_commentary(commentary_dirs)
     load_game_comments(comments_dir)
     load_game_stats(stats_dir)
-    # Not implemented in Solr yet
-    # load_game_player_stats(stats_dir)
+    load_game_player_stats(stats_dir)
 
     logger.info('Data ingest complete for: ' + records_directory)
 
@@ -336,7 +335,7 @@ def load_game_player_stats(game_stats_dir):
     '''Load GameStats data into a solr instance.
 
     :param game_stats_dir: Directory containing XDATA NBA GameStats JSON
-        JSOn files to load into a Solr instance.
+        files to load into a Solr instance.
     '''
     logger.info('Starting GamePlayerStats ingestion: ' + game_stats_dir)
 
@@ -358,7 +357,7 @@ def load_game_player_stats(game_stats_dir):
 
     # Process all the files!
     thread_pool = multiprocessing.Pool(total_threads)
-    results = thread_pool.map(load_game_players_stats_files, split_data_files)
+    results = thread_pool.map(load_game_player_stats_files, split_data_files)
     thread_pool.close()
     thread_pool.join()
 
@@ -425,7 +424,7 @@ def load_game_stats_files(game_stats_files):
     results = [parse_game_stats_file(f) for f in game_stats_files]
     return list(itertools.chain.from_iterable(results))
 
-def load_game_player_stats_file(game_stats_files):
+def load_game_player_stats_files(game_stats_files):
     '''Load XDATA NBA Player stats from GameStats files into Solr
 
     :param game_stats_files: List of GameStats files to load into Solr
