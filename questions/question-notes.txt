@@ -1,0 +1,22 @@
+Question 3:
+----
+Trades can be identified with provided helper script. Requires a player Id to be
+    provided
+Injuries can be viewed over the entire dataset per player. Helper script
+    provides "confirmed" injury queries in addition to "possible" injury
+    queries.
+Potential firing information can be discovered with free text search over game
+    commentary and comments. There tends to be a lot of noise in this
+    information (past firings being discussed in game recaps or people demanding
+    firings in comments)
+Personnel changes: Unsure how to handle
+
+Question 13:
+----
+Streaks can be identified with provided helper script. Requires a game id to be
+    provided.
+
+Unstructured data doesn't offer a ton of use. Occasional mention of streaks can
+    be found in game recap information with free text searches. Comment data
+    tends to be flooded with win/loss streak discussion as opposed to scoring
+    streak comments.
