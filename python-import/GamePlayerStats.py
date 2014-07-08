@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import json
 import logging
 import os
 import sys
@@ -10,10 +11,10 @@ logger = logging.getLogger('nba_ingest_logger')
 
 def parse_game_players_stats_file(game_stats_file):
     ''''''
-    path, file_name = os.path.split(game_players_file)
+    path, file_name = os.path.split(game_stats_file)
     game_id = file_name.split('_')[0]
 
-    with open(game_players_file) as json_in:
+    with open(game_stats_file) as json_in:
         data = json.load(json_in)
 
     logger.debug('Stripping player stats from: ' + file_name)
@@ -21,7 +22,7 @@ def parse_game_players_stats_file(game_stats_file):
 
     for obj in data['resultSets']:
         if obj['name'] == 'PlayerStats':
-            player_stats = obj
+            player_stats = obj['rowSet']
             break
 
     records = []
