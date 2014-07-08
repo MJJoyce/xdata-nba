@@ -8,7 +8,7 @@ import requests
 
 SOLR_URL = 'http://localhost:8983/solr/'
 GAME_PLAY_BY_PLAY_CORE = 'game-play-by-play/'
-QUERY_STRING = '?q=game_id%3A{game_id}&fq=score_margin%3A*&sort=event_num+asc&rows=100&wt=json&indent=true&group=true&group.field=score&row=2147493647'
+QUERY_STRING = '?q=game_id%3A{game_id}&fq=score_margin%3A*&sort=event_num+asc&rows=214749364&wt=json&indent=true&group=true&group.field=score&'
 
 def detect_streaks(game_id):
     ''''''
