@@ -15,6 +15,7 @@ from GameComments import parse_comment_files
 from GamePlayByPlay import parse_game_play_by_play_file
 from GameStats import parse_game_stats_file
 from GamePlayerStats import parse_game_players_stats_file
+import LeagueTeamStats
 
 import SentimentAnalyser
 
@@ -46,6 +47,7 @@ GAME_STATS_CORE = 'game-stats/'
 GAME_STATS_FILES_PER_THREAD = 10
 GAME_PLAYER_STATS_CORE = 'game-player-stats/'
 GAME_PLAYER_STATS_FILES_PER_THREAD = 10
+LEAGUE_TEAM_STATS_CORE = 'league-team-stats/'
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
@@ -78,6 +80,7 @@ def load_records(records_directory):
     comments_dir = os.path.join(records_directory, 'comments')
     playbyplay_dir = os.path.join(records_directory, 'playbyplay')
     stats_dir = os.path.join(records_directory, 'gamestats')
+    league_team_stats_path = os.path.join(records_directory, 'teamdata.json')
 
     load_game_play_by_plays(playbyplay_dir)
     load_game_players(game_players_dir)
@@ -85,6 +88,7 @@ def load_records(records_directory):
     load_game_comments(comments_dir)
     load_game_stats(stats_dir)
     load_game_player_stats(stats_dir)
+    load_league_team_stats(league_team_stats_path)
 
     logger.info('Data ingest complete for: ' + records_directory)
 
@@ -368,6 +372,18 @@ def load_game_player_stats(game_stats_dir):
     data = json.dumps(results, encoding='latin-1')
     req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
     urllib2.urlopen(req)
+
+def load_league_team_stats(league_game_stats_file):
+    logger.info('Starting LeagueTeamStats ingestion: ' + league_game_stats_file)
+
+    results = LeagueTeamStats.parse_game_team_data_file(league_game_stats_file)
+
+    solr_url = SOLR_URL + LEAGUE_TEAM_STATS_CORE + 'update?commit=true'
+    data = json.dumps(results, encoding='latin-1')
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+    urllib2.urlopen(req)
+
+    logger.info('Finished LeagueTeamStats ingestion: ' + league_game_stats_file)
 
 def load_game_players_files(game_players_files):
     '''Load XDATA NBA GamePlayers files into Solr
