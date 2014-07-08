@@ -3,6 +3,7 @@ import logging
 import os
 import sys
 import urllib2
+import datetime
 
 logger = logging.getLogger('nba_ingest_logger')
 
@@ -26,6 +27,10 @@ def parse_game_stats_file(game_stats_file):
     general_record = {}
     general_record['game_id'] = game_summary[2]
     general_record['game_code'] = game_summary[5]
+    #2014-01-23T00:00:00
+    #fmt = '%Y-%m-%d\T%H:%M:%S'
+    #general_record['game_date_est'] = datetime.strptime(game_summary[0],fmt)
+    general_record['game_date_est'] = game_summary[0] + 'Z'
     general_record['home_team_id'] = game_summary[6]
     general_record['visitor_team_id'] = game_summary[7]
     general_record['season'] = game_summary[8]

@@ -8,6 +8,7 @@
    <field name="game_id" type="string" indexed="true" stored="true"/>
    <!--From the Game Summary section-->
    <field name="game_code" type="string" indexed="true" stored="true"/>
+   <field name="game_date_est" type="date" indexed="true" stored="true"/>
    <field name="home_team_id" type="string" indexed="true" stored="true"/>
    <field name="visitor_team_id" type="string" indexed="true" stored="true"/>
    <field name="season" type="int" indexed="true" stored="true"/>
