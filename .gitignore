@@ -1,2 +1,6 @@
 .vagrant/
 solr/*/data/
+*.log
+impoexpo/lib/
+impoexpo/slf4j*
+impoexpo/target/
