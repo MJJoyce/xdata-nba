@@ -1,7 +1,9 @@
 from collections import defaultdict
 import itertools
 import json
+import multiprocessing
 import requests
+import urllib2
 
 import commentary_ne_extractor as com_ne_extract
 
@@ -101,8 +103,8 @@ for game_id in game_ids:
     #player_er_records.append({
         #'id': player['player_id'],
         #'player_name': player['player_name'],
-        #'ne': player_entity_collection[player['player_name']]
+        #'ne': list(player_entity_collection[player['player_name']])
     #})
-#data = json.dumps(player_records)
+#data = json.dumps(player_er_records)
 #req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
 #urllib2.urlopen(req)
