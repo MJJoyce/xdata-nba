@@ -67,13 +67,17 @@ for game_id in game_ids:
     # record will hold all references to named entities from every game. This
     # records will not be stored in the game-players core like the following
     # update.
-    for player in player_records:
-        player_entity_collection[player['player_name']] |= cleaned_entities
+    #
+    # Approach #1. Be sure to comment out the other relevant section below!
+    #for player in player_records:
+        #player_entity_collection[player['player_name']] |= cleaned_entities
 
     # Update player records with references. This assumes that we're keeping
     # each player record separate per game. The named entities found for this
     # games commentary data is only associated with player data from the
     # same game_id
+    #
+    # Approach #2
     #cleaned_entities = list(named_entities.difference(skip_entities))
     #update_json = [{'id':p['id'], 'ne':cleaned_entities} for p in player_records]
     #data = json.dumps(update_json, encoding='latin-1')
@@ -89,6 +93,8 @@ for game_id in game_ids:
 # more explicit. For instance, each NE could be a (game_id, NE) pair or perhaps
 # the ID for the commentary that was used should be included as well in the
 # relation
+#
+# Approach #1. Be sure to comment the other relevant section above!
 #solr_url = 'http://localhost:8983/solr/player-commentar-ne-data/update/'
 #player_er_records = []
 #for player in player_records:
