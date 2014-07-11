@@ -51,21 +51,21 @@ for game_id in game_ids:
                   for team_query in team_queries
                   for r in requests.get(team_query).json()['response']['docs']]
 
-    # Create a list of skip works for the names of the teams involved in the
+    # Create a list of skip words for the names of the teams involved in the
     # game including upper case and split versions.
     team_names += map(lambda x: x.upper(), team_names)
     team_names += list(itertools.chain(*map(lambda x: x.split(' '), team_names)))
     skip_entities = skip_entities.union(set(team_names))
 
-    # Do NE extractor
+    # Do NE extraction
     named_entities = com_ne_extract.detect_named_entities_in_commentary(game_id)
 
-    # Strip out player entities
+    # Strip out skip entities
     cleaned_entities = named_entities.difference(skip_entities)
 
     # Update player records with references. This assumes that a single player
     # record will hold all references to named entities from every game. This
-    # records will not be stored in the game-players core like the previous
+    # records will not be stored in the game-players core like the following
     # update.
     for player in player_records:
         player_entity_collection[player['player_name']] |= cleaned_entities
@@ -89,4 +89,14 @@ for game_id in game_ids:
 # more explicit. For instance, each NE could be a (game_id, NE) pair or perhaps
 # the ID for the commentary that was used should be included as well in the
 # relation
-
+#solr_url = 'http://localhost:8983/solr/player-commentar-ne-data/update/'
+#player_er_records = []
+#for player in player_records:
+    #player_er_records.append({
+        #'id': player['player_id'],
+        #'player_name': player['player_name'],
+        #'ne': player_entity_collection[player['player_name']]
+    #})
+#data = json.dumps(player_records)
+#req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+#urllib2.urlopen(req)
