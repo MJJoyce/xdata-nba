@@ -11,28 +11,28 @@
     <field name="w" type="int" indexed="true" stored="true" required="true"/>
     <field name="l" type="int" indexed="true" stored="true" required="true"/>
     <field name="w_pct" type="float" indexed="true" stored="true" required="true"/>
-    <field name="min" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fgm" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fga" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fg_pct" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fg3m" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fg3a" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fg3_pct" type="int" indexed="true" stored="true" required="true"/>
-    <field name="ftm" type="int" indexed="true" stored="true" required="true"/>
-    <field name="fta" type="int" indexed="true" stored="true" required="true"/>
-    <field name="ft_pct" type="int" indexed="true" stored="true" required="true"/>
-    <field name="oreb" type="int" indexed="true" stored="true" required="true"/>
-    <field name="dreb" type="int" indexed="true" stored="true" required="true"/>
-    <field name="reb" type="int" indexed="true" stored="true" required="true"/>
+    <field name="min" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fgm" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fga" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fg_pct" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fg3m" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fg3a" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fg3_pct" type="float" indexed="true" stored="true" required="true"/>
+    <field name="ftm" type="float" indexed="true" stored="true" required="true"/>
+    <field name="fta" type="float" indexed="true" stored="true" required="true"/>
+    <field name="ft_pct" type="float" indexed="true" stored="true" required="true"/>
+    <field name="oreb" type="float" indexed="true" stored="true" required="true"/>
+    <field name="dreb" type="float" indexed="true" stored="true" required="true"/>
+    <field name="reb" type="float" indexed="true" stored="true" required="true"/>
     <field name="ast" type="int" indexed="true" stored="true" required="true"/>
-    <field name="tov" type="int" indexed="true" stored="true" required="true"/>
-    <field name="stl" type="int" indexed="true" stored="true" required="true"/>
-    <field name="blk" type="int" indexed="true" stored="true" required="true"/>
-    <field name="blka" type="int" indexed="true" stored="true" required="true"/>
-    <field name="pf" type="int" indexed="true" stored="true" required="true"/>
-    <field name="pfd" type="int" indexed="true" stored="true" required="true"/>
-    <field name="pts" type="int" indexed="true" stored="true" required="true"/>
-    <field name="plus_minus" type="int" indexed="true" stored="true" required="true"/>
+    <field name="tov" type="float" indexed="true" stored="true" required="true"/>
+    <field name="stl" type="float" indexed="true" stored="true" required="true"/>
+    <field name="blk" type="float" indexed="true" stored="true" required="true"/>
+    <field name="blka" type="float" indexed="true" stored="true" required="true"/>
+    <field name="pf" type="float" indexed="true" stored="true" required="true"/>
+    <field name="pfd" type="float" indexed="true" stored="true" required="true"/>
+    <field name="pts" type="float" indexed="true" stored="true" required="true"/>
+    <field name="plus_minus" type="float" indexed="true" stored="true" required="true"/>
     <field name="cfid" type="int" indexed="true" stored="true" required="true"/>
     <field name="cfparams" type="string" indexed="true" stored="true" required="true"/>
  </fields>

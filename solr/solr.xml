@@ -54,5 +54,6 @@
     <core name="game-commentary" instanceDir="game-commentary" />
     <core name="game-players" instanceDir="game-players" />
     <core name="game-player-stats" instanceDir="game-player-stats" />
+    <core name="league-team-stats" instanceDir="league-team-stats" />
   </cores>
 </solr>

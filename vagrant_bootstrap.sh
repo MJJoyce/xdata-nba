@@ -22,6 +22,13 @@ apt-get install -y vim
 apt-get install -y git
 apt-get install -y maven
 
+##### Python install #####
+echo "[vagrant provisioning] Installing Python and relevant dependencies ..."
+apt-get install -y python-dev
+apt-get install -y python-pip
+pip install -r /vagrant/requirements.txt
+python -m nltk.downloader all
+
 ##### Gora installation #####
 echo "[vagrant provisioning] Installing and building Gora..."]
 cd /home/vagrant
