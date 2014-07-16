@@ -76,4 +76,6 @@ public interface Manager {
    * @param input
    */
   void aquire(String parseType, Object input);
+  
+  void aquire(String[] inputFiles);
 }

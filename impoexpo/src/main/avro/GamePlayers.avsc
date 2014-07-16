@@ -1,6 +1,6 @@
 {"name": "GamePlayer",
  "type": "record",
- "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+ "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
  "fields": [
         {"name": "id", "type": ["null","string"], "default":null},
         {"name": "player_id", "type": "int", "default":0},

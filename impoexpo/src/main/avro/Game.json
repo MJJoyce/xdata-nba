@@ -1,11 +1,11 @@
 {"name": "Game",
  "type": "record",
- "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+ "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
  "fields": [
         {"name": "preview", "type": ["null", {
             "name": "Preview",
             "type": "record",
-            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
             "fields": [
                 {"name": "previewText", "type": ["null","string"], "default":null}
             ]
@@ -13,7 +13,7 @@
         {"name": "recap", "type": ["null", {
             "name": "Recap",
             "type": "record",
-            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
             "fields": [
                 {"name": "recapText", "type": ["null","string"], "default":null}
             ]
@@ -21,7 +21,7 @@
         {"name": "notebook", "type": ["null", {
             "name": "Notebook",
             "type": "record",
-            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
             "fields": [
                 {"name": "teamNotebook", "type": ["null","string"], "default":null},
                 {"name": "notebookAuthor", "type": ["null","string"], "default":null},
@@ -34,18 +34,21 @@
                 {"name": "hot", "type": ["null","string"], "default":null},
                 {"name": "not", "type": ["null","string"], "default":null},
                 {"name": "notable", "type": ["null","string"], "default":null},
-                {"name": "upNext", "type": {"type": "map", "values":{"type": "array", "items":{"type":"map", "values":"string"}}}, "default":{}}
+                {"name": "upNext", "type": ["null","string"], "default":null},
+                {"name": "theLead", "type": ["null","string"], "default":null},
+                {"name": "goodMove", "type": ["null","string"], "default":null},
+                {"name": "badMove", "type": ["null","string"], "default":null}
             ]
             }], "default":null},
          {"name": "gameStats", "type": ["null", {
             "name": "GameStats",
             "type": "record",
-            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+            "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
             "fields": [
                 {"name": "gameSummary", "type": ["null", {
                    "name": "GameSummary",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameDateEst", "type": ["null","string"], "default":null},
                        {"name": "gameSequence", "type": "int", "default":0},
@@ -66,7 +69,7 @@
                 {"name": "lineScore", "type": ["null", {
                    "name": "LineScore",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameDateEst", "type": ["null","string"], "default":null},
                        {"name": "gameSequence", "type": "int", "default":0},
@@ -95,7 +98,7 @@
                 {"name": "seasonSeries", "type": ["null", {
                    "name": "SeasonSeries",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameId", "type": "int", "default":0},
                        {"name": "homeTeamId", "type": "int", "default":0},
@@ -109,7 +112,7 @@
                 {"name": "lastMeeting", "type": ["null", {
                    "name": "LastMeeting",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameId", "type": "int", "default":0},
                        {"name": "lastGameId", "type": "int", "default":0},
@@ -129,7 +132,7 @@
                 {"name": "playerStats", "type": ["null", {
                    "name": "PlayerStats",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameId", "type": "int", "default":0},
                        {"name": "teamId", "type": "int", "default":0},
@@ -164,7 +167,7 @@
                 {"name": "teamStats", "type": ["null", {
                    "name": "TeamStats",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameId", "type": "int", "default":0},
                        {"name": "teamId", "type": "int", "default":0},
@@ -196,7 +199,7 @@
                 {"name": "otherStats", "type": ["null", {
                    "name": "OtherStats",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "leagueId", "type": "int", "default":0},
                        {"name": "seasonId", "type": "int", "default":0},
@@ -214,7 +217,7 @@
                 {"name": "officials", "type": ["null", {
                    "name": "Officials",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "officialId", "type": "int", "default":0},
                        {"name": "firstName", "type": ["null","string"], "default":null},
@@ -225,7 +228,7 @@
                 {"name": "gameInfo", "type": ["null", {
                    "name": "GameInfo",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "gameDate", "type": ["null","string"], "default":null},
                        {"name": "attendance", "type": "int", "default":0},
@@ -235,7 +238,7 @@
                 {"name": "inactivePlayers", "type": ["null", {
                    "name": "InactivePlayers",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "playerId", "type": "int", "default":0},
                        {"name": "firstName", "type": ["null","string"], "default":null},
@@ -250,7 +253,7 @@
                 {"name": "availableVideo", "type": ["null", {
                    "name": "AvailableVideo",
                    "type": "record",
-                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo",
+                   "namespace": "gov.nasa.jpl.xdata.nba.impoexpo.structs",
                    "fields": [
                        {"name": "videoAvailableFlag", "type": "int", "default":0}
                    ]

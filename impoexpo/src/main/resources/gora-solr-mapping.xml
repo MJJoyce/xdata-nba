@@ -17,7 +17,7 @@
 -->
 
 <gora-otd>
-  <class name="gov.nasa.jpl.xdata.nba.impoexpo.GamePlayer" keyClass="java.lang.CharSequence" table="game-players">
+  <class name="gora.nasa.jpl.xdata.nba.impoexpo.structs.GamePlayer" keyClass="java.lang.CharSequence" table="game-players">
     <primarykey column="id"/>
     <field name="player_id" column="player_id"/>
     <field name="player_name" column="player_name"/>
@@ -40,13 +40,183 @@
     <field name="score" column="score"/>
     <field name="score_margin" column="score_margin"/>
   </class>
-  <!--  class name="" keyClass="" table="">
-    <primarykey column=""/>
-    <field name="" column=""/>
-    <field name="" column=""/>
-    <field name="" column=""/>
-    <field name="" column=""/>
-    <field name="" column=""/>
-  </class-->
+  
+  <class name="gora.nasa.jpl.xdata.nba.impoexpo.structs.Game" keyClass="java.lang.Integer" table="game">
+    <primarykey column="gameId"/>
+    <!-- Preview -->
+    <field name="previewText" column="previewText"/>
+    <!-- Recap -->
+    <field name="recapText" column="recapText"/>
+    <!-- NoteBook -->
+    <field name="teamNotebook" column="teamNotebook"/>
+    <field name="notebookAuthor" column="notebookAuthor"/>
+    <field name="publishingBody" column="publishingBody"/>
+    <field name="postedDate" column="postedDate"/>
+    <field name="theFacts" column="theFacts"/>
+    <field name="theQuotes" column="theQuotes"/>
+    <field name="theStat" column="theStat"/>
+    <field name="theTurningPoint" column="theTurningPoint"/>
+    <field name="hot" column="hot"/>
+    <field name="not" column="not"/>
+    <field name="notable" column="notable"/>
+    <field name="upNext" column="upNext"/>
+    <field name="theLead" column="theLead"/>
+    <field name="goodMove" column="goodMove"/>
+    <field name="badMove" column="badMove"/>
+    <!-- Game summary -->
+    <field name="gameDateEst" column="gameDateEst"/>
+    <field name="gameSequence" column="gameSequence"/>
+    <field name="gameId" column="gameId"/>
+    <field name="gameStatusId" column="gameStatusId"/>
+    <field name="gameStatusText" column="gameStatusText"/>
+    <field name="gameCode" column="gameCode"/>
+    <field name="homeTeamId" column="homeTeamId"/>
+    <field name="visitorTeamId" column="visitorTeamId"/>
+    <field name="season" column="season"/>
+    <field name="livePeriod" column="livePeriod"/>
+    <field name="livePcTime" column="livePcTime"/>
+    <field name="natlTvBroadcasterAbbreviation" column="natlTvBroadcasterAbbreviation"/>
+    <field name="livePeriodTimeBcast" column="livePeriodTimeBcast"/>
+    <field name="whStatus" column="whStatus"/>
+    <!-- LineScore -->
+    <field name="gameDateEst" column="gameDateEst"/>
+    <field name="gameSequence" column="gameSequence"/>
+    <field name="gameId" column="gameId"/>
+    <field name="teamId" column="teamId"/>
+    <field name="teamAbbreviation" column="teamAbbreviation"/>
+    <field name="teamCityName" column="teamCityName"/>
+    <field name="teamWinsLosses" column="teamWinsLosses"/>
+    <field name="ptsQtr1" column="ptsQtr1"/>
+    <field name="ptsQtr2" column="ptsQtr2"/>
+    <field name="ptsQtr3" column="ptsQtr3"/>
+    <field name="ptsQtr4" column="ptsQtr4"/>
+    <field name="ptsOt1" column="ptsOt1"/>
+    <field name="ptsOt2" column="ptsOt2"/>
+    <field name="ptsOt3" column="ptsOt3"/>
+    <field name="ptsOt4" column="ptsOt4"/>
+    <field name="ptsOt5" column="ptsOt5"/>
+    <field name="ptsOt6" column="ptsOt6"/>
+    <field name="ptsOt7" column="ptsOt7"/>
+    <field name="ptsOt8" column="ptsOt8"/>
+    <field name="ptsOt9" column="ptsOt9"/>
+    <field name="ptsOt10" column="ptsOt10"/>
+    <field name="pts" column="pts"/>
+    <!-- SeasonSeries -->
+    <field name="gameId" column="gameId"/>
+    <field name="homeTeamId" column="homeTeamId"/>
+    <field name="visitorTeamId" column="visitorTeamId"/>
+    <field name="gameDateEst" column="gameDateEst"/>
+    <field name="homeTeamWins" column="homeTeamWins"/>
+    <field name="homeTeamLosses" column="homeTeamLosses"/>
+    <field name="seriesLeader" column="seriesLeader"/>
+    <!-- LastMeeting -->
+    <field name="gameId" column="gameId"/>
+    <field name="lastGameId" column="lastGameId"/>
+    <field name="lastGameDateEst" column="lastGameDateEst"/>
+    <field name="lastGameHomeTeamId" column="lastGameHomeTeamId"/>
+    <field name="lastGameHomeTeamCity" column="lastGameHomeTeamCity"/>
+    <field name="lastGameHomeTeamName" column="lastGameHomeTeamName"/>
+    <field name="lastGameHomeTeamAbbreviation" column="lastGameHomeTeamAbbreviation"/>
+    <field name="lastGameHomeTeamPoints" column="lastGameHomeTeamPoints"/>
+    <field name="lastGameVisitorTeamId" column="lastGameVisitorTeamId"/>
+    <field name="lastGameVisitorTeamCity" column="lastGameVisitorTeamCity"/>
+    <field name="lastGameVisitorTeamName" column="lastGameVisitorTeamName"/>
+    <field name="lastGameVisitorTeamCity1" column="lastGameVisitorTeamCity1"/>
+    <field name="lastGameVisitorTeamPoints" column="lastGameVisitorTeamPoints"/>
+    <!-- PlayerStats -->
+    <field name="gameId" column="gameId"/>
+    <field name="teamId" column="teamId"/>
+    <field name="teamAbbreviation" column="teamAbbreviation"/>
+    <field name="teamCity" column="teamCity"/>
+    <field name="playerId" column="playerId"/>
+    <field name="playerName" column="playerName"/>
+    <field name="startPosition" column="startPosition"/>
+    <field name="comment" column="comment"/>
+    <field name="min" column="min"/>
+    <field name="fgm" column="fgm"/>
+    <field name="fga" column="fga"/>
+    <field name="fgPct" column="fgPct"/>
+    <field name="fg3m" column="fg3m"/>
+    <field name="fg3a" column="fg3a"/>
+    <field name="fg3Pct" column="fg3Pct"/>
+    <field name="ftm" column="ftm"/>
+    <field name="fta" column="fta"/>
+    <field name="ftPct" column="ftPct"/>
+    <field name="oreb" column="oreb"/>
+    <field name="dreb" column="dreb"/>
+    <field name="reb" column="reb"/>
+    <field name="ast" column="ast"/>
+    <field name="stl" column="stl"/>
+    <field name="blk" column="blk"/>
+    <field name="to" column="to"/>
+    <field name="pf" column="pf"/>
+    <field name="pts" column="pts"/>
+    <field name="plusMinus" column="plusMinus"/>
+    <!-- TeamStats -->
+    <field name="gameId" column="gameId"/>
+    <field name="teamId" column="teamId"/>
+    <field name="teamName" column="teamName"/>
+    <field name="teamAbbreviation" column="teamAbbreviation"/>
+    <field name="teamCity" column="teamCity"/>
+    <field name="min" column="min"/>
+    <field name="fgm" column="fgm"/>
+    <field name="fga" column="fga"/>
+    <field name="fgPct" column="fgPct"/>
+    <field name="fg3m" column="fg3m"/>
+    <field name="fg3a" column="fg3a"/>
+    <field name="fg3Pct" column="fg3Pct"/>
+    <field name="ftm" column="ftm"/>
+    <field name="fta" column="fta"/>
+    <field name="ftPct" column="ftPct"/>
+    <field name="oreb" column="oreb"/>
+    <field name="dreb" column="dreb"/>
+    <field name="reb" column="reb"/>
+    <field name="ast" column="ast"/>
+    <field name="stl" column="stl"/>
+    <field name="blk" column="blk"/>
+    <field name="to" column="to"/>
+    <field name="pf" column="pf"/>
+    <field name="pts" column="pts"/>
+    <field name="plusMinus" column="plusMinus"/>
+    <!-- OtherStats -->
+    <field name="leagueId" column="leagueId"/>
+    <field name="seasonId" column="seasonId"/>
+    <field name="teamId" column="teamId"/>
+    <field name="teamAbbreviation" column="teamAbbreviation"/>
+    <field name="teamCity" column="teamCity"/>
+    <field name="ptsPaint" column="ptsPaint"/>
+    <field name="pts2ndChance" column="pts2ndChance"/>
+    <field name="ptsFb" column="ptsFb"/>
+    <field name="largestLead" column="largestLead"/>
+    <field name="leadChanges" column="leadChanges"/>
+    <field name="timesTied" column="timesTied"/>
+    <!-- Officials -->
+    <field name="officialId" column="officialId"/>
+    <field name="firstName" column="firstName"/>
+    <field name="lastName" column="lastName"/>
+    <field name="jerseyNum" column="jerseyNum"/>
+    <!-- GameInfo -->
+    <field name="gameDate" column="gameDate"/>
+    <field name="attendance" column="attendance"/>
+    <field name="gameTime" column="gameTime"/>
+    <!-- InactivePlayers -->
+    <field name="playerId" column="playerId"/>
+    <field name="firstName" column="firstName"/>
+    <field name="lastName" column="lastName"/>
+    <field name="jerseyNum" column="jerseyNum"/>
+    <field name="teamId" column="teamId"/>
+    <field name="teamCity" column="teamCity"/>
+    <field name="teamName" column="teamName"/>
+    <field name="teamAbbreviation" column="teamAbbreviation"/>
+    <!-- AvailableVideo -->
+    <field name="videoAvailableFlag" column="videoAvailableFlag"/>
+    <!-- Top Level Simple Fields -->
+    <field name="gameId" column="gameId"/>
+    <field name="rangeType" column="rangeType"/>
+    <field name="startPeriod" column="startPeriod"/>
+    <field name="startRange" column="startRange"/>
+    <field name="endPeriod" column="endPeriod"/>
+    <field name="endRange" column="endRange"/>
+  </class>
 </gora-otd>
 

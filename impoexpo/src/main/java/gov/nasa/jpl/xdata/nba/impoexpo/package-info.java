@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 /**
- * Hosts classes for processing the nba specific dataset and 
- * mapping data into Solr via Apache Gora.
+ * Main base class, currently contains little functional code.
  *
  */
 package gov.nasa.jpl.xdata.nba.impoexpo;

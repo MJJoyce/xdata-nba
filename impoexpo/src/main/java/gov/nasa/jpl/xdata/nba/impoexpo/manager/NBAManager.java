@@ -17,7 +17,7 @@
  */
 package gov.nasa.jpl.xdata.nba.impoexpo.manager;
 
-import gov.nasa.jpl.xdata.nba.impoexpo.GamePlayer;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.GamePlayer;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -302,6 +302,12 @@ public class NBAManager<GamePlayers, K> implements Manager{
 
   @Override
   public void aquire(Object input) throws IOException {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void aquire(String[] inputFiles) {
     // TODO Auto-generated method stub
     
   }
