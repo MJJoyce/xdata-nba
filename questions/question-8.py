@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import itertools
 import json
 import multiprocessing
 import requests
@@ -29,7 +30,6 @@ COMMENTER_QUERY = (
 
 def process_cmntr_data(cmntr):
     # Get all comments for commenter sorted by game_id
-    #cmnts = requests.get(COMMENTS_QUERY.format(cmntr=cmntr.encode('utf-8'))).json()
     if '"' in cmntr:
         cmntr = cmntr.replace('"', '\\\"')
 
@@ -37,38 +37,54 @@ def process_cmntr_data(cmntr):
     cmnts = requests.get(q).json()
     cmnts = cmnts['response']['docs']
 
-    # Calculate percentage of positive vs negative comments
-    # Group comments by game_id to categorize
-    comments_per_game = {'pos': 0, 'neg': 0}
+    # Retrieve a list of game_ids where the current commenter posted. For each
+    # game_id we will count the number of positive and negative sentiment
+    # posts so we initialize a dictionary for use later.
+    game_ids = set([c['game_id'] for c in cmnts])
+    comments_per_game = {}
+    for g in game_ids:
+        comments_per_game[g] = {'pos': 0, 'neg': 0}
+
+    # Check every comment the user made and increment the pos/neg count
+    # for the proper game_ids. This lets us look at a commenters' overall
+    # sentiment on a per game basis.
+    pos, neg = 0, 0
     for c in cmnts:
         if c['sentiment'] == 'pos':
-            comments_per_game['pos'] += 1
+            comments_per_game[c['game_id']]['pos'] += 1
         else:
-            comments_per_game['neg'] += 1
+            comments_per_game[c['game_id']]['neg'] += 1
 
-    total = comments_per_game['pos'] + comments_per_game['neg']
-    return {
-        'id': cmntr,
-        'total': total,
-        'pos': comments_per_game['pos'],
-        'neg': comments_per_game['neg'],
-        'prcnt_pos': comments_per_game['pos'] / float(total),
-        'prcnt_neg': comments_per_game['neg'] / float(total),
-    }
+    # Commenter sentiment is stored per game_id. Format the JSON and
+    # return the values so they can be added to Solr in batch.
+    returns = []
+    for game_id in game_ids:
+        pos = comments_per_game[game_id]['pos']
+        neg = comments_per_game[game_id]['neg']
+        total = pos + neg
 
-r = requests.get(GAME_ID_QUERY).json()
-game_ids = [group['groupValue'] for group in r['grouped']['game_id']['groups']]
+        returns.append({
+            'id': cmntr + '_' + game_id,
+            'cmntr': cmntr,
+            'game_id': game_id,
+            'pos': pos,
+            'neg': neg,
+            'prcnt_pos': pos / float(total),
+            'prcnt_neg': neg / float(total),
+        })
 
+    return returns
+
+# Get a list of all commenter names in the comment data.
 commenter_json = requests.get(COMMENTER_QUERY).json()
 commenter_list = [c['groupValue'] for c in commenter_json['grouped']['commenter']['groups']]
-
-processed = {}
 
 thread_pool = multiprocessing.Pool(TOTAL_THREADS)
 results = thread_pool.map(process_cmntr_data, commenter_list)
 thread_pool.close()
 thread_pool.join()
 
+results = list(itertools.chain.from_iterable(results))
 solr_url = 'http://localhost:8983/solr/comment-sentiment/update?commit=true'
 data = json.dumps(results)
 req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
