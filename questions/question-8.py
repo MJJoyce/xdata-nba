@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+import json
 import multiprocessing
 import requests
 import urllib
+import urllib2
 
 TOTAL_THREADS = 10
 
@@ -46,11 +48,12 @@ def process_cmntr_data(cmntr):
 
     total = comments_per_game['pos'] + comments_per_game['neg']
     return {
-        'name': cmntr,
+        'id': cmntr,
         'total': total,
+        'pos': comments_per_game['pos'],
+        'neg': comments_per_game['neg'],
         'prcnt_pos': comments_per_game['pos'] / float(total),
         'prcnt_neg': comments_per_game['neg'] / float(total),
-        'comments_per_game': comments_per_game
     }
 
 r = requests.get(GAME_ID_QUERY).json()
@@ -66,4 +69,7 @@ results = thread_pool.map(process_cmntr_data, commenter_list)
 thread_pool.close()
 thread_pool.join()
 
-print len(results)
+solr_url = 'http://localhost:8983/solr/comment-sentiment/update?commit=true'
+data = json.dumps(results)
+req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+urllib2.urlopen(req)
