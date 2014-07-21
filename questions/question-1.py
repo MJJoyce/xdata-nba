@@ -97,7 +97,7 @@ for game_id in game_ids:
 # relation
 #
 # Approach #1. Be sure to comment the other relevant section above!
-#solr_url = 'http://localhost:8983/solr/player-commentar-ne-data/update/'
+#solr_url = 'http://localhost:8983/solr/player-commentary-ne-data/update/'
 #player_er_records = []
 #for player in player_records:
     #player_er_records.append({
