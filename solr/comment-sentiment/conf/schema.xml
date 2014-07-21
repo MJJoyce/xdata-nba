@@ -5,7 +5,8 @@
  <fields>
     <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
     <field name="id" type="string" indexed="true" stored="true" required="true"/>
-    <field name="total" type="int" indexed="true" stored="true" required="true"/>
+    <field name="game_id" type="string" indexed="true" stored="true" required="true"/>
+    <field name="cmntr" type="string" indexed="true" stored="true" required="true"/>
     <field name="pos" type="int" indexed="true" stored="true" required="true"/>
     <field name="neg" type="int" indexed="true" stored="true" required="true"/>
     <field name="prcnt_pos" type="float" indexed="true" stored="true" required="true"/>
