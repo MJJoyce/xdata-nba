@@ -55,7 +55,6 @@ def parse_game_stats_file(game_stats_file):
         team_record['pts_ot9'] = team_data[19]
         team_record['pts_ot10'] = team_data[20]
         team_record['pts'] = team_data[21]
-        records.append(team_record)
 
         team_record.update(general_record)
         records.append(team_record)
