@@ -57,5 +57,6 @@
     <core name="league-team-stats" instanceDir="league-team-stats" />
     <core name="comment-sentiment" instanceDir="comment-sentiment" />
     <core name="player-commentary-ne-data" instanceDir="player-commentary-ne-data" />
+    <core name="game-results" instanceDir="game-results" />
   </cores>
 </solr>
