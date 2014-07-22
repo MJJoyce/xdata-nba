@@ -9,12 +9,14 @@ SOLR_URL = 'http://localhost:8983/solr/'
 CORE = 'game-commentary/'
 QUERY_STRING = '?q=game_id%3A{game_id}&wt=json&indent=true'
 
-def detect_named_entities_in_commentary(game_id):
-    query = SOLR_URL + CORE + 'select/' + QUERY_STRING
-    query = query.format(game_id=game_id)
+# Retrieve all commentary data for future processing
+r = requests.get(SOLR_URL + CORE + 'select/' + '?q=*:*&wt=json&rows=1236457890')
+commentary_data = {}
+for r in r.json()['response']['docs']:
+    commentary_data[r['game_id']] = r
 
-    results = run_query(query)
-    doc = strip_doc_list_from_results(results)
+def detect_named_entities_in_commentary(game_id):
+    doc = commentary_data[game_id]
 
     prepared_preview = prep_for_named_entity_extraction(doc['preview'])
     prepared_recap = prep_for_named_entity_extraction(doc['recap'])
@@ -46,14 +48,6 @@ def run_query(query):
     ''''''
     r = requests.get(query)
     return r.json()
-
-def strip_doc_list_from_results(query_results):
-    ''''''
-    if query_results['response']['numFound'] == 0:
-        print "No documents were returned"
-        sys.exit(1)
-
-    return query_results['response']['docs'][0]
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='XDATA NBA NE Extractor')
