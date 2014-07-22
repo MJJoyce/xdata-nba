@@ -48,6 +48,7 @@ GAME_STATS_FILES_PER_THREAD = 10
 GAME_PLAYER_STATS_CORE = 'game-player-stats/'
 GAME_PLAYER_STATS_FILES_PER_THREAD = 10
 LEAGUE_TEAM_STATS_CORE = 'league-team-stats/'
+GAME_RESULTS_CORE = 'game-results/'
 
 def load_records(records_directory):
     '''Load XDATA NBA Records.
@@ -334,6 +335,45 @@ def load_game_stats(game_stats_dir):
     urllib2.urlopen(req)
 
     logger.info('GameStats ingestions complete')
+    logger.info('Processing GameStats results for GameResults core update')
+    sorted_results = sorted(results, key=lambda x: x['game_id'])
+
+    game_results = []
+    for team1, team2 in zip(sorted_results[::2], sorted_results[1::2]):
+        if team1['game_id'] != team2['game_id']:
+            err = (
+                'Invalid records. Game_ids don\'t match. '
+                'Indices: {} and {}'
+            ).format(i, i+1)
+            logger.critical(err)
+            continue
+
+        if team1['pts'] > team2['pts']:
+            winner, loser = team1, team2
+        elif team2['pts'] > team1['pts']:
+            winner, loser = team2, team1
+        else:
+            err = (
+                'Game resulted in a tie: game_id_1 {} game_id_2 {} '
+                'team_1_id {} team_2_id {}'
+            ).format(team1['game_id'], team2['game_id'],
+                     team1['team_id'], team2['team_id'])
+            logger.critical(err)
+            continue
+
+        game_results.append({
+            'id': winner['game_id'],
+            'game_id': winner['game_id'],
+            'winner_id': winner['team_id'],
+            'loser_id': loser['team_id'],
+        })
+
+    solr_url = SOLR_URL + GAME_RESULTS_CORE + 'update?commit=true'
+    data = json.dumps(game_results, encoding='latin-1')
+    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+    urllib2.urlopen(req)
+
+    logger.info('GameResults ingestion complete')
 
 def load_game_player_stats(game_stats_dir):
     '''Load GameStats data into a solr instance.
