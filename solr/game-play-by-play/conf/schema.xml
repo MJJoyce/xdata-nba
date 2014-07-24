@@ -13,7 +13,7 @@
    <field name="sc_time_string" type="string" indexed="true" stored="true"/>
    <field name="pc_time_string" type="string" indexed="true" stored="true"/>
    <field name="home_description" type="string" indexed="true" stored="true"/>
-   <field name="neutral_description" type="string" indexed="true" stored="true"/>
+   <field name="neutral_description" type="text_general" indexed="true" stored="true"/>
    <field name="visit_description" type="string" indexed="true" stored="true"/>
    <field name="score" type="string" indexed="true" stored="true"/>
    <field name="score_margin" type="string" indexed="true" stored="true"/>
