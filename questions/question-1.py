@@ -38,7 +38,6 @@ TEAM_STATS_QUERY = (
 # Get a complete game_id list and determine how many threads we're going
 # to use for processing. Not the prettiest way of handling this but it
 # does a decent job :/
-#fpt = 30 # How many Files Per Thread should be use during processing.
 fpt = 30 # How many Files Per Thread should be use during processing.
 r = requests.get(GAME_ID_QUERY).json()
 game_ids = [group['groupValue'] for group in r['grouped']['game_id']['groups']]
@@ -49,7 +48,7 @@ split_game_ids = [game_ids[(fpt * index):(fpt * index) + fpt]
                     for index in range(total_threads)]
 
 # Grab all player data in one go and group it by game_id so we don't
-# have to hit solr 4 billion times.
+# have to hit Solr 4 billion times.
 r = requests.get(GAME_PLAYER_QUERY)
 all_player_records = {}
 for game_data in r.json()['grouped']['game_id']['groups']:
@@ -71,6 +70,25 @@ for team_record in r.json()['response']['docs']:
 
 # Do named entity extraction for each game record that we have
 def ne_stuff(game_ids):
+    '''Do NE extraction for a list of game_id's commentary data
+
+    Process a list of game_id's commentary data and performs NE extraction over
+    them. There are two ways to handle player data updates with the NEs that are
+    extracted per game_id. Player records per game can be updated with NE date
+    from that game's commentary data or a single player record can be created and
+    have NE data added to the record for all game's commentary data. Currently
+    the second one is the approach being taken.
+
+    Per game_id, commentary data has NEs extracted from. A player list is updated
+    with new NE data from that game_id. After all game_ids have been processed,
+    the global player data is returned upstream.
+
+    :param game_ids: List of game_ids specifying which commentary data should
+        have NE extraction done.
+
+    :returns: Dictionary containing player:ne_data pairs for all processed
+        game_ids. Each player record contains NE data for all processed games.
+    '''
     player_ne_collection = defaultdict(set)
     for game_id in game_ids:
         player_records = all_player_records[game_id]
@@ -101,9 +119,8 @@ def ne_stuff(game_ids):
         cleaned_entities = named_entities.difference(skip_entities)
 
         # Update player records with references. This assumes that a single player
-        # record will hold all references to named entities from every game. This
-        # records will not be stored in the game-players core like the following
-        # update.
+        # record will hold all references to named entities from every game. These
+        # records will not be stored in the game-players core like Approach #2.
         #
         # Approach #1. Be sure to comment out the other relevant section below!
         for player in player_records:
