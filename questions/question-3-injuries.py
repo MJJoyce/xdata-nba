@@ -1,3 +1,8 @@
+# python question-3-injuries.py will output two URLs for Solr queries.
+#
+# The first URL will give you a list of injuries/missed games per player.
+# The second will give you a list of potential injuries/missed games per player
+
 SOLR_URL = 'http://localhost:8983/solr/'
 PLAYER_STATS_CORE = 'game-player-stats/'
 INJURY_QUERY = '?&wt=json&indent=true&rows=214749364&group=true&group.field=player_name&group.limit=100'
