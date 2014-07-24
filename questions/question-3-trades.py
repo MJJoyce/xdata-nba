@@ -12,11 +12,17 @@ GAME_PLAY_BY_PLAY_CORE = 'game-players/'
 QUERY_STRING = '?q=player_id%3A{player_id}&wt=json&indent=true&group=true&group.field=team_city'
 
 def detect_trades(player_id):
-    ''''''
+    '''Determine if a player_id has been traded to another team.
+    
+    Given a player_id, determine if that player has been traded at some point
+    in the collected data.
+
+    :param player_id: The player_id to look up trades for.
+    '''
     query = SOLR_URL + GAME_PLAY_BY_PLAY_CORE + 'select/' + QUERY_STRING
     query = query.format(player_id=player_id)
     
-    results = run_query(query)
+    results = requests.get(query).json()
     doc_list = strip_doc_list_from_results(results)
     player_name = doc_list[0]['player_name']
 
@@ -27,13 +33,14 @@ def detect_trades(player_id):
         print 'Only one team found for', player_name
         print doc_list[0]['team_city']
 
-def run_query(query):
-    ''''''
-    r = requests.get(query)
-    return r.json()
-
 def strip_doc_list_from_results(query_results):
-    ''''''
+    '''Strip document list out of Solr query JSON.
+
+    If no documents were found in the query, this prints an appropriate message
+    and terminate execution.
+
+    :returns: A list of documents matched in the run query.
+    '''
     if query_results['grouped']['team_city']['matches'] == 0:
         print "No documents were returned"
         sys.exit(1)
