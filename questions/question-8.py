@@ -33,7 +33,14 @@ TEAM_NAME_QUERY = SOLR_URL + TEAM_NAME_CORE + TEAM_NAME_Q
 
 
 def analyse_commenter_data(commenter):
-    ''''''
+    '''Print out a sentiment analysis based overview of a commenter.
+
+    Given a commenter id, we look up a list of of their comments and see if
+    we can find an interesting connection between team performance.
+    '''
+    # Query for commenter sentiment data per game. This gives us information
+    # grouped by game_id about the number of comments and the pos/neg
+    # sentiment for the commenter of interest.
     r = requests.get(SENTIMENT_QUERY.format(cmntr=commenter))
 
     if r.json()["grouped"]["game_id"]["matches"] == 0:
@@ -42,11 +49,17 @@ def analyse_commenter_data(commenter):
 
     sentiment_groupings = r.json()['grouped']['game_id']['groups']
     
+    # For each game_id where the commenter posted, we will grab game
+    # result information. This tells us which team won/loss the game
+    # and helps us identify if the commenter focuses around the
+    # performance of a particular team.
     game_ids = set([s['groupValue'] for s in sentiment_groupings])
     stats_q = 'game_id:' + '\ngame_id:'.join(game_ids)
     r = requests.get(STATS_QUERY.format(stats_q=stats_q))
     game_stats = {g['game_id']:g for g in r.json()['response']['docs']}
 
+    # Calculate the number of times a team played when the commenter
+    # posted somewhere.
     team_id_count = collections.defaultdict(int)
     for game in r.json()['response']['docs']:
         team_id_count[game['winner_id']] += 1
@@ -60,6 +73,8 @@ def analyse_commenter_data(commenter):
         print 'No team-based grouping of comments could be found ...'
         return
 
+    # Retrieve the team names for each game if we determine that the
+    # commenter seemed to focus on one or more teams.
     team_name_ids = ''
     for k,g in game_stats.iteritems():
         team_name_ids += 'team_id:' + g['winner_id'] + '\n'
@@ -70,6 +85,7 @@ def analyse_commenter_data(commenter):
 
     r = requests.get(TEAM_NAME_QUERY.format(team_ids=team_name_ids))
 
+    # Nicely format team data so we can print things easily later.
     team_groups = {str(g['groupValue']):g['doclist']['docs'][0]
                    for g in r.json()['grouped']['team_id']['groups']}
 
