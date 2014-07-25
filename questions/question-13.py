@@ -23,10 +23,23 @@ def detect_streaks(game_id):
     good_streaks = [s for s in filtered_streaks if 5 <= len(s) < 10]
     great_streaks = [s for s in filtered_streaks if len(s) >= 10]
 
-    print len(filtered_streaks)
-    print len(ok_streaks)
-    print len(good_streaks)
-    print len(great_streaks)
+    print len(ok_streaks), 'Streak(s) of length 2 - 4'
+    print len(good_streaks), 'Streak(s) of length 5 - 9'
+    print len(great_streaks), 'Streak(s) of length 10 or more'
+    print '-----'
+
+    if len(great_streaks) > 0:
+        best = sorted(great_streaks, key=lambda x: len(x))
+    elif len(good_streaks) > 0:
+        best = sorted(good_streaks, key=lambda x: len(x))
+    elif len(ok_streaks) > 0:
+        best = sorted(ok_streaks, key=lambda x: len(x))
+    else:
+        return
+
+    print 'Streak length: ', len(best[-1]), '\n'
+    for s in best[-1]:
+        print s['score']
 
 def run_query(query):
     ''''''
