@@ -220,9 +220,29 @@ public class ParseUtil {
   }
   public static LineScore parseLineScore(JSONObject jsonObject) {
     return LineScore.newBuilder().build();
+      // TODO: LineScore contains two entries, one for each team.
   }
   public static SeasonSeries parseSeasonSeries(JSONObject jsonObject) {
-    return SeasonSeries.newBuilder().build();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(2);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    JSONArray row = (JSONArray) rowSet.get(0);
+    int seriesId = Integer.parseInt(row.get(0).toString());
+    int homeTeamId = Integer.parseInt(row.get(1).toString());
+    int visitorTeamId = Integer.parseInt(row.get(2).toString());
+    String seriesDateEst = (String) row.get(3);
+    int homeTeamWins = Integer.parseInt(row.get(4).toString());
+    int homeTeamLosses = Integer.parseInt(row.get(5).toString());
+    String seriesLeader = (String) row.get(6);
+    return SeasonSeries.newBuilder()
+            .setGameSeasonSeriesId(seriesId)
+            .setSeasonSeriesHomeTeamId(homeTeamId)
+            .setSeasonSeriesVisitorTeamId(visitorTeamId)
+            .setGameSeasonSeriesDateEst(seriesDateEst)
+            .setHomeTeamWins(homeTeamWins)
+            .setHomeTeamLosses(homeTeamLosses)
+            .setSeriesLeader(seriesLeader)
+            .build();
   }
   public static LastMeeting parseLastMeeting(JSONObject jsonObject) {
     return LastMeeting.newBuilder().build();
