@@ -6,13 +6,10 @@
    <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
    <field name="id" type="string" indexed="true" stored="true" required="true"/>
    <!-- Preview Fields -->
-   <field name="preview" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
    <field name="previewText" type="string" indexed="true" stored="true"/>
    <!-- Recap Fields -->
-   <field name="recap" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
    <field name="recapText" type="string" indexed="true" stored="true"/>
    <!-- Notebook Fields -->
-   <field name="notebook" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
    <field name="teamNotebook" type="string" indexed="true" stored="true"/>
    <field name="notebookAuthor" type="string" indexed="true" stored="true"/>
    <field name="publishingBody" type="string" indexed="true" stored="true"/>
@@ -30,17 +27,17 @@
    <field name="badMove" type="string" indexed="true" stored="true"/>
 
    <!-- GameStats Fields -->
-   <field name="gameStats" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
+   <!--  field name="gameStats" type="string" indexed="true" stored="true"/>  NESTED RECORD-->
    
-   <field name="gameSummary" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="gameDateEst" type="string" indexed="true" stored="true"/>
-   <field name="gameSequence" type="int" indexed="true" stored="true"/>
-   <field name="gameId" type="int" indexed="true" stored="true"/>
+   <!-- Game Summary -->
+   <field name="gameSummaryDateEst" type="string" indexed="true" stored="true"/>
+   <field name="gameSummarySequence" type="int" indexed="true" stored="true"/>
+   <field name="gameGameSummaryId" type="int" indexed="true" stored="true"/>
    <field name="gameStatusId" type="int" indexed="true" stored="true"/>
    <field name="gameStatusText" type="string" indexed="true" stored="true"/>
    <field name="gameCode" type="string" indexed="true" stored="true"/>
-   <field name="homeTeamId" type="int" indexed="true" stored="true"/>
-   <field name="visitorTeamId" type="int" indexed="true" stored="true"/>
+   <field name="gameSummaryHomeTeamId" type="int" indexed="true" stored="true"/>
+   <field name="gameSummaryVisitorTeamId" type="int" indexed="true" stored="true"/>
    <field name="season" type="int" indexed="true" stored="true"/>
    <field name="livePeriod" type="int" indexed="true" stored="true"/>
    <field name="livePcTime" type="int" indexed="true" stored="true"/>
@@ -49,12 +46,11 @@
    <field name="whStatus" type="int" indexed="true" stored="true"/>
    
    <!-- LineScore -->
-   <field name="lineScore" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="gameDateEst" type="string" indexed="true" stored="true"/> 
-   <field name="gameSequence" type="int" indexed="true" stored="true"/>
-   <field name="gameId" type="int" indexed="true" stored="true"/>
-   <field name="teamId" type="int" indexed="true" stored="true"/>
-   <field name="teamAbbreviation" type="string" indexed="true" stored="true"/>
+   <field name="gameLineScoreDateEst" type="string" indexed="true" stored="true"/> 
+   <field name="gameLineScoreSequence" type="int" indexed="true" stored="true"/>
+   <field name="gameLineScoreId" type="int" indexed="true" stored="true"/>
+   <field name="lineScoreTeamId" type="int" indexed="true" stored="true"/>
+   <field name="lineScoreTeamAbbreviation" type="string" indexed="true" stored="true"/>
    <field name="teamCityName" type="string" indexed="true" stored="true"/>
    <field name="teamWinsLosses" type="string" indexed="true" stored="true"/>
    <field name="ptsQtr1" type="int" indexed="true" stored="true"/>
@@ -71,21 +67,19 @@
    <field name="ptsOt8" type="int" indexed="true" stored="true"/>
    <field name="ptsOt9" type="int" indexed="true" stored="true"/>
    <field name="ptsOt10" type="int" indexed="true" stored="true"/>
-   <field name="pts" type="int" indexed="true" stored="true"/>
+   <field name="lineScorePts" type="int" indexed="true" stored="true"/>
    
    <!-- Season Series -->
-   <field name="seasonSeries" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="gameId" type="int" indexed="true" stored="true"/> 
-   <field name="homeTeamId" type="int" indexed="true" stored="true"/>
-   <field name="visitorTeamId" type="int" indexed="true" stored="true"/>
-   <field name="gameDateEst" type="string" indexed="true" stored="true"/>
+   <field name="gameSeasonSeriesId" type="int" indexed="true" stored="true"/> 
+   <field name="seasonSeriesHomeTeamId" type="int" indexed="true" stored="true"/>
+   <field name="seasonSeriesVisitorTeamId" type="int" indexed="true" stored="true"/>
+   <field name="gameSeasonSeriesDateEst" type="string" indexed="true" stored="true"/>
    <field name="homeTeamWins" type="int" indexed="true" stored="true"/>
    <field name="homeTeamLosses" type="int" indexed="true" stored="true"/>
    <field name="seriesLeader" type="string" indexed="true" stored="true"/>
    
    <!-- Last Meeting -->
-   <field name="lastMeeting" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="gameId" type="int" indexed="true" stored="true"/> 
+   <field name="gameLastMeetingId" type="int" indexed="true" stored="true"/> 
    <field name="lastGameId" type="int" indexed="true" stored="true"/>
    <field name="lastGameDateEst" type="string" indexed="true" stored="true"/>
    <field name="lastGameHomeTeamId" type="int" indexed="true" stored="true"/>
@@ -100,71 +94,68 @@
    <field name="lastGameVisitorTeamPoints" type="int" indexed="true" stored="true"/>
    
     <!-- PlayerStats -->
-    <field name="lastMeeting" type="string" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-    <field name="gameId" type="int" indexed="true" stored="true"/>
-    <field name="teamId" type="int" indexed="true" stored="true"/>
-    <field name="teamAbbreviation" type="string" indexed="true" stored="true"/>
-    <field name="teamCity" type="string" indexed="true" stored="true"/>
-    <field name="playerId" type="int" indexed="true" stored="true"/>
+    <field name="gamePlayerStatsId" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsTeamId" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsTeamAbbreviation" type="string" indexed="true" stored="true"/>
+    <field name="playerStatsTeamCity" type="string" indexed="true" stored="true"/>
+    <field name="playerStatsPlayerId" type="int" indexed="true" stored="true"/>
     <field name="playerName" type="string" indexed="true" stored="true"/>
     <field name="startPosition" type="string" indexed="true" stored="true"/>
     <field name="comment" type="string" indexed="true" stored="true"/>
-    <field name="min" type="string" indexed="true" stored="true"/>
-    <field name="fgm" type="int" indexed="true" stored="true"/>
-    <field name="fga" type="int" indexed="true" stored="true"/>
-    <field name="fgPct" type="long" indexed="true" stored="true"/>
-    <field name="fg3m" type="int" indexed="true" stored="true"/>
-    <field name="fg3a" type="int" indexed="true" stored="true"/>
-    <field name="fg3Pct" type="long" indexed="true" stored="true"/>
-    <field name="ftm" type="int" indexed="true" stored="true"/>
-    <field name="fta" type="int" indexed="true" stored="true"/>
-    <field name="ftPct" type="int" indexed="true" stored="true"/>
-    <field name="oreb" type="int" indexed="true" stored="true"/>
-    <field name="dreb" type="int" indexed="true" stored="true"/>
-    <field name="reb" type="int" indexed="true" stored="true"/>
-    <field name="ast" type="int" indexed="true" stored="true"/>
-    <field name="stl" type="int" indexed="true" stored="true"/>
-    <field name="blk" type="int" indexed="true" stored="true"/>
-    <field name="to" type="int" indexed="true" stored="true"/>
-    <field name="pf" type="int" indexed="true" stored="true"/>
-    <field name="pts" type="int" indexed="true" stored="true"/>
-    <field name="plusMinus" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsMin" type="string" indexed="true" stored="true"/>
+    <field name="playerStatsFgm" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsFga" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsfgPct" type="long" indexed="true" stored="true"/>
+    <field name="playerStatsfg3m" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsfg3a" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsfg3Pct" type="long" indexed="true" stored="true"/>
+    <field name="playerStatsftm" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsfta" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsftPct" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsoreb" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsdreb" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsreb" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsast" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsstl" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsblk" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsto" type="int" indexed="true" stored="true"/>
+    <field name="playerStatspf" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsPts" type="int" indexed="true" stored="true"/>
+    <field name="playerStatsPlusMinus" type="int" indexed="true" stored="true"/>
     
     <!-- TeamStats -->
-    <field name="teamStats" type="string" indexed="true" stored="true"/>
-    <field name="gameId" type="int" indexed="true" stored="true"/>
-    <field name="teamId" type="int" indexed="true" stored="true"/>
-    <field name="teamName" type="string" indexed="true" stored="true"/>
-    <field name="teamAbbreviation" type="string" indexed="true" stored="true"/>
-    <field name="teamCity" type="string" indexed="true" stored="true"/>
-    <field name="min" type="string" indexed="true" stored="true"/>
-    <field name="fgm" type="int" indexed="true" stored="true"/>
-    <field name="fga" type="int" indexed="true" stored="true"/>
-    <field name="fgPct" type="long" indexed="true" stored="true"/>
-    <field name="fg3m" type="int" indexed="true" stored="true"/>
-    <field name="fg3a" type="int" indexed="true" stored="true"/>
-    <field name="fg3Pct" type="long" indexed="true" stored="true"/>
-    <field name="ftm" type="int" indexed="true" stored="true"/>
-    <field name="fta" type="int" indexed="true" stored="true"/>
-    <field name="ftPct" type="int" indexed="true" stored="true"/>
-    <field name="oreb" type="int" indexed="true" stored="true"/>
-    <field name="dreb" type="int" indexed="true" stored="true"/>
-    <field name="reb" type="int" indexed="true" stored="true"/>
-    <field name="ast" type="int" indexed="true" stored="true"/>
-    <field name="stl" type="int" indexed="true" stored="true"/>
-    <field name="blk" type="int" indexed="true" stored="true"/>
-    <field name="to" type="int" indexed="true" stored="true"/>
-    <field name="pf" type="int" indexed="true" stored="true"/>
-    <field name="pts" type="int" indexed="true" stored="true"/>
-    <field name="plusMinus" type="int" indexed="true" stored="true"/>
+    <field name="gameTeamStatsId" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsTeamId" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsTeamName" type="string" indexed="true" stored="true"/>
+    <field name="teamStatsTeamAbbreviation" type="string" indexed="true" stored="true"/>
+    <field name="teamStatsTeamCity" type="string" indexed="true" stored="true"/>
+    <field name="teamStatsMin" type="string" indexed="true" stored="true"/>
+    <field name="teamStatsFgm" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsFga" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsfgPct" type="long" indexed="true" stored="true"/>
+    <field name="teamStatsfg3m" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsfg3a" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsfg3Pct" type="long" indexed="true" stored="true"/>
+    <field name="teamStatsftm" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsfta" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsftPct" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsoreb" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsdreb" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsreb" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsast" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsstl" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsblk" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsto" type="int" indexed="true" stored="true"/>
+    <field name="teamStatspf" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsPts" type="int" indexed="true" stored="true"/>
+    <field name="teamStatsPlusMinus" type="int" indexed="true" stored="true"/>
     
     <!-- OtherStats -->
-    <field name="otherStats" type="string" indexed="true" stored="true"/>
     <field name="leagueId" type="int" indexed="true" stored="true"/>
     <field name="seasonId" type="int" indexed="true" stored="true"/>
-    <field name="teamId" type="int" indexed="true" stored="true"/>
-    <field name="teamAbbreviation" type="string" indexed="true" stored="true"/>
-    <field name="teamCity" type="string" indexed="true" stored="true"/>
+    <field name="otherStatsTeamId" type="int" indexed="true" stored="true"/>
+    <field name="otherStatsTeamAbbreviation" type="string" indexed="true" stored="true"/>
+    <field name="otherStatsTeamCity" type="string" indexed="true" stored="true"/>
     <field name="ptsPaint" type="int" indexed="true" stored="true"/>
     <field name="pts2ndChance" type="int" indexed="true" stored="true"/>
     <field name="ptsFb" type="long" indexed="true" stored="true"/>
@@ -173,35 +164,30 @@
     <field name="timesTied" type="long" indexed="true" stored="true"/>
     
     <!-- Officials -->
-    <field name="officials" type="string" indexed="true" stored="true"/>
     <field name="officialId" type="int" indexed="true" stored="true"/>
-    <field name="firstName" type="string" indexed="true" stored="true"/>
-    <field name="lastName" type="string" indexed="true" stored="true"/>
-    <field name="jerseyNum" type="int" indexed="true" stored="true"/>
+    <field name="officialFirstName" type="string" indexed="true" stored="true"/>
+    <field name="officialLastName" type="string" indexed="true" stored="true"/>
+    <field name="officialJerseyNum" type="int" indexed="true" stored="true"/>
     
     <!-- GameInfo -->
-    <field name="gameInfo" type="string" indexed="true" stored="true"/>
     <field name="gameDate" type="string" indexed="true" stored="true"/>
     <field name="attendance" type="int" indexed="true" stored="true"/>
     <field name="gameTime" type="string" indexed="true" stored="true"/>
     
     <!-- InactivePlayers -->
-    <field name="inactivePlayers" type="string" indexed="true" stored="true"/>
-    <field name="playerId" type="int" indexed="true" stored="true"/>
-    <field name="firstName" type="string" indexed="true" stored="true"/>
-    <field name="lastName" type="string" indexed="true" stored="true"/>
-    <field name="jerseyNum" type="int" indexed="true" stored="true"/>
-    <field name="teamId" type="int" indexed="true" stored="true"/>
-    <field name="teamCity" type="string" indexed="true" stored="true"/>
-    <field name="teamName" type="string" indexed="true" stored="true"/>
-    <field name="teamAbbreviation" type="string" indexed="true" stored="true"/>
+    <field name="inactivePlayersPlayerId" type="int" indexed="true" stored="true"/>
+    <field name="inactivePlayersFirstName" type="string" indexed="true" stored="true"/>
+    <field name="inactivePlayerslastName" type="string" indexed="true" stored="true"/>
+    <field name="inactivePlayersJerseyNum" type="int" indexed="true" stored="true"/>
+    <field name="inactivePlayersTeamId" type="int" indexed="true" stored="true"/>
+    <field name="inactivePLayersTeamCity" type="string" indexed="true" stored="true"/>
+    <field name="nactivePLayersTeamName" type="string" indexed="true" stored="true"/>
+    <field name="inactivePlayersTeamAbbreviation" type="string" indexed="true" stored="true"/>
     
     <!-- AvailableVideo -->
-    <field name="availableVideo" type="string" indexed="true" stored="true"/>
     <field name="videoAvailableFlag" type="int" indexed="true" stored="true"/>
     
     <!-- Top Level Simple Fields -->
-    <field name="gameId" type="string" indexed="true" stored="true"/>
     <field name="gameId" type="int" indexed="true" stored="true"/>
     <field name="rangeType" type="int" indexed="true" stored="true"/>
     <field name="startPeriod" type="int" indexed="true" stored="true"/>
