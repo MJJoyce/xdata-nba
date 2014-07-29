@@ -33,10 +33,21 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo;
 import gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore;
 import gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats;
 import gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview;
 import gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries;
+import gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -143,9 +154,29 @@ public class ParseUtil {
     JSONArray result = (JSONArray) jsonObject.get("resultSets");
     JSONObject jObj = (JSONObject) result.get(0);
     JSONArray rows = (JSONArray) jObj.get("rowset");
+    
+    //Lewis
+    GameSummary summary = null;
+    LineScore score = null;
+    SeasonSeries series = null;
+    LastMeeting meeting = null;
+    PlayerStats playerStats = null;
+    TeamStats teamStats = null;
+    
+    //Tyler
+    OtherStats otherStats = null;
+    Officials officials = null;
+    GameInfo info = null;
+    InactivePlayers inactivePlayers = null;
+    AvailableVideo video = null;
+    
+    GameStats stats = GameStats.newBuilder().setGameSummary(summary).setLineScore(score)
+        .setSeasonSeries(series).setLastMeeting(meeting).setPlayerStats(playerStats)
+        .setTeamStats(teamStats).setOtherStats(otherStats).setOfficials(officials)
+        .setGameInfo(info).setInactivePlayers(inactivePlayers).setAvailableVideo(video).build();
 
     
-    return null;
+    return stats;
     
   }
   

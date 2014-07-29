@@ -25,7 +25,7 @@
     <field name="team_city" column="team_city"/>
   </class>
 
-  <class name="gov.nasa.jpl.xdata.nba.impoexpo.PlayByPLay" keyClass="java.lang.CharSequence" table="play-by-play">
+  <!-- class name="gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayByPLay" keyClass="java.lang.CharSequence" table="play-by-play">
     <primarykey column="id"/>
     <field name="game_id" column="game_id"/>
     <field name="event_num" column="event_num"/>
@@ -39,9 +39,9 @@
     <field name="visitor_desc" column="visitor_desc"/>
     <field name="score" column="score"/>
     <field name="score_margin" column="score_margin"/>
-  </class>
+  </class-->
   
-  <class name="gora.nasa.jpl.xdata.nba.impoexpo.structs.Game" keyClass="java.lang.Integer" table="game">
+  <class name="gov.nasa.jpl.xdata.nba.impoexpo.structs.Game" keyClass="java.lang.Integer" table="game">
     <primarykey column="gameId"/>
     <!-- Preview -->
     <field name="previewText" column="previewText"/>
@@ -219,5 +219,6 @@
     <field name="endPeriod" column="endPeriod"/>
     <field name="endRange" column="endRange"/>
   </class>
+
 </gora-otd>
 
