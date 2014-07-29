@@ -181,7 +181,42 @@ public class ParseUtil {
   }
 
   public static GameSummary parseGameSummary(JSONObject jsonObject) {
-    return GameSummary.newBuilder().build();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(0);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    JSONArray row = (JSONArray) rowSet.get(0);
+    String gameSummaryDateEst = (String) row.get(0);
+    int gameSummarySequence   = Integer.parseInt(row.get(1).toString());
+    int gameSummaryId         = Integer.parseInt((String) row.get(2));
+    int gameStatusId          = Integer.parseInt(row.get(3).toString());
+    String gameStatusText     = (String) row.get(4);
+    String gameCode           = (String) row.get(5);
+    int homeTeamId            = Integer.parseInt(row.get(6).toString());
+    int visitorTeamId         = Integer.parseInt(row.get(7).toString());
+    int season                = Integer.parseInt(row.get(8).toString());
+    int livePeriod            = Integer.parseInt(row.get(9).toString());
+    String livePcTimeString = row.get(10).toString();
+    int livePcTime            = livePcTimeString.isEmpty() ? 0 : Integer.parseInt(livePcTimeString);
+    String broadcasterAbbrev  = (String) row.get(11);
+    String livePeriodTimeBcast= (String) row.get(12);
+    int whStatus              = Integer.parseInt(row.get(13).toString());
+
+    return GameSummary.newBuilder()
+            .setGameSummaryDateEst(gameSummaryDateEst)
+            .setGameSummarySequence(gameSummarySequence)
+            .setGameGameSummaryId(gameSummaryId)
+            .setGameStatusId(gameStatusId)
+            .setGameStatusText(gameStatusText)
+            .setGameCode(gameCode)
+            .setGameSummaryHomeTeamId(homeTeamId)
+            .setGameSummaryVisitorTeamId(visitorTeamId)
+            .setSeason(season)
+            .setLivePeriod(livePeriod)
+            .setLivePcTime(livePcTime)
+            .setNatlTvBroadcasterAbbreviation(broadcasterAbbrev)
+            .setLivePeriodTimeBcast(livePeriodTimeBcast)
+            .setWhStatus(whStatus)
+            .build();
   }
   public static LineScore parseLineScore(JSONObject jsonObject) {
     return LineScore.newBuilder().build();
