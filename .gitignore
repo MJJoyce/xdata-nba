@@ -6,3 +6,5 @@ impoexpo/slf4j*
 impoexpo/target/
 impoexpo/.classpath
 impoexpo/.project
+impoexpo/.idea/
+impoexpo/impoexpo.iml
