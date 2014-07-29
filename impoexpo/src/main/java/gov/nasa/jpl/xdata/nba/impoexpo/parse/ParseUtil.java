@@ -235,9 +235,10 @@ public class ParseUtil {
       JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
       JSONObject infoObject = (JSONObject) resultSets.get(8);
       JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
-      String gameDate = (String) rowSet.get(0);
-      int attendance = (Integer) rowSet.get(1);
-      String gameTime = (String) rowSet.get(2);
+      JSONArray row = (JSONArray) rowSet.get(0);
+      String gameDate = (String) row.get(0);
+      int attendance = Integer.parseInt(row.get(1).toString());
+      String gameTime = (String) row.get(2);
       return GameInfo.newBuilder()
               .setGameDate(gameDate)
               .setAttendance(attendance)
@@ -261,8 +262,9 @@ public class ParseUtil {
       JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
       JSONObject availableVideoObject = (JSONObject) resultSets.get(10);
       JSONArray rowSet = (JSONArray) availableVideoObject.get("rowSet");
+      JSONArray row = (JSONArray) rowSet.get(0);
       return AvailableVideo.newBuilder()
-              .setVideoAvailableFlag((Integer) rowSet.get(0))
+              .setVideoAvailableFlag(Integer.parseInt(row.get(0).toString()))
               .build();
   }
   
