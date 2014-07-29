@@ -15,62 +15,67 @@ import java.io.InputStreamReader;
 public class TestParseUtil {
 
     @Test
-    void testParseGameSummary() throws Exception {
+    public void testParseGameSummary() throws Exception {
         JSONObject gameJson = getGameJSON();
         GameSummary gameSummary = ParseUtil.parseGameSummary(gameJson);
     }
 
     @Test
-    void testParseLineScore() throws Exception {
+    public void testParseLineScore() throws Exception {
         JSONObject gameJson = getGameJSON();
         LineScore lineScore = ParseUtil.parseLineScore(gameJson);
     }
 
     @Test
-    void testParseSeasonSeries() throws Exception {
+    public void testParseSeasonSeries() throws Exception {
         JSONObject gameJson = getGameJSON();
         SeasonSeries seasonSeries = ParseUtil.parseSeasonSeries(gameJson);
     }
 
     @Test
-    void testParseLastMeeting() throws Exception {
+    public void testParseLastMeeting() throws Exception {
         JSONObject gameJson = getGameJSON();
         LastMeeting lastMeeting = ParseUtil.parseLastMeeting(gameJson);
     }
 
     @Test
-    void testParsePlayerStats() throws Exception {
+    public void testParsePlayerStats() throws Exception {
         JSONObject gameJson = getGameJSON();
         PlayerStats playerStats = ParseUtil.parsePlayerStats(gameJson);
     }
 
     @Test
-    void testParseTeamStats() throws Exception {
+    public void testParseTeamStats() throws Exception {
         JSONObject gameJson = getGameJSON();
         TeamStats teamStats = ParseUtil.parseTeamStats(gameJson);
     }
 
-    @Test void testParseOtherStats() throws Exception {
+    @Test
+    public void testParseOtherStats() throws Exception {
         JSONObject gameJson = getGameJSON();
         OtherStats otherStats = ParseUtil.parseOtherStats(gameJson);
     }
 
-    @Test void testParseOfficials() throws Exception {
+    @Test
+    public void testParseOfficials() throws Exception {
         JSONObject gameJson = getGameJSON();
         Officials officials = ParseUtil.parseOfficials(gameJson);
     }
 
-    @Test void testParseInfo() throws Exception {
+    @Test
+    public void testParseInfo() throws Exception {
         JSONObject gameJson = getGameJSON();
         GameInfo gameInfo = ParseUtil.parseInfo(gameJson);
     }
 
-    @Test void testParseInactivePlayers() throws Exception {
+    @Test
+    public void testParseInactivePlayers() throws Exception {
         JSONObject gameJson = getGameJSON();
         InactivePlayers inactivePlayers = ParseUtil.parseInactivePlayers(gameJson);
     }
 
-    @Test void testParseAvailableVideo() throws Exception {
+    @Test
+    public void testParseAvailableVideo() throws Exception {
         JSONObject gameJson = getGameJSON();
         AvailableVideo availableVideo = ParseUtil.parseAvailableVideo(gameJson);
     }
