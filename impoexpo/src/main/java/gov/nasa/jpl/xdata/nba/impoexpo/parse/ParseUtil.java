@@ -19,15 +19,13 @@ package gov.nasa.jpl.xdata.nba.impoexpo.parse;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.avro.util.Utf8;
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
-import org.apache.tika.metadata.Metadata;
-import org.apache.tika.parser.AutoDetectParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -73,11 +71,12 @@ public class ParseUtil {
   /**
    * Simply reads in a String path to a Preview file, parses the File, populates
    * a Preview object and returns that object.
+   * @param preview 
    * @param string
    * @return
    */
-  public static Preview parsePreview(String string) {
-    Preview preview = Preview.newBuilder().setPreviewText(parseTextFile(string)).build();
+  public static Preview parsePreview(Preview preview, String string) {
+    preview.setPreviewText(parseTextFile(string));
     return preview;
     
   }
@@ -85,11 +84,12 @@ public class ParseUtil {
   /**
    * Simply reads in a String path to a Recap file, parses the File, populates
    * a Recap object and returns that object.
+   * @param recap 
    * @param string
    * @return
    */
-  public static Recap parseRecap(String string) {
-    Recap recap = Recap.newBuilder().setRecapText(parseTextFile(string)).build();
+  public static Recap parseRecap(Recap recap, String string) {
+    recap.setRecapText(parseTextFile(string));
     return recap;
   }
 
@@ -155,8 +155,7 @@ public class ParseUtil {
     JSONObject jObj = (JSONObject) result.get(0);
     JSONArray rows = (JSONArray) jObj.get("rowset");
     
-    //Lewis
-    GameSummary summary = null;
+    GameSummary summary = parseGameSummary();
     LineScore score = null;
     SeasonSeries series = null;
     LastMeeting meeting = null;
@@ -174,19 +173,22 @@ public class ParseUtil {
         .setSeasonSeries(series).setLastMeeting(meeting).setPlayerStats(playerStats)
         .setTeamStats(teamStats).setOtherStats(otherStats).setOfficials(officials)
         .setGameInfo(info).setInactivePlayers(inactivePlayers).setAvailableVideo(video).build();
-
     
     return stats;
     
   }
   
 
+  private static GameSummary parseGameSummary() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
   private static String parseTextFile(String textString) {
     LOG.info("Parsing Text: {}", textString);
     InputStream is = null;
     try {
       is = new FileInputStream(textString);
-      is.close();
     } catch (Exception e) {
       // TODO: handle exception
     }
@@ -200,6 +202,14 @@ public class ParseUtil {
     } catch (TikaException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
+    }
+    finally {
+      try {
+        is.close();
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
     }
     return text;
   }

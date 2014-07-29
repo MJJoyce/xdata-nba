@@ -4,6 +4,9 @@
  * DO NOT EDIT DIRECTLY
  */
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
+
+import java.nio.ByteBuffer;
+
 @SuppressWarnings("all")
 public class Preview extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Preview\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"previewText\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
