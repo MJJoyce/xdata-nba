@@ -6,14 +6,14 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class Officials extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Officials\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"officialId\",\"type\":\"int\",\"default\":0},{\"name\":\"firstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"jerseyNum\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Officials\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"officialId\",\"type\":\"int\",\"default\":0},{\"name\":\"officialFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialJerseyNum\",\"type\":\"int\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
     OFFICIAL_ID(0, "officialId"),
-    FIRST_NAME(1, "firstName"),
-    LAST_NAME(2, "lastName"),
-    JERSEY_NUM(3, "jerseyNum"),
+    OFFICIAL_FIRST_NAME(1, "officialFirstName"),
+    OFFICIAL_LAST_NAME(2, "officialLastName"),
+    OFFICIAL_JERSEY_NUM(3, "officialJerseyNum"),
     ;
     /**
      * Field's index.
@@ -53,9 +53,9 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 
   public static final String[] _ALL_FIELDS = {
   "officialId",
-  "firstName",
-  "lastName",
-  "jerseyNum",
+  "officialFirstName",
+  "officialLastName",
+  "officialJerseyNum",
   };
 
   /**
@@ -67,17 +67,17 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   }
 
   private int officialId;
-  private java.lang.CharSequence firstName;
-  private java.lang.CharSequence lastName;
-  private int jerseyNum;
+  private java.lang.CharSequence officialFirstName;
+  private java.lang.CharSequence officialLastName;
+  private int officialJerseyNum;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return officialId;
-    case 1: return firstName;
-    case 2: return lastName;
-    case 3: return jerseyNum;
+    case 1: return officialFirstName;
+    case 2: return officialLastName;
+    case 3: return officialJerseyNum;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -87,9 +87,9 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
     case 0: officialId = (java.lang.Integer)(value); break;
-    case 1: firstName = (java.lang.CharSequence)(value); break;
-    case 2: lastName = (java.lang.CharSequence)(value); break;
-    case 3: jerseyNum = (java.lang.Integer)(value); break;
+    case 1: officialFirstName = (java.lang.CharSequence)(value); break;
+    case 2: officialLastName = (java.lang.CharSequence)(value); break;
+    case 3: officialJerseyNum = (java.lang.Integer)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -119,74 +119,74 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   }
 
   /**
-   * Gets the value of the 'firstName' field.
+   * Gets the value of the 'officialFirstName' field.
    */
-  public java.lang.CharSequence getFirstName() {
-    return firstName;
+  public java.lang.CharSequence getOfficialFirstName() {
+    return officialFirstName;
   }
 
   /**
-   * Sets the value of the 'firstName' field.
+   * Sets the value of the 'officialFirstName' field.
    * @param value the value to set.
    */
-  public void setFirstName(java.lang.CharSequence value) {
-    this.firstName = value;
+  public void setOfficialFirstName(java.lang.CharSequence value) {
+    this.officialFirstName = value;
     setDirty(1);
   }
   
   /**
-   * Checks the dirty status of the 'firstName' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'officialFirstName' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFirstNameDirty(java.lang.CharSequence value) {
+  public boolean isOfficialFirstNameDirty(java.lang.CharSequence value) {
     return isDirty(1);
   }
 
   /**
-   * Gets the value of the 'lastName' field.
+   * Gets the value of the 'officialLastName' field.
    */
-  public java.lang.CharSequence getLastName() {
-    return lastName;
+  public java.lang.CharSequence getOfficialLastName() {
+    return officialLastName;
   }
 
   /**
-   * Sets the value of the 'lastName' field.
+   * Sets the value of the 'officialLastName' field.
    * @param value the value to set.
    */
-  public void setLastName(java.lang.CharSequence value) {
-    this.lastName = value;
+  public void setOfficialLastName(java.lang.CharSequence value) {
+    this.officialLastName = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'lastName' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'officialLastName' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isLastNameDirty(java.lang.CharSequence value) {
+  public boolean isOfficialLastNameDirty(java.lang.CharSequence value) {
     return isDirty(2);
   }
 
   /**
-   * Gets the value of the 'jerseyNum' field.
+   * Gets the value of the 'officialJerseyNum' field.
    */
-  public java.lang.Integer getJerseyNum() {
-    return jerseyNum;
+  public java.lang.Integer getOfficialJerseyNum() {
+    return officialJerseyNum;
   }
 
   /**
-   * Sets the value of the 'jerseyNum' field.
+   * Sets the value of the 'officialJerseyNum' field.
    * @param value the value to set.
    */
-  public void setJerseyNum(java.lang.Integer value) {
-    this.jerseyNum = value;
+  public void setOfficialJerseyNum(java.lang.Integer value) {
+    this.officialJerseyNum = value;
     setDirty(3);
   }
   
   /**
-   * Checks the dirty status of the 'jerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'officialJerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isJerseyNumDirty(java.lang.Integer value) {
+  public boolean isOfficialJerseyNumDirty(java.lang.Integer value) {
     return isDirty(3);
   }
 
@@ -235,9 +235,9 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
     implements org.apache.avro.data.RecordBuilder<Officials> {
 
     private int officialId;
-    private java.lang.CharSequence firstName;
-    private java.lang.CharSequence lastName;
-    private int jerseyNum;
+    private java.lang.CharSequence officialFirstName;
+    private java.lang.CharSequence officialLastName;
+    private int officialJerseyNum;
 
     /** Creates a new Builder */
     private Builder() {
@@ -256,16 +256,16 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
         this.officialId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.officialId);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.firstName)) {
-        this.firstName = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.firstName);
+      if (isValidValue(fields()[1], other.officialFirstName)) {
+        this.officialFirstName = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.officialFirstName);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.lastName)) {
-        this.lastName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.lastName);
+      if (isValidValue(fields()[2], other.officialLastName)) {
+        this.officialLastName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.officialLastName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.jerseyNum)) {
-        this.jerseyNum = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.jerseyNum);
+      if (isValidValue(fields()[3], other.officialJerseyNum)) {
+        this.officialJerseyNum = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.officialJerseyNum);
         fieldSetFlags()[3] = true;
       }
     }
@@ -294,76 +294,76 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
       return this;
     }
     
-    /** Gets the value of the 'firstName' field */
-    public java.lang.CharSequence getFirstName() {
-      return firstName;
+    /** Gets the value of the 'officialFirstName' field */
+    public java.lang.CharSequence getOfficialFirstName() {
+      return officialFirstName;
     }
     
-    /** Sets the value of the 'firstName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setFirstName(java.lang.CharSequence value) {
+    /** Sets the value of the 'officialFirstName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialFirstName(java.lang.CharSequence value) {
       validate(fields()[1], value);
-      this.firstName = value;
+      this.officialFirstName = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'firstName' field has been set */
-    public boolean hasFirstName() {
+    /** Checks whether the 'officialFirstName' field has been set */
+    public boolean hasOfficialFirstName() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'firstName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearFirstName() {
-      firstName = null;
+    /** Clears the value of the 'officialFirstName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialFirstName() {
+      officialFirstName = null;
       fieldSetFlags()[1] = false;
       return this;
     }
     
-    /** Gets the value of the 'lastName' field */
-    public java.lang.CharSequence getLastName() {
-      return lastName;
+    /** Gets the value of the 'officialLastName' field */
+    public java.lang.CharSequence getOfficialLastName() {
+      return officialLastName;
     }
     
-    /** Sets the value of the 'lastName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setLastName(java.lang.CharSequence value) {
+    /** Sets the value of the 'officialLastName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialLastName(java.lang.CharSequence value) {
       validate(fields()[2], value);
-      this.lastName = value;
+      this.officialLastName = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'lastName' field has been set */
-    public boolean hasLastName() {
+    /** Checks whether the 'officialLastName' field has been set */
+    public boolean hasOfficialLastName() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'lastName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearLastName() {
-      lastName = null;
+    /** Clears the value of the 'officialLastName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialLastName() {
+      officialLastName = null;
       fieldSetFlags()[2] = false;
       return this;
     }
     
-    /** Gets the value of the 'jerseyNum' field */
-    public java.lang.Integer getJerseyNum() {
-      return jerseyNum;
+    /** Gets the value of the 'officialJerseyNum' field */
+    public java.lang.Integer getOfficialJerseyNum() {
+      return officialJerseyNum;
     }
     
-    /** Sets the value of the 'jerseyNum' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setJerseyNum(int value) {
+    /** Sets the value of the 'officialJerseyNum' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialJerseyNum(int value) {
       validate(fields()[3], value);
-      this.jerseyNum = value;
+      this.officialJerseyNum = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'jerseyNum' field has been set */
-    public boolean hasJerseyNum() {
+    /** Checks whether the 'officialJerseyNum' field has been set */
+    public boolean hasOfficialJerseyNum() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'jerseyNum' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearJerseyNum() {
+    /** Clears the value of the 'officialJerseyNum' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialJerseyNum() {
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -373,9 +373,9 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
       try {
         Officials record = new Officials();
         record.officialId = fieldSetFlags()[0] ? this.officialId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.lastName = fieldSetFlags()[2] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.jerseyNum = fieldSetFlags()[3] ? this.jerseyNum : (java.lang.Integer) defaultValue(fields()[3]);
+        record.officialFirstName = fieldSetFlags()[1] ? this.officialFirstName : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.officialLastName = fieldSetFlags()[2] ? this.officialLastName : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.officialJerseyNum = fieldSetFlags()[3] ? this.officialJerseyNum : (java.lang.Integer) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -421,71 +421,71 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 	  }
 	
 				  /**
-	   * Gets the value of the 'firstName' field.
+	   * Gets the value of the 'officialFirstName' field.
 		   */
-	  public java.lang.CharSequence getFirstName() {
+	  public java.lang.CharSequence getOfficialFirstName() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'firstName' field.
+	   * Sets the value of the 'officialFirstName' field.
 		   * @param value the value to set.
 	   */
-	  public void setFirstName(java.lang.CharSequence value) {
+	  public void setOfficialFirstName(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'firstName' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'officialFirstName' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFirstNameDirty(java.lang.CharSequence value) {
+	  public boolean isOfficialFirstNameDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'lastName' field.
+	   * Gets the value of the 'officialLastName' field.
 		   */
-	  public java.lang.CharSequence getLastName() {
+	  public java.lang.CharSequence getOfficialLastName() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'lastName' field.
+	   * Sets the value of the 'officialLastName' field.
 		   * @param value the value to set.
 	   */
-	  public void setLastName(java.lang.CharSequence value) {
+	  public void setOfficialLastName(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'lastName' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'officialLastName' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isLastNameDirty(java.lang.CharSequence value) {
+	  public boolean isOfficialLastNameDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'jerseyNum' field.
+	   * Gets the value of the 'officialJerseyNum' field.
 		   */
-	  public java.lang.Integer getJerseyNum() {
+	  public java.lang.Integer getOfficialJerseyNum() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'jerseyNum' field.
+	   * Sets the value of the 'officialJerseyNum' field.
 		   * @param value the value to set.
 	   */
-	  public void setJerseyNum(java.lang.Integer value) {
+	  public void setOfficialJerseyNum(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'jerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'officialJerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isJerseyNumDirty(java.lang.Integer value) {
+	  public boolean isOfficialJerseyNumDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

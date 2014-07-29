@@ -6,15 +6,15 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OtherStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"leagueId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"int\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"int\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"int\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OtherStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"leagueId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"int\",\"default\":0},{\"name\":\"otherStatsTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"otherStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"otherStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"int\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"int\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"int\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
     LEAGUE_ID(0, "leagueId"),
     SEASON_ID(1, "seasonId"),
-    TEAM_ID(2, "teamId"),
-    TEAM_ABBREVIATION(3, "teamAbbreviation"),
-    TEAM_CITY(4, "teamCity"),
+    OTHER_STATS_TEAM_ID(2, "otherStatsTeamId"),
+    OTHER_STATS_TEAM_ABBREVIATION(3, "otherStatsTeamAbbreviation"),
+    OTHER_STATS_TEAM_CITY(4, "otherStatsTeamCity"),
     PTS_PAINT(5, "ptsPaint"),
     PTS2ND_CHANCE(6, "pts2ndChance"),
     PTS_FB(7, "ptsFb"),
@@ -61,9 +61,9 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   public static final String[] _ALL_FIELDS = {
   "leagueId",
   "seasonId",
-  "teamId",
-  "teamAbbreviation",
-  "teamCity",
+  "otherStatsTeamId",
+  "otherStatsTeamAbbreviation",
+  "otherStatsTeamCity",
   "ptsPaint",
   "pts2ndChance",
   "ptsFb",
@@ -82,9 +82,9 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 
   private int leagueId;
   private int seasonId;
-  private int teamId;
-  private java.lang.CharSequence teamAbbreviation;
-  private java.lang.CharSequence teamCity;
+  private int otherStatsTeamId;
+  private java.lang.CharSequence otherStatsTeamAbbreviation;
+  private java.lang.CharSequence otherStatsTeamCity;
   private int ptsPaint;
   private int pts2ndChance;
   private long ptsFb;
@@ -97,9 +97,9 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     switch (field$) {
     case 0: return leagueId;
     case 1: return seasonId;
-    case 2: return teamId;
-    case 3: return teamAbbreviation;
-    case 4: return teamCity;
+    case 2: return otherStatsTeamId;
+    case 3: return otherStatsTeamAbbreviation;
+    case 4: return otherStatsTeamCity;
     case 5: return ptsPaint;
     case 6: return pts2ndChance;
     case 7: return ptsFb;
@@ -116,9 +116,9 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     switch (field$) {
     case 0: leagueId = (java.lang.Integer)(value); break;
     case 1: seasonId = (java.lang.Integer)(value); break;
-    case 2: teamId = (java.lang.Integer)(value); break;
-    case 3: teamAbbreviation = (java.lang.CharSequence)(value); break;
-    case 4: teamCity = (java.lang.CharSequence)(value); break;
+    case 2: otherStatsTeamId = (java.lang.Integer)(value); break;
+    case 3: otherStatsTeamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 4: otherStatsTeamCity = (java.lang.CharSequence)(value); break;
     case 5: ptsPaint = (java.lang.Integer)(value); break;
     case 6: pts2ndChance = (java.lang.Integer)(value); break;
     case 7: ptsFb = (java.lang.Long)(value); break;
@@ -178,74 +178,74 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   }
 
   /**
-   * Gets the value of the 'teamId' field.
+   * Gets the value of the 'otherStatsTeamId' field.
    */
-  public java.lang.Integer getTeamId() {
-    return teamId;
+  public java.lang.Integer getOtherStatsTeamId() {
+    return otherStatsTeamId;
   }
 
   /**
-   * Sets the value of the 'teamId' field.
+   * Sets the value of the 'otherStatsTeamId' field.
    * @param value the value to set.
    */
-  public void setTeamId(java.lang.Integer value) {
-    this.teamId = value;
+  public void setOtherStatsTeamId(java.lang.Integer value) {
+    this.otherStatsTeamId = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'otherStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamIdDirty(java.lang.Integer value) {
+  public boolean isOtherStatsTeamIdDirty(java.lang.Integer value) {
     return isDirty(2);
   }
 
   /**
-   * Gets the value of the 'teamAbbreviation' field.
+   * Gets the value of the 'otherStatsTeamAbbreviation' field.
    */
-  public java.lang.CharSequence getTeamAbbreviation() {
-    return teamAbbreviation;
+  public java.lang.CharSequence getOtherStatsTeamAbbreviation() {
+    return otherStatsTeamAbbreviation;
   }
 
   /**
-   * Sets the value of the 'teamAbbreviation' field.
+   * Sets the value of the 'otherStatsTeamAbbreviation' field.
    * @param value the value to set.
    */
-  public void setTeamAbbreviation(java.lang.CharSequence value) {
-    this.teamAbbreviation = value;
+  public void setOtherStatsTeamAbbreviation(java.lang.CharSequence value) {
+    this.otherStatsTeamAbbreviation = value;
     setDirty(3);
   }
   
   /**
-   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'otherStatsTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+  public boolean isOtherStatsTeamAbbreviationDirty(java.lang.CharSequence value) {
     return isDirty(3);
   }
 
   /**
-   * Gets the value of the 'teamCity' field.
+   * Gets the value of the 'otherStatsTeamCity' field.
    */
-  public java.lang.CharSequence getTeamCity() {
-    return teamCity;
+  public java.lang.CharSequence getOtherStatsTeamCity() {
+    return otherStatsTeamCity;
   }
 
   /**
-   * Sets the value of the 'teamCity' field.
+   * Sets the value of the 'otherStatsTeamCity' field.
    * @param value the value to set.
    */
-  public void setTeamCity(java.lang.CharSequence value) {
-    this.teamCity = value;
+  public void setOtherStatsTeamCity(java.lang.CharSequence value) {
+    this.otherStatsTeamCity = value;
     setDirty(4);
   }
   
   /**
-   * Checks the dirty status of the 'teamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'otherStatsTeamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamCityDirty(java.lang.CharSequence value) {
+  public boolean isOtherStatsTeamCityDirty(java.lang.CharSequence value) {
     return isDirty(4);
   }
 
@@ -439,9 +439,9 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 
     private int leagueId;
     private int seasonId;
-    private int teamId;
-    private java.lang.CharSequence teamAbbreviation;
-    private java.lang.CharSequence teamCity;
+    private int otherStatsTeamId;
+    private java.lang.CharSequence otherStatsTeamAbbreviation;
+    private java.lang.CharSequence otherStatsTeamCity;
     private int ptsPaint;
     private int pts2ndChance;
     private long ptsFb;
@@ -470,16 +470,16 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
         this.seasonId = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.seasonId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.teamId)) {
-        this.teamId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.teamId);
+      if (isValidValue(fields()[2], other.otherStatsTeamId)) {
+        this.otherStatsTeamId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.otherStatsTeamId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.teamAbbreviation)) {
-        this.teamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.teamAbbreviation);
+      if (isValidValue(fields()[3], other.otherStatsTeamAbbreviation)) {
+        this.otherStatsTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.otherStatsTeamAbbreviation);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.teamCity)) {
-        this.teamCity = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamCity);
+      if (isValidValue(fields()[4], other.otherStatsTeamCity)) {
+        this.otherStatsTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.otherStatsTeamCity);
         fieldSetFlags()[4] = true;
       }
       if (isValidValue(fields()[5], other.ptsPaint)) {
@@ -556,76 +556,76 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
       return this;
     }
     
-    /** Gets the value of the 'teamId' field */
-    public java.lang.Integer getTeamId() {
-      return teamId;
+    /** Gets the value of the 'otherStatsTeamId' field */
+    public java.lang.Integer getOtherStatsTeamId() {
+      return otherStatsTeamId;
     }
     
-    /** Sets the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setTeamId(int value) {
+    /** Sets the value of the 'otherStatsTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamId(int value) {
       validate(fields()[2], value);
-      this.teamId = value;
+      this.otherStatsTeamId = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamId' field has been set */
-    public boolean hasTeamId() {
+    /** Checks whether the 'otherStatsTeamId' field has been set */
+    public boolean hasOtherStatsTeamId() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearTeamId() {
+    /** Clears the value of the 'otherStatsTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearOtherStatsTeamId() {
       fieldSetFlags()[2] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamAbbreviation' field */
-    public java.lang.CharSequence getTeamAbbreviation() {
-      return teamAbbreviation;
+    /** Gets the value of the 'otherStatsTeamAbbreviation' field */
+    public java.lang.CharSequence getOtherStatsTeamAbbreviation() {
+      return otherStatsTeamAbbreviation;
     }
     
-    /** Sets the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setTeamAbbreviation(java.lang.CharSequence value) {
+    /** Sets the value of the 'otherStatsTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamAbbreviation(java.lang.CharSequence value) {
       validate(fields()[3], value);
-      this.teamAbbreviation = value;
+      this.otherStatsTeamAbbreviation = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamAbbreviation' field has been set */
-    public boolean hasTeamAbbreviation() {
+    /** Checks whether the 'otherStatsTeamAbbreviation' field has been set */
+    public boolean hasOtherStatsTeamAbbreviation() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearTeamAbbreviation() {
-      teamAbbreviation = null;
+    /** Clears the value of the 'otherStatsTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearOtherStatsTeamAbbreviation() {
+      otherStatsTeamAbbreviation = null;
       fieldSetFlags()[3] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamCity' field */
-    public java.lang.CharSequence getTeamCity() {
-      return teamCity;
+    /** Gets the value of the 'otherStatsTeamCity' field */
+    public java.lang.CharSequence getOtherStatsTeamCity() {
+      return otherStatsTeamCity;
     }
     
-    /** Sets the value of the 'teamCity' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setTeamCity(java.lang.CharSequence value) {
+    /** Sets the value of the 'otherStatsTeamCity' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamCity(java.lang.CharSequence value) {
       validate(fields()[4], value);
-      this.teamCity = value;
+      this.otherStatsTeamCity = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamCity' field has been set */
-    public boolean hasTeamCity() {
+    /** Checks whether the 'otherStatsTeamCity' field has been set */
+    public boolean hasOtherStatsTeamCity() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'teamCity' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearTeamCity() {
-      teamCity = null;
+    /** Clears the value of the 'otherStatsTeamCity' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearOtherStatsTeamCity() {
+      otherStatsTeamCity = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -780,9 +780,9 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
         OtherStats record = new OtherStats();
         record.leagueId = fieldSetFlags()[0] ? this.leagueId : (java.lang.Integer) defaultValue(fields()[0]);
         record.seasonId = fieldSetFlags()[1] ? this.seasonId : (java.lang.Integer) defaultValue(fields()[1]);
-        record.teamId = fieldSetFlags()[2] ? this.teamId : (java.lang.Integer) defaultValue(fields()[2]);
-        record.teamAbbreviation = fieldSetFlags()[3] ? this.teamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.teamCity = fieldSetFlags()[4] ? this.teamCity : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.otherStatsTeamId = fieldSetFlags()[2] ? this.otherStatsTeamId : (java.lang.Integer) defaultValue(fields()[2]);
+        record.otherStatsTeamAbbreviation = fieldSetFlags()[3] ? this.otherStatsTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.otherStatsTeamCity = fieldSetFlags()[4] ? this.otherStatsTeamCity : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.ptsPaint = fieldSetFlags()[5] ? this.ptsPaint : (java.lang.Integer) defaultValue(fields()[5]);
         record.pts2ndChance = fieldSetFlags()[6] ? this.pts2ndChance : (java.lang.Integer) defaultValue(fields()[6]);
         record.ptsFb = fieldSetFlags()[7] ? this.ptsFb : (java.lang.Long) defaultValue(fields()[7]);
@@ -857,71 +857,71 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamId' field.
+	   * Gets the value of the 'otherStatsTeamId' field.
 		   */
-	  public java.lang.Integer getTeamId() {
+	  public java.lang.Integer getOtherStatsTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamId' field.
+	   * Sets the value of the 'otherStatsTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamId(java.lang.Integer value) {
+	  public void setOtherStatsTeamId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'otherStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamIdDirty(java.lang.Integer value) {
+	  public boolean isOtherStatsTeamIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamAbbreviation' field.
+	   * Gets the value of the 'otherStatsTeamAbbreviation' field.
 		   */
-	  public java.lang.CharSequence getTeamAbbreviation() {
+	  public java.lang.CharSequence getOtherStatsTeamAbbreviation() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamAbbreviation' field.
+	   * Sets the value of the 'otherStatsTeamAbbreviation' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamAbbreviation(java.lang.CharSequence value) {
+	  public void setOtherStatsTeamAbbreviation(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'otherStatsTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+	  public boolean isOtherStatsTeamAbbreviationDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamCity' field.
+	   * Gets the value of the 'otherStatsTeamCity' field.
 		   */
-	  public java.lang.CharSequence getTeamCity() {
+	  public java.lang.CharSequence getOtherStatsTeamCity() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamCity' field.
+	   * Sets the value of the 'otherStatsTeamCity' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamCity(java.lang.CharSequence value) {
+	  public void setOtherStatsTeamCity(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'otherStatsTeamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamCityDirty(java.lang.CharSequence value) {
+	  public boolean isOtherStatsTeamCityDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

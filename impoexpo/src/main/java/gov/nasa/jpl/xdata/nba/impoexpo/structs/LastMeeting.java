@@ -6,11 +6,11 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LastMeeting\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameHomeTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamPoints\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamCity1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamPoints\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LastMeeting\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameLastMeetingId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameHomeTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamPoints\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamCity1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamPoints\",\"type\":\"int\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_ID(0, "gameId"),
+    GAME_LAST_MEETING_ID(0, "gameLastMeetingId"),
     LAST_GAME_ID(1, "lastGameId"),
     LAST_GAME_DATE_EST(2, "lastGameDateEst"),
     LAST_GAME_HOME_TEAM_ID(3, "lastGameHomeTeamId"),
@@ -61,7 +61,7 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
   };
 
   public static final String[] _ALL_FIELDS = {
-  "gameId",
+  "gameLastMeetingId",
   "lastGameId",
   "lastGameDateEst",
   "lastGameHomeTeamId",
@@ -84,7 +84,7 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
     return LastMeeting._ALL_FIELDS.length;
   }
 
-  private int gameId;
+  private int gameLastMeetingId;
   private int lastGameId;
   private java.lang.CharSequence lastGameDateEst;
   private int lastGameHomeTeamId;
@@ -101,7 +101,7 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameId;
+    case 0: return gameLastMeetingId;
     case 1: return lastGameId;
     case 2: return lastGameDateEst;
     case 3: return lastGameHomeTeamId;
@@ -122,7 +122,7 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameId = (java.lang.Integer)(value); break;
+    case 0: gameLastMeetingId = (java.lang.Integer)(value); break;
     case 1: lastGameId = (java.lang.Integer)(value); break;
     case 2: lastGameDateEst = (java.lang.CharSequence)(value); break;
     case 3: lastGameHomeTeamId = (java.lang.Integer)(value); break;
@@ -140,26 +140,26 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
   }
 
   /**
-   * Gets the value of the 'gameId' field.
+   * Gets the value of the 'gameLastMeetingId' field.
    */
-  public java.lang.Integer getGameId() {
-    return gameId;
+  public java.lang.Integer getGameLastMeetingId() {
+    return gameLastMeetingId;
   }
 
   /**
-   * Sets the value of the 'gameId' field.
+   * Sets the value of the 'gameLastMeetingId' field.
    * @param value the value to set.
    */
-  public void setGameId(java.lang.Integer value) {
-    this.gameId = value;
+  public void setGameLastMeetingId(java.lang.Integer value) {
+    this.gameLastMeetingId = value;
     setDirty(0);
   }
   
   /**
-   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLastMeetingId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameIdDirty(java.lang.Integer value) {
+  public boolean isGameLastMeetingIdDirty(java.lang.Integer value) {
     return isDirty(0);
   }
 
@@ -495,7 +495,7 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<LastMeeting>
     implements org.apache.avro.data.RecordBuilder<LastMeeting> {
 
-    private int gameId;
+    private int gameLastMeetingId;
     private int lastGameId;
     private java.lang.CharSequence lastGameDateEst;
     private int lastGameHomeTeamId;
@@ -522,8 +522,8 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
     /** Creates a Builder by copying an existing LastMeeting instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameId)) {
-        this.gameId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.gameId);
+      if (isValidValue(fields()[0], other.gameLastMeetingId)) {
+        this.gameLastMeetingId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.gameLastMeetingId);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.lastGameId)) {
@@ -576,26 +576,26 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
       }
     }
 
-    /** Gets the value of the 'gameId' field */
-    public java.lang.Integer getGameId() {
-      return gameId;
+    /** Gets the value of the 'gameLastMeetingId' field */
+    public java.lang.Integer getGameLastMeetingId() {
+      return gameLastMeetingId;
     }
     
-    /** Sets the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting.Builder setGameId(int value) {
+    /** Sets the value of the 'gameLastMeetingId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting.Builder setGameLastMeetingId(int value) {
       validate(fields()[0], value);
-      this.gameId = value;
+      this.gameLastMeetingId = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameId' field has been set */
-    public boolean hasGameId() {
+    /** Checks whether the 'gameLastMeetingId' field has been set */
+    public boolean hasGameLastMeetingId() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting.Builder clearGameId() {
+    /** Clears the value of the 'gameLastMeetingId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting.Builder clearGameLastMeetingId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -899,7 +899,7 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
     public LastMeeting build() {
       try {
         LastMeeting record = new LastMeeting();
-        record.gameId = fieldSetFlags()[0] ? this.gameId : (java.lang.Integer) defaultValue(fields()[0]);
+        record.gameLastMeetingId = fieldSetFlags()[0] ? this.gameLastMeetingId : (java.lang.Integer) defaultValue(fields()[0]);
         record.lastGameId = fieldSetFlags()[1] ? this.lastGameId : (java.lang.Integer) defaultValue(fields()[1]);
         record.lastGameDateEst = fieldSetFlags()[2] ? this.lastGameDateEst : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.lastGameHomeTeamId = fieldSetFlags()[3] ? this.lastGameHomeTeamId : (java.lang.Integer) defaultValue(fields()[3]);
@@ -934,25 +934,25 @@ public class LastMeeting extends org.apache.gora.persistency.impl.PersistentBase
       private Tombstone() { }
   
 	  		  /**
-	   * Gets the value of the 'gameId' field.
+	   * Gets the value of the 'gameLastMeetingId' field.
 		   */
-	  public java.lang.Integer getGameId() {
+	  public java.lang.Integer getGameLastMeetingId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameId' field.
+	   * Sets the value of the 'gameLastMeetingId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameId(java.lang.Integer value) {
+	  public void setGameLastMeetingId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLastMeetingId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameIdDirty(java.lang.Integer value) {
+	  public boolean isGameLastMeetingIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

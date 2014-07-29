@@ -6,15 +6,15 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class LineScore extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineScore\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"int\",\"default\":0},{\"name\":\"pts\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineScore\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameLineScoreDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameLineScoreSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameLineScoreId\",\"type\":\"int\",\"default\":0},{\"name\":\"lineScoreTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lineScoreTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"int\",\"default\":0},{\"name\":\"lineScorePts\",\"type\":\"int\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_DATE_EST(0, "gameDateEst"),
-    GAME_SEQUENCE(1, "gameSequence"),
-    GAME_ID(2, "gameId"),
-    TEAM_ID(3, "teamId"),
-    TEAM_ABBREVIATION(4, "teamAbbreviation"),
+    GAME_LINE_SCORE_DATE_EST(0, "gameLineScoreDateEst"),
+    GAME_LINE_SCORE_SEQUENCE(1, "gameLineScoreSequence"),
+    GAME_LINE_SCORE_ID(2, "gameLineScoreId"),
+    LINE_SCORE_TEAM_ID(3, "lineScoreTeamId"),
+    LINE_SCORE_TEAM_ABBREVIATION(4, "lineScoreTeamAbbreviation"),
     TEAM_CITY_NAME(5, "teamCityName"),
     TEAM_WINS_LOSSES(6, "teamWinsLosses"),
     PTS_QTR1(7, "ptsQtr1"),
@@ -31,7 +31,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     PTS_OT8(18, "ptsOt8"),
     PTS_OT9(19, "ptsOt9"),
     PTS_OT10(20, "ptsOt10"),
-    PTS(21, "pts"),
+    LINE_SCORE_PTS(21, "lineScorePts"),
     ;
     /**
      * Field's index.
@@ -70,11 +70,11 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   };
 
   public static final String[] _ALL_FIELDS = {
-  "gameDateEst",
-  "gameSequence",
-  "gameId",
-  "teamId",
-  "teamAbbreviation",
+  "gameLineScoreDateEst",
+  "gameLineScoreSequence",
+  "gameLineScoreId",
+  "lineScoreTeamId",
+  "lineScoreTeamAbbreviation",
   "teamCityName",
   "teamWinsLosses",
   "ptsQtr1",
@@ -91,7 +91,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   "ptsOt8",
   "ptsOt9",
   "ptsOt10",
-  "pts",
+  "lineScorePts",
   };
 
   /**
@@ -102,11 +102,11 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     return LineScore._ALL_FIELDS.length;
   }
 
-  private java.lang.CharSequence gameDateEst;
-  private int gameSequence;
-  private int gameId;
-  private int teamId;
-  private java.lang.CharSequence teamAbbreviation;
+  private java.lang.CharSequence gameLineScoreDateEst;
+  private int gameLineScoreSequence;
+  private int gameLineScoreId;
+  private int lineScoreTeamId;
+  private java.lang.CharSequence lineScoreTeamAbbreviation;
   private java.lang.CharSequence teamCityName;
   private java.lang.CharSequence teamWinsLosses;
   private int ptsQtr1;
@@ -123,16 +123,16 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   private int ptsOt8;
   private int ptsOt9;
   private int ptsOt10;
-  private int pts;
+  private int lineScorePts;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameDateEst;
-    case 1: return gameSequence;
-    case 2: return gameId;
-    case 3: return teamId;
-    case 4: return teamAbbreviation;
+    case 0: return gameLineScoreDateEst;
+    case 1: return gameLineScoreSequence;
+    case 2: return gameLineScoreId;
+    case 3: return lineScoreTeamId;
+    case 4: return lineScoreTeamAbbreviation;
     case 5: return teamCityName;
     case 6: return teamWinsLosses;
     case 7: return ptsQtr1;
@@ -149,7 +149,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     case 18: return ptsOt8;
     case 19: return ptsOt9;
     case 20: return ptsOt10;
-    case 21: return pts;
+    case 21: return lineScorePts;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -158,11 +158,11 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameDateEst = (java.lang.CharSequence)(value); break;
-    case 1: gameSequence = (java.lang.Integer)(value); break;
-    case 2: gameId = (java.lang.Integer)(value); break;
-    case 3: teamId = (java.lang.Integer)(value); break;
-    case 4: teamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 0: gameLineScoreDateEst = (java.lang.CharSequence)(value); break;
+    case 1: gameLineScoreSequence = (java.lang.Integer)(value); break;
+    case 2: gameLineScoreId = (java.lang.Integer)(value); break;
+    case 3: lineScoreTeamId = (java.lang.Integer)(value); break;
+    case 4: lineScoreTeamAbbreviation = (java.lang.CharSequence)(value); break;
     case 5: teamCityName = (java.lang.CharSequence)(value); break;
     case 6: teamWinsLosses = (java.lang.CharSequence)(value); break;
     case 7: ptsQtr1 = (java.lang.Integer)(value); break;
@@ -179,128 +179,128 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     case 18: ptsOt8 = (java.lang.Integer)(value); break;
     case 19: ptsOt9 = (java.lang.Integer)(value); break;
     case 20: ptsOt10 = (java.lang.Integer)(value); break;
-    case 21: pts = (java.lang.Integer)(value); break;
+    case 21: lineScorePts = (java.lang.Integer)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'gameDateEst' field.
+   * Gets the value of the 'gameLineScoreDateEst' field.
    */
-  public java.lang.CharSequence getGameDateEst() {
-    return gameDateEst;
+  public java.lang.CharSequence getGameLineScoreDateEst() {
+    return gameLineScoreDateEst;
   }
 
   /**
-   * Sets the value of the 'gameDateEst' field.
+   * Sets the value of the 'gameLineScoreDateEst' field.
    * @param value the value to set.
    */
-  public void setGameDateEst(java.lang.CharSequence value) {
-    this.gameDateEst = value;
+  public void setGameLineScoreDateEst(java.lang.CharSequence value) {
+    this.gameLineScoreDateEst = value;
     setDirty(0);
   }
   
   /**
-   * Checks the dirty status of the 'gameDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLineScoreDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameDateEstDirty(java.lang.CharSequence value) {
+  public boolean isGameLineScoreDateEstDirty(java.lang.CharSequence value) {
     return isDirty(0);
   }
 
   /**
-   * Gets the value of the 'gameSequence' field.
+   * Gets the value of the 'gameLineScoreSequence' field.
    */
-  public java.lang.Integer getGameSequence() {
-    return gameSequence;
+  public java.lang.Integer getGameLineScoreSequence() {
+    return gameLineScoreSequence;
   }
 
   /**
-   * Sets the value of the 'gameSequence' field.
+   * Sets the value of the 'gameLineScoreSequence' field.
    * @param value the value to set.
    */
-  public void setGameSequence(java.lang.Integer value) {
-    this.gameSequence = value;
+  public void setGameLineScoreSequence(java.lang.Integer value) {
+    this.gameLineScoreSequence = value;
     setDirty(1);
   }
   
   /**
-   * Checks the dirty status of the 'gameSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLineScoreSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameSequenceDirty(java.lang.Integer value) {
+  public boolean isGameLineScoreSequenceDirty(java.lang.Integer value) {
     return isDirty(1);
   }
 
   /**
-   * Gets the value of the 'gameId' field.
+   * Gets the value of the 'gameLineScoreId' field.
    */
-  public java.lang.Integer getGameId() {
-    return gameId;
+  public java.lang.Integer getGameLineScoreId() {
+    return gameLineScoreId;
   }
 
   /**
-   * Sets the value of the 'gameId' field.
+   * Sets the value of the 'gameLineScoreId' field.
    * @param value the value to set.
    */
-  public void setGameId(java.lang.Integer value) {
-    this.gameId = value;
+  public void setGameLineScoreId(java.lang.Integer value) {
+    this.gameLineScoreId = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLineScoreId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameIdDirty(java.lang.Integer value) {
+  public boolean isGameLineScoreIdDirty(java.lang.Integer value) {
     return isDirty(2);
   }
 
   /**
-   * Gets the value of the 'teamId' field.
+   * Gets the value of the 'lineScoreTeamId' field.
    */
-  public java.lang.Integer getTeamId() {
-    return teamId;
+  public java.lang.Integer getLineScoreTeamId() {
+    return lineScoreTeamId;
   }
 
   /**
-   * Sets the value of the 'teamId' field.
+   * Sets the value of the 'lineScoreTeamId' field.
    * @param value the value to set.
    */
-  public void setTeamId(java.lang.Integer value) {
-    this.teamId = value;
+  public void setLineScoreTeamId(java.lang.Integer value) {
+    this.lineScoreTeamId = value;
     setDirty(3);
   }
   
   /**
-   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'lineScoreTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamIdDirty(java.lang.Integer value) {
+  public boolean isLineScoreTeamIdDirty(java.lang.Integer value) {
     return isDirty(3);
   }
 
   /**
-   * Gets the value of the 'teamAbbreviation' field.
+   * Gets the value of the 'lineScoreTeamAbbreviation' field.
    */
-  public java.lang.CharSequence getTeamAbbreviation() {
-    return teamAbbreviation;
+  public java.lang.CharSequence getLineScoreTeamAbbreviation() {
+    return lineScoreTeamAbbreviation;
   }
 
   /**
-   * Sets the value of the 'teamAbbreviation' field.
+   * Sets the value of the 'lineScoreTeamAbbreviation' field.
    * @param value the value to set.
    */
-  public void setTeamAbbreviation(java.lang.CharSequence value) {
-    this.teamAbbreviation = value;
+  public void setLineScoreTeamAbbreviation(java.lang.CharSequence value) {
+    this.lineScoreTeamAbbreviation = value;
     setDirty(4);
   }
   
   /**
-   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'lineScoreTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+  public boolean isLineScoreTeamAbbreviationDirty(java.lang.CharSequence value) {
     return isDirty(4);
   }
 
@@ -689,26 +689,26 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   }
 
   /**
-   * Gets the value of the 'pts' field.
+   * Gets the value of the 'lineScorePts' field.
    */
-  public java.lang.Integer getPts() {
-    return pts;
+  public java.lang.Integer getLineScorePts() {
+    return lineScorePts;
   }
 
   /**
-   * Sets the value of the 'pts' field.
+   * Sets the value of the 'lineScorePts' field.
    * @param value the value to set.
    */
-  public void setPts(java.lang.Integer value) {
-    this.pts = value;
+  public void setLineScorePts(java.lang.Integer value) {
+    this.lineScorePts = value;
     setDirty(21);
   }
   
   /**
-   * Checks the dirty status of the 'pts' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'lineScorePts' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsDirty(java.lang.Integer value) {
+  public boolean isLineScorePtsDirty(java.lang.Integer value) {
     return isDirty(21);
   }
 
@@ -756,11 +756,11 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<LineScore>
     implements org.apache.avro.data.RecordBuilder<LineScore> {
 
-    private java.lang.CharSequence gameDateEst;
-    private int gameSequence;
-    private int gameId;
-    private int teamId;
-    private java.lang.CharSequence teamAbbreviation;
+    private java.lang.CharSequence gameLineScoreDateEst;
+    private int gameLineScoreSequence;
+    private int gameLineScoreId;
+    private int lineScoreTeamId;
+    private java.lang.CharSequence lineScoreTeamAbbreviation;
     private java.lang.CharSequence teamCityName;
     private java.lang.CharSequence teamWinsLosses;
     private int ptsQtr1;
@@ -777,7 +777,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     private int ptsOt8;
     private int ptsOt9;
     private int ptsOt10;
-    private int pts;
+    private int lineScorePts;
 
     /** Creates a new Builder */
     private Builder() {
@@ -792,24 +792,24 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     /** Creates a Builder by copying an existing LineScore instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameDateEst)) {
-        this.gameDateEst = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.gameDateEst);
+      if (isValidValue(fields()[0], other.gameLineScoreDateEst)) {
+        this.gameLineScoreDateEst = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.gameLineScoreDateEst);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.gameSequence)) {
-        this.gameSequence = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.gameSequence);
+      if (isValidValue(fields()[1], other.gameLineScoreSequence)) {
+        this.gameLineScoreSequence = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.gameLineScoreSequence);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.gameId)) {
-        this.gameId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.gameId);
+      if (isValidValue(fields()[2], other.gameLineScoreId)) {
+        this.gameLineScoreId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.gameLineScoreId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.teamId)) {
-        this.teamId = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.teamId);
+      if (isValidValue(fields()[3], other.lineScoreTeamId)) {
+        this.lineScoreTeamId = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.lineScoreTeamId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.teamAbbreviation)) {
-        this.teamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamAbbreviation);
+      if (isValidValue(fields()[4], other.lineScoreTeamAbbreviation)) {
+        this.lineScoreTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.lineScoreTeamAbbreviation);
         fieldSetFlags()[4] = true;
       }
       if (isValidValue(fields()[5], other.teamCityName)) {
@@ -876,130 +876,130 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
         this.ptsOt10 = (java.lang.Integer) data().deepCopy(fields()[20].schema(), other.ptsOt10);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.pts)) {
-        this.pts = (java.lang.Integer) data().deepCopy(fields()[21].schema(), other.pts);
+      if (isValidValue(fields()[21], other.lineScorePts)) {
+        this.lineScorePts = (java.lang.Integer) data().deepCopy(fields()[21].schema(), other.lineScorePts);
         fieldSetFlags()[21] = true;
       }
     }
 
-    /** Gets the value of the 'gameDateEst' field */
-    public java.lang.CharSequence getGameDateEst() {
-      return gameDateEst;
+    /** Gets the value of the 'gameLineScoreDateEst' field */
+    public java.lang.CharSequence getGameLineScoreDateEst() {
+      return gameLineScoreDateEst;
     }
     
-    /** Sets the value of the 'gameDateEst' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameDateEst(java.lang.CharSequence value) {
+    /** Sets the value of the 'gameLineScoreDateEst' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameLineScoreDateEst(java.lang.CharSequence value) {
       validate(fields()[0], value);
-      this.gameDateEst = value;
+      this.gameLineScoreDateEst = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameDateEst' field has been set */
-    public boolean hasGameDateEst() {
+    /** Checks whether the 'gameLineScoreDateEst' field has been set */
+    public boolean hasGameLineScoreDateEst() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'gameDateEst' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameDateEst() {
-      gameDateEst = null;
+    /** Clears the value of the 'gameLineScoreDateEst' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameLineScoreDateEst() {
+      gameLineScoreDateEst = null;
       fieldSetFlags()[0] = false;
       return this;
     }
     
-    /** Gets the value of the 'gameSequence' field */
-    public java.lang.Integer getGameSequence() {
-      return gameSequence;
+    /** Gets the value of the 'gameLineScoreSequence' field */
+    public java.lang.Integer getGameLineScoreSequence() {
+      return gameLineScoreSequence;
     }
     
-    /** Sets the value of the 'gameSequence' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameSequence(int value) {
+    /** Sets the value of the 'gameLineScoreSequence' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameLineScoreSequence(int value) {
       validate(fields()[1], value);
-      this.gameSequence = value;
+      this.gameLineScoreSequence = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameSequence' field has been set */
-    public boolean hasGameSequence() {
+    /** Checks whether the 'gameLineScoreSequence' field has been set */
+    public boolean hasGameLineScoreSequence() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'gameSequence' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameSequence() {
+    /** Clears the value of the 'gameLineScoreSequence' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameLineScoreSequence() {
       fieldSetFlags()[1] = false;
       return this;
     }
     
-    /** Gets the value of the 'gameId' field */
-    public java.lang.Integer getGameId() {
-      return gameId;
+    /** Gets the value of the 'gameLineScoreId' field */
+    public java.lang.Integer getGameLineScoreId() {
+      return gameLineScoreId;
     }
     
-    /** Sets the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameId(int value) {
+    /** Sets the value of the 'gameLineScoreId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameLineScoreId(int value) {
       validate(fields()[2], value);
-      this.gameId = value;
+      this.gameLineScoreId = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameId' field has been set */
-    public boolean hasGameId() {
+    /** Checks whether the 'gameLineScoreId' field has been set */
+    public boolean hasGameLineScoreId() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameId() {
+    /** Clears the value of the 'gameLineScoreId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameLineScoreId() {
       fieldSetFlags()[2] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamId' field */
-    public java.lang.Integer getTeamId() {
-      return teamId;
+    /** Gets the value of the 'lineScoreTeamId' field */
+    public java.lang.Integer getLineScoreTeamId() {
+      return lineScoreTeamId;
     }
     
-    /** Sets the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setTeamId(int value) {
+    /** Sets the value of the 'lineScoreTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setLineScoreTeamId(int value) {
       validate(fields()[3], value);
-      this.teamId = value;
+      this.lineScoreTeamId = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamId' field has been set */
-    public boolean hasTeamId() {
+    /** Checks whether the 'lineScoreTeamId' field has been set */
+    public boolean hasLineScoreTeamId() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearTeamId() {
+    /** Clears the value of the 'lineScoreTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearLineScoreTeamId() {
       fieldSetFlags()[3] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamAbbreviation' field */
-    public java.lang.CharSequence getTeamAbbreviation() {
-      return teamAbbreviation;
+    /** Gets the value of the 'lineScoreTeamAbbreviation' field */
+    public java.lang.CharSequence getLineScoreTeamAbbreviation() {
+      return lineScoreTeamAbbreviation;
     }
     
-    /** Sets the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setTeamAbbreviation(java.lang.CharSequence value) {
+    /** Sets the value of the 'lineScoreTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setLineScoreTeamAbbreviation(java.lang.CharSequence value) {
       validate(fields()[4], value);
-      this.teamAbbreviation = value;
+      this.lineScoreTeamAbbreviation = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamAbbreviation' field has been set */
-    public boolean hasTeamAbbreviation() {
+    /** Checks whether the 'lineScoreTeamAbbreviation' field has been set */
+    public boolean hasLineScoreTeamAbbreviation() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearTeamAbbreviation() {
-      teamAbbreviation = null;
+    /** Clears the value of the 'lineScoreTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearLineScoreTeamAbbreviation() {
+      lineScoreTeamAbbreviation = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -1390,26 +1390,26 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
       return this;
     }
     
-    /** Gets the value of the 'pts' field */
-    public java.lang.Integer getPts() {
-      return pts;
+    /** Gets the value of the 'lineScorePts' field */
+    public java.lang.Integer getLineScorePts() {
+      return lineScorePts;
     }
     
-    /** Sets the value of the 'pts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPts(int value) {
+    /** Sets the value of the 'lineScorePts' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setLineScorePts(int value) {
       validate(fields()[21], value);
-      this.pts = value;
+      this.lineScorePts = value;
       fieldSetFlags()[21] = true;
       return this; 
     }
     
-    /** Checks whether the 'pts' field has been set */
-    public boolean hasPts() {
+    /** Checks whether the 'lineScorePts' field has been set */
+    public boolean hasLineScorePts() {
       return fieldSetFlags()[21];
     }
     
-    /** Clears the value of the 'pts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPts() {
+    /** Clears the value of the 'lineScorePts' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearLineScorePts() {
       fieldSetFlags()[21] = false;
       return this;
     }
@@ -1418,11 +1418,11 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     public LineScore build() {
       try {
         LineScore record = new LineScore();
-        record.gameDateEst = fieldSetFlags()[0] ? this.gameDateEst : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.gameSequence = fieldSetFlags()[1] ? this.gameSequence : (java.lang.Integer) defaultValue(fields()[1]);
-        record.gameId = fieldSetFlags()[2] ? this.gameId : (java.lang.Integer) defaultValue(fields()[2]);
-        record.teamId = fieldSetFlags()[3] ? this.teamId : (java.lang.Integer) defaultValue(fields()[3]);
-        record.teamAbbreviation = fieldSetFlags()[4] ? this.teamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.gameLineScoreDateEst = fieldSetFlags()[0] ? this.gameLineScoreDateEst : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.gameLineScoreSequence = fieldSetFlags()[1] ? this.gameLineScoreSequence : (java.lang.Integer) defaultValue(fields()[1]);
+        record.gameLineScoreId = fieldSetFlags()[2] ? this.gameLineScoreId : (java.lang.Integer) defaultValue(fields()[2]);
+        record.lineScoreTeamId = fieldSetFlags()[3] ? this.lineScoreTeamId : (java.lang.Integer) defaultValue(fields()[3]);
+        record.lineScoreTeamAbbreviation = fieldSetFlags()[4] ? this.lineScoreTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.teamCityName = fieldSetFlags()[5] ? this.teamCityName : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.teamWinsLosses = fieldSetFlags()[6] ? this.teamWinsLosses : (java.lang.CharSequence) defaultValue(fields()[6]);
         record.ptsQtr1 = fieldSetFlags()[7] ? this.ptsQtr1 : (java.lang.Integer) defaultValue(fields()[7]);
@@ -1439,7 +1439,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
         record.ptsOt8 = fieldSetFlags()[18] ? this.ptsOt8 : (java.lang.Integer) defaultValue(fields()[18]);
         record.ptsOt9 = fieldSetFlags()[19] ? this.ptsOt9 : (java.lang.Integer) defaultValue(fields()[19]);
         record.ptsOt10 = fieldSetFlags()[20] ? this.ptsOt10 : (java.lang.Integer) defaultValue(fields()[20]);
-        record.pts = fieldSetFlags()[21] ? this.pts : (java.lang.Integer) defaultValue(fields()[21]);
+        record.lineScorePts = fieldSetFlags()[21] ? this.lineScorePts : (java.lang.Integer) defaultValue(fields()[21]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -1462,117 +1462,117 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
       private Tombstone() { }
   
 	  		  /**
-	   * Gets the value of the 'gameDateEst' field.
+	   * Gets the value of the 'gameLineScoreDateEst' field.
 		   */
-	  public java.lang.CharSequence getGameDateEst() {
+	  public java.lang.CharSequence getGameLineScoreDateEst() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameDateEst' field.
+	   * Sets the value of the 'gameLineScoreDateEst' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameDateEst(java.lang.CharSequence value) {
+	  public void setGameLineScoreDateEst(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLineScoreDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameDateEstDirty(java.lang.CharSequence value) {
+	  public boolean isGameLineScoreDateEstDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'gameSequence' field.
+	   * Gets the value of the 'gameLineScoreSequence' field.
 		   */
-	  public java.lang.Integer getGameSequence() {
+	  public java.lang.Integer getGameLineScoreSequence() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameSequence' field.
+	   * Sets the value of the 'gameLineScoreSequence' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameSequence(java.lang.Integer value) {
+	  public void setGameLineScoreSequence(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLineScoreSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameSequenceDirty(java.lang.Integer value) {
+	  public boolean isGameLineScoreSequenceDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'gameId' field.
+	   * Gets the value of the 'gameLineScoreId' field.
 		   */
-	  public java.lang.Integer getGameId() {
+	  public java.lang.Integer getGameLineScoreId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameId' field.
+	   * Sets the value of the 'gameLineScoreId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameId(java.lang.Integer value) {
+	  public void setGameLineScoreId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLineScoreId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameIdDirty(java.lang.Integer value) {
+	  public boolean isGameLineScoreIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamId' field.
+	   * Gets the value of the 'lineScoreTeamId' field.
 		   */
-	  public java.lang.Integer getTeamId() {
+	  public java.lang.Integer getLineScoreTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamId' field.
+	   * Sets the value of the 'lineScoreTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamId(java.lang.Integer value) {
+	  public void setLineScoreTeamId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'lineScoreTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamIdDirty(java.lang.Integer value) {
+	  public boolean isLineScoreTeamIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamAbbreviation' field.
+	   * Gets the value of the 'lineScoreTeamAbbreviation' field.
 		   */
-	  public java.lang.CharSequence getTeamAbbreviation() {
+	  public java.lang.CharSequence getLineScoreTeamAbbreviation() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamAbbreviation' field.
+	   * Sets the value of the 'lineScoreTeamAbbreviation' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamAbbreviation(java.lang.CharSequence value) {
+	  public void setLineScoreTeamAbbreviation(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'lineScoreTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+	  public boolean isLineScoreTeamAbbreviationDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1945,25 +1945,25 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	  }
 	
 				  /**
-	   * Gets the value of the 'pts' field.
+	   * Gets the value of the 'lineScorePts' field.
 		   */
-	  public java.lang.Integer getPts() {
+	  public java.lang.Integer getLineScorePts() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'pts' field.
+	   * Sets the value of the 'lineScorePts' field.
 		   * @param value the value to set.
 	   */
-	  public void setPts(java.lang.Integer value) {
+	  public void setLineScorePts(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'pts' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'lineScorePts' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsDirty(java.lang.Integer value) {
+	  public boolean isLineScorePtsDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

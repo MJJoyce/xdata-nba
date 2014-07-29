@@ -4,3 +4,5 @@ solr/*/data/
 impoexpo/lib/
 impoexpo/slf4j*
 impoexpo/target/
+impoexpo/.classpath
+impoexpo/.project

@@ -6,18 +6,18 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GameSummary\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusText\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameCode\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"visitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"season\",\"type\":\"int\",\"default\":0},{\"name\":\"livePeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"livePcTime\",\"type\":\"int\",\"default\":0},{\"name\":\"natlTvBroadcasterAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"livePeriodTimeBcast\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"whStatus\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GameSummary\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameSummaryDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummarySequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameGameSummaryId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusText\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameCode\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummaryHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameSummaryVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"season\",\"type\":\"int\",\"default\":0},{\"name\":\"livePeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"livePcTime\",\"type\":\"int\",\"default\":0},{\"name\":\"natlTvBroadcasterAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"livePeriodTimeBcast\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"whStatus\",\"type\":\"int\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_DATE_EST(0, "gameDateEst"),
-    GAME_SEQUENCE(1, "gameSequence"),
-    GAME_ID(2, "gameId"),
+    GAME_SUMMARY_DATE_EST(0, "gameSummaryDateEst"),
+    GAME_SUMMARY_SEQUENCE(1, "gameSummarySequence"),
+    GAME_GAME_SUMMARY_ID(2, "gameGameSummaryId"),
     GAME_STATUS_ID(3, "gameStatusId"),
     GAME_STATUS_TEXT(4, "gameStatusText"),
     GAME_CODE(5, "gameCode"),
-    HOME_TEAM_ID(6, "homeTeamId"),
-    VISITOR_TEAM_ID(7, "visitorTeamId"),
+    GAME_SUMMARY_HOME_TEAM_ID(6, "gameSummaryHomeTeamId"),
+    GAME_SUMMARY_VISITOR_TEAM_ID(7, "gameSummaryVisitorTeamId"),
     SEASON(8, "season"),
     LIVE_PERIOD(9, "livePeriod"),
     LIVE_PC_TIME(10, "livePcTime"),
@@ -62,14 +62,14 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
   };
 
   public static final String[] _ALL_FIELDS = {
-  "gameDateEst",
-  "gameSequence",
-  "gameId",
+  "gameSummaryDateEst",
+  "gameSummarySequence",
+  "gameGameSummaryId",
   "gameStatusId",
   "gameStatusText",
   "gameCode",
-  "homeTeamId",
-  "visitorTeamId",
+  "gameSummaryHomeTeamId",
+  "gameSummaryVisitorTeamId",
   "season",
   "livePeriod",
   "livePcTime",
@@ -86,14 +86,14 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
     return GameSummary._ALL_FIELDS.length;
   }
 
-  private java.lang.CharSequence gameDateEst;
-  private int gameSequence;
-  private int gameId;
+  private java.lang.CharSequence gameSummaryDateEst;
+  private int gameSummarySequence;
+  private int gameGameSummaryId;
   private int gameStatusId;
   private java.lang.CharSequence gameStatusText;
   private java.lang.CharSequence gameCode;
-  private int homeTeamId;
-  private int visitorTeamId;
+  private int gameSummaryHomeTeamId;
+  private int gameSummaryVisitorTeamId;
   private int season;
   private int livePeriod;
   private int livePcTime;
@@ -104,14 +104,14 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameDateEst;
-    case 1: return gameSequence;
-    case 2: return gameId;
+    case 0: return gameSummaryDateEst;
+    case 1: return gameSummarySequence;
+    case 2: return gameGameSummaryId;
     case 3: return gameStatusId;
     case 4: return gameStatusText;
     case 5: return gameCode;
-    case 6: return homeTeamId;
-    case 7: return visitorTeamId;
+    case 6: return gameSummaryHomeTeamId;
+    case 7: return gameSummaryVisitorTeamId;
     case 8: return season;
     case 9: return livePeriod;
     case 10: return livePcTime;
@@ -126,14 +126,14 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameDateEst = (java.lang.CharSequence)(value); break;
-    case 1: gameSequence = (java.lang.Integer)(value); break;
-    case 2: gameId = (java.lang.Integer)(value); break;
+    case 0: gameSummaryDateEst = (java.lang.CharSequence)(value); break;
+    case 1: gameSummarySequence = (java.lang.Integer)(value); break;
+    case 2: gameGameSummaryId = (java.lang.Integer)(value); break;
     case 3: gameStatusId = (java.lang.Integer)(value); break;
     case 4: gameStatusText = (java.lang.CharSequence)(value); break;
     case 5: gameCode = (java.lang.CharSequence)(value); break;
-    case 6: homeTeamId = (java.lang.Integer)(value); break;
-    case 7: visitorTeamId = (java.lang.Integer)(value); break;
+    case 6: gameSummaryHomeTeamId = (java.lang.Integer)(value); break;
+    case 7: gameSummaryVisitorTeamId = (java.lang.Integer)(value); break;
     case 8: season = (java.lang.Integer)(value); break;
     case 9: livePeriod = (java.lang.Integer)(value); break;
     case 10: livePcTime = (java.lang.Integer)(value); break;
@@ -145,74 +145,74 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
   }
 
   /**
-   * Gets the value of the 'gameDateEst' field.
+   * Gets the value of the 'gameSummaryDateEst' field.
    */
-  public java.lang.CharSequence getGameDateEst() {
-    return gameDateEst;
+  public java.lang.CharSequence getGameSummaryDateEst() {
+    return gameSummaryDateEst;
   }
 
   /**
-   * Sets the value of the 'gameDateEst' field.
+   * Sets the value of the 'gameSummaryDateEst' field.
    * @param value the value to set.
    */
-  public void setGameDateEst(java.lang.CharSequence value) {
-    this.gameDateEst = value;
+  public void setGameSummaryDateEst(java.lang.CharSequence value) {
+    this.gameSummaryDateEst = value;
     setDirty(0);
   }
   
   /**
-   * Checks the dirty status of the 'gameDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameSummaryDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameDateEstDirty(java.lang.CharSequence value) {
+  public boolean isGameSummaryDateEstDirty(java.lang.CharSequence value) {
     return isDirty(0);
   }
 
   /**
-   * Gets the value of the 'gameSequence' field.
+   * Gets the value of the 'gameSummarySequence' field.
    */
-  public java.lang.Integer getGameSequence() {
-    return gameSequence;
+  public java.lang.Integer getGameSummarySequence() {
+    return gameSummarySequence;
   }
 
   /**
-   * Sets the value of the 'gameSequence' field.
+   * Sets the value of the 'gameSummarySequence' field.
    * @param value the value to set.
    */
-  public void setGameSequence(java.lang.Integer value) {
-    this.gameSequence = value;
+  public void setGameSummarySequence(java.lang.Integer value) {
+    this.gameSummarySequence = value;
     setDirty(1);
   }
   
   /**
-   * Checks the dirty status of the 'gameSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameSummarySequence' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameSequenceDirty(java.lang.Integer value) {
+  public boolean isGameSummarySequenceDirty(java.lang.Integer value) {
     return isDirty(1);
   }
 
   /**
-   * Gets the value of the 'gameId' field.
+   * Gets the value of the 'gameGameSummaryId' field.
    */
-  public java.lang.Integer getGameId() {
-    return gameId;
+  public java.lang.Integer getGameGameSummaryId() {
+    return gameGameSummaryId;
   }
 
   /**
-   * Sets the value of the 'gameId' field.
+   * Sets the value of the 'gameGameSummaryId' field.
    * @param value the value to set.
    */
-  public void setGameId(java.lang.Integer value) {
-    this.gameId = value;
+  public void setGameGameSummaryId(java.lang.Integer value) {
+    this.gameGameSummaryId = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameGameSummaryId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameIdDirty(java.lang.Integer value) {
+  public boolean isGameGameSummaryIdDirty(java.lang.Integer value) {
     return isDirty(2);
   }
 
@@ -289,50 +289,50 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
   }
 
   /**
-   * Gets the value of the 'homeTeamId' field.
+   * Gets the value of the 'gameSummaryHomeTeamId' field.
    */
-  public java.lang.Integer getHomeTeamId() {
-    return homeTeamId;
+  public java.lang.Integer getGameSummaryHomeTeamId() {
+    return gameSummaryHomeTeamId;
   }
 
   /**
-   * Sets the value of the 'homeTeamId' field.
+   * Sets the value of the 'gameSummaryHomeTeamId' field.
    * @param value the value to set.
    */
-  public void setHomeTeamId(java.lang.Integer value) {
-    this.homeTeamId = value;
+  public void setGameSummaryHomeTeamId(java.lang.Integer value) {
+    this.gameSummaryHomeTeamId = value;
     setDirty(6);
   }
   
   /**
-   * Checks the dirty status of the 'homeTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameSummaryHomeTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isHomeTeamIdDirty(java.lang.Integer value) {
+  public boolean isGameSummaryHomeTeamIdDirty(java.lang.Integer value) {
     return isDirty(6);
   }
 
   /**
-   * Gets the value of the 'visitorTeamId' field.
+   * Gets the value of the 'gameSummaryVisitorTeamId' field.
    */
-  public java.lang.Integer getVisitorTeamId() {
-    return visitorTeamId;
+  public java.lang.Integer getGameSummaryVisitorTeamId() {
+    return gameSummaryVisitorTeamId;
   }
 
   /**
-   * Sets the value of the 'visitorTeamId' field.
+   * Sets the value of the 'gameSummaryVisitorTeamId' field.
    * @param value the value to set.
    */
-  public void setVisitorTeamId(java.lang.Integer value) {
-    this.visitorTeamId = value;
+  public void setGameSummaryVisitorTeamId(java.lang.Integer value) {
+    this.gameSummaryVisitorTeamId = value;
     setDirty(7);
   }
   
   /**
-   * Checks the dirty status of the 'visitorTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameSummaryVisitorTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isVisitorTeamIdDirty(java.lang.Integer value) {
+  public boolean isGameSummaryVisitorTeamIdDirty(java.lang.Integer value) {
     return isDirty(7);
   }
 
@@ -524,14 +524,14 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<GameSummary>
     implements org.apache.avro.data.RecordBuilder<GameSummary> {
 
-    private java.lang.CharSequence gameDateEst;
-    private int gameSequence;
-    private int gameId;
+    private java.lang.CharSequence gameSummaryDateEst;
+    private int gameSummarySequence;
+    private int gameGameSummaryId;
     private int gameStatusId;
     private java.lang.CharSequence gameStatusText;
     private java.lang.CharSequence gameCode;
-    private int homeTeamId;
-    private int visitorTeamId;
+    private int gameSummaryHomeTeamId;
+    private int gameSummaryVisitorTeamId;
     private int season;
     private int livePeriod;
     private int livePcTime;
@@ -552,16 +552,16 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
     /** Creates a Builder by copying an existing GameSummary instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameDateEst)) {
-        this.gameDateEst = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.gameDateEst);
+      if (isValidValue(fields()[0], other.gameSummaryDateEst)) {
+        this.gameSummaryDateEst = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.gameSummaryDateEst);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.gameSequence)) {
-        this.gameSequence = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.gameSequence);
+      if (isValidValue(fields()[1], other.gameSummarySequence)) {
+        this.gameSummarySequence = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.gameSummarySequence);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.gameId)) {
-        this.gameId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.gameId);
+      if (isValidValue(fields()[2], other.gameGameSummaryId)) {
+        this.gameGameSummaryId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.gameGameSummaryId);
         fieldSetFlags()[2] = true;
       }
       if (isValidValue(fields()[3], other.gameStatusId)) {
@@ -576,12 +576,12 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
         this.gameCode = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.gameCode);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.homeTeamId)) {
-        this.homeTeamId = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.homeTeamId);
+      if (isValidValue(fields()[6], other.gameSummaryHomeTeamId)) {
+        this.gameSummaryHomeTeamId = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.gameSummaryHomeTeamId);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.visitorTeamId)) {
-        this.visitorTeamId = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.visitorTeamId);
+      if (isValidValue(fields()[7], other.gameSummaryVisitorTeamId)) {
+        this.gameSummaryVisitorTeamId = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.gameSummaryVisitorTeamId);
         fieldSetFlags()[7] = true;
       }
       if (isValidValue(fields()[8], other.season)) {
@@ -610,75 +610,75 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
       }
     }
 
-    /** Gets the value of the 'gameDateEst' field */
-    public java.lang.CharSequence getGameDateEst() {
-      return gameDateEst;
+    /** Gets the value of the 'gameSummaryDateEst' field */
+    public java.lang.CharSequence getGameSummaryDateEst() {
+      return gameSummaryDateEst;
     }
     
-    /** Sets the value of the 'gameDateEst' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameDateEst(java.lang.CharSequence value) {
+    /** Sets the value of the 'gameSummaryDateEst' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameSummaryDateEst(java.lang.CharSequence value) {
       validate(fields()[0], value);
-      this.gameDateEst = value;
+      this.gameSummaryDateEst = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameDateEst' field has been set */
-    public boolean hasGameDateEst() {
+    /** Checks whether the 'gameSummaryDateEst' field has been set */
+    public boolean hasGameSummaryDateEst() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'gameDateEst' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameDateEst() {
-      gameDateEst = null;
+    /** Clears the value of the 'gameSummaryDateEst' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameSummaryDateEst() {
+      gameSummaryDateEst = null;
       fieldSetFlags()[0] = false;
       return this;
     }
     
-    /** Gets the value of the 'gameSequence' field */
-    public java.lang.Integer getGameSequence() {
-      return gameSequence;
+    /** Gets the value of the 'gameSummarySequence' field */
+    public java.lang.Integer getGameSummarySequence() {
+      return gameSummarySequence;
     }
     
-    /** Sets the value of the 'gameSequence' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameSequence(int value) {
+    /** Sets the value of the 'gameSummarySequence' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameSummarySequence(int value) {
       validate(fields()[1], value);
-      this.gameSequence = value;
+      this.gameSummarySequence = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameSequence' field has been set */
-    public boolean hasGameSequence() {
+    /** Checks whether the 'gameSummarySequence' field has been set */
+    public boolean hasGameSummarySequence() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'gameSequence' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameSequence() {
+    /** Clears the value of the 'gameSummarySequence' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameSummarySequence() {
       fieldSetFlags()[1] = false;
       return this;
     }
     
-    /** Gets the value of the 'gameId' field */
-    public java.lang.Integer getGameId() {
-      return gameId;
+    /** Gets the value of the 'gameGameSummaryId' field */
+    public java.lang.Integer getGameGameSummaryId() {
+      return gameGameSummaryId;
     }
     
-    /** Sets the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameId(int value) {
+    /** Sets the value of the 'gameGameSummaryId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameGameSummaryId(int value) {
       validate(fields()[2], value);
-      this.gameId = value;
+      this.gameGameSummaryId = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameId' field has been set */
-    public boolean hasGameId() {
+    /** Checks whether the 'gameGameSummaryId' field has been set */
+    public boolean hasGameGameSummaryId() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameId() {
+    /** Clears the value of the 'gameGameSummaryId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameGameSummaryId() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -757,50 +757,50 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
       return this;
     }
     
-    /** Gets the value of the 'homeTeamId' field */
-    public java.lang.Integer getHomeTeamId() {
-      return homeTeamId;
+    /** Gets the value of the 'gameSummaryHomeTeamId' field */
+    public java.lang.Integer getGameSummaryHomeTeamId() {
+      return gameSummaryHomeTeamId;
     }
     
-    /** Sets the value of the 'homeTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setHomeTeamId(int value) {
+    /** Sets the value of the 'gameSummaryHomeTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameSummaryHomeTeamId(int value) {
       validate(fields()[6], value);
-      this.homeTeamId = value;
+      this.gameSummaryHomeTeamId = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
     
-    /** Checks whether the 'homeTeamId' field has been set */
-    public boolean hasHomeTeamId() {
+    /** Checks whether the 'gameSummaryHomeTeamId' field has been set */
+    public boolean hasGameSummaryHomeTeamId() {
       return fieldSetFlags()[6];
     }
     
-    /** Clears the value of the 'homeTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearHomeTeamId() {
+    /** Clears the value of the 'gameSummaryHomeTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameSummaryHomeTeamId() {
       fieldSetFlags()[6] = false;
       return this;
     }
     
-    /** Gets the value of the 'visitorTeamId' field */
-    public java.lang.Integer getVisitorTeamId() {
-      return visitorTeamId;
+    /** Gets the value of the 'gameSummaryVisitorTeamId' field */
+    public java.lang.Integer getGameSummaryVisitorTeamId() {
+      return gameSummaryVisitorTeamId;
     }
     
-    /** Sets the value of the 'visitorTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setVisitorTeamId(int value) {
+    /** Sets the value of the 'gameSummaryVisitorTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder setGameSummaryVisitorTeamId(int value) {
       validate(fields()[7], value);
-      this.visitorTeamId = value;
+      this.gameSummaryVisitorTeamId = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
     
-    /** Checks whether the 'visitorTeamId' field has been set */
-    public boolean hasVisitorTeamId() {
+    /** Checks whether the 'gameSummaryVisitorTeamId' field has been set */
+    public boolean hasGameSummaryVisitorTeamId() {
       return fieldSetFlags()[7];
     }
     
-    /** Clears the value of the 'visitorTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearVisitorTeamId() {
+    /** Clears the value of the 'gameSummaryVisitorTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary.Builder clearGameSummaryVisitorTeamId() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -955,14 +955,14 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
     public GameSummary build() {
       try {
         GameSummary record = new GameSummary();
-        record.gameDateEst = fieldSetFlags()[0] ? this.gameDateEst : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.gameSequence = fieldSetFlags()[1] ? this.gameSequence : (java.lang.Integer) defaultValue(fields()[1]);
-        record.gameId = fieldSetFlags()[2] ? this.gameId : (java.lang.Integer) defaultValue(fields()[2]);
+        record.gameSummaryDateEst = fieldSetFlags()[0] ? this.gameSummaryDateEst : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.gameSummarySequence = fieldSetFlags()[1] ? this.gameSummarySequence : (java.lang.Integer) defaultValue(fields()[1]);
+        record.gameGameSummaryId = fieldSetFlags()[2] ? this.gameGameSummaryId : (java.lang.Integer) defaultValue(fields()[2]);
         record.gameStatusId = fieldSetFlags()[3] ? this.gameStatusId : (java.lang.Integer) defaultValue(fields()[3]);
         record.gameStatusText = fieldSetFlags()[4] ? this.gameStatusText : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.gameCode = fieldSetFlags()[5] ? this.gameCode : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.homeTeamId = fieldSetFlags()[6] ? this.homeTeamId : (java.lang.Integer) defaultValue(fields()[6]);
-        record.visitorTeamId = fieldSetFlags()[7] ? this.visitorTeamId : (java.lang.Integer) defaultValue(fields()[7]);
+        record.gameSummaryHomeTeamId = fieldSetFlags()[6] ? this.gameSummaryHomeTeamId : (java.lang.Integer) defaultValue(fields()[6]);
+        record.gameSummaryVisitorTeamId = fieldSetFlags()[7] ? this.gameSummaryVisitorTeamId : (java.lang.Integer) defaultValue(fields()[7]);
         record.season = fieldSetFlags()[8] ? this.season : (java.lang.Integer) defaultValue(fields()[8]);
         record.livePeriod = fieldSetFlags()[9] ? this.livePeriod : (java.lang.Integer) defaultValue(fields()[9]);
         record.livePcTime = fieldSetFlags()[10] ? this.livePcTime : (java.lang.Integer) defaultValue(fields()[10]);
@@ -991,71 +991,71 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
       private Tombstone() { }
   
 	  		  /**
-	   * Gets the value of the 'gameDateEst' field.
+	   * Gets the value of the 'gameSummaryDateEst' field.
 		   */
-	  public java.lang.CharSequence getGameDateEst() {
+	  public java.lang.CharSequence getGameSummaryDateEst() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameDateEst' field.
+	   * Sets the value of the 'gameSummaryDateEst' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameDateEst(java.lang.CharSequence value) {
+	  public void setGameSummaryDateEst(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameSummaryDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameDateEstDirty(java.lang.CharSequence value) {
+	  public boolean isGameSummaryDateEstDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'gameSequence' field.
+	   * Gets the value of the 'gameSummarySequence' field.
 		   */
-	  public java.lang.Integer getGameSequence() {
+	  public java.lang.Integer getGameSummarySequence() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameSequence' field.
+	   * Sets the value of the 'gameSummarySequence' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameSequence(java.lang.Integer value) {
+	  public void setGameSummarySequence(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameSummarySequence' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameSequenceDirty(java.lang.Integer value) {
+	  public boolean isGameSummarySequenceDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'gameId' field.
+	   * Gets the value of the 'gameGameSummaryId' field.
 		   */
-	  public java.lang.Integer getGameId() {
+	  public java.lang.Integer getGameGameSummaryId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameId' field.
+	   * Sets the value of the 'gameGameSummaryId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameId(java.lang.Integer value) {
+	  public void setGameGameSummaryId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameGameSummaryId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameIdDirty(java.lang.Integer value) {
+	  public boolean isGameGameSummaryIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1129,48 +1129,48 @@ public class GameSummary extends org.apache.gora.persistency.impl.PersistentBase
 	  }
 	
 				  /**
-	   * Gets the value of the 'homeTeamId' field.
+	   * Gets the value of the 'gameSummaryHomeTeamId' field.
 		   */
-	  public java.lang.Integer getHomeTeamId() {
+	  public java.lang.Integer getGameSummaryHomeTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'homeTeamId' field.
+	   * Sets the value of the 'gameSummaryHomeTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setHomeTeamId(java.lang.Integer value) {
+	  public void setGameSummaryHomeTeamId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'homeTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameSummaryHomeTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isHomeTeamIdDirty(java.lang.Integer value) {
+	  public boolean isGameSummaryHomeTeamIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'visitorTeamId' field.
+	   * Gets the value of the 'gameSummaryVisitorTeamId' field.
 		   */
-	  public java.lang.Integer getVisitorTeamId() {
+	  public java.lang.Integer getGameSummaryVisitorTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'visitorTeamId' field.
+	   * Sets the value of the 'gameSummaryVisitorTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setVisitorTeamId(java.lang.Integer value) {
+	  public void setGameSummaryVisitorTeamId(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'visitorTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameSummaryVisitorTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isVisitorTeamIdDirty(java.lang.Integer value) {
+	  public boolean isGameSummaryVisitorTeamIdDirty(java.lang.Integer value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
