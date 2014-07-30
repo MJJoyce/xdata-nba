@@ -141,8 +141,8 @@ public class ParseUtil {
     return notebook;
   }
 
-  public static GameStats parseGameStats(String string) throws IOException, ParseException {
-    LOG.info("Parsing GameStats: {}" + string);
+  public static GameStats parseGameStats(GameStats gameStats, String string) throws IOException, ParseException {
+    LOG.info("Parsing GameStats: {}", string);
     FileReader reader = new FileReader(string);
 
     // Pare with JSON simple parser

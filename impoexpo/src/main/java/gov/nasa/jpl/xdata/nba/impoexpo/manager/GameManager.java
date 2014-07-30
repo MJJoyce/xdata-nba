@@ -159,7 +159,7 @@ public class GameManager implements Manager {
           break;
         case 4: // switch to parseGameStats
           try {
-            gameStats = ParseUtil.parseGameStats(list.get(i));
+            gameStats = ParseUtil.parseGameStats(gameStats, list.get(i));
           } catch (ParseException e) {
             e.printStackTrace();
             break;

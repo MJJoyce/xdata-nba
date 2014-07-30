@@ -6,14 +6,15 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class Officials extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Officials\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"officialId\",\"type\":\"int\",\"default\":0},{\"name\":\"officialFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialJerseyNum\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Officials\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"officialId\",\"type\":\"long\",\"default\":0},{\"name\":\"officialFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialJerseyNum\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    OFFICIAL_ID(0, "officialId"),
-    OFFICIAL_FIRST_NAME(1, "officialFirstName"),
-    OFFICIAL_LAST_NAME(2, "officialLastName"),
-    OFFICIAL_JERSEY_NUM(3, "officialJerseyNum"),
+    __G__DIRTY(0, "__g__dirty"),
+    OFFICIAL_ID(1, "officialId"),
+    OFFICIAL_FIRST_NAME(2, "officialFirstName"),
+    OFFICIAL_LAST_NAME(3, "officialLastName"),
+    OFFICIAL_JERSEY_NUM(4, "officialJerseyNum"),
     ;
     /**
      * Field's index.
@@ -52,32 +53,28 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "officialId",
   "officialFirstName",
   "officialLastName",
   "officialJerseyNum",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return Officials._ALL_FIELDS.length;
-  }
-
-  private int officialId;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[1]);
+  private long officialId;
   private java.lang.CharSequence officialFirstName;
   private java.lang.CharSequence officialLastName;
-  private int officialJerseyNum;
+  private long officialJerseyNum;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return officialId;
-    case 1: return officialFirstName;
-    case 2: return officialLastName;
-    case 3: return officialJerseyNum;
+    case 0: return __g__dirty;
+    case 1: return officialId;
+    case 2: return officialFirstName;
+    case 3: return officialLastName;
+    case 4: return officialJerseyNum;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -86,10 +83,11 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: officialId = (java.lang.Integer)(value); break;
-    case 1: officialFirstName = (java.lang.CharSequence)(value); break;
-    case 2: officialLastName = (java.lang.CharSequence)(value); break;
-    case 3: officialJerseyNum = (java.lang.Integer)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: officialId = (java.lang.Long)(value); break;
+    case 2: officialFirstName = (java.lang.CharSequence)(value); break;
+    case 3: officialLastName = (java.lang.CharSequence)(value); break;
+    case 4: officialJerseyNum = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -97,7 +95,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   /**
    * Gets the value of the 'officialId' field.
    */
-  public java.lang.Integer getOfficialId() {
+  public java.lang.Long getOfficialId() {
     return officialId;
   }
 
@@ -105,17 +103,17 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'officialId' field.
    * @param value the value to set.
    */
-  public void setOfficialId(java.lang.Integer value) {
+  public void setOfficialId(java.lang.Long value) {
     this.officialId = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
    * Checks the dirty status of the 'officialId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isOfficialIdDirty(java.lang.Integer value) {
-    return isDirty(0);
+  public boolean isOfficialIdDirty(java.lang.Long value) {
+    return isDirty(1);
   }
 
   /**
@@ -131,7 +129,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setOfficialFirstName(java.lang.CharSequence value) {
     this.officialFirstName = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
@@ -139,7 +137,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isOfficialFirstNameDirty(java.lang.CharSequence value) {
-    return isDirty(1);
+    return isDirty(2);
   }
 
   /**
@@ -155,7 +153,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setOfficialLastName(java.lang.CharSequence value) {
     this.officialLastName = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
@@ -163,13 +161,13 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isOfficialLastNameDirty(java.lang.CharSequence value) {
-    return isDirty(2);
+    return isDirty(3);
   }
 
   /**
    * Gets the value of the 'officialJerseyNum' field.
    */
-  public java.lang.Integer getOfficialJerseyNum() {
+  public java.lang.Long getOfficialJerseyNum() {
     return officialJerseyNum;
   }
 
@@ -177,17 +175,17 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'officialJerseyNum' field.
    * @param value the value to set.
    */
-  public void setOfficialJerseyNum(java.lang.Integer value) {
+  public void setOfficialJerseyNum(java.lang.Long value) {
     this.officialJerseyNum = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
    * Checks the dirty status of the 'officialJerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isOfficialJerseyNumDirty(java.lang.Integer value) {
-    return isDirty(3);
+  public boolean isOfficialJerseyNumDirty(java.lang.Long value) {
+    return isDirty(4);
   }
 
   /** Creates a new Officials RecordBuilder */
@@ -234,10 +232,11 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Officials>
     implements org.apache.avro.data.RecordBuilder<Officials> {
 
-    private int officialId;
+    private java.nio.ByteBuffer __g__dirty;
+    private long officialId;
     private java.lang.CharSequence officialFirstName;
     private java.lang.CharSequence officialLastName;
-    private int officialJerseyNum;
+    private long officialJerseyNum;
 
     /** Creates a new Builder */
     private Builder() {
@@ -252,45 +251,49 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
     /** Creates a Builder by copying an existing Officials instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.SCHEMA$);
-      if (isValidValue(fields()[0], other.officialId)) {
-        this.officialId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.officialId);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.officialFirstName)) {
-        this.officialFirstName = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.officialFirstName);
+      if (isValidValue(fields()[1], other.officialId)) {
+        this.officialId = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.officialId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.officialLastName)) {
-        this.officialLastName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.officialLastName);
+      if (isValidValue(fields()[2], other.officialFirstName)) {
+        this.officialFirstName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.officialFirstName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.officialJerseyNum)) {
-        this.officialJerseyNum = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.officialJerseyNum);
+      if (isValidValue(fields()[3], other.officialLastName)) {
+        this.officialLastName = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.officialLastName);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.officialJerseyNum)) {
+        this.officialJerseyNum = (java.lang.Long) data().deepCopy(fields()[4].schema(), other.officialJerseyNum);
+        fieldSetFlags()[4] = true;
       }
     }
 
     /** Gets the value of the 'officialId' field */
-    public java.lang.Integer getOfficialId() {
+    public java.lang.Long getOfficialId() {
       return officialId;
     }
     
     /** Sets the value of the 'officialId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialId(int value) {
-      validate(fields()[0], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialId(long value) {
+      validate(fields()[1], value);
       this.officialId = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'officialId' field has been set */
     public boolean hasOfficialId() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'officialId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialId() {
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
@@ -301,21 +304,21 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'officialFirstName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialFirstName(java.lang.CharSequence value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.officialFirstName = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'officialFirstName' field has been set */
     public boolean hasOfficialFirstName() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'officialFirstName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialFirstName() {
       officialFirstName = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
@@ -326,45 +329,45 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'officialLastName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialLastName(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.officialLastName = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'officialLastName' field has been set */
     public boolean hasOfficialLastName() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'officialLastName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialLastName() {
       officialLastName = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
     /** Gets the value of the 'officialJerseyNum' field */
-    public java.lang.Integer getOfficialJerseyNum() {
+    public java.lang.Long getOfficialJerseyNum() {
       return officialJerseyNum;
     }
     
     /** Sets the value of the 'officialJerseyNum' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialJerseyNum(int value) {
-      validate(fields()[3], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder setOfficialJerseyNum(long value) {
+      validate(fields()[4], value);
       this.officialJerseyNum = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'officialJerseyNum' field has been set */
     public boolean hasOfficialJerseyNum() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'officialJerseyNum' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials.Builder clearOfficialJerseyNum() {
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
@@ -372,10 +375,11 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
     public Officials build() {
       try {
         Officials record = new Officials();
-        record.officialId = fieldSetFlags()[0] ? this.officialId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.officialFirstName = fieldSetFlags()[1] ? this.officialFirstName : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.officialLastName = fieldSetFlags()[2] ? this.officialLastName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.officialJerseyNum = fieldSetFlags()[3] ? this.officialJerseyNum : (java.lang.Integer) defaultValue(fields()[3]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[1]);
+        record.officialId = fieldSetFlags()[1] ? this.officialId : (java.lang.Long) defaultValue(fields()[1]);
+        record.officialFirstName = fieldSetFlags()[2] ? this.officialFirstName : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.officialLastName = fieldSetFlags()[3] ? this.officialLastName : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.officialJerseyNum = fieldSetFlags()[4] ? this.officialJerseyNum : (java.lang.Long) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -397,10 +401,10 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'officialId' field.
 		   */
-	  public java.lang.Integer getOfficialId() {
+	  public java.lang.Long getOfficialId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -408,7 +412,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'officialId' field.
 		   * @param value the value to set.
 	   */
-	  public void setOfficialId(java.lang.Integer value) {
+	  public void setOfficialId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -416,7 +420,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'officialId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isOfficialIdDirty(java.lang.Integer value) {
+	  public boolean isOfficialIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -469,7 +473,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'officialJerseyNum' field.
 		   */
-	  public java.lang.Integer getOfficialJerseyNum() {
+	  public java.lang.Long getOfficialJerseyNum() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -477,7 +481,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'officialJerseyNum' field.
 		   * @param value the value to set.
 	   */
-	  public void setOfficialJerseyNum(java.lang.Integer value) {
+	  public void setOfficialJerseyNum(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -485,7 +489,7 @@ public class Officials extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'officialJerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isOfficialJerseyNumDirty(java.lang.Integer value) {
+	  public boolean isOfficialJerseyNumDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
