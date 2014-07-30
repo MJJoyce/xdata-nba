@@ -57,3 +57,9 @@ sleep 1
 while ! grep -m1 'Registered new searcher' < /tmp/solr-server-log.txt; do
   sleep 1
 done
+
+##### Run Python ingestion #####
+if [ -d "../nba" ]; then
+    cd /vagrant/python-import
+    python NBAIngest.py ../nba
+fi
