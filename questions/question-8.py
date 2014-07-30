@@ -37,7 +37,7 @@ def analyse_commenter_data(commenter):
     '''Print out a sentiment analysis based overview of a commenter.
 
     Given a commenter id, we look up a list of of their comments and see if
-    we can find an interesting connection between team performance.
+    we can find interesting connections to team/player performance.
     '''
     # Query for commenter sentiment data per game. This gives us information
     # grouped by game_id about the number of comments and the pos/neg
@@ -119,6 +119,10 @@ def analyse_commenter_data(commenter):
                          win=win,
                          lose=lose)
 
+    # Generate a query for grabbing player data for a set of game ids.
+    #
+    # Player information is grouped my player_name and sorted by the number
+    # of occurrences of each player.
     PLAYER_QUERY = SOLR_URL + 'game-players/select/?q='
     for g in game_ids:
         PLAYER_QUERY += 'game_id:{}%0A'.format(g)
@@ -126,6 +130,7 @@ def analyse_commenter_data(commenter):
     player_data = requests.get(PLAYER_QUERY).json()['grouped']['player_name']['groups']
     player_data = sorted(player_data, key=lambda x: x['doclist']['numFound'])
 
+    # Determine which players we should grab more information on.
     simplified_player_data = [x['doclist']['numFound'] for x in player_data]
     player_mention_mean = numpy.mean(simplified_player_data)
     player_mention_std = numpy.std(simplified_player_data)
@@ -149,6 +154,8 @@ def analyse_commenter_data(commenter):
                     for player_game_record in player['doclist']['docs']])
     game_ids = sorted(list(game_ids))
 
+    # Create a query for pulling relevant player stat information now that we
+    # know which players we are interested in.
     player_ids_query = '&fq='
     for player in players_to_inspect:
         player_ids_query += 'player_id:{} OR '.format(player['doclist']['docs'][0]['player_id'])
@@ -166,12 +173,11 @@ def analyse_commenter_data(commenter):
     all_game_player_stats = {g['groupValue']:g['doclist']['docs']
                              for g in all_game_player_stats}
 
-    # For each player_id
-    # Calculate average performance over the entire dataset
+    # Collect player performance information per game
     per_game_performance = collections.defaultdict(dict)
     player_avgs = {}
-
     for player in players_to_inspect:
+        # Grab player stats over the entire dataset.
         player_id = player['doclist']['docs'][0]['player_id']
         DATASET_STAT_AVG = (SOLR_URL +
                            PLAYER_STATS_CORE +
@@ -186,6 +192,8 @@ def analyse_commenter_data(commenter):
 
         player_avgs[player_id] = requests.get(DATASET_STAT_AVG).json()
 
+        # For each game appearance by a player, determine if that player had a
+        # below/above average game and save the results.
         for game_stats in player['doclist']['docs']:
             game_id = game_stats['game_id']
             game_perf = get_game_perf(all_game_player_stats[game_id], player_avgs[player_id], player_id)
@@ -195,10 +203,12 @@ def analyse_commenter_data(commenter):
                 'game_overall': game_overall
             }
 
+    # Group commenter sentiment values by game_id to make out lives easier.
     gamewise_sentiments = {g['groupValue']:g['doclist']['docs'][0]
                            for g in sentiment_groupings}
 
-    # For player, determine percent of games where pos perf == pos comments and neg perf == neg comments
+    # For each player, determine percent of games where pos perf == pos
+    # comments and neg perf == neg comments.
     player_perf_to_sentiment = {}
     for game_id, game in per_game_performance.iteritems():
         for player_id, player in game.iteritems():
