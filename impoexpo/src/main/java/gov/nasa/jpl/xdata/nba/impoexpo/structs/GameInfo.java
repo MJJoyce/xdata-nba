@@ -6,13 +6,14 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GameInfo\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"attendance\",\"type\":\"int\",\"default\":0},{\"name\":\"gameTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GameInfo\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"gameDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"attendance\",\"type\":\"long\",\"default\":0},{\"name\":\"gameTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_DATE(0, "gameDate"),
-    ATTENDANCE(1, "attendance"),
-    GAME_TIME(2, "gameTime"),
+    __G__DIRTY(0, "__g__dirty"),
+    GAME_DATE(1, "gameDate"),
+    ATTENDANCE(2, "attendance"),
+    GAME_TIME(3, "gameTime"),
     ;
     /**
      * Field's index.
@@ -51,29 +52,25 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "gameDate",
   "attendance",
   "gameTime",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return GameInfo._ALL_FIELDS.length;
-  }
-
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[1]);
   private java.lang.CharSequence gameDate;
-  private int attendance;
+  private long attendance;
   private java.lang.CharSequence gameTime;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameDate;
-    case 1: return attendance;
-    case 2: return gameTime;
+    case 0: return __g__dirty;
+    case 1: return gameDate;
+    case 2: return attendance;
+    case 3: return gameTime;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -82,9 +79,10 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameDate = (java.lang.CharSequence)(value); break;
-    case 1: attendance = (java.lang.Integer)(value); break;
-    case 2: gameTime = (java.lang.CharSequence)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: gameDate = (java.lang.CharSequence)(value); break;
+    case 2: attendance = (java.lang.Long)(value); break;
+    case 3: gameTime = (java.lang.CharSequence)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -102,7 +100,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setGameDate(java.lang.CharSequence value) {
     this.gameDate = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
@@ -110,13 +108,13 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isGameDateDirty(java.lang.CharSequence value) {
-    return isDirty(0);
+    return isDirty(1);
   }
 
   /**
    * Gets the value of the 'attendance' field.
    */
-  public java.lang.Integer getAttendance() {
+  public java.lang.Long getAttendance() {
     return attendance;
   }
 
@@ -124,17 +122,17 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
    * Sets the value of the 'attendance' field.
    * @param value the value to set.
    */
-  public void setAttendance(java.lang.Integer value) {
+  public void setAttendance(java.lang.Long value) {
     this.attendance = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
    * Checks the dirty status of the 'attendance' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isAttendanceDirty(java.lang.Integer value) {
-    return isDirty(1);
+  public boolean isAttendanceDirty(java.lang.Long value) {
+    return isDirty(2);
   }
 
   /**
@@ -150,7 +148,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setGameTime(java.lang.CharSequence value) {
     this.gameTime = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
@@ -158,7 +156,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isGameTimeDirty(java.lang.CharSequence value) {
-    return isDirty(2);
+    return isDirty(3);
   }
 
   /** Creates a new GameInfo RecordBuilder */
@@ -205,8 +203,9 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<GameInfo>
     implements org.apache.avro.data.RecordBuilder<GameInfo> {
 
+    private java.nio.ByteBuffer __g__dirty;
     private java.lang.CharSequence gameDate;
-    private int attendance;
+    private long attendance;
     private java.lang.CharSequence gameTime;
 
     /** Creates a new Builder */
@@ -222,17 +221,21 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
     /** Creates a Builder by copying an existing GameInfo instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameDate)) {
-        this.gameDate = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.gameDate);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.attendance)) {
-        this.attendance = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.attendance);
+      if (isValidValue(fields()[1], other.gameDate)) {
+        this.gameDate = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.gameDate);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.gameTime)) {
-        this.gameTime = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.gameTime);
+      if (isValidValue(fields()[2], other.attendance)) {
+        this.attendance = (java.lang.Long) data().deepCopy(fields()[2].schema(), other.attendance);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.gameTime)) {
+        this.gameTime = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.gameTime);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -243,45 +246,45 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'gameDate' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder setGameDate(java.lang.CharSequence value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.gameDate = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'gameDate' field has been set */
     public boolean hasGameDate() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'gameDate' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder clearGameDate() {
       gameDate = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
     /** Gets the value of the 'attendance' field */
-    public java.lang.Integer getAttendance() {
+    public java.lang.Long getAttendance() {
       return attendance;
     }
     
     /** Sets the value of the 'attendance' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder setAttendance(int value) {
-      validate(fields()[1], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder setAttendance(long value) {
+      validate(fields()[2], value);
       this.attendance = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'attendance' field has been set */
     public boolean hasAttendance() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'attendance' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder clearAttendance() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
@@ -292,21 +295,21 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'gameTime' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder setGameTime(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.gameTime = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'gameTime' field has been set */
     public boolean hasGameTime() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'gameTime' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo.Builder clearGameTime() {
       gameTime = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -314,9 +317,10 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
     public GameInfo build() {
       try {
         GameInfo record = new GameInfo();
-        record.gameDate = fieldSetFlags()[0] ? this.gameDate : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.attendance = fieldSetFlags()[1] ? this.attendance : (java.lang.Integer) defaultValue(fields()[1]);
-        record.gameTime = fieldSetFlags()[2] ? this.gameTime : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[1]);
+        record.gameDate = fieldSetFlags()[1] ? this.gameDate : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.attendance = fieldSetFlags()[2] ? this.attendance : (java.lang.Long) defaultValue(fields()[2]);
+        record.gameTime = fieldSetFlags()[3] ? this.gameTime : (java.lang.CharSequence) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -338,7 +342,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'gameDate' field.
 		   */
 	  public java.lang.CharSequence getGameDate() {
@@ -364,7 +368,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
 				  /**
 	   * Gets the value of the 'attendance' field.
 		   */
-	  public java.lang.Integer getAttendance() {
+	  public java.lang.Long getAttendance() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -372,7 +376,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
 	   * Sets the value of the 'attendance' field.
 		   * @param value the value to set.
 	   */
-	  public void setAttendance(java.lang.Integer value) {
+	  public void setAttendance(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -380,7 +384,7 @@ public class GameInfo extends org.apache.gora.persistency.impl.PersistentBase im
 	   * Checks the dirty status of the 'attendance' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isAttendanceDirty(java.lang.Integer value) {
+	  public boolean isAttendanceDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

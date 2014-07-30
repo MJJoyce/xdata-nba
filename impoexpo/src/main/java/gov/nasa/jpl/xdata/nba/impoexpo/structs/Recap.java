@@ -6,11 +6,12 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class Recap extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Recap\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"recapText\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Recap\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"recapText\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    RECAP_TEXT(0, "recapText"),
+    __G__DIRTY(0, "__g__dirty"),
+    RECAP_TEXT(1, "recapText"),
     ;
     /**
      * Field's index.
@@ -49,23 +50,19 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "recapText",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return Recap._ALL_FIELDS.length;
-  }
-
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[1]);
   private java.lang.CharSequence recapText;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return recapText;
+    case 0: return __g__dirty;
+    case 1: return recapText;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -74,7 +71,8 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: recapText = (java.lang.CharSequence)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: recapText = (java.lang.CharSequence)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -92,7 +90,7 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
    */
   public void setRecapText(java.lang.CharSequence value) {
     this.recapText = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
@@ -100,7 +98,7 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
    * @param value the value to set.
    */
   public boolean isRecapTextDirty(java.lang.CharSequence value) {
-    return isDirty(0);
+    return isDirty(1);
   }
 
   /** Creates a new Recap RecordBuilder */
@@ -147,6 +145,7 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Recap>
     implements org.apache.avro.data.RecordBuilder<Recap> {
 
+    private java.nio.ByteBuffer __g__dirty;
     private java.lang.CharSequence recapText;
 
     /** Creates a new Builder */
@@ -162,9 +161,13 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
     /** Creates a Builder by copying an existing Recap instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap.SCHEMA$);
-      if (isValidValue(fields()[0], other.recapText)) {
-        this.recapText = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.recapText);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.recapText)) {
+        this.recapText = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.recapText);
+        fieldSetFlags()[1] = true;
       }
     }
 
@@ -175,21 +178,21 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
     
     /** Sets the value of the 'recapText' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap.Builder setRecapText(java.lang.CharSequence value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.recapText = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'recapText' field has been set */
     public boolean hasRecapText() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'recapText' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap.Builder clearRecapText() {
       recapText = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
@@ -197,7 +200,8 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
     public Recap build() {
       try {
         Recap record = new Recap();
-        record.recapText = fieldSetFlags()[0] ? this.recapText : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[1]);
+        record.recapText = fieldSetFlags()[1] ? this.recapText : (java.lang.CharSequence) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -219,7 +223,7 @@ public class Recap extends org.apache.gora.persistency.impl.PersistentBase imple
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'recapText' field.
 		   */
 	  public java.lang.CharSequence getRecapText() {

@@ -19,15 +19,12 @@ package gov.nasa.jpl.xdata.nba.impoexpo.parse;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
-import org.apache.tika.metadata.Metadata;
-import org.apache.tika.parser.AutoDetectParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -73,11 +70,12 @@ public class ParseUtil {
   /**
    * Simply reads in a String path to a Preview file, parses the File, populates
    * a Preview object and returns that object.
+   * @param preview 
    * @param string
    * @return
    */
-  public static Preview parsePreview(String string) {
-    Preview preview = Preview.newBuilder().setPreviewText(parseTextFile(string)).build();
+  public static Preview parsePreview(Preview preview, String string) {
+    preview.setPreviewText(parseTextFile(string));
     return preview;
     
   }
@@ -85,11 +83,12 @@ public class ParseUtil {
   /**
    * Simply reads in a String path to a Recap file, parses the File, populates
    * a Recap object and returns that object.
+   * @param recap 
    * @param string
    * @return
    */
-  public static Recap parseRecap(String string) {
-    Recap recap = Recap.newBuilder().setRecapText(parseTextFile(string)).build();
+  public static Recap parseRecap(Recap recap, String string) {
+    recap.setRecapText(parseTextFile(string));
     return recap;
   }
 
@@ -101,10 +100,9 @@ public class ParseUtil {
    * @return
    * @throws IOException 
    */
-  public static Notebook parseNotebook(String string) throws IOException {
+  public static Notebook parseNotebook(Notebook notebook, String string) throws IOException {
     LOG.info("Parsing Notebook: {}", string);
     BufferedReader reader = new BufferedReader(new FileReader(string));
-    Notebook notebook = Notebook.newBuilder().build();
     try {
       String line = reader.readLine();
       do {
@@ -143,8 +141,8 @@ public class ParseUtil {
     return notebook;
   }
 
-  public static GameStats parseGameStats(String string) throws IOException, ParseException {
-    LOG.info("Parsing GameStats: {}" + string);
+  public static GameStats parseGameStats(GameStats gameStats, String string) throws IOException, ParseException {
+    LOG.info("Parsing GameStats: {}", string);
     FileReader reader = new FileReader(string);
 
     // Pare with JSON simple parser
@@ -174,7 +172,6 @@ public class ParseUtil {
         .setSeasonSeries(series).setLastMeeting(meeting).setPlayerStats(playerStats)
         .setTeamStats(teamStats).setOtherStats(otherStats).setOfficials(officials)
         .setGameInfo(info).setInactivePlayers(inactivePlayers).setAvailableVideo(video).build();
-
     
     return stats;
     
@@ -361,12 +358,16 @@ public class ParseUtil {
   }
   
 
+  private static GameSummary parseGameSummary() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
   private static String parseTextFile(String textString) {
     LOG.info("Parsing Text: {}", textString);
     InputStream is = null;
     try {
       is = new FileInputStream(textString);
-      is.close();
     } catch (Exception e) {
       // TODO: handle exception
     }
@@ -380,6 +381,14 @@ public class ParseUtil {
     } catch (TikaException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
+    }
+    finally {
+      try {
+        is.close();
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
     }
     return text;
   }

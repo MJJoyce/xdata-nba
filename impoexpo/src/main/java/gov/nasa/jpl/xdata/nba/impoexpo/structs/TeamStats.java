@@ -6,35 +6,36 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TeamStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameTeamStatsId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsFgm\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsFga\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3m\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfg3a\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftm\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfta\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsftPct\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsoreb\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsdreb\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsreb\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsast\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsstl\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsblk\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsto\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatspf\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsPts\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsPlusMinus\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TeamStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAAAA==\"},{\"name\":\"gameTeamStatsId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsFgm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsFga\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3m\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3a\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfta\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsoreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsdreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsast\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsstl\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsblk\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsto\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatspf\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPts\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPlusMinus\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_TEAM_STATS_ID(0, "gameTeamStatsId"),
-    TEAM_STATS_TEAM_ID(1, "teamStatsTeamId"),
-    TEAM_STATS_TEAM_NAME(2, "teamStatsTeamName"),
-    TEAM_STATS_TEAM_ABBREVIATION(3, "teamStatsTeamAbbreviation"),
-    TEAM_STATS_TEAM_CITY(4, "teamStatsTeamCity"),
-    TEAM_STATS_MIN(5, "teamStatsMin"),
-    TEAM_STATS_FGM(6, "teamStatsFgm"),
-    TEAM_STATS_FGA(7, "teamStatsFga"),
-    TEAM_STATSFG_PCT(8, "teamStatsfgPct"),
-    TEAM_STATSFG3M(9, "teamStatsfg3m"),
-    TEAM_STATSFG3A(10, "teamStatsfg3a"),
-    TEAM_STATSFG3PCT(11, "teamStatsfg3Pct"),
-    TEAM_STATSFTM(12, "teamStatsftm"),
-    TEAM_STATSFTA(13, "teamStatsfta"),
-    TEAM_STATSFT_PCT(14, "teamStatsftPct"),
-    TEAM_STATSOREB(15, "teamStatsoreb"),
-    TEAM_STATSDREB(16, "teamStatsdreb"),
-    TEAM_STATSREB(17, "teamStatsreb"),
-    TEAM_STATSAST(18, "teamStatsast"),
-    TEAM_STATSSTL(19, "teamStatsstl"),
-    TEAM_STATSBLK(20, "teamStatsblk"),
-    TEAM_STATSTO(21, "teamStatsto"),
-    TEAM_STATSPF(22, "teamStatspf"),
-    TEAM_STATS_PTS(23, "teamStatsPts"),
-    TEAM_STATS_PLUS_MINUS(24, "teamStatsPlusMinus"),
+    __G__DIRTY(0, "__g__dirty"),
+    GAME_TEAM_STATS_ID(1, "gameTeamStatsId"),
+    TEAM_STATS_TEAM_ID(2, "teamStatsTeamId"),
+    TEAM_STATS_TEAM_NAME(3, "teamStatsTeamName"),
+    TEAM_STATS_TEAM_ABBREVIATION(4, "teamStatsTeamAbbreviation"),
+    TEAM_STATS_TEAM_CITY(5, "teamStatsTeamCity"),
+    TEAM_STATS_MIN(6, "teamStatsMin"),
+    TEAM_STATS_FGM(7, "teamStatsFgm"),
+    TEAM_STATS_FGA(8, "teamStatsFga"),
+    TEAM_STATSFG_PCT(9, "teamStatsfgPct"),
+    TEAM_STATSFG3M(10, "teamStatsfg3m"),
+    TEAM_STATSFG3A(11, "teamStatsfg3a"),
+    TEAM_STATSFG3PCT(12, "teamStatsfg3Pct"),
+    TEAM_STATSFTM(13, "teamStatsftm"),
+    TEAM_STATSFTA(14, "teamStatsfta"),
+    TEAM_STATSFT_PCT(15, "teamStatsftPct"),
+    TEAM_STATSOREB(16, "teamStatsoreb"),
+    TEAM_STATSDREB(17, "teamStatsdreb"),
+    TEAM_STATSREB(18, "teamStatsreb"),
+    TEAM_STATSAST(19, "teamStatsast"),
+    TEAM_STATSSTL(20, "teamStatsstl"),
+    TEAM_STATSBLK(21, "teamStatsblk"),
+    TEAM_STATSTO(22, "teamStatsto"),
+    TEAM_STATSPF(23, "teamStatspf"),
+    TEAM_STATS_PTS(24, "teamStatsPts"),
+    TEAM_STATS_PLUS_MINUS(25, "teamStatsPlusMinus"),
     ;
     /**
      * Field's index.
@@ -73,6 +74,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "gameTeamStatsId",
   "teamStatsTeamId",
   "teamStatsTeamName",
@@ -100,68 +102,63 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   "teamStatsPlusMinus",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return TeamStats._ALL_FIELDS.length;
-  }
-
-  private int gameTeamStatsId;
-  private int teamStatsTeamId;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[4]);
+  private long gameTeamStatsId;
+  private long teamStatsTeamId;
   private java.lang.CharSequence teamStatsTeamName;
   private java.lang.CharSequence teamStatsTeamAbbreviation;
   private java.lang.CharSequence teamStatsTeamCity;
   private java.lang.CharSequence teamStatsMin;
-  private int teamStatsFgm;
-  private int teamStatsFga;
+  private long teamStatsFgm;
+  private long teamStatsFga;
   private long teamStatsfgPct;
-  private int teamStatsfg3m;
-  private int teamStatsfg3a;
+  private long teamStatsfg3m;
+  private long teamStatsfg3a;
   private long teamStatsfg3Pct;
-  private int teamStatsftm;
-  private int teamStatsfta;
-  private int teamStatsftPct;
-  private int teamStatsoreb;
-  private int teamStatsdreb;
-  private int teamStatsreb;
-  private int teamStatsast;
-  private int teamStatsstl;
-  private int teamStatsblk;
-  private int teamStatsto;
-  private int teamStatspf;
-  private int teamStatsPts;
-  private int teamStatsPlusMinus;
+  private long teamStatsftm;
+  private long teamStatsfta;
+  private long teamStatsftPct;
+  private long teamStatsoreb;
+  private long teamStatsdreb;
+  private long teamStatsreb;
+  private long teamStatsast;
+  private long teamStatsstl;
+  private long teamStatsblk;
+  private long teamStatsto;
+  private long teamStatspf;
+  private long teamStatsPts;
+  private long teamStatsPlusMinus;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameTeamStatsId;
-    case 1: return teamStatsTeamId;
-    case 2: return teamStatsTeamName;
-    case 3: return teamStatsTeamAbbreviation;
-    case 4: return teamStatsTeamCity;
-    case 5: return teamStatsMin;
-    case 6: return teamStatsFgm;
-    case 7: return teamStatsFga;
-    case 8: return teamStatsfgPct;
-    case 9: return teamStatsfg3m;
-    case 10: return teamStatsfg3a;
-    case 11: return teamStatsfg3Pct;
-    case 12: return teamStatsftm;
-    case 13: return teamStatsfta;
-    case 14: return teamStatsftPct;
-    case 15: return teamStatsoreb;
-    case 16: return teamStatsdreb;
-    case 17: return teamStatsreb;
-    case 18: return teamStatsast;
-    case 19: return teamStatsstl;
-    case 20: return teamStatsblk;
-    case 21: return teamStatsto;
-    case 22: return teamStatspf;
-    case 23: return teamStatsPts;
-    case 24: return teamStatsPlusMinus;
+    case 0: return __g__dirty;
+    case 1: return gameTeamStatsId;
+    case 2: return teamStatsTeamId;
+    case 3: return teamStatsTeamName;
+    case 4: return teamStatsTeamAbbreviation;
+    case 5: return teamStatsTeamCity;
+    case 6: return teamStatsMin;
+    case 7: return teamStatsFgm;
+    case 8: return teamStatsFga;
+    case 9: return teamStatsfgPct;
+    case 10: return teamStatsfg3m;
+    case 11: return teamStatsfg3a;
+    case 12: return teamStatsfg3Pct;
+    case 13: return teamStatsftm;
+    case 14: return teamStatsfta;
+    case 15: return teamStatsftPct;
+    case 16: return teamStatsoreb;
+    case 17: return teamStatsdreb;
+    case 18: return teamStatsreb;
+    case 19: return teamStatsast;
+    case 20: return teamStatsstl;
+    case 21: return teamStatsblk;
+    case 22: return teamStatsto;
+    case 23: return teamStatspf;
+    case 24: return teamStatsPts;
+    case 25: return teamStatsPlusMinus;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -170,31 +167,32 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameTeamStatsId = (java.lang.Integer)(value); break;
-    case 1: teamStatsTeamId = (java.lang.Integer)(value); break;
-    case 2: teamStatsTeamName = (java.lang.CharSequence)(value); break;
-    case 3: teamStatsTeamAbbreviation = (java.lang.CharSequence)(value); break;
-    case 4: teamStatsTeamCity = (java.lang.CharSequence)(value); break;
-    case 5: teamStatsMin = (java.lang.CharSequence)(value); break;
-    case 6: teamStatsFgm = (java.lang.Integer)(value); break;
-    case 7: teamStatsFga = (java.lang.Integer)(value); break;
-    case 8: teamStatsfgPct = (java.lang.Long)(value); break;
-    case 9: teamStatsfg3m = (java.lang.Integer)(value); break;
-    case 10: teamStatsfg3a = (java.lang.Integer)(value); break;
-    case 11: teamStatsfg3Pct = (java.lang.Long)(value); break;
-    case 12: teamStatsftm = (java.lang.Integer)(value); break;
-    case 13: teamStatsfta = (java.lang.Integer)(value); break;
-    case 14: teamStatsftPct = (java.lang.Integer)(value); break;
-    case 15: teamStatsoreb = (java.lang.Integer)(value); break;
-    case 16: teamStatsdreb = (java.lang.Integer)(value); break;
-    case 17: teamStatsreb = (java.lang.Integer)(value); break;
-    case 18: teamStatsast = (java.lang.Integer)(value); break;
-    case 19: teamStatsstl = (java.lang.Integer)(value); break;
-    case 20: teamStatsblk = (java.lang.Integer)(value); break;
-    case 21: teamStatsto = (java.lang.Integer)(value); break;
-    case 22: teamStatspf = (java.lang.Integer)(value); break;
-    case 23: teamStatsPts = (java.lang.Integer)(value); break;
-    case 24: teamStatsPlusMinus = (java.lang.Integer)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: gameTeamStatsId = (java.lang.Long)(value); break;
+    case 2: teamStatsTeamId = (java.lang.Long)(value); break;
+    case 3: teamStatsTeamName = (java.lang.CharSequence)(value); break;
+    case 4: teamStatsTeamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 5: teamStatsTeamCity = (java.lang.CharSequence)(value); break;
+    case 6: teamStatsMin = (java.lang.CharSequence)(value); break;
+    case 7: teamStatsFgm = (java.lang.Long)(value); break;
+    case 8: teamStatsFga = (java.lang.Long)(value); break;
+    case 9: teamStatsfgPct = (java.lang.Long)(value); break;
+    case 10: teamStatsfg3m = (java.lang.Long)(value); break;
+    case 11: teamStatsfg3a = (java.lang.Long)(value); break;
+    case 12: teamStatsfg3Pct = (java.lang.Long)(value); break;
+    case 13: teamStatsftm = (java.lang.Long)(value); break;
+    case 14: teamStatsfta = (java.lang.Long)(value); break;
+    case 15: teamStatsftPct = (java.lang.Long)(value); break;
+    case 16: teamStatsoreb = (java.lang.Long)(value); break;
+    case 17: teamStatsdreb = (java.lang.Long)(value); break;
+    case 18: teamStatsreb = (java.lang.Long)(value); break;
+    case 19: teamStatsast = (java.lang.Long)(value); break;
+    case 20: teamStatsstl = (java.lang.Long)(value); break;
+    case 21: teamStatsblk = (java.lang.Long)(value); break;
+    case 22: teamStatsto = (java.lang.Long)(value); break;
+    case 23: teamStatspf = (java.lang.Long)(value); break;
+    case 24: teamStatsPts = (java.lang.Long)(value); break;
+    case 25: teamStatsPlusMinus = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -202,7 +200,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   /**
    * Gets the value of the 'gameTeamStatsId' field.
    */
-  public java.lang.Integer getGameTeamStatsId() {
+  public java.lang.Long getGameTeamStatsId() {
     return gameTeamStatsId;
   }
 
@@ -210,23 +208,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'gameTeamStatsId' field.
    * @param value the value to set.
    */
-  public void setGameTeamStatsId(java.lang.Integer value) {
+  public void setGameTeamStatsId(java.lang.Long value) {
     this.gameTeamStatsId = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
    * Checks the dirty status of the 'gameTeamStatsId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameTeamStatsIdDirty(java.lang.Integer value) {
-    return isDirty(0);
+  public boolean isGameTeamStatsIdDirty(java.lang.Long value) {
+    return isDirty(1);
   }
 
   /**
    * Gets the value of the 'teamStatsTeamId' field.
    */
-  public java.lang.Integer getTeamStatsTeamId() {
+  public java.lang.Long getTeamStatsTeamId() {
     return teamStatsTeamId;
   }
 
@@ -234,17 +232,17 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsTeamId' field.
    * @param value the value to set.
    */
-  public void setTeamStatsTeamId(java.lang.Integer value) {
+  public void setTeamStatsTeamId(java.lang.Long value) {
     this.teamStatsTeamId = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsTeamIdDirty(java.lang.Integer value) {
-    return isDirty(1);
+  public boolean isTeamStatsTeamIdDirty(java.lang.Long value) {
+    return isDirty(2);
   }
 
   /**
@@ -260,7 +258,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamStatsTeamName(java.lang.CharSequence value) {
     this.teamStatsTeamName = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
@@ -268,7 +266,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamStatsTeamNameDirty(java.lang.CharSequence value) {
-    return isDirty(2);
+    return isDirty(3);
   }
 
   /**
@@ -284,7 +282,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamStatsTeamAbbreviation(java.lang.CharSequence value) {
     this.teamStatsTeamAbbreviation = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
@@ -292,7 +290,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamStatsTeamAbbreviationDirty(java.lang.CharSequence value) {
-    return isDirty(3);
+    return isDirty(4);
   }
 
   /**
@@ -308,7 +306,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamStatsTeamCity(java.lang.CharSequence value) {
     this.teamStatsTeamCity = value;
-    setDirty(4);
+    setDirty(5);
   }
   
   /**
@@ -316,7 +314,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamStatsTeamCityDirty(java.lang.CharSequence value) {
-    return isDirty(4);
+    return isDirty(5);
   }
 
   /**
@@ -332,7 +330,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamStatsMin(java.lang.CharSequence value) {
     this.teamStatsMin = value;
-    setDirty(5);
+    setDirty(6);
   }
   
   /**
@@ -340,13 +338,13 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamStatsMinDirty(java.lang.CharSequence value) {
-    return isDirty(5);
+    return isDirty(6);
   }
 
   /**
    * Gets the value of the 'teamStatsFgm' field.
    */
-  public java.lang.Integer getTeamStatsFgm() {
+  public java.lang.Long getTeamStatsFgm() {
     return teamStatsFgm;
   }
 
@@ -354,23 +352,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsFgm' field.
    * @param value the value to set.
    */
-  public void setTeamStatsFgm(java.lang.Integer value) {
+  public void setTeamStatsFgm(java.lang.Long value) {
     this.teamStatsFgm = value;
-    setDirty(6);
+    setDirty(7);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsFgm' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsFgmDirty(java.lang.Integer value) {
-    return isDirty(6);
+  public boolean isTeamStatsFgmDirty(java.lang.Long value) {
+    return isDirty(7);
   }
 
   /**
    * Gets the value of the 'teamStatsFga' field.
    */
-  public java.lang.Integer getTeamStatsFga() {
+  public java.lang.Long getTeamStatsFga() {
     return teamStatsFga;
   }
 
@@ -378,17 +376,17 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsFga' field.
    * @param value the value to set.
    */
-  public void setTeamStatsFga(java.lang.Integer value) {
+  public void setTeamStatsFga(java.lang.Long value) {
     this.teamStatsFga = value;
-    setDirty(7);
+    setDirty(8);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsFga' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsFgaDirty(java.lang.Integer value) {
-    return isDirty(7);
+  public boolean isTeamStatsFgaDirty(java.lang.Long value) {
+    return isDirty(8);
   }
 
   /**
@@ -404,7 +402,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamStatsfgPct(java.lang.Long value) {
     this.teamStatsfgPct = value;
-    setDirty(8);
+    setDirty(9);
   }
   
   /**
@@ -412,13 +410,13 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamStatsfgPctDirty(java.lang.Long value) {
-    return isDirty(8);
+    return isDirty(9);
   }
 
   /**
    * Gets the value of the 'teamStatsfg3m' field.
    */
-  public java.lang.Integer getTeamStatsfg3m() {
+  public java.lang.Long getTeamStatsfg3m() {
     return teamStatsfg3m;
   }
 
@@ -426,23 +424,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsfg3m' field.
    * @param value the value to set.
    */
-  public void setTeamStatsfg3m(java.lang.Integer value) {
+  public void setTeamStatsfg3m(java.lang.Long value) {
     this.teamStatsfg3m = value;
-    setDirty(9);
+    setDirty(10);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsfg3m' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsfg3mDirty(java.lang.Integer value) {
-    return isDirty(9);
+  public boolean isTeamStatsfg3mDirty(java.lang.Long value) {
+    return isDirty(10);
   }
 
   /**
    * Gets the value of the 'teamStatsfg3a' field.
    */
-  public java.lang.Integer getTeamStatsfg3a() {
+  public java.lang.Long getTeamStatsfg3a() {
     return teamStatsfg3a;
   }
 
@@ -450,17 +448,17 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsfg3a' field.
    * @param value the value to set.
    */
-  public void setTeamStatsfg3a(java.lang.Integer value) {
+  public void setTeamStatsfg3a(java.lang.Long value) {
     this.teamStatsfg3a = value;
-    setDirty(10);
+    setDirty(11);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsfg3a' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsfg3aDirty(java.lang.Integer value) {
-    return isDirty(10);
+  public boolean isTeamStatsfg3aDirty(java.lang.Long value) {
+    return isDirty(11);
   }
 
   /**
@@ -476,7 +474,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamStatsfg3Pct(java.lang.Long value) {
     this.teamStatsfg3Pct = value;
-    setDirty(11);
+    setDirty(12);
   }
   
   /**
@@ -484,13 +482,13 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamStatsfg3PctDirty(java.lang.Long value) {
-    return isDirty(11);
+    return isDirty(12);
   }
 
   /**
    * Gets the value of the 'teamStatsftm' field.
    */
-  public java.lang.Integer getTeamStatsftm() {
+  public java.lang.Long getTeamStatsftm() {
     return teamStatsftm;
   }
 
@@ -498,23 +496,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsftm' field.
    * @param value the value to set.
    */
-  public void setTeamStatsftm(java.lang.Integer value) {
+  public void setTeamStatsftm(java.lang.Long value) {
     this.teamStatsftm = value;
-    setDirty(12);
+    setDirty(13);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsftm' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsftmDirty(java.lang.Integer value) {
-    return isDirty(12);
+  public boolean isTeamStatsftmDirty(java.lang.Long value) {
+    return isDirty(13);
   }
 
   /**
    * Gets the value of the 'teamStatsfta' field.
    */
-  public java.lang.Integer getTeamStatsfta() {
+  public java.lang.Long getTeamStatsfta() {
     return teamStatsfta;
   }
 
@@ -522,23 +520,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsfta' field.
    * @param value the value to set.
    */
-  public void setTeamStatsfta(java.lang.Integer value) {
+  public void setTeamStatsfta(java.lang.Long value) {
     this.teamStatsfta = value;
-    setDirty(13);
+    setDirty(14);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsfta' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsftaDirty(java.lang.Integer value) {
-    return isDirty(13);
+  public boolean isTeamStatsftaDirty(java.lang.Long value) {
+    return isDirty(14);
   }
 
   /**
    * Gets the value of the 'teamStatsftPct' field.
    */
-  public java.lang.Integer getTeamStatsftPct() {
+  public java.lang.Long getTeamStatsftPct() {
     return teamStatsftPct;
   }
 
@@ -546,23 +544,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsftPct' field.
    * @param value the value to set.
    */
-  public void setTeamStatsftPct(java.lang.Integer value) {
+  public void setTeamStatsftPct(java.lang.Long value) {
     this.teamStatsftPct = value;
-    setDirty(14);
+    setDirty(15);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsftPct' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsftPctDirty(java.lang.Integer value) {
-    return isDirty(14);
+  public boolean isTeamStatsftPctDirty(java.lang.Long value) {
+    return isDirty(15);
   }
 
   /**
    * Gets the value of the 'teamStatsoreb' field.
    */
-  public java.lang.Integer getTeamStatsoreb() {
+  public java.lang.Long getTeamStatsoreb() {
     return teamStatsoreb;
   }
 
@@ -570,23 +568,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsoreb' field.
    * @param value the value to set.
    */
-  public void setTeamStatsoreb(java.lang.Integer value) {
+  public void setTeamStatsoreb(java.lang.Long value) {
     this.teamStatsoreb = value;
-    setDirty(15);
+    setDirty(16);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsoreb' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsorebDirty(java.lang.Integer value) {
-    return isDirty(15);
+  public boolean isTeamStatsorebDirty(java.lang.Long value) {
+    return isDirty(16);
   }
 
   /**
    * Gets the value of the 'teamStatsdreb' field.
    */
-  public java.lang.Integer getTeamStatsdreb() {
+  public java.lang.Long getTeamStatsdreb() {
     return teamStatsdreb;
   }
 
@@ -594,23 +592,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsdreb' field.
    * @param value the value to set.
    */
-  public void setTeamStatsdreb(java.lang.Integer value) {
+  public void setTeamStatsdreb(java.lang.Long value) {
     this.teamStatsdreb = value;
-    setDirty(16);
+    setDirty(17);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsdreb' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsdrebDirty(java.lang.Integer value) {
-    return isDirty(16);
+  public boolean isTeamStatsdrebDirty(java.lang.Long value) {
+    return isDirty(17);
   }
 
   /**
    * Gets the value of the 'teamStatsreb' field.
    */
-  public java.lang.Integer getTeamStatsreb() {
+  public java.lang.Long getTeamStatsreb() {
     return teamStatsreb;
   }
 
@@ -618,23 +616,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsreb' field.
    * @param value the value to set.
    */
-  public void setTeamStatsreb(java.lang.Integer value) {
+  public void setTeamStatsreb(java.lang.Long value) {
     this.teamStatsreb = value;
-    setDirty(17);
+    setDirty(18);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsreb' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsrebDirty(java.lang.Integer value) {
-    return isDirty(17);
+  public boolean isTeamStatsrebDirty(java.lang.Long value) {
+    return isDirty(18);
   }
 
   /**
    * Gets the value of the 'teamStatsast' field.
    */
-  public java.lang.Integer getTeamStatsast() {
+  public java.lang.Long getTeamStatsast() {
     return teamStatsast;
   }
 
@@ -642,23 +640,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsast' field.
    * @param value the value to set.
    */
-  public void setTeamStatsast(java.lang.Integer value) {
+  public void setTeamStatsast(java.lang.Long value) {
     this.teamStatsast = value;
-    setDirty(18);
+    setDirty(19);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsast' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsastDirty(java.lang.Integer value) {
-    return isDirty(18);
+  public boolean isTeamStatsastDirty(java.lang.Long value) {
+    return isDirty(19);
   }
 
   /**
    * Gets the value of the 'teamStatsstl' field.
    */
-  public java.lang.Integer getTeamStatsstl() {
+  public java.lang.Long getTeamStatsstl() {
     return teamStatsstl;
   }
 
@@ -666,23 +664,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsstl' field.
    * @param value the value to set.
    */
-  public void setTeamStatsstl(java.lang.Integer value) {
+  public void setTeamStatsstl(java.lang.Long value) {
     this.teamStatsstl = value;
-    setDirty(19);
+    setDirty(20);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsstl' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsstlDirty(java.lang.Integer value) {
-    return isDirty(19);
+  public boolean isTeamStatsstlDirty(java.lang.Long value) {
+    return isDirty(20);
   }
 
   /**
    * Gets the value of the 'teamStatsblk' field.
    */
-  public java.lang.Integer getTeamStatsblk() {
+  public java.lang.Long getTeamStatsblk() {
     return teamStatsblk;
   }
 
@@ -690,23 +688,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsblk' field.
    * @param value the value to set.
    */
-  public void setTeamStatsblk(java.lang.Integer value) {
+  public void setTeamStatsblk(java.lang.Long value) {
     this.teamStatsblk = value;
-    setDirty(20);
+    setDirty(21);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsblk' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsblkDirty(java.lang.Integer value) {
-    return isDirty(20);
+  public boolean isTeamStatsblkDirty(java.lang.Long value) {
+    return isDirty(21);
   }
 
   /**
    * Gets the value of the 'teamStatsto' field.
    */
-  public java.lang.Integer getTeamStatsto() {
+  public java.lang.Long getTeamStatsto() {
     return teamStatsto;
   }
 
@@ -714,23 +712,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsto' field.
    * @param value the value to set.
    */
-  public void setTeamStatsto(java.lang.Integer value) {
+  public void setTeamStatsto(java.lang.Long value) {
     this.teamStatsto = value;
-    setDirty(21);
+    setDirty(22);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsto' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatstoDirty(java.lang.Integer value) {
-    return isDirty(21);
+  public boolean isTeamStatstoDirty(java.lang.Long value) {
+    return isDirty(22);
   }
 
   /**
    * Gets the value of the 'teamStatspf' field.
    */
-  public java.lang.Integer getTeamStatspf() {
+  public java.lang.Long getTeamStatspf() {
     return teamStatspf;
   }
 
@@ -738,23 +736,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatspf' field.
    * @param value the value to set.
    */
-  public void setTeamStatspf(java.lang.Integer value) {
+  public void setTeamStatspf(java.lang.Long value) {
     this.teamStatspf = value;
-    setDirty(22);
+    setDirty(23);
   }
   
   /**
    * Checks the dirty status of the 'teamStatspf' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatspfDirty(java.lang.Integer value) {
-    return isDirty(22);
+  public boolean isTeamStatspfDirty(java.lang.Long value) {
+    return isDirty(23);
   }
 
   /**
    * Gets the value of the 'teamStatsPts' field.
    */
-  public java.lang.Integer getTeamStatsPts() {
+  public java.lang.Long getTeamStatsPts() {
     return teamStatsPts;
   }
 
@@ -762,23 +760,23 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsPts' field.
    * @param value the value to set.
    */
-  public void setTeamStatsPts(java.lang.Integer value) {
+  public void setTeamStatsPts(java.lang.Long value) {
     this.teamStatsPts = value;
-    setDirty(23);
+    setDirty(24);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsPts' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsPtsDirty(java.lang.Integer value) {
-    return isDirty(23);
+  public boolean isTeamStatsPtsDirty(java.lang.Long value) {
+    return isDirty(24);
   }
 
   /**
    * Gets the value of the 'teamStatsPlusMinus' field.
    */
-  public java.lang.Integer getTeamStatsPlusMinus() {
+  public java.lang.Long getTeamStatsPlusMinus() {
     return teamStatsPlusMinus;
   }
 
@@ -786,17 +784,17 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStatsPlusMinus' field.
    * @param value the value to set.
    */
-  public void setTeamStatsPlusMinus(java.lang.Integer value) {
+  public void setTeamStatsPlusMinus(java.lang.Long value) {
     this.teamStatsPlusMinus = value;
-    setDirty(24);
+    setDirty(25);
   }
   
   /**
    * Checks the dirty status of the 'teamStatsPlusMinus' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsPlusMinusDirty(java.lang.Integer value) {
-    return isDirty(24);
+  public boolean isTeamStatsPlusMinusDirty(java.lang.Long value) {
+    return isDirty(25);
   }
 
   /** Creates a new TeamStats RecordBuilder */
@@ -843,31 +841,32 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TeamStats>
     implements org.apache.avro.data.RecordBuilder<TeamStats> {
 
-    private int gameTeamStatsId;
-    private int teamStatsTeamId;
+    private java.nio.ByteBuffer __g__dirty;
+    private long gameTeamStatsId;
+    private long teamStatsTeamId;
     private java.lang.CharSequence teamStatsTeamName;
     private java.lang.CharSequence teamStatsTeamAbbreviation;
     private java.lang.CharSequence teamStatsTeamCity;
     private java.lang.CharSequence teamStatsMin;
-    private int teamStatsFgm;
-    private int teamStatsFga;
+    private long teamStatsFgm;
+    private long teamStatsFga;
     private long teamStatsfgPct;
-    private int teamStatsfg3m;
-    private int teamStatsfg3a;
+    private long teamStatsfg3m;
+    private long teamStatsfg3a;
     private long teamStatsfg3Pct;
-    private int teamStatsftm;
-    private int teamStatsfta;
-    private int teamStatsftPct;
-    private int teamStatsoreb;
-    private int teamStatsdreb;
-    private int teamStatsreb;
-    private int teamStatsast;
-    private int teamStatsstl;
-    private int teamStatsblk;
-    private int teamStatsto;
-    private int teamStatspf;
-    private int teamStatsPts;
-    private int teamStatsPlusMinus;
+    private long teamStatsftm;
+    private long teamStatsfta;
+    private long teamStatsftPct;
+    private long teamStatsoreb;
+    private long teamStatsdreb;
+    private long teamStatsreb;
+    private long teamStatsast;
+    private long teamStatsstl;
+    private long teamStatsblk;
+    private long teamStatsto;
+    private long teamStatspf;
+    private long teamStatsPts;
+    private long teamStatsPlusMinus;
 
     /** Creates a new Builder */
     private Builder() {
@@ -882,153 +881,157 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     /** Creates a Builder by copying an existing TeamStats instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameTeamStatsId)) {
-        this.gameTeamStatsId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.gameTeamStatsId);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.teamStatsTeamId)) {
-        this.teamStatsTeamId = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.teamStatsTeamId);
+      if (isValidValue(fields()[1], other.gameTeamStatsId)) {
+        this.gameTeamStatsId = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.gameTeamStatsId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.teamStatsTeamName)) {
-        this.teamStatsTeamName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.teamStatsTeamName);
+      if (isValidValue(fields()[2], other.teamStatsTeamId)) {
+        this.teamStatsTeamId = (java.lang.Long) data().deepCopy(fields()[2].schema(), other.teamStatsTeamId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.teamStatsTeamAbbreviation)) {
-        this.teamStatsTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.teamStatsTeamAbbreviation);
+      if (isValidValue(fields()[3], other.teamStatsTeamName)) {
+        this.teamStatsTeamName = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.teamStatsTeamName);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.teamStatsTeamCity)) {
-        this.teamStatsTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamStatsTeamCity);
+      if (isValidValue(fields()[4], other.teamStatsTeamAbbreviation)) {
+        this.teamStatsTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamStatsTeamAbbreviation);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.teamStatsMin)) {
-        this.teamStatsMin = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.teamStatsMin);
+      if (isValidValue(fields()[5], other.teamStatsTeamCity)) {
+        this.teamStatsTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.teamStatsTeamCity);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.teamStatsFgm)) {
-        this.teamStatsFgm = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.teamStatsFgm);
+      if (isValidValue(fields()[6], other.teamStatsMin)) {
+        this.teamStatsMin = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.teamStatsMin);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.teamStatsFga)) {
-        this.teamStatsFga = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.teamStatsFga);
+      if (isValidValue(fields()[7], other.teamStatsFgm)) {
+        this.teamStatsFgm = (java.lang.Long) data().deepCopy(fields()[7].schema(), other.teamStatsFgm);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.teamStatsfgPct)) {
-        this.teamStatsfgPct = (java.lang.Long) data().deepCopy(fields()[8].schema(), other.teamStatsfgPct);
+      if (isValidValue(fields()[8], other.teamStatsFga)) {
+        this.teamStatsFga = (java.lang.Long) data().deepCopy(fields()[8].schema(), other.teamStatsFga);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.teamStatsfg3m)) {
-        this.teamStatsfg3m = (java.lang.Integer) data().deepCopy(fields()[9].schema(), other.teamStatsfg3m);
+      if (isValidValue(fields()[9], other.teamStatsfgPct)) {
+        this.teamStatsfgPct = (java.lang.Long) data().deepCopy(fields()[9].schema(), other.teamStatsfgPct);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.teamStatsfg3a)) {
-        this.teamStatsfg3a = (java.lang.Integer) data().deepCopy(fields()[10].schema(), other.teamStatsfg3a);
+      if (isValidValue(fields()[10], other.teamStatsfg3m)) {
+        this.teamStatsfg3m = (java.lang.Long) data().deepCopy(fields()[10].schema(), other.teamStatsfg3m);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.teamStatsfg3Pct)) {
-        this.teamStatsfg3Pct = (java.lang.Long) data().deepCopy(fields()[11].schema(), other.teamStatsfg3Pct);
+      if (isValidValue(fields()[11], other.teamStatsfg3a)) {
+        this.teamStatsfg3a = (java.lang.Long) data().deepCopy(fields()[11].schema(), other.teamStatsfg3a);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.teamStatsftm)) {
-        this.teamStatsftm = (java.lang.Integer) data().deepCopy(fields()[12].schema(), other.teamStatsftm);
+      if (isValidValue(fields()[12], other.teamStatsfg3Pct)) {
+        this.teamStatsfg3Pct = (java.lang.Long) data().deepCopy(fields()[12].schema(), other.teamStatsfg3Pct);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.teamStatsfta)) {
-        this.teamStatsfta = (java.lang.Integer) data().deepCopy(fields()[13].schema(), other.teamStatsfta);
+      if (isValidValue(fields()[13], other.teamStatsftm)) {
+        this.teamStatsftm = (java.lang.Long) data().deepCopy(fields()[13].schema(), other.teamStatsftm);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.teamStatsftPct)) {
-        this.teamStatsftPct = (java.lang.Integer) data().deepCopy(fields()[14].schema(), other.teamStatsftPct);
+      if (isValidValue(fields()[14], other.teamStatsfta)) {
+        this.teamStatsfta = (java.lang.Long) data().deepCopy(fields()[14].schema(), other.teamStatsfta);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.teamStatsoreb)) {
-        this.teamStatsoreb = (java.lang.Integer) data().deepCopy(fields()[15].schema(), other.teamStatsoreb);
+      if (isValidValue(fields()[15], other.teamStatsftPct)) {
+        this.teamStatsftPct = (java.lang.Long) data().deepCopy(fields()[15].schema(), other.teamStatsftPct);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.teamStatsdreb)) {
-        this.teamStatsdreb = (java.lang.Integer) data().deepCopy(fields()[16].schema(), other.teamStatsdreb);
+      if (isValidValue(fields()[16], other.teamStatsoreb)) {
+        this.teamStatsoreb = (java.lang.Long) data().deepCopy(fields()[16].schema(), other.teamStatsoreb);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.teamStatsreb)) {
-        this.teamStatsreb = (java.lang.Integer) data().deepCopy(fields()[17].schema(), other.teamStatsreb);
+      if (isValidValue(fields()[17], other.teamStatsdreb)) {
+        this.teamStatsdreb = (java.lang.Long) data().deepCopy(fields()[17].schema(), other.teamStatsdreb);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.teamStatsast)) {
-        this.teamStatsast = (java.lang.Integer) data().deepCopy(fields()[18].schema(), other.teamStatsast);
+      if (isValidValue(fields()[18], other.teamStatsreb)) {
+        this.teamStatsreb = (java.lang.Long) data().deepCopy(fields()[18].schema(), other.teamStatsreb);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.teamStatsstl)) {
-        this.teamStatsstl = (java.lang.Integer) data().deepCopy(fields()[19].schema(), other.teamStatsstl);
+      if (isValidValue(fields()[19], other.teamStatsast)) {
+        this.teamStatsast = (java.lang.Long) data().deepCopy(fields()[19].schema(), other.teamStatsast);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.teamStatsblk)) {
-        this.teamStatsblk = (java.lang.Integer) data().deepCopy(fields()[20].schema(), other.teamStatsblk);
+      if (isValidValue(fields()[20], other.teamStatsstl)) {
+        this.teamStatsstl = (java.lang.Long) data().deepCopy(fields()[20].schema(), other.teamStatsstl);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.teamStatsto)) {
-        this.teamStatsto = (java.lang.Integer) data().deepCopy(fields()[21].schema(), other.teamStatsto);
+      if (isValidValue(fields()[21], other.teamStatsblk)) {
+        this.teamStatsblk = (java.lang.Long) data().deepCopy(fields()[21].schema(), other.teamStatsblk);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.teamStatspf)) {
-        this.teamStatspf = (java.lang.Integer) data().deepCopy(fields()[22].schema(), other.teamStatspf);
+      if (isValidValue(fields()[22], other.teamStatsto)) {
+        this.teamStatsto = (java.lang.Long) data().deepCopy(fields()[22].schema(), other.teamStatsto);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.teamStatsPts)) {
-        this.teamStatsPts = (java.lang.Integer) data().deepCopy(fields()[23].schema(), other.teamStatsPts);
+      if (isValidValue(fields()[23], other.teamStatspf)) {
+        this.teamStatspf = (java.lang.Long) data().deepCopy(fields()[23].schema(), other.teamStatspf);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.teamStatsPlusMinus)) {
-        this.teamStatsPlusMinus = (java.lang.Integer) data().deepCopy(fields()[24].schema(), other.teamStatsPlusMinus);
+      if (isValidValue(fields()[24], other.teamStatsPts)) {
+        this.teamStatsPts = (java.lang.Long) data().deepCopy(fields()[24].schema(), other.teamStatsPts);
         fieldSetFlags()[24] = true;
+      }
+      if (isValidValue(fields()[25], other.teamStatsPlusMinus)) {
+        this.teamStatsPlusMinus = (java.lang.Long) data().deepCopy(fields()[25].schema(), other.teamStatsPlusMinus);
+        fieldSetFlags()[25] = true;
       }
     }
 
     /** Gets the value of the 'gameTeamStatsId' field */
-    public java.lang.Integer getGameTeamStatsId() {
+    public java.lang.Long getGameTeamStatsId() {
       return gameTeamStatsId;
     }
     
     /** Sets the value of the 'gameTeamStatsId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setGameTeamStatsId(int value) {
-      validate(fields()[0], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setGameTeamStatsId(long value) {
+      validate(fields()[1], value);
       this.gameTeamStatsId = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'gameTeamStatsId' field has been set */
     public boolean hasGameTeamStatsId() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'gameTeamStatsId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearGameTeamStatsId() {
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsTeamId' field */
-    public java.lang.Integer getTeamStatsTeamId() {
+    public java.lang.Long getTeamStatsTeamId() {
       return teamStatsTeamId;
     }
     
     /** Sets the value of the 'teamStatsTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamId(int value) {
-      validate(fields()[1], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamId(long value) {
+      validate(fields()[2], value);
       this.teamStatsTeamId = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsTeamId' field has been set */
     public boolean hasTeamStatsTeamId() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'teamStatsTeamId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamId() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
@@ -1039,21 +1042,21 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamStatsTeamName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamName(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.teamStatsTeamName = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsTeamName' field has been set */
     public boolean hasTeamStatsTeamName() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'teamStatsTeamName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamName() {
       teamStatsTeamName = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -1064,21 +1067,21 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamStatsTeamAbbreviation' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamAbbreviation(java.lang.CharSequence value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.teamStatsTeamAbbreviation = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsTeamAbbreviation' field has been set */
     public boolean hasTeamStatsTeamAbbreviation() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'teamStatsTeamAbbreviation' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamAbbreviation() {
       teamStatsTeamAbbreviation = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
@@ -1089,21 +1092,21 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamStatsTeamCity' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamCity(java.lang.CharSequence value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.teamStatsTeamCity = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsTeamCity' field has been set */
     public boolean hasTeamStatsTeamCity() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'teamStatsTeamCity' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamCity() {
       teamStatsTeamCity = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
     
@@ -1114,69 +1117,69 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamStatsMin' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsMin(java.lang.CharSequence value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.teamStatsMin = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsMin' field has been set */
     public boolean hasTeamStatsMin() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'teamStatsMin' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsMin() {
       teamStatsMin = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsFgm' field */
-    public java.lang.Integer getTeamStatsFgm() {
+    public java.lang.Long getTeamStatsFgm() {
       return teamStatsFgm;
     }
     
     /** Sets the value of the 'teamStatsFgm' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsFgm(int value) {
-      validate(fields()[6], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsFgm(long value) {
+      validate(fields()[7], value);
       this.teamStatsFgm = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsFgm' field has been set */
     public boolean hasTeamStatsFgm() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'teamStatsFgm' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsFgm() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsFga' field */
-    public java.lang.Integer getTeamStatsFga() {
+    public java.lang.Long getTeamStatsFga() {
       return teamStatsFga;
     }
     
     /** Sets the value of the 'teamStatsFga' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsFga(int value) {
-      validate(fields()[7], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsFga(long value) {
+      validate(fields()[8], value);
       this.teamStatsFga = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsFga' field has been set */
     public boolean hasTeamStatsFga() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'teamStatsFga' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsFga() {
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
     
@@ -1187,68 +1190,68 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamStatsfgPct' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfgPct(long value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.teamStatsfgPct = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsfgPct' field has been set */
     public boolean hasTeamStatsfgPct() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'teamStatsfgPct' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfgPct() {
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsfg3m' field */
-    public java.lang.Integer getTeamStatsfg3m() {
+    public java.lang.Long getTeamStatsfg3m() {
       return teamStatsfg3m;
     }
     
     /** Sets the value of the 'teamStatsfg3m' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3m(int value) {
-      validate(fields()[9], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3m(long value) {
+      validate(fields()[10], value);
       this.teamStatsfg3m = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsfg3m' field has been set */
     public boolean hasTeamStatsfg3m() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
     
     /** Clears the value of the 'teamStatsfg3m' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfg3m() {
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsfg3a' field */
-    public java.lang.Integer getTeamStatsfg3a() {
+    public java.lang.Long getTeamStatsfg3a() {
       return teamStatsfg3a;
     }
     
     /** Sets the value of the 'teamStatsfg3a' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3a(int value) {
-      validate(fields()[10], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3a(long value) {
+      validate(fields()[11], value);
       this.teamStatsfg3a = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsfg3a' field has been set */
     public boolean hasTeamStatsfg3a() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
     
     /** Clears the value of the 'teamStatsfg3a' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfg3a() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
     
@@ -1259,332 +1262,332 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamStatsfg3Pct' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3Pct(long value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.teamStatsfg3Pct = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsfg3Pct' field has been set */
     public boolean hasTeamStatsfg3Pct() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
     
     /** Clears the value of the 'teamStatsfg3Pct' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfg3Pct() {
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsftm' field */
-    public java.lang.Integer getTeamStatsftm() {
+    public java.lang.Long getTeamStatsftm() {
       return teamStatsftm;
     }
     
     /** Sets the value of the 'teamStatsftm' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsftm(int value) {
-      validate(fields()[12], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsftm(long value) {
+      validate(fields()[13], value);
       this.teamStatsftm = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsftm' field has been set */
     public boolean hasTeamStatsftm() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
     
     /** Clears the value of the 'teamStatsftm' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsftm() {
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsfta' field */
-    public java.lang.Integer getTeamStatsfta() {
+    public java.lang.Long getTeamStatsfta() {
       return teamStatsfta;
     }
     
     /** Sets the value of the 'teamStatsfta' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfta(int value) {
-      validate(fields()[13], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfta(long value) {
+      validate(fields()[14], value);
       this.teamStatsfta = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsfta' field has been set */
     public boolean hasTeamStatsfta() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
     
     /** Clears the value of the 'teamStatsfta' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfta() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsftPct' field */
-    public java.lang.Integer getTeamStatsftPct() {
+    public java.lang.Long getTeamStatsftPct() {
       return teamStatsftPct;
     }
     
     /** Sets the value of the 'teamStatsftPct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsftPct(int value) {
-      validate(fields()[14], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsftPct(long value) {
+      validate(fields()[15], value);
       this.teamStatsftPct = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsftPct' field has been set */
     public boolean hasTeamStatsftPct() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
     
     /** Clears the value of the 'teamStatsftPct' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsftPct() {
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsoreb' field */
-    public java.lang.Integer getTeamStatsoreb() {
+    public java.lang.Long getTeamStatsoreb() {
       return teamStatsoreb;
     }
     
     /** Sets the value of the 'teamStatsoreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsoreb(int value) {
-      validate(fields()[15], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsoreb(long value) {
+      validate(fields()[16], value);
       this.teamStatsoreb = value;
-      fieldSetFlags()[15] = true;
+      fieldSetFlags()[16] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsoreb' field has been set */
     public boolean hasTeamStatsoreb() {
-      return fieldSetFlags()[15];
+      return fieldSetFlags()[16];
     }
     
     /** Clears the value of the 'teamStatsoreb' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsoreb() {
-      fieldSetFlags()[15] = false;
+      fieldSetFlags()[16] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsdreb' field */
-    public java.lang.Integer getTeamStatsdreb() {
+    public java.lang.Long getTeamStatsdreb() {
       return teamStatsdreb;
     }
     
     /** Sets the value of the 'teamStatsdreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsdreb(int value) {
-      validate(fields()[16], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsdreb(long value) {
+      validate(fields()[17], value);
       this.teamStatsdreb = value;
-      fieldSetFlags()[16] = true;
+      fieldSetFlags()[17] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsdreb' field has been set */
     public boolean hasTeamStatsdreb() {
-      return fieldSetFlags()[16];
+      return fieldSetFlags()[17];
     }
     
     /** Clears the value of the 'teamStatsdreb' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsdreb() {
-      fieldSetFlags()[16] = false;
+      fieldSetFlags()[17] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsreb' field */
-    public java.lang.Integer getTeamStatsreb() {
+    public java.lang.Long getTeamStatsreb() {
       return teamStatsreb;
     }
     
     /** Sets the value of the 'teamStatsreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsreb(int value) {
-      validate(fields()[17], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsreb(long value) {
+      validate(fields()[18], value);
       this.teamStatsreb = value;
-      fieldSetFlags()[17] = true;
+      fieldSetFlags()[18] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsreb' field has been set */
     public boolean hasTeamStatsreb() {
-      return fieldSetFlags()[17];
+      return fieldSetFlags()[18];
     }
     
     /** Clears the value of the 'teamStatsreb' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsreb() {
-      fieldSetFlags()[17] = false;
+      fieldSetFlags()[18] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsast' field */
-    public java.lang.Integer getTeamStatsast() {
+    public java.lang.Long getTeamStatsast() {
       return teamStatsast;
     }
     
     /** Sets the value of the 'teamStatsast' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsast(int value) {
-      validate(fields()[18], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsast(long value) {
+      validate(fields()[19], value);
       this.teamStatsast = value;
-      fieldSetFlags()[18] = true;
+      fieldSetFlags()[19] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsast' field has been set */
     public boolean hasTeamStatsast() {
-      return fieldSetFlags()[18];
+      return fieldSetFlags()[19];
     }
     
     /** Clears the value of the 'teamStatsast' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsast() {
-      fieldSetFlags()[18] = false;
+      fieldSetFlags()[19] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsstl' field */
-    public java.lang.Integer getTeamStatsstl() {
+    public java.lang.Long getTeamStatsstl() {
       return teamStatsstl;
     }
     
     /** Sets the value of the 'teamStatsstl' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsstl(int value) {
-      validate(fields()[19], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsstl(long value) {
+      validate(fields()[20], value);
       this.teamStatsstl = value;
-      fieldSetFlags()[19] = true;
+      fieldSetFlags()[20] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsstl' field has been set */
     public boolean hasTeamStatsstl() {
-      return fieldSetFlags()[19];
+      return fieldSetFlags()[20];
     }
     
     /** Clears the value of the 'teamStatsstl' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsstl() {
-      fieldSetFlags()[19] = false;
+      fieldSetFlags()[20] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsblk' field */
-    public java.lang.Integer getTeamStatsblk() {
+    public java.lang.Long getTeamStatsblk() {
       return teamStatsblk;
     }
     
     /** Sets the value of the 'teamStatsblk' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsblk(int value) {
-      validate(fields()[20], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsblk(long value) {
+      validate(fields()[21], value);
       this.teamStatsblk = value;
-      fieldSetFlags()[20] = true;
+      fieldSetFlags()[21] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsblk' field has been set */
     public boolean hasTeamStatsblk() {
-      return fieldSetFlags()[20];
+      return fieldSetFlags()[21];
     }
     
     /** Clears the value of the 'teamStatsblk' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsblk() {
-      fieldSetFlags()[20] = false;
+      fieldSetFlags()[21] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsto' field */
-    public java.lang.Integer getTeamStatsto() {
+    public java.lang.Long getTeamStatsto() {
       return teamStatsto;
     }
     
     /** Sets the value of the 'teamStatsto' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsto(int value) {
-      validate(fields()[21], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsto(long value) {
+      validate(fields()[22], value);
       this.teamStatsto = value;
-      fieldSetFlags()[21] = true;
+      fieldSetFlags()[22] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsto' field has been set */
     public boolean hasTeamStatsto() {
-      return fieldSetFlags()[21];
+      return fieldSetFlags()[22];
     }
     
     /** Clears the value of the 'teamStatsto' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsto() {
-      fieldSetFlags()[21] = false;
+      fieldSetFlags()[22] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatspf' field */
-    public java.lang.Integer getTeamStatspf() {
+    public java.lang.Long getTeamStatspf() {
       return teamStatspf;
     }
     
     /** Sets the value of the 'teamStatspf' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatspf(int value) {
-      validate(fields()[22], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatspf(long value) {
+      validate(fields()[23], value);
       this.teamStatspf = value;
-      fieldSetFlags()[22] = true;
+      fieldSetFlags()[23] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatspf' field has been set */
     public boolean hasTeamStatspf() {
-      return fieldSetFlags()[22];
+      return fieldSetFlags()[23];
     }
     
     /** Clears the value of the 'teamStatspf' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatspf() {
-      fieldSetFlags()[22] = false;
+      fieldSetFlags()[23] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsPts' field */
-    public java.lang.Integer getTeamStatsPts() {
+    public java.lang.Long getTeamStatsPts() {
       return teamStatsPts;
     }
     
     /** Sets the value of the 'teamStatsPts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsPts(int value) {
-      validate(fields()[23], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsPts(long value) {
+      validate(fields()[24], value);
       this.teamStatsPts = value;
-      fieldSetFlags()[23] = true;
+      fieldSetFlags()[24] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsPts' field has been set */
     public boolean hasTeamStatsPts() {
-      return fieldSetFlags()[23];
+      return fieldSetFlags()[24];
     }
     
     /** Clears the value of the 'teamStatsPts' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsPts() {
-      fieldSetFlags()[23] = false;
+      fieldSetFlags()[24] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStatsPlusMinus' field */
-    public java.lang.Integer getTeamStatsPlusMinus() {
+    public java.lang.Long getTeamStatsPlusMinus() {
       return teamStatsPlusMinus;
     }
     
     /** Sets the value of the 'teamStatsPlusMinus' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsPlusMinus(int value) {
-      validate(fields()[24], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsPlusMinus(long value) {
+      validate(fields()[25], value);
       this.teamStatsPlusMinus = value;
-      fieldSetFlags()[24] = true;
+      fieldSetFlags()[25] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStatsPlusMinus' field has been set */
     public boolean hasTeamStatsPlusMinus() {
-      return fieldSetFlags()[24];
+      return fieldSetFlags()[25];
     }
     
     /** Clears the value of the 'teamStatsPlusMinus' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsPlusMinus() {
-      fieldSetFlags()[24] = false;
+      fieldSetFlags()[25] = false;
       return this;
     }
     
@@ -1592,31 +1595,32 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     public TeamStats build() {
       try {
         TeamStats record = new TeamStats();
-        record.gameTeamStatsId = fieldSetFlags()[0] ? this.gameTeamStatsId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.teamStatsTeamId = fieldSetFlags()[1] ? this.teamStatsTeamId : (java.lang.Integer) defaultValue(fields()[1]);
-        record.teamStatsTeamName = fieldSetFlags()[2] ? this.teamStatsTeamName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.teamStatsTeamAbbreviation = fieldSetFlags()[3] ? this.teamStatsTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.teamStatsTeamCity = fieldSetFlags()[4] ? this.teamStatsTeamCity : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.teamStatsMin = fieldSetFlags()[5] ? this.teamStatsMin : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.teamStatsFgm = fieldSetFlags()[6] ? this.teamStatsFgm : (java.lang.Integer) defaultValue(fields()[6]);
-        record.teamStatsFga = fieldSetFlags()[7] ? this.teamStatsFga : (java.lang.Integer) defaultValue(fields()[7]);
-        record.teamStatsfgPct = fieldSetFlags()[8] ? this.teamStatsfgPct : (java.lang.Long) defaultValue(fields()[8]);
-        record.teamStatsfg3m = fieldSetFlags()[9] ? this.teamStatsfg3m : (java.lang.Integer) defaultValue(fields()[9]);
-        record.teamStatsfg3a = fieldSetFlags()[10] ? this.teamStatsfg3a : (java.lang.Integer) defaultValue(fields()[10]);
-        record.teamStatsfg3Pct = fieldSetFlags()[11] ? this.teamStatsfg3Pct : (java.lang.Long) defaultValue(fields()[11]);
-        record.teamStatsftm = fieldSetFlags()[12] ? this.teamStatsftm : (java.lang.Integer) defaultValue(fields()[12]);
-        record.teamStatsfta = fieldSetFlags()[13] ? this.teamStatsfta : (java.lang.Integer) defaultValue(fields()[13]);
-        record.teamStatsftPct = fieldSetFlags()[14] ? this.teamStatsftPct : (java.lang.Integer) defaultValue(fields()[14]);
-        record.teamStatsoreb = fieldSetFlags()[15] ? this.teamStatsoreb : (java.lang.Integer) defaultValue(fields()[15]);
-        record.teamStatsdreb = fieldSetFlags()[16] ? this.teamStatsdreb : (java.lang.Integer) defaultValue(fields()[16]);
-        record.teamStatsreb = fieldSetFlags()[17] ? this.teamStatsreb : (java.lang.Integer) defaultValue(fields()[17]);
-        record.teamStatsast = fieldSetFlags()[18] ? this.teamStatsast : (java.lang.Integer) defaultValue(fields()[18]);
-        record.teamStatsstl = fieldSetFlags()[19] ? this.teamStatsstl : (java.lang.Integer) defaultValue(fields()[19]);
-        record.teamStatsblk = fieldSetFlags()[20] ? this.teamStatsblk : (java.lang.Integer) defaultValue(fields()[20]);
-        record.teamStatsto = fieldSetFlags()[21] ? this.teamStatsto : (java.lang.Integer) defaultValue(fields()[21]);
-        record.teamStatspf = fieldSetFlags()[22] ? this.teamStatspf : (java.lang.Integer) defaultValue(fields()[22]);
-        record.teamStatsPts = fieldSetFlags()[23] ? this.teamStatsPts : (java.lang.Integer) defaultValue(fields()[23]);
-        record.teamStatsPlusMinus = fieldSetFlags()[24] ? this.teamStatsPlusMinus : (java.lang.Integer) defaultValue(fields()[24]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[4]);
+        record.gameTeamStatsId = fieldSetFlags()[1] ? this.gameTeamStatsId : (java.lang.Long) defaultValue(fields()[1]);
+        record.teamStatsTeamId = fieldSetFlags()[2] ? this.teamStatsTeamId : (java.lang.Long) defaultValue(fields()[2]);
+        record.teamStatsTeamName = fieldSetFlags()[3] ? this.teamStatsTeamName : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.teamStatsTeamAbbreviation = fieldSetFlags()[4] ? this.teamStatsTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.teamStatsTeamCity = fieldSetFlags()[5] ? this.teamStatsTeamCity : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.teamStatsMin = fieldSetFlags()[6] ? this.teamStatsMin : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.teamStatsFgm = fieldSetFlags()[7] ? this.teamStatsFgm : (java.lang.Long) defaultValue(fields()[7]);
+        record.teamStatsFga = fieldSetFlags()[8] ? this.teamStatsFga : (java.lang.Long) defaultValue(fields()[8]);
+        record.teamStatsfgPct = fieldSetFlags()[9] ? this.teamStatsfgPct : (java.lang.Long) defaultValue(fields()[9]);
+        record.teamStatsfg3m = fieldSetFlags()[10] ? this.teamStatsfg3m : (java.lang.Long) defaultValue(fields()[10]);
+        record.teamStatsfg3a = fieldSetFlags()[11] ? this.teamStatsfg3a : (java.lang.Long) defaultValue(fields()[11]);
+        record.teamStatsfg3Pct = fieldSetFlags()[12] ? this.teamStatsfg3Pct : (java.lang.Long) defaultValue(fields()[12]);
+        record.teamStatsftm = fieldSetFlags()[13] ? this.teamStatsftm : (java.lang.Long) defaultValue(fields()[13]);
+        record.teamStatsfta = fieldSetFlags()[14] ? this.teamStatsfta : (java.lang.Long) defaultValue(fields()[14]);
+        record.teamStatsftPct = fieldSetFlags()[15] ? this.teamStatsftPct : (java.lang.Long) defaultValue(fields()[15]);
+        record.teamStatsoreb = fieldSetFlags()[16] ? this.teamStatsoreb : (java.lang.Long) defaultValue(fields()[16]);
+        record.teamStatsdreb = fieldSetFlags()[17] ? this.teamStatsdreb : (java.lang.Long) defaultValue(fields()[17]);
+        record.teamStatsreb = fieldSetFlags()[18] ? this.teamStatsreb : (java.lang.Long) defaultValue(fields()[18]);
+        record.teamStatsast = fieldSetFlags()[19] ? this.teamStatsast : (java.lang.Long) defaultValue(fields()[19]);
+        record.teamStatsstl = fieldSetFlags()[20] ? this.teamStatsstl : (java.lang.Long) defaultValue(fields()[20]);
+        record.teamStatsblk = fieldSetFlags()[21] ? this.teamStatsblk : (java.lang.Long) defaultValue(fields()[21]);
+        record.teamStatsto = fieldSetFlags()[22] ? this.teamStatsto : (java.lang.Long) defaultValue(fields()[22]);
+        record.teamStatspf = fieldSetFlags()[23] ? this.teamStatspf : (java.lang.Long) defaultValue(fields()[23]);
+        record.teamStatsPts = fieldSetFlags()[24] ? this.teamStatsPts : (java.lang.Long) defaultValue(fields()[24]);
+        record.teamStatsPlusMinus = fieldSetFlags()[25] ? this.teamStatsPlusMinus : (java.lang.Long) defaultValue(fields()[25]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -1638,10 +1642,10 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'gameTeamStatsId' field.
 		   */
-	  public java.lang.Integer getGameTeamStatsId() {
+	  public java.lang.Long getGameTeamStatsId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1649,7 +1653,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'gameTeamStatsId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameTeamStatsId(java.lang.Integer value) {
+	  public void setGameTeamStatsId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1657,14 +1661,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'gameTeamStatsId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameTeamStatsIdDirty(java.lang.Integer value) {
+	  public boolean isGameTeamStatsIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsTeamId' field.
 		   */
-	  public java.lang.Integer getTeamStatsTeamId() {
+	  public java.lang.Long getTeamStatsTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1672,7 +1676,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsTeamId(java.lang.Integer value) {
+	  public void setTeamStatsTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1680,7 +1684,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsTeamIdDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1779,7 +1783,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'teamStatsFgm' field.
 		   */
-	  public java.lang.Integer getTeamStatsFgm() {
+	  public java.lang.Long getTeamStatsFgm() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1787,7 +1791,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsFgm' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsFgm(java.lang.Integer value) {
+	  public void setTeamStatsFgm(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1795,14 +1799,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsFgm' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsFgmDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsFgmDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsFga' field.
 		   */
-	  public java.lang.Integer getTeamStatsFga() {
+	  public java.lang.Long getTeamStatsFga() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1810,7 +1814,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsFga' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsFga(java.lang.Integer value) {
+	  public void setTeamStatsFga(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1818,7 +1822,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsFga' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsFgaDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsFgaDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1848,7 +1852,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'teamStatsfg3m' field.
 		   */
-	  public java.lang.Integer getTeamStatsfg3m() {
+	  public java.lang.Long getTeamStatsfg3m() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1856,7 +1860,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsfg3m' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsfg3m(java.lang.Integer value) {
+	  public void setTeamStatsfg3m(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1864,14 +1868,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsfg3m' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsfg3mDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsfg3mDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsfg3a' field.
 		   */
-	  public java.lang.Integer getTeamStatsfg3a() {
+	  public java.lang.Long getTeamStatsfg3a() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1879,7 +1883,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsfg3a' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsfg3a(java.lang.Integer value) {
+	  public void setTeamStatsfg3a(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1887,7 +1891,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsfg3a' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsfg3aDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsfg3aDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1917,7 +1921,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'teamStatsftm' field.
 		   */
-	  public java.lang.Integer getTeamStatsftm() {
+	  public java.lang.Long getTeamStatsftm() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1925,7 +1929,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsftm' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsftm(java.lang.Integer value) {
+	  public void setTeamStatsftm(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1933,14 +1937,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsftm' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsftmDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsftmDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsfta' field.
 		   */
-	  public java.lang.Integer getTeamStatsfta() {
+	  public java.lang.Long getTeamStatsfta() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1948,7 +1952,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsfta' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsfta(java.lang.Integer value) {
+	  public void setTeamStatsfta(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1956,14 +1960,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsfta' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsftaDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsftaDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsftPct' field.
 		   */
-	  public java.lang.Integer getTeamStatsftPct() {
+	  public java.lang.Long getTeamStatsftPct() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1971,7 +1975,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsftPct' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsftPct(java.lang.Integer value) {
+	  public void setTeamStatsftPct(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1979,14 +1983,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsftPct' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsftPctDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsftPctDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsoreb' field.
 		   */
-	  public java.lang.Integer getTeamStatsoreb() {
+	  public java.lang.Long getTeamStatsoreb() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1994,7 +1998,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsoreb' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsoreb(java.lang.Integer value) {
+	  public void setTeamStatsoreb(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2002,14 +2006,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsoreb' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsorebDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsorebDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsdreb' field.
 		   */
-	  public java.lang.Integer getTeamStatsdreb() {
+	  public java.lang.Long getTeamStatsdreb() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2017,7 +2021,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsdreb' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsdreb(java.lang.Integer value) {
+	  public void setTeamStatsdreb(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2025,14 +2029,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsdreb' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsdrebDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsdrebDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsreb' field.
 		   */
-	  public java.lang.Integer getTeamStatsreb() {
+	  public java.lang.Long getTeamStatsreb() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2040,7 +2044,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsreb' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsreb(java.lang.Integer value) {
+	  public void setTeamStatsreb(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2048,14 +2052,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsreb' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsrebDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsrebDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsast' field.
 		   */
-	  public java.lang.Integer getTeamStatsast() {
+	  public java.lang.Long getTeamStatsast() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2063,7 +2067,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsast' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsast(java.lang.Integer value) {
+	  public void setTeamStatsast(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2071,14 +2075,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsast' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsastDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsastDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsstl' field.
 		   */
-	  public java.lang.Integer getTeamStatsstl() {
+	  public java.lang.Long getTeamStatsstl() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2086,7 +2090,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsstl' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsstl(java.lang.Integer value) {
+	  public void setTeamStatsstl(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2094,14 +2098,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsstl' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsstlDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsstlDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsblk' field.
 		   */
-	  public java.lang.Integer getTeamStatsblk() {
+	  public java.lang.Long getTeamStatsblk() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2109,7 +2113,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsblk' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsblk(java.lang.Integer value) {
+	  public void setTeamStatsblk(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2117,14 +2121,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsblk' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsblkDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsblkDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsto' field.
 		   */
-	  public java.lang.Integer getTeamStatsto() {
+	  public java.lang.Long getTeamStatsto() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2132,7 +2136,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsto' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsto(java.lang.Integer value) {
+	  public void setTeamStatsto(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2140,14 +2144,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsto' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatstoDirty(java.lang.Integer value) {
+	  public boolean isTeamStatstoDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatspf' field.
 		   */
-	  public java.lang.Integer getTeamStatspf() {
+	  public java.lang.Long getTeamStatspf() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2155,7 +2159,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatspf' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatspf(java.lang.Integer value) {
+	  public void setTeamStatspf(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2163,14 +2167,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatspf' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatspfDirty(java.lang.Integer value) {
+	  public boolean isTeamStatspfDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsPts' field.
 		   */
-	  public java.lang.Integer getTeamStatsPts() {
+	  public java.lang.Long getTeamStatsPts() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2178,7 +2182,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsPts' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsPts(java.lang.Integer value) {
+	  public void setTeamStatsPts(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2186,14 +2190,14 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsPts' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsPtsDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsPtsDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStatsPlusMinus' field.
 		   */
-	  public java.lang.Integer getTeamStatsPlusMinus() {
+	  public java.lang.Long getTeamStatsPlusMinus() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -2201,7 +2205,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStatsPlusMinus' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStatsPlusMinus(java.lang.Integer value) {
+	  public void setTeamStatsPlusMinus(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -2209,7 +2213,7 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStatsPlusMinus' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsPlusMinusDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsPlusMinusDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

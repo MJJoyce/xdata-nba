@@ -6,21 +6,22 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OtherStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"leagueId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"int\",\"default\":0},{\"name\":\"otherStatsTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"otherStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"otherStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"int\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"int\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"int\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OtherStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"leagueId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"long\",\"default\":0},{\"name\":\"otherStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"otherStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"otherStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"long\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"long\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"long\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    LEAGUE_ID(0, "leagueId"),
-    SEASON_ID(1, "seasonId"),
-    OTHER_STATS_TEAM_ID(2, "otherStatsTeamId"),
-    OTHER_STATS_TEAM_ABBREVIATION(3, "otherStatsTeamAbbreviation"),
-    OTHER_STATS_TEAM_CITY(4, "otherStatsTeamCity"),
-    PTS_PAINT(5, "ptsPaint"),
-    PTS2ND_CHANCE(6, "pts2ndChance"),
-    PTS_FB(7, "ptsFb"),
-    LARGEST_LEAD(8, "largestLead"),
-    LEAD_CHANGES(9, "leadChanges"),
-    TIMES_TIED(10, "timesTied"),
+    __G__DIRTY(0, "__g__dirty"),
+    LEAGUE_ID(1, "leagueId"),
+    SEASON_ID(2, "seasonId"),
+    OTHER_STATS_TEAM_ID(3, "otherStatsTeamId"),
+    OTHER_STATS_TEAM_ABBREVIATION(4, "otherStatsTeamAbbreviation"),
+    OTHER_STATS_TEAM_CITY(5, "otherStatsTeamCity"),
+    PTS_PAINT(6, "ptsPaint"),
+    PTS2ND_CHANCE(7, "pts2ndChance"),
+    PTS_FB(8, "ptsFb"),
+    LARGEST_LEAD(9, "largestLead"),
+    LEAD_CHANGES(10, "leadChanges"),
+    TIMES_TIED(11, "timesTied"),
     ;
     /**
      * Field's index.
@@ -59,6 +60,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "leagueId",
   "seasonId",
   "otherStatsTeamId",
@@ -72,40 +74,35 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   "timesTied",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return OtherStats._ALL_FIELDS.length;
-  }
-
-  private int leagueId;
-  private int seasonId;
-  private int otherStatsTeamId;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[2]);
+  private long leagueId;
+  private long seasonId;
+  private long otherStatsTeamId;
   private java.lang.CharSequence otherStatsTeamAbbreviation;
   private java.lang.CharSequence otherStatsTeamCity;
-  private int ptsPaint;
-  private int pts2ndChance;
+  private long ptsPaint;
+  private long pts2ndChance;
   private long ptsFb;
-  private int largestLead;
-  private int leadChanges;
+  private long largestLead;
+  private long leadChanges;
   private long timesTied;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return leagueId;
-    case 1: return seasonId;
-    case 2: return otherStatsTeamId;
-    case 3: return otherStatsTeamAbbreviation;
-    case 4: return otherStatsTeamCity;
-    case 5: return ptsPaint;
-    case 6: return pts2ndChance;
-    case 7: return ptsFb;
-    case 8: return largestLead;
-    case 9: return leadChanges;
-    case 10: return timesTied;
+    case 0: return __g__dirty;
+    case 1: return leagueId;
+    case 2: return seasonId;
+    case 3: return otherStatsTeamId;
+    case 4: return otherStatsTeamAbbreviation;
+    case 5: return otherStatsTeamCity;
+    case 6: return ptsPaint;
+    case 7: return pts2ndChance;
+    case 8: return ptsFb;
+    case 9: return largestLead;
+    case 10: return leadChanges;
+    case 11: return timesTied;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -114,17 +111,18 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: leagueId = (java.lang.Integer)(value); break;
-    case 1: seasonId = (java.lang.Integer)(value); break;
-    case 2: otherStatsTeamId = (java.lang.Integer)(value); break;
-    case 3: otherStatsTeamAbbreviation = (java.lang.CharSequence)(value); break;
-    case 4: otherStatsTeamCity = (java.lang.CharSequence)(value); break;
-    case 5: ptsPaint = (java.lang.Integer)(value); break;
-    case 6: pts2ndChance = (java.lang.Integer)(value); break;
-    case 7: ptsFb = (java.lang.Long)(value); break;
-    case 8: largestLead = (java.lang.Integer)(value); break;
-    case 9: leadChanges = (java.lang.Integer)(value); break;
-    case 10: timesTied = (java.lang.Long)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: leagueId = (java.lang.Long)(value); break;
+    case 2: seasonId = (java.lang.Long)(value); break;
+    case 3: otherStatsTeamId = (java.lang.Long)(value); break;
+    case 4: otherStatsTeamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 5: otherStatsTeamCity = (java.lang.CharSequence)(value); break;
+    case 6: ptsPaint = (java.lang.Long)(value); break;
+    case 7: pts2ndChance = (java.lang.Long)(value); break;
+    case 8: ptsFb = (java.lang.Long)(value); break;
+    case 9: largestLead = (java.lang.Long)(value); break;
+    case 10: leadChanges = (java.lang.Long)(value); break;
+    case 11: timesTied = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -132,7 +130,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   /**
    * Gets the value of the 'leagueId' field.
    */
-  public java.lang.Integer getLeagueId() {
+  public java.lang.Long getLeagueId() {
     return leagueId;
   }
 
@@ -140,23 +138,23 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'leagueId' field.
    * @param value the value to set.
    */
-  public void setLeagueId(java.lang.Integer value) {
+  public void setLeagueId(java.lang.Long value) {
     this.leagueId = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
    * Checks the dirty status of the 'leagueId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isLeagueIdDirty(java.lang.Integer value) {
-    return isDirty(0);
+  public boolean isLeagueIdDirty(java.lang.Long value) {
+    return isDirty(1);
   }
 
   /**
    * Gets the value of the 'seasonId' field.
    */
-  public java.lang.Integer getSeasonId() {
+  public java.lang.Long getSeasonId() {
     return seasonId;
   }
 
@@ -164,23 +162,23 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'seasonId' field.
    * @param value the value to set.
    */
-  public void setSeasonId(java.lang.Integer value) {
+  public void setSeasonId(java.lang.Long value) {
     this.seasonId = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
    * Checks the dirty status of the 'seasonId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isSeasonIdDirty(java.lang.Integer value) {
-    return isDirty(1);
+  public boolean isSeasonIdDirty(java.lang.Long value) {
+    return isDirty(2);
   }
 
   /**
    * Gets the value of the 'otherStatsTeamId' field.
    */
-  public java.lang.Integer getOtherStatsTeamId() {
+  public java.lang.Long getOtherStatsTeamId() {
     return otherStatsTeamId;
   }
 
@@ -188,17 +186,17 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'otherStatsTeamId' field.
    * @param value the value to set.
    */
-  public void setOtherStatsTeamId(java.lang.Integer value) {
+  public void setOtherStatsTeamId(java.lang.Long value) {
     this.otherStatsTeamId = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
    * Checks the dirty status of the 'otherStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isOtherStatsTeamIdDirty(java.lang.Integer value) {
-    return isDirty(2);
+  public boolean isOtherStatsTeamIdDirty(java.lang.Long value) {
+    return isDirty(3);
   }
 
   /**
@@ -214,7 +212,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    */
   public void setOtherStatsTeamAbbreviation(java.lang.CharSequence value) {
     this.otherStatsTeamAbbreviation = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
@@ -222,7 +220,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * @param value the value to set.
    */
   public boolean isOtherStatsTeamAbbreviationDirty(java.lang.CharSequence value) {
-    return isDirty(3);
+    return isDirty(4);
   }
 
   /**
@@ -238,7 +236,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    */
   public void setOtherStatsTeamCity(java.lang.CharSequence value) {
     this.otherStatsTeamCity = value;
-    setDirty(4);
+    setDirty(5);
   }
   
   /**
@@ -246,13 +244,13 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * @param value the value to set.
    */
   public boolean isOtherStatsTeamCityDirty(java.lang.CharSequence value) {
-    return isDirty(4);
+    return isDirty(5);
   }
 
   /**
    * Gets the value of the 'ptsPaint' field.
    */
-  public java.lang.Integer getPtsPaint() {
+  public java.lang.Long getPtsPaint() {
     return ptsPaint;
   }
 
@@ -260,23 +258,23 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'ptsPaint' field.
    * @param value the value to set.
    */
-  public void setPtsPaint(java.lang.Integer value) {
+  public void setPtsPaint(java.lang.Long value) {
     this.ptsPaint = value;
-    setDirty(5);
+    setDirty(6);
   }
   
   /**
    * Checks the dirty status of the 'ptsPaint' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsPaintDirty(java.lang.Integer value) {
-    return isDirty(5);
+  public boolean isPtsPaintDirty(java.lang.Long value) {
+    return isDirty(6);
   }
 
   /**
    * Gets the value of the 'pts2ndChance' field.
    */
-  public java.lang.Integer getPts2ndChance() {
+  public java.lang.Long getPts2ndChance() {
     return pts2ndChance;
   }
 
@@ -284,17 +282,17 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'pts2ndChance' field.
    * @param value the value to set.
    */
-  public void setPts2ndChance(java.lang.Integer value) {
+  public void setPts2ndChance(java.lang.Long value) {
     this.pts2ndChance = value;
-    setDirty(6);
+    setDirty(7);
   }
   
   /**
    * Checks the dirty status of the 'pts2ndChance' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPts2ndChanceDirty(java.lang.Integer value) {
-    return isDirty(6);
+  public boolean isPts2ndChanceDirty(java.lang.Long value) {
+    return isDirty(7);
   }
 
   /**
@@ -310,7 +308,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    */
   public void setPtsFb(java.lang.Long value) {
     this.ptsFb = value;
-    setDirty(7);
+    setDirty(8);
   }
   
   /**
@@ -318,13 +316,13 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * @param value the value to set.
    */
   public boolean isPtsFbDirty(java.lang.Long value) {
-    return isDirty(7);
+    return isDirty(8);
   }
 
   /**
    * Gets the value of the 'largestLead' field.
    */
-  public java.lang.Integer getLargestLead() {
+  public java.lang.Long getLargestLead() {
     return largestLead;
   }
 
@@ -332,23 +330,23 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'largestLead' field.
    * @param value the value to set.
    */
-  public void setLargestLead(java.lang.Integer value) {
+  public void setLargestLead(java.lang.Long value) {
     this.largestLead = value;
-    setDirty(8);
+    setDirty(9);
   }
   
   /**
    * Checks the dirty status of the 'largestLead' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isLargestLeadDirty(java.lang.Integer value) {
-    return isDirty(8);
+  public boolean isLargestLeadDirty(java.lang.Long value) {
+    return isDirty(9);
   }
 
   /**
    * Gets the value of the 'leadChanges' field.
    */
-  public java.lang.Integer getLeadChanges() {
+  public java.lang.Long getLeadChanges() {
     return leadChanges;
   }
 
@@ -356,17 +354,17 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * Sets the value of the 'leadChanges' field.
    * @param value the value to set.
    */
-  public void setLeadChanges(java.lang.Integer value) {
+  public void setLeadChanges(java.lang.Long value) {
     this.leadChanges = value;
-    setDirty(9);
+    setDirty(10);
   }
   
   /**
    * Checks the dirty status of the 'leadChanges' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isLeadChangesDirty(java.lang.Integer value) {
-    return isDirty(9);
+  public boolean isLeadChangesDirty(java.lang.Long value) {
+    return isDirty(10);
   }
 
   /**
@@ -382,7 +380,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    */
   public void setTimesTied(java.lang.Long value) {
     this.timesTied = value;
-    setDirty(10);
+    setDirty(11);
   }
   
   /**
@@ -390,7 +388,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
    * @param value the value to set.
    */
   public boolean isTimesTiedDirty(java.lang.Long value) {
-    return isDirty(10);
+    return isDirty(11);
   }
 
   /** Creates a new OtherStats RecordBuilder */
@@ -437,16 +435,17 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OtherStats>
     implements org.apache.avro.data.RecordBuilder<OtherStats> {
 
-    private int leagueId;
-    private int seasonId;
-    private int otherStatsTeamId;
+    private java.nio.ByteBuffer __g__dirty;
+    private long leagueId;
+    private long seasonId;
+    private long otherStatsTeamId;
     private java.lang.CharSequence otherStatsTeamAbbreviation;
     private java.lang.CharSequence otherStatsTeamCity;
-    private int ptsPaint;
-    private int pts2ndChance;
+    private long ptsPaint;
+    private long pts2ndChance;
     private long ptsFb;
-    private int largestLead;
-    private int leadChanges;
+    private long largestLead;
+    private long leadChanges;
     private long timesTied;
 
     /** Creates a new Builder */
@@ -462,121 +461,125 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     /** Creates a Builder by copying an existing OtherStats instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.SCHEMA$);
-      if (isValidValue(fields()[0], other.leagueId)) {
-        this.leagueId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.leagueId);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.seasonId)) {
-        this.seasonId = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.seasonId);
+      if (isValidValue(fields()[1], other.leagueId)) {
+        this.leagueId = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.leagueId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.otherStatsTeamId)) {
-        this.otherStatsTeamId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.otherStatsTeamId);
+      if (isValidValue(fields()[2], other.seasonId)) {
+        this.seasonId = (java.lang.Long) data().deepCopy(fields()[2].schema(), other.seasonId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.otherStatsTeamAbbreviation)) {
-        this.otherStatsTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.otherStatsTeamAbbreviation);
+      if (isValidValue(fields()[3], other.otherStatsTeamId)) {
+        this.otherStatsTeamId = (java.lang.Long) data().deepCopy(fields()[3].schema(), other.otherStatsTeamId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.otherStatsTeamCity)) {
-        this.otherStatsTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.otherStatsTeamCity);
+      if (isValidValue(fields()[4], other.otherStatsTeamAbbreviation)) {
+        this.otherStatsTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.otherStatsTeamAbbreviation);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.ptsPaint)) {
-        this.ptsPaint = (java.lang.Integer) data().deepCopy(fields()[5].schema(), other.ptsPaint);
+      if (isValidValue(fields()[5], other.otherStatsTeamCity)) {
+        this.otherStatsTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.otherStatsTeamCity);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.pts2ndChance)) {
-        this.pts2ndChance = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.pts2ndChance);
+      if (isValidValue(fields()[6], other.ptsPaint)) {
+        this.ptsPaint = (java.lang.Long) data().deepCopy(fields()[6].schema(), other.ptsPaint);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.ptsFb)) {
-        this.ptsFb = (java.lang.Long) data().deepCopy(fields()[7].schema(), other.ptsFb);
+      if (isValidValue(fields()[7], other.pts2ndChance)) {
+        this.pts2ndChance = (java.lang.Long) data().deepCopy(fields()[7].schema(), other.pts2ndChance);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.largestLead)) {
-        this.largestLead = (java.lang.Integer) data().deepCopy(fields()[8].schema(), other.largestLead);
+      if (isValidValue(fields()[8], other.ptsFb)) {
+        this.ptsFb = (java.lang.Long) data().deepCopy(fields()[8].schema(), other.ptsFb);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.leadChanges)) {
-        this.leadChanges = (java.lang.Integer) data().deepCopy(fields()[9].schema(), other.leadChanges);
+      if (isValidValue(fields()[9], other.largestLead)) {
+        this.largestLead = (java.lang.Long) data().deepCopy(fields()[9].schema(), other.largestLead);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.timesTied)) {
-        this.timesTied = (java.lang.Long) data().deepCopy(fields()[10].schema(), other.timesTied);
+      if (isValidValue(fields()[10], other.leadChanges)) {
+        this.leadChanges = (java.lang.Long) data().deepCopy(fields()[10].schema(), other.leadChanges);
         fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.timesTied)) {
+        this.timesTied = (java.lang.Long) data().deepCopy(fields()[11].schema(), other.timesTied);
+        fieldSetFlags()[11] = true;
       }
     }
 
     /** Gets the value of the 'leagueId' field */
-    public java.lang.Integer getLeagueId() {
+    public java.lang.Long getLeagueId() {
       return leagueId;
     }
     
     /** Sets the value of the 'leagueId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setLeagueId(int value) {
-      validate(fields()[0], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setLeagueId(long value) {
+      validate(fields()[1], value);
       this.leagueId = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'leagueId' field has been set */
     public boolean hasLeagueId() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'leagueId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearLeagueId() {
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
     /** Gets the value of the 'seasonId' field */
-    public java.lang.Integer getSeasonId() {
+    public java.lang.Long getSeasonId() {
       return seasonId;
     }
     
     /** Sets the value of the 'seasonId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setSeasonId(int value) {
-      validate(fields()[1], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setSeasonId(long value) {
+      validate(fields()[2], value);
       this.seasonId = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'seasonId' field has been set */
     public boolean hasSeasonId() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'seasonId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearSeasonId() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
     /** Gets the value of the 'otherStatsTeamId' field */
-    public java.lang.Integer getOtherStatsTeamId() {
+    public java.lang.Long getOtherStatsTeamId() {
       return otherStatsTeamId;
     }
     
     /** Sets the value of the 'otherStatsTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamId(int value) {
-      validate(fields()[2], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamId(long value) {
+      validate(fields()[3], value);
       this.otherStatsTeamId = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'otherStatsTeamId' field has been set */
     public boolean hasOtherStatsTeamId() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'otherStatsTeamId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearOtherStatsTeamId() {
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -587,21 +590,21 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     
     /** Sets the value of the 'otherStatsTeamAbbreviation' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamAbbreviation(java.lang.CharSequence value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.otherStatsTeamAbbreviation = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'otherStatsTeamAbbreviation' field has been set */
     public boolean hasOtherStatsTeamAbbreviation() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'otherStatsTeamAbbreviation' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearOtherStatsTeamAbbreviation() {
       otherStatsTeamAbbreviation = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
@@ -612,69 +615,69 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     
     /** Sets the value of the 'otherStatsTeamCity' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setOtherStatsTeamCity(java.lang.CharSequence value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.otherStatsTeamCity = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'otherStatsTeamCity' field has been set */
     public boolean hasOtherStatsTeamCity() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'otherStatsTeamCity' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearOtherStatsTeamCity() {
       otherStatsTeamCity = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsPaint' field */
-    public java.lang.Integer getPtsPaint() {
+    public java.lang.Long getPtsPaint() {
       return ptsPaint;
     }
     
     /** Sets the value of the 'ptsPaint' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setPtsPaint(int value) {
-      validate(fields()[5], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setPtsPaint(long value) {
+      validate(fields()[6], value);
       this.ptsPaint = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsPaint' field has been set */
     public boolean hasPtsPaint() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'ptsPaint' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearPtsPaint() {
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
     
     /** Gets the value of the 'pts2ndChance' field */
-    public java.lang.Integer getPts2ndChance() {
+    public java.lang.Long getPts2ndChance() {
       return pts2ndChance;
     }
     
     /** Sets the value of the 'pts2ndChance' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setPts2ndChance(int value) {
-      validate(fields()[6], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setPts2ndChance(long value) {
+      validate(fields()[7], value);
       this.pts2ndChance = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'pts2ndChance' field has been set */
     public boolean hasPts2ndChance() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'pts2ndChance' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearPts2ndChance() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
     
@@ -685,68 +688,68 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     
     /** Sets the value of the 'ptsFb' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setPtsFb(long value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.ptsFb = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsFb' field has been set */
     public boolean hasPtsFb() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'ptsFb' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearPtsFb() {
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
     
     /** Gets the value of the 'largestLead' field */
-    public java.lang.Integer getLargestLead() {
+    public java.lang.Long getLargestLead() {
       return largestLead;
     }
     
     /** Sets the value of the 'largestLead' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setLargestLead(int value) {
-      validate(fields()[8], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setLargestLead(long value) {
+      validate(fields()[9], value);
       this.largestLead = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'largestLead' field has been set */
     public boolean hasLargestLead() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'largestLead' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearLargestLead() {
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
     
     /** Gets the value of the 'leadChanges' field */
-    public java.lang.Integer getLeadChanges() {
+    public java.lang.Long getLeadChanges() {
       return leadChanges;
     }
     
     /** Sets the value of the 'leadChanges' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setLeadChanges(int value) {
-      validate(fields()[9], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setLeadChanges(long value) {
+      validate(fields()[10], value);
       this.leadChanges = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
     
     /** Checks whether the 'leadChanges' field has been set */
     public boolean hasLeadChanges() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
     
     /** Clears the value of the 'leadChanges' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearLeadChanges() {
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
     
@@ -757,20 +760,20 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     
     /** Sets the value of the 'timesTied' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder setTimesTied(long value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.timesTied = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
     
     /** Checks whether the 'timesTied' field has been set */
     public boolean hasTimesTied() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
     
     /** Clears the value of the 'timesTied' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats.Builder clearTimesTied() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
     
@@ -778,17 +781,18 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
     public OtherStats build() {
       try {
         OtherStats record = new OtherStats();
-        record.leagueId = fieldSetFlags()[0] ? this.leagueId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.seasonId = fieldSetFlags()[1] ? this.seasonId : (java.lang.Integer) defaultValue(fields()[1]);
-        record.otherStatsTeamId = fieldSetFlags()[2] ? this.otherStatsTeamId : (java.lang.Integer) defaultValue(fields()[2]);
-        record.otherStatsTeamAbbreviation = fieldSetFlags()[3] ? this.otherStatsTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.otherStatsTeamCity = fieldSetFlags()[4] ? this.otherStatsTeamCity : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.ptsPaint = fieldSetFlags()[5] ? this.ptsPaint : (java.lang.Integer) defaultValue(fields()[5]);
-        record.pts2ndChance = fieldSetFlags()[6] ? this.pts2ndChance : (java.lang.Integer) defaultValue(fields()[6]);
-        record.ptsFb = fieldSetFlags()[7] ? this.ptsFb : (java.lang.Long) defaultValue(fields()[7]);
-        record.largestLead = fieldSetFlags()[8] ? this.largestLead : (java.lang.Integer) defaultValue(fields()[8]);
-        record.leadChanges = fieldSetFlags()[9] ? this.leadChanges : (java.lang.Integer) defaultValue(fields()[9]);
-        record.timesTied = fieldSetFlags()[10] ? this.timesTied : (java.lang.Long) defaultValue(fields()[10]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[2]);
+        record.leagueId = fieldSetFlags()[1] ? this.leagueId : (java.lang.Long) defaultValue(fields()[1]);
+        record.seasonId = fieldSetFlags()[2] ? this.seasonId : (java.lang.Long) defaultValue(fields()[2]);
+        record.otherStatsTeamId = fieldSetFlags()[3] ? this.otherStatsTeamId : (java.lang.Long) defaultValue(fields()[3]);
+        record.otherStatsTeamAbbreviation = fieldSetFlags()[4] ? this.otherStatsTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.otherStatsTeamCity = fieldSetFlags()[5] ? this.otherStatsTeamCity : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.ptsPaint = fieldSetFlags()[6] ? this.ptsPaint : (java.lang.Long) defaultValue(fields()[6]);
+        record.pts2ndChance = fieldSetFlags()[7] ? this.pts2ndChance : (java.lang.Long) defaultValue(fields()[7]);
+        record.ptsFb = fieldSetFlags()[8] ? this.ptsFb : (java.lang.Long) defaultValue(fields()[8]);
+        record.largestLead = fieldSetFlags()[9] ? this.largestLead : (java.lang.Long) defaultValue(fields()[9]);
+        record.leadChanges = fieldSetFlags()[10] ? this.leadChanges : (java.lang.Long) defaultValue(fields()[10]);
+        record.timesTied = fieldSetFlags()[11] ? this.timesTied : (java.lang.Long) defaultValue(fields()[11]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -810,10 +814,10 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'leagueId' field.
 		   */
-	  public java.lang.Integer getLeagueId() {
+	  public java.lang.Long getLeagueId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -821,7 +825,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'leagueId' field.
 		   * @param value the value to set.
 	   */
-	  public void setLeagueId(java.lang.Integer value) {
+	  public void setLeagueId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -829,14 +833,14 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'leagueId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isLeagueIdDirty(java.lang.Integer value) {
+	  public boolean isLeagueIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'seasonId' field.
 		   */
-	  public java.lang.Integer getSeasonId() {
+	  public java.lang.Long getSeasonId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -844,7 +848,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'seasonId' field.
 		   * @param value the value to set.
 	   */
-	  public void setSeasonId(java.lang.Integer value) {
+	  public void setSeasonId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -852,14 +856,14 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'seasonId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isSeasonIdDirty(java.lang.Integer value) {
+	  public boolean isSeasonIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'otherStatsTeamId' field.
 		   */
-	  public java.lang.Integer getOtherStatsTeamId() {
+	  public java.lang.Long getOtherStatsTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -867,7 +871,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'otherStatsTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setOtherStatsTeamId(java.lang.Integer value) {
+	  public void setOtherStatsTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -875,7 +879,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'otherStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isOtherStatsTeamIdDirty(java.lang.Integer value) {
+	  public boolean isOtherStatsTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -928,7 +932,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 				  /**
 	   * Gets the value of the 'ptsPaint' field.
 		   */
-	  public java.lang.Integer getPtsPaint() {
+	  public java.lang.Long getPtsPaint() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -936,7 +940,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'ptsPaint' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsPaint(java.lang.Integer value) {
+	  public void setPtsPaint(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -944,14 +948,14 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'ptsPaint' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsPaintDirty(java.lang.Integer value) {
+	  public boolean isPtsPaintDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'pts2ndChance' field.
 		   */
-	  public java.lang.Integer getPts2ndChance() {
+	  public java.lang.Long getPts2ndChance() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -959,7 +963,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'pts2ndChance' field.
 		   * @param value the value to set.
 	   */
-	  public void setPts2ndChance(java.lang.Integer value) {
+	  public void setPts2ndChance(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -967,7 +971,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'pts2ndChance' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPts2ndChanceDirty(java.lang.Integer value) {
+	  public boolean isPts2ndChanceDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -997,7 +1001,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 				  /**
 	   * Gets the value of the 'largestLead' field.
 		   */
-	  public java.lang.Integer getLargestLead() {
+	  public java.lang.Long getLargestLead() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1005,7 +1009,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'largestLead' field.
 		   * @param value the value to set.
 	   */
-	  public void setLargestLead(java.lang.Integer value) {
+	  public void setLargestLead(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1013,14 +1017,14 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'largestLead' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isLargestLeadDirty(java.lang.Integer value) {
+	  public boolean isLargestLeadDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'leadChanges' field.
 		   */
-	  public java.lang.Integer getLeadChanges() {
+	  public java.lang.Long getLeadChanges() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1028,7 +1032,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Sets the value of the 'leadChanges' field.
 		   * @param value the value to set.
 	   */
-	  public void setLeadChanges(java.lang.Integer value) {
+	  public void setLeadChanges(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1036,7 +1040,7 @@ public class OtherStats extends org.apache.gora.persistency.impl.PersistentBase 
 	   * Checks the dirty status of the 'leadChanges' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isLeadChangesDirty(java.lang.Integer value) {
+	  public boolean isLeadChangesDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

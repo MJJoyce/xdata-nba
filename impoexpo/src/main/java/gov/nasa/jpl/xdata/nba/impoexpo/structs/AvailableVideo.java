@@ -6,11 +6,12 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AvailableVideo\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"videoAvailableFlag\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AvailableVideo\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"videoAvailableFlag\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    VIDEO_AVAILABLE_FLAG(0, "videoAvailableFlag"),
+    __G__DIRTY(0, "__g__dirty"),
+    VIDEO_AVAILABLE_FLAG(1, "videoAvailableFlag"),
     ;
     /**
      * Field's index.
@@ -49,23 +50,19 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "videoAvailableFlag",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return AvailableVideo._ALL_FIELDS.length;
-  }
-
-  private int videoAvailableFlag;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[1]);
+  private long videoAvailableFlag;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return videoAvailableFlag;
+    case 0: return __g__dirty;
+    case 1: return videoAvailableFlag;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -74,7 +71,8 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: videoAvailableFlag = (java.lang.Integer)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: videoAvailableFlag = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -82,7 +80,7 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
   /**
    * Gets the value of the 'videoAvailableFlag' field.
    */
-  public java.lang.Integer getVideoAvailableFlag() {
+  public java.lang.Long getVideoAvailableFlag() {
     return videoAvailableFlag;
   }
 
@@ -90,17 +88,17 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
    * Sets the value of the 'videoAvailableFlag' field.
    * @param value the value to set.
    */
-  public void setVideoAvailableFlag(java.lang.Integer value) {
+  public void setVideoAvailableFlag(java.lang.Long value) {
     this.videoAvailableFlag = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
    * Checks the dirty status of the 'videoAvailableFlag' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isVideoAvailableFlagDirty(java.lang.Integer value) {
-    return isDirty(0);
+  public boolean isVideoAvailableFlagDirty(java.lang.Long value) {
+    return isDirty(1);
   }
 
   /** Creates a new AvailableVideo RecordBuilder */
@@ -147,7 +145,8 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<AvailableVideo>
     implements org.apache.avro.data.RecordBuilder<AvailableVideo> {
 
-    private int videoAvailableFlag;
+    private java.nio.ByteBuffer __g__dirty;
+    private long videoAvailableFlag;
 
     /** Creates a new Builder */
     private Builder() {
@@ -162,33 +161,37 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
     /** Creates a Builder by copying an existing AvailableVideo instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo.SCHEMA$);
-      if (isValidValue(fields()[0], other.videoAvailableFlag)) {
-        this.videoAvailableFlag = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.videoAvailableFlag);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.videoAvailableFlag)) {
+        this.videoAvailableFlag = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.videoAvailableFlag);
+        fieldSetFlags()[1] = true;
       }
     }
 
     /** Gets the value of the 'videoAvailableFlag' field */
-    public java.lang.Integer getVideoAvailableFlag() {
+    public java.lang.Long getVideoAvailableFlag() {
       return videoAvailableFlag;
     }
     
     /** Sets the value of the 'videoAvailableFlag' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo.Builder setVideoAvailableFlag(int value) {
-      validate(fields()[0], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo.Builder setVideoAvailableFlag(long value) {
+      validate(fields()[1], value);
       this.videoAvailableFlag = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'videoAvailableFlag' field has been set */
     public boolean hasVideoAvailableFlag() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'videoAvailableFlag' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo.Builder clearVideoAvailableFlag() {
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
@@ -196,7 +199,8 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
     public AvailableVideo build() {
       try {
         AvailableVideo record = new AvailableVideo();
-        record.videoAvailableFlag = fieldSetFlags()[0] ? this.videoAvailableFlag : (java.lang.Integer) defaultValue(fields()[0]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[1]);
+        record.videoAvailableFlag = fieldSetFlags()[1] ? this.videoAvailableFlag : (java.lang.Long) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -218,10 +222,10 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'videoAvailableFlag' field.
 		   */
-	  public java.lang.Integer getVideoAvailableFlag() {
+	  public java.lang.Long getVideoAvailableFlag() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -229,7 +233,7 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
 	   * Sets the value of the 'videoAvailableFlag' field.
 		   * @param value the value to set.
 	   */
-	  public void setVideoAvailableFlag(java.lang.Integer value) {
+	  public void setVideoAvailableFlag(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -237,7 +241,7 @@ public class AvailableVideo extends org.apache.gora.persistency.impl.PersistentB
 	   * Checks the dirty status of the 'videoAvailableFlag' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isVideoAvailableFlagDirty(java.lang.Integer value) {
+	  public boolean isVideoAvailableFlagDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
