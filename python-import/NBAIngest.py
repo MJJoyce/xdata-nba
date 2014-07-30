@@ -17,6 +17,7 @@ from GameStats import parse_game_stats_file
 from GamePlayerStats import parse_game_players_stats_file
 import LeagueTeamStats
 
+import etl.etllib as etl
 import SentimentAnalyser
 
 logger = logging.getLogger('nba_ingest_logger')
@@ -128,9 +129,8 @@ def load_game_players(game_players_dir):
 
     # Send single hit to Solr here
     solr_url = SOLR_URL + GAME_PLAYERS_CORE + 'update?commit=true'
-    data = json.dumps(results)
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False)
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GamePlayers ingestions complete')
 
