@@ -192,11 +192,9 @@ def load_commentary(commentary_dirs):
     # Join result set
     results = list(itertools.chain.from_iterable(results))
 
-    # Send single hit to Solr
     solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
-    data = json.dumps(results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('Commentary ingestions complete')
 
