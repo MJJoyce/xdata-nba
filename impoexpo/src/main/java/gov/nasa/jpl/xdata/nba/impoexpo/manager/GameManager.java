@@ -136,30 +136,30 @@ public class GameManager implements Manager {
       for (String string : inputFiles) {
         list.add(string);
       }
-      Game game = null;
-      Preview preview = null;
-      Recap recap = null;
-      Notebook notebook = null;
-      GameStats gameStats = null;
+      Game game = Game.newBuilder().build();
+      Preview preview = Preview.newBuilder().build();
+      Recap recap = Recap.newBuilder().build();
+      Notebook notebook = Notebook.newBuilder().build();
+      GameStats gameStats = GameStats.newBuilder().build();
       // we start at arg 1 as arg 0 is '-aquire'
       for (int i = 1; i < list.size(); i++) {
         
-        switch (list.indexOf(i)) {
+        switch (i) {
         case 1: // switch to parsePreview
-          preview = ParseUtil.parsePreview(list.get(i));
+          preview = ParseUtil.parsePreview(preview, list.get(i));
           game.setPreview(preview);
           break;
         case 2: // switch to parseRecap
-          recap = ParseUtil.parseRecap(list.get(i));
+          recap = ParseUtil.parseRecap(recap, list.get(i));
           game.setRecap(recap);
           break;
         case 3: // switch to parseNotebook
-          notebook = ParseUtil.parseNotebook(list.get(i));
+          notebook = ParseUtil.parseNotebook(notebook, list.get(i));
           game.setNotebook(notebook);
           break;
         case 4: // switch to parseGameStats
           try {
-            gameStats = ParseUtil.parseGameStats(list.get(i));
+            gameStats = ParseUtil.parseGameStats(gameStats, list.get(i));
           } catch (ParseException e) {
             e.printStackTrace();
             break;

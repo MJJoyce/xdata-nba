@@ -6,14 +6,15 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class Game extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Game\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"preview\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Preview\",\"fields\":[{\"name\":\"previewText\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"recap\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Recap\",\"fields\":[{\"name\":\"recapText\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"notebook\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Notebook\",\"fields\":[{\"name\":\"teamNotebook\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notebookAuthor\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"publishingBody\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"postedDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theFacts\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theQuotes\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"default\":[]},{\"name\":\"theStat\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theTurningPoint\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"hot\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"not\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notable\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"upNext\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theLead\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"goodMove\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"badMove\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"gameStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameStats\",\"fields\":[{\"name\":\"gameSummary\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameSummary\",\"fields\":[{\"name\":\"gameSummaryDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummarySequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameGameSummaryId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusText\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameCode\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummaryHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameSummaryVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"season\",\"type\":\"int\",\"default\":0},{\"name\":\"livePeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"livePcTime\",\"type\":\"int\",\"default\":0},{\"name\":\"natlTvBroadcasterAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"livePeriodTimeBcast\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"whStatus\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"lineScore\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LineScore\",\"fields\":[{\"name\":\"gameLineScoreDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameLineScoreSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameLineScoreId\",\"type\":\"int\",\"default\":0},{\"name\":\"lineScoreTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lineScoreTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"int\",\"default\":0},{\"name\":\"lineScorePts\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"seasonSeries\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SeasonSeries\",\"fields\":[{\"name\":\"gameSeasonSeriesId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonSeriesHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonSeriesVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameSeasonSeriesDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamWins\",\"type\":\"int\",\"default\":0},{\"name\":\"homeTeamLosses\",\"type\":\"int\",\"default\":0},{\"name\":\"seriesLeader\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"lastMeeting\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LastMeeting\",\"fields\":[{\"name\":\"gameLastMeetingId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameHomeTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamPoints\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamCity1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamPoints\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"playerStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"PlayerStats\",\"fields\":[{\"name\":\"gamePlayerStatsId\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsPlayerId\",\"type\":\"int\",\"default\":0},{\"name\":\"playerName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startPosition\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"comment\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsFgm\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsFga\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3m\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsfg3a\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsftm\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsfta\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsftPct\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsoreb\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsdreb\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsreb\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsast\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsstl\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsblk\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsto\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatspf\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsPts\",\"type\":\"int\",\"default\":0},{\"name\":\"playerStatsPlusMinus\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"teamStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TeamStats\",\"fields\":[{\"name\":\"gameTeamStatsId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsFgm\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsFga\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3m\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfg3a\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftm\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsfta\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsftPct\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsoreb\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsdreb\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsreb\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsast\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsstl\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsblk\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsto\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatspf\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsPts\",\"type\":\"int\",\"default\":0},{\"name\":\"teamStatsPlusMinus\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"otherStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"OtherStats\",\"fields\":[{\"name\":\"leagueId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"int\",\"default\":0},{\"name\":\"otherStatsTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"otherStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"otherStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"int\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"int\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"int\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"officials\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Officials\",\"fields\":[{\"name\":\"officialId\",\"type\":\"int\",\"default\":0},{\"name\":\"officialFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialJerseyNum\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"gameInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameInfo\",\"fields\":[{\"name\":\"gameDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"attendance\",\"type\":\"int\",\"default\":0},{\"name\":\"gameTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"inactivePlayers\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"InactivePlayers\",\"fields\":[{\"name\":\"inactivePlayersPlayerId\",\"type\":\"int\",\"default\":0},{\"name\":\"inactivePlayersFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersJerseyNum\",\"type\":\"int\",\"default\":0},{\"name\":\"inactivePlayersTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"inactivePLayersTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"availableVideo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AvailableVideo\",\"fields\":[{\"name\":\"videoAvailableFlag\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"rangeType\",\"type\":\"int\",\"default\":0},{\"name\":\"startPeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"startRange\",\"type\":\"int\",\"default\":0},{\"name\":\"endPeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"endRange\",\"type\":\"int\",\"default\":0}]}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Game\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"preview\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Preview\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"previewText\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"recap\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Recap\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"recapText\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"notebook\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Notebook\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"teamNotebook\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notebookAuthor\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"publishingBody\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"postedDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theFacts\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theQuotes\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"default\":[]},{\"name\":\"theStat\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theTurningPoint\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"hot\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"not\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notable\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"upNext\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theLead\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"goodMove\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"badMove\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"gameStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAA\"},{\"name\":\"gameSummary\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameSummary\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"gameSummaryDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummarySequence\",\"type\":\"long\",\"default\":0},{\"name\":\"gameGameSummaryId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameStatusId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameStatusText\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameCode\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummaryHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameSummaryVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"season\",\"type\":\"long\",\"default\":0},{\"name\":\"livePeriod\",\"type\":\"long\",\"default\":0},{\"name\":\"livePcTime\",\"type\":\"long\",\"default\":0},{\"name\":\"natlTvBroadcasterAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"livePeriodTimeBcast\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"whStatus\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"lineScore\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"LineScore\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAA\"},{\"name\":\"gameLineScoreDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameLineScoreSequence\",\"type\":\"long\",\"default\":0},{\"name\":\"gameLineScoreId\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScoreTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScoreTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScorePts\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"seasonSeries\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SeasonSeries\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"gameSeasonSeriesId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonSeriesHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonSeriesVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameSeasonSeriesDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamWins\",\"type\":\"long\",\"default\":0},{\"name\":\"homeTeamLosses\",\"type\":\"long\",\"default\":0},{\"name\":\"seriesLeader\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"lastMeeting\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LastMeeting\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"gameLastMeetingId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameHomeTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamPoints\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameVisitorTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamCity1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamPoints\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"playerStats\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"PlayerStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAAAA==\"},{\"name\":\"gamePlayerStatsId\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsPlayerId\",\"type\":\"long\",\"default\":0},{\"name\":\"playerName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startPosition\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"comment\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsFgm\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsFga\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3m\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3a\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsftm\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfta\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsftPct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsoreb\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsdreb\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsreb\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsast\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsstl\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsblk\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsto\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatspf\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsPts\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsPlusMinus\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"teamStats\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"TeamStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAAAA==\"},{\"name\":\"gameTeamStatsId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsFgm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsFga\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3m\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3a\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfta\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsoreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsdreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsast\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsstl\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsblk\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsto\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatspf\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPts\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPlusMinus\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"otherStats\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"OtherStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"leagueId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"long\",\"default\":0},{\"name\":\"otherStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"otherStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"otherStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"long\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"long\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"long\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"officials\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"Officials\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"officialId\",\"type\":\"long\",\"default\":0},{\"name\":\"officialFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialJerseyNum\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"gameInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameInfo\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"gameDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"attendance\",\"type\":\"long\",\"default\":0},{\"name\":\"gameTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"inactivePlayers\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"InactivePlayers\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"inactivePlayersPlayerId\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePlayersFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersJerseyNum\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePlayersTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePLayersTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null}]}]}},{\"name\":\"availableVideo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AvailableVideo\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"videoAvailableFlag\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"gameId\",\"type\":\"long\",\"default\":0},{\"name\":\"rangeType\",\"type\":\"long\",\"default\":0},{\"name\":\"startPeriod\",\"type\":\"long\",\"default\":0},{\"name\":\"startRange\",\"type\":\"long\",\"default\":0},{\"name\":\"endPeriod\",\"type\":\"long\",\"default\":0},{\"name\":\"endRange\",\"type\":\"long\",\"default\":0}]}],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    PREVIEW(0, "preview"),
-    RECAP(1, "recap"),
-    NOTEBOOK(2, "notebook"),
-    GAME_STATS(3, "gameStats"),
+    __G__DIRTY(0, "__g__dirty"),
+    PREVIEW(1, "preview"),
+    RECAP(2, "recap"),
+    NOTEBOOK(3, "notebook"),
+    GAME_STATS(4, "gameStats"),
     ;
     /**
      * Field's index.
@@ -52,20 +53,15 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "preview",
   "recap",
   "notebook",
   "gameStats",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return Game._ALL_FIELDS.length;
-  }
-
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[1]);
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview preview;
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap recap;
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook notebook;
@@ -74,10 +70,11 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return preview;
-    case 1: return recap;
-    case 2: return notebook;
-    case 3: return gameStats;
+    case 0: return __g__dirty;
+    case 1: return preview;
+    case 2: return recap;
+    case 3: return notebook;
+    case 4: return gameStats;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -86,10 +83,11 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: preview = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview)(value); break;
-    case 1: recap = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap)(value); break;
-    case 2: notebook = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook)(value); break;
-    case 3: gameStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: preview = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview)(value); break;
+    case 2: recap = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap)(value); break;
+    case 3: notebook = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook)(value); break;
+    case 4: gameStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -107,7 +105,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    */
   public void setPreview(gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview value) {
     this.preview = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
@@ -115,7 +113,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    * @param value the value to set.
    */
   public boolean isPreviewDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview value) {
-    return isDirty(0);
+    return isDirty(1);
   }
 
   /**
@@ -131,7 +129,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    */
   public void setRecap(gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap value) {
     this.recap = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
@@ -139,7 +137,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    * @param value the value to set.
    */
   public boolean isRecapDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap value) {
-    return isDirty(1);
+    return isDirty(2);
   }
 
   /**
@@ -155,7 +153,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    */
   public void setNotebook(gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook value) {
     this.notebook = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
@@ -163,7 +161,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    * @param value the value to set.
    */
   public boolean isNotebookDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook value) {
-    return isDirty(2);
+    return isDirty(3);
   }
 
   /**
@@ -179,7 +177,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    */
   public void setGameStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats value) {
     this.gameStats = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
@@ -187,7 +185,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
    * @param value the value to set.
    */
   public boolean isGameStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats value) {
-    return isDirty(3);
+    return isDirty(4);
   }
 
   /** Creates a new Game RecordBuilder */
@@ -234,6 +232,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Game>
     implements org.apache.avro.data.RecordBuilder<Game> {
 
+    private java.nio.ByteBuffer __g__dirty;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview preview;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap recap;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook notebook;
@@ -252,21 +251,25 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
     /** Creates a Builder by copying an existing Game instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.Game other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.SCHEMA$);
-      if (isValidValue(fields()[0], other.preview)) {
-        this.preview = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview) data().deepCopy(fields()[0].schema(), other.preview);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.recap)) {
-        this.recap = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap) data().deepCopy(fields()[1].schema(), other.recap);
+      if (isValidValue(fields()[1], other.preview)) {
+        this.preview = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview) data().deepCopy(fields()[1].schema(), other.preview);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.notebook)) {
-        this.notebook = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook) data().deepCopy(fields()[2].schema(), other.notebook);
+      if (isValidValue(fields()[2], other.recap)) {
+        this.recap = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap) data().deepCopy(fields()[2].schema(), other.recap);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.gameStats)) {
-        this.gameStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats) data().deepCopy(fields()[3].schema(), other.gameStats);
+      if (isValidValue(fields()[3], other.notebook)) {
+        this.notebook = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook) data().deepCopy(fields()[3].schema(), other.notebook);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.gameStats)) {
+        this.gameStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats) data().deepCopy(fields()[4].schema(), other.gameStats);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -277,21 +280,21 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
     
     /** Sets the value of the 'preview' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder setPreview(gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.preview = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'preview' field has been set */
     public boolean hasPreview() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'preview' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder clearPreview() {
       preview = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
@@ -302,21 +305,21 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
     
     /** Sets the value of the 'recap' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder setRecap(gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.recap = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'recap' field has been set */
     public boolean hasRecap() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'recap' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder clearRecap() {
       recap = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
@@ -327,21 +330,21 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
     
     /** Sets the value of the 'notebook' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder setNotebook(gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.notebook = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'notebook' field has been set */
     public boolean hasNotebook() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'notebook' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder clearNotebook() {
       notebook = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -352,21 +355,21 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
     
     /** Sets the value of the 'gameStats' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder setGameStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.gameStats = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'gameStats' field has been set */
     public boolean hasGameStats() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'gameStats' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Game.Builder clearGameStats() {
       gameStats = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
@@ -374,10 +377,11 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
     public Game build() {
       try {
         Game record = new Game();
-        record.preview = fieldSetFlags()[0] ? this.preview : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview) defaultValue(fields()[0]);
-        record.recap = fieldSetFlags()[1] ? this.recap : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap) defaultValue(fields()[1]);
-        record.notebook = fieldSetFlags()[2] ? this.notebook : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook) defaultValue(fields()[2]);
-        record.gameStats = fieldSetFlags()[3] ? this.gameStats : (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats) defaultValue(fields()[3]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[1]);
+        record.preview = fieldSetFlags()[1] ? this.preview : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview) defaultValue(fields()[1]);
+        record.recap = fieldSetFlags()[2] ? this.recap : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Recap) defaultValue(fields()[2]);
+        record.notebook = fieldSetFlags()[3] ? this.notebook : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook) defaultValue(fields()[3]);
+        record.gameStats = fieldSetFlags()[4] ? this.gameStats : (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -399,7 +403,7 @@ public class Game extends org.apache.gora.persistency.impl.PersistentBase implem
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'preview' field.
 		   */
 	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview getPreview() {

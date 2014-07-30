@@ -17,13 +17,13 @@
 -->
 
 <gora-otd>
-  <class name="gora.nasa.jpl.xdata.nba.impoexpo.structs.GamePlayer" keyClass="java.lang.CharSequence" table="game-players">
+  <!-- class name="gora.nasa.jpl.xdata.nba.impoexpo.structs.GamePlayer" keyClass="java.lang.CharSequence" table="game-players">
     <primarykey column="id"/>
     <field name="player_id" column="player_id"/>
     <field name="player_name" column="player_name"/>
     <field name="team_id" column="team_id"/>
     <field name="team_city" column="team_city"/>
-  </class>
+  </class-->
 
   <!-- class name="gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayByPLay" keyClass="java.lang.CharSequence" table="play-by-play">
     <primarykey column="id"/>

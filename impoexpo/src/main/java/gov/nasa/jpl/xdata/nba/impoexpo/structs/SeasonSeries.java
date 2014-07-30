@@ -6,17 +6,18 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SeasonSeries\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameSeasonSeriesId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonSeriesHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonSeriesVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameSeasonSeriesDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamWins\",\"type\":\"int\",\"default\":0},{\"name\":\"homeTeamLosses\",\"type\":\"int\",\"default\":0},{\"name\":\"seriesLeader\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SeasonSeries\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"gameSeasonSeriesId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonSeriesHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonSeriesVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameSeasonSeriesDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamWins\",\"type\":\"long\",\"default\":0},{\"name\":\"homeTeamLosses\",\"type\":\"long\",\"default\":0},{\"name\":\"seriesLeader\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_SEASON_SERIES_ID(0, "gameSeasonSeriesId"),
-    SEASON_SERIES_HOME_TEAM_ID(1, "seasonSeriesHomeTeamId"),
-    SEASON_SERIES_VISITOR_TEAM_ID(2, "seasonSeriesVisitorTeamId"),
-    GAME_SEASON_SERIES_DATE_EST(3, "gameSeasonSeriesDateEst"),
-    HOME_TEAM_WINS(4, "homeTeamWins"),
-    HOME_TEAM_LOSSES(5, "homeTeamLosses"),
-    SERIES_LEADER(6, "seriesLeader"),
+    __G__DIRTY(0, "__g__dirty"),
+    GAME_SEASON_SERIES_ID(1, "gameSeasonSeriesId"),
+    SEASON_SERIES_HOME_TEAM_ID(2, "seasonSeriesHomeTeamId"),
+    SEASON_SERIES_VISITOR_TEAM_ID(3, "seasonSeriesVisitorTeamId"),
+    GAME_SEASON_SERIES_DATE_EST(4, "gameSeasonSeriesDateEst"),
+    HOME_TEAM_WINS(5, "homeTeamWins"),
+    HOME_TEAM_LOSSES(6, "homeTeamLosses"),
+    SERIES_LEADER(7, "seriesLeader"),
     ;
     /**
      * Field's index.
@@ -55,6 +56,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "gameSeasonSeriesId",
   "seasonSeriesHomeTeamId",
   "seasonSeriesVisitorTeamId",
@@ -64,32 +66,27 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
   "seriesLeader",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return SeasonSeries._ALL_FIELDS.length;
-  }
-
-  private int gameSeasonSeriesId;
-  private int seasonSeriesHomeTeamId;
-  private int seasonSeriesVisitorTeamId;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[2]);
+  private long gameSeasonSeriesId;
+  private long seasonSeriesHomeTeamId;
+  private long seasonSeriesVisitorTeamId;
   private java.lang.CharSequence gameSeasonSeriesDateEst;
-  private int homeTeamWins;
-  private int homeTeamLosses;
+  private long homeTeamWins;
+  private long homeTeamLosses;
   private java.lang.CharSequence seriesLeader;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameSeasonSeriesId;
-    case 1: return seasonSeriesHomeTeamId;
-    case 2: return seasonSeriesVisitorTeamId;
-    case 3: return gameSeasonSeriesDateEst;
-    case 4: return homeTeamWins;
-    case 5: return homeTeamLosses;
-    case 6: return seriesLeader;
+    case 0: return __g__dirty;
+    case 1: return gameSeasonSeriesId;
+    case 2: return seasonSeriesHomeTeamId;
+    case 3: return seasonSeriesVisitorTeamId;
+    case 4: return gameSeasonSeriesDateEst;
+    case 5: return homeTeamWins;
+    case 6: return homeTeamLosses;
+    case 7: return seriesLeader;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -98,13 +95,14 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameSeasonSeriesId = (java.lang.Integer)(value); break;
-    case 1: seasonSeriesHomeTeamId = (java.lang.Integer)(value); break;
-    case 2: seasonSeriesVisitorTeamId = (java.lang.Integer)(value); break;
-    case 3: gameSeasonSeriesDateEst = (java.lang.CharSequence)(value); break;
-    case 4: homeTeamWins = (java.lang.Integer)(value); break;
-    case 5: homeTeamLosses = (java.lang.Integer)(value); break;
-    case 6: seriesLeader = (java.lang.CharSequence)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: gameSeasonSeriesId = (java.lang.Long)(value); break;
+    case 2: seasonSeriesHomeTeamId = (java.lang.Long)(value); break;
+    case 3: seasonSeriesVisitorTeamId = (java.lang.Long)(value); break;
+    case 4: gameSeasonSeriesDateEst = (java.lang.CharSequence)(value); break;
+    case 5: homeTeamWins = (java.lang.Long)(value); break;
+    case 6: homeTeamLosses = (java.lang.Long)(value); break;
+    case 7: seriesLeader = (java.lang.CharSequence)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -112,7 +110,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
   /**
    * Gets the value of the 'gameSeasonSeriesId' field.
    */
-  public java.lang.Integer getGameSeasonSeriesId() {
+  public java.lang.Long getGameSeasonSeriesId() {
     return gameSeasonSeriesId;
   }
 
@@ -120,23 +118,23 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * Sets the value of the 'gameSeasonSeriesId' field.
    * @param value the value to set.
    */
-  public void setGameSeasonSeriesId(java.lang.Integer value) {
+  public void setGameSeasonSeriesId(java.lang.Long value) {
     this.gameSeasonSeriesId = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
    * Checks the dirty status of the 'gameSeasonSeriesId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameSeasonSeriesIdDirty(java.lang.Integer value) {
-    return isDirty(0);
+  public boolean isGameSeasonSeriesIdDirty(java.lang.Long value) {
+    return isDirty(1);
   }
 
   /**
    * Gets the value of the 'seasonSeriesHomeTeamId' field.
    */
-  public java.lang.Integer getSeasonSeriesHomeTeamId() {
+  public java.lang.Long getSeasonSeriesHomeTeamId() {
     return seasonSeriesHomeTeamId;
   }
 
@@ -144,23 +142,23 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * Sets the value of the 'seasonSeriesHomeTeamId' field.
    * @param value the value to set.
    */
-  public void setSeasonSeriesHomeTeamId(java.lang.Integer value) {
+  public void setSeasonSeriesHomeTeamId(java.lang.Long value) {
     this.seasonSeriesHomeTeamId = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
    * Checks the dirty status of the 'seasonSeriesHomeTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isSeasonSeriesHomeTeamIdDirty(java.lang.Integer value) {
-    return isDirty(1);
+  public boolean isSeasonSeriesHomeTeamIdDirty(java.lang.Long value) {
+    return isDirty(2);
   }
 
   /**
    * Gets the value of the 'seasonSeriesVisitorTeamId' field.
    */
-  public java.lang.Integer getSeasonSeriesVisitorTeamId() {
+  public java.lang.Long getSeasonSeriesVisitorTeamId() {
     return seasonSeriesVisitorTeamId;
   }
 
@@ -168,17 +166,17 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * Sets the value of the 'seasonSeriesVisitorTeamId' field.
    * @param value the value to set.
    */
-  public void setSeasonSeriesVisitorTeamId(java.lang.Integer value) {
+  public void setSeasonSeriesVisitorTeamId(java.lang.Long value) {
     this.seasonSeriesVisitorTeamId = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
    * Checks the dirty status of the 'seasonSeriesVisitorTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isSeasonSeriesVisitorTeamIdDirty(java.lang.Integer value) {
-    return isDirty(2);
+  public boolean isSeasonSeriesVisitorTeamIdDirty(java.lang.Long value) {
+    return isDirty(3);
   }
 
   /**
@@ -194,7 +192,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    */
   public void setGameSeasonSeriesDateEst(java.lang.CharSequence value) {
     this.gameSeasonSeriesDateEst = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
@@ -202,13 +200,13 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * @param value the value to set.
    */
   public boolean isGameSeasonSeriesDateEstDirty(java.lang.CharSequence value) {
-    return isDirty(3);
+    return isDirty(4);
   }
 
   /**
    * Gets the value of the 'homeTeamWins' field.
    */
-  public java.lang.Integer getHomeTeamWins() {
+  public java.lang.Long getHomeTeamWins() {
     return homeTeamWins;
   }
 
@@ -216,23 +214,23 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * Sets the value of the 'homeTeamWins' field.
    * @param value the value to set.
    */
-  public void setHomeTeamWins(java.lang.Integer value) {
+  public void setHomeTeamWins(java.lang.Long value) {
     this.homeTeamWins = value;
-    setDirty(4);
+    setDirty(5);
   }
   
   /**
    * Checks the dirty status of the 'homeTeamWins' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isHomeTeamWinsDirty(java.lang.Integer value) {
-    return isDirty(4);
+  public boolean isHomeTeamWinsDirty(java.lang.Long value) {
+    return isDirty(5);
   }
 
   /**
    * Gets the value of the 'homeTeamLosses' field.
    */
-  public java.lang.Integer getHomeTeamLosses() {
+  public java.lang.Long getHomeTeamLosses() {
     return homeTeamLosses;
   }
 
@@ -240,17 +238,17 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * Sets the value of the 'homeTeamLosses' field.
    * @param value the value to set.
    */
-  public void setHomeTeamLosses(java.lang.Integer value) {
+  public void setHomeTeamLosses(java.lang.Long value) {
     this.homeTeamLosses = value;
-    setDirty(5);
+    setDirty(6);
   }
   
   /**
    * Checks the dirty status of the 'homeTeamLosses' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isHomeTeamLossesDirty(java.lang.Integer value) {
-    return isDirty(5);
+  public boolean isHomeTeamLossesDirty(java.lang.Long value) {
+    return isDirty(6);
   }
 
   /**
@@ -266,7 +264,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    */
   public void setSeriesLeader(java.lang.CharSequence value) {
     this.seriesLeader = value;
-    setDirty(6);
+    setDirty(7);
   }
   
   /**
@@ -274,7 +272,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
    * @param value the value to set.
    */
   public boolean isSeriesLeaderDirty(java.lang.CharSequence value) {
-    return isDirty(6);
+    return isDirty(7);
   }
 
   /** Creates a new SeasonSeries RecordBuilder */
@@ -321,12 +319,13 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<SeasonSeries>
     implements org.apache.avro.data.RecordBuilder<SeasonSeries> {
 
-    private int gameSeasonSeriesId;
-    private int seasonSeriesHomeTeamId;
-    private int seasonSeriesVisitorTeamId;
+    private java.nio.ByteBuffer __g__dirty;
+    private long gameSeasonSeriesId;
+    private long seasonSeriesHomeTeamId;
+    private long seasonSeriesVisitorTeamId;
     private java.lang.CharSequence gameSeasonSeriesDateEst;
-    private int homeTeamWins;
-    private int homeTeamLosses;
+    private long homeTeamWins;
+    private long homeTeamLosses;
     private java.lang.CharSequence seriesLeader;
 
     /** Creates a new Builder */
@@ -342,105 +341,109 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
     /** Creates a Builder by copying an existing SeasonSeries instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameSeasonSeriesId)) {
-        this.gameSeasonSeriesId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.gameSeasonSeriesId);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.seasonSeriesHomeTeamId)) {
-        this.seasonSeriesHomeTeamId = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.seasonSeriesHomeTeamId);
+      if (isValidValue(fields()[1], other.gameSeasonSeriesId)) {
+        this.gameSeasonSeriesId = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.gameSeasonSeriesId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.seasonSeriesVisitorTeamId)) {
-        this.seasonSeriesVisitorTeamId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.seasonSeriesVisitorTeamId);
+      if (isValidValue(fields()[2], other.seasonSeriesHomeTeamId)) {
+        this.seasonSeriesHomeTeamId = (java.lang.Long) data().deepCopy(fields()[2].schema(), other.seasonSeriesHomeTeamId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.gameSeasonSeriesDateEst)) {
-        this.gameSeasonSeriesDateEst = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.gameSeasonSeriesDateEst);
+      if (isValidValue(fields()[3], other.seasonSeriesVisitorTeamId)) {
+        this.seasonSeriesVisitorTeamId = (java.lang.Long) data().deepCopy(fields()[3].schema(), other.seasonSeriesVisitorTeamId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.homeTeamWins)) {
-        this.homeTeamWins = (java.lang.Integer) data().deepCopy(fields()[4].schema(), other.homeTeamWins);
+      if (isValidValue(fields()[4], other.gameSeasonSeriesDateEst)) {
+        this.gameSeasonSeriesDateEst = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.gameSeasonSeriesDateEst);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.homeTeamLosses)) {
-        this.homeTeamLosses = (java.lang.Integer) data().deepCopy(fields()[5].schema(), other.homeTeamLosses);
+      if (isValidValue(fields()[5], other.homeTeamWins)) {
+        this.homeTeamWins = (java.lang.Long) data().deepCopy(fields()[5].schema(), other.homeTeamWins);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.seriesLeader)) {
-        this.seriesLeader = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.seriesLeader);
+      if (isValidValue(fields()[6], other.homeTeamLosses)) {
+        this.homeTeamLosses = (java.lang.Long) data().deepCopy(fields()[6].schema(), other.homeTeamLosses);
         fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.seriesLeader)) {
+        this.seriesLeader = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.seriesLeader);
+        fieldSetFlags()[7] = true;
       }
     }
 
     /** Gets the value of the 'gameSeasonSeriesId' field */
-    public java.lang.Integer getGameSeasonSeriesId() {
+    public java.lang.Long getGameSeasonSeriesId() {
       return gameSeasonSeriesId;
     }
     
     /** Sets the value of the 'gameSeasonSeriesId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setGameSeasonSeriesId(int value) {
-      validate(fields()[0], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setGameSeasonSeriesId(long value) {
+      validate(fields()[1], value);
       this.gameSeasonSeriesId = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'gameSeasonSeriesId' field has been set */
     public boolean hasGameSeasonSeriesId() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'gameSeasonSeriesId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearGameSeasonSeriesId() {
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
     /** Gets the value of the 'seasonSeriesHomeTeamId' field */
-    public java.lang.Integer getSeasonSeriesHomeTeamId() {
+    public java.lang.Long getSeasonSeriesHomeTeamId() {
       return seasonSeriesHomeTeamId;
     }
     
     /** Sets the value of the 'seasonSeriesHomeTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setSeasonSeriesHomeTeamId(int value) {
-      validate(fields()[1], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setSeasonSeriesHomeTeamId(long value) {
+      validate(fields()[2], value);
       this.seasonSeriesHomeTeamId = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'seasonSeriesHomeTeamId' field has been set */
     public boolean hasSeasonSeriesHomeTeamId() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'seasonSeriesHomeTeamId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearSeasonSeriesHomeTeamId() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
     /** Gets the value of the 'seasonSeriesVisitorTeamId' field */
-    public java.lang.Integer getSeasonSeriesVisitorTeamId() {
+    public java.lang.Long getSeasonSeriesVisitorTeamId() {
       return seasonSeriesVisitorTeamId;
     }
     
     /** Sets the value of the 'seasonSeriesVisitorTeamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setSeasonSeriesVisitorTeamId(int value) {
-      validate(fields()[2], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setSeasonSeriesVisitorTeamId(long value) {
+      validate(fields()[3], value);
       this.seasonSeriesVisitorTeamId = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'seasonSeriesVisitorTeamId' field has been set */
     public boolean hasSeasonSeriesVisitorTeamId() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'seasonSeriesVisitorTeamId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearSeasonSeriesVisitorTeamId() {
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -451,69 +454,69 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
     
     /** Sets the value of the 'gameSeasonSeriesDateEst' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setGameSeasonSeriesDateEst(java.lang.CharSequence value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.gameSeasonSeriesDateEst = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'gameSeasonSeriesDateEst' field has been set */
     public boolean hasGameSeasonSeriesDateEst() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'gameSeasonSeriesDateEst' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearGameSeasonSeriesDateEst() {
       gameSeasonSeriesDateEst = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
     /** Gets the value of the 'homeTeamWins' field */
-    public java.lang.Integer getHomeTeamWins() {
+    public java.lang.Long getHomeTeamWins() {
       return homeTeamWins;
     }
     
     /** Sets the value of the 'homeTeamWins' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setHomeTeamWins(int value) {
-      validate(fields()[4], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setHomeTeamWins(long value) {
+      validate(fields()[5], value);
       this.homeTeamWins = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'homeTeamWins' field has been set */
     public boolean hasHomeTeamWins() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'homeTeamWins' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearHomeTeamWins() {
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
     
     /** Gets the value of the 'homeTeamLosses' field */
-    public java.lang.Integer getHomeTeamLosses() {
+    public java.lang.Long getHomeTeamLosses() {
       return homeTeamLosses;
     }
     
     /** Sets the value of the 'homeTeamLosses' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setHomeTeamLosses(int value) {
-      validate(fields()[5], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setHomeTeamLosses(long value) {
+      validate(fields()[6], value);
       this.homeTeamLosses = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'homeTeamLosses' field has been set */
     public boolean hasHomeTeamLosses() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'homeTeamLosses' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearHomeTeamLosses() {
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
     
@@ -524,21 +527,21 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
     
     /** Sets the value of the 'seriesLeader' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder setSeriesLeader(java.lang.CharSequence value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.seriesLeader = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'seriesLeader' field has been set */
     public boolean hasSeriesLeader() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'seriesLeader' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries.Builder clearSeriesLeader() {
       seriesLeader = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
     
@@ -546,13 +549,14 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
     public SeasonSeries build() {
       try {
         SeasonSeries record = new SeasonSeries();
-        record.gameSeasonSeriesId = fieldSetFlags()[0] ? this.gameSeasonSeriesId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.seasonSeriesHomeTeamId = fieldSetFlags()[1] ? this.seasonSeriesHomeTeamId : (java.lang.Integer) defaultValue(fields()[1]);
-        record.seasonSeriesVisitorTeamId = fieldSetFlags()[2] ? this.seasonSeriesVisitorTeamId : (java.lang.Integer) defaultValue(fields()[2]);
-        record.gameSeasonSeriesDateEst = fieldSetFlags()[3] ? this.gameSeasonSeriesDateEst : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.homeTeamWins = fieldSetFlags()[4] ? this.homeTeamWins : (java.lang.Integer) defaultValue(fields()[4]);
-        record.homeTeamLosses = fieldSetFlags()[5] ? this.homeTeamLosses : (java.lang.Integer) defaultValue(fields()[5]);
-        record.seriesLeader = fieldSetFlags()[6] ? this.seriesLeader : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[2]);
+        record.gameSeasonSeriesId = fieldSetFlags()[1] ? this.gameSeasonSeriesId : (java.lang.Long) defaultValue(fields()[1]);
+        record.seasonSeriesHomeTeamId = fieldSetFlags()[2] ? this.seasonSeriesHomeTeamId : (java.lang.Long) defaultValue(fields()[2]);
+        record.seasonSeriesVisitorTeamId = fieldSetFlags()[3] ? this.seasonSeriesVisitorTeamId : (java.lang.Long) defaultValue(fields()[3]);
+        record.gameSeasonSeriesDateEst = fieldSetFlags()[4] ? this.gameSeasonSeriesDateEst : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.homeTeamWins = fieldSetFlags()[5] ? this.homeTeamWins : (java.lang.Long) defaultValue(fields()[5]);
+        record.homeTeamLosses = fieldSetFlags()[6] ? this.homeTeamLosses : (java.lang.Long) defaultValue(fields()[6]);
+        record.seriesLeader = fieldSetFlags()[7] ? this.seriesLeader : (java.lang.CharSequence) defaultValue(fields()[7]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -574,10 +578,10 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'gameSeasonSeriesId' field.
 		   */
-	  public java.lang.Integer getGameSeasonSeriesId() {
+	  public java.lang.Long getGameSeasonSeriesId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -585,7 +589,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Sets the value of the 'gameSeasonSeriesId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameSeasonSeriesId(java.lang.Integer value) {
+	  public void setGameSeasonSeriesId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -593,14 +597,14 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Checks the dirty status of the 'gameSeasonSeriesId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameSeasonSeriesIdDirty(java.lang.Integer value) {
+	  public boolean isGameSeasonSeriesIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'seasonSeriesHomeTeamId' field.
 		   */
-	  public java.lang.Integer getSeasonSeriesHomeTeamId() {
+	  public java.lang.Long getSeasonSeriesHomeTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -608,7 +612,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Sets the value of the 'seasonSeriesHomeTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setSeasonSeriesHomeTeamId(java.lang.Integer value) {
+	  public void setSeasonSeriesHomeTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -616,14 +620,14 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Checks the dirty status of the 'seasonSeriesHomeTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isSeasonSeriesHomeTeamIdDirty(java.lang.Integer value) {
+	  public boolean isSeasonSeriesHomeTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'seasonSeriesVisitorTeamId' field.
 		   */
-	  public java.lang.Integer getSeasonSeriesVisitorTeamId() {
+	  public java.lang.Long getSeasonSeriesVisitorTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -631,7 +635,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Sets the value of the 'seasonSeriesVisitorTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setSeasonSeriesVisitorTeamId(java.lang.Integer value) {
+	  public void setSeasonSeriesVisitorTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -639,7 +643,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Checks the dirty status of the 'seasonSeriesVisitorTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isSeasonSeriesVisitorTeamIdDirty(java.lang.Integer value) {
+	  public boolean isSeasonSeriesVisitorTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -669,7 +673,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 				  /**
 	   * Gets the value of the 'homeTeamWins' field.
 		   */
-	  public java.lang.Integer getHomeTeamWins() {
+	  public java.lang.Long getHomeTeamWins() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -677,7 +681,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Sets the value of the 'homeTeamWins' field.
 		   * @param value the value to set.
 	   */
-	  public void setHomeTeamWins(java.lang.Integer value) {
+	  public void setHomeTeamWins(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -685,14 +689,14 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Checks the dirty status of the 'homeTeamWins' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isHomeTeamWinsDirty(java.lang.Integer value) {
+	  public boolean isHomeTeamWinsDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'homeTeamLosses' field.
 		   */
-	  public java.lang.Integer getHomeTeamLosses() {
+	  public java.lang.Long getHomeTeamLosses() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -700,7 +704,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Sets the value of the 'homeTeamLosses' field.
 		   * @param value the value to set.
 	   */
-	  public void setHomeTeamLosses(java.lang.Integer value) {
+	  public void setHomeTeamLosses(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -708,7 +712,7 @@ public class SeasonSeries extends org.apache.gora.persistency.impl.PersistentBas
 	   * Checks the dirty status of the 'homeTeamLosses' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isHomeTeamLossesDirty(java.lang.Integer value) {
+	  public boolean isHomeTeamLossesDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
