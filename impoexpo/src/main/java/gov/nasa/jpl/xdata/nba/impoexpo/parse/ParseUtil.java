@@ -22,6 +22,8 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
@@ -149,23 +151,16 @@ public class ParseUtil {
     JSONParser jsonParser = new JSONParser();
     JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
-    JSONArray result = (JSONArray) jsonObject.get("resultSets");
-    JSONObject jObj = (JSONObject) result.get(0);
-    JSONArray rows = (JSONArray) jObj.get("rowset");
-    
-    //Lewis
     GameSummary summary = parseGameSummary(jsonObject);
-    LineScore score = parseLineScore(jsonObject);
+    List<LineScore> score = parseLineScore(jsonObject);
     SeasonSeries series = parseSeasonSeries(jsonObject);
     LastMeeting meeting = parseLastMeeting(jsonObject);
-    PlayerStats playerStats = parsePlayerStats(jsonObject);
-    TeamStats teamStats = parseTeamStats(jsonObject);
-    
-    //Tyler
-    OtherStats otherStats = parseOtherStats(jsonObject);
-    Officials officials = parseOfficials(jsonObject);
+    List<PlayerStats> playerStats = parsePlayerStats(jsonObject);
+    List<TeamStats> teamStats = parseTeamStats(jsonObject);
+    List<OtherStats> otherStats = parseOtherStats(jsonObject);
+    List<Officials> officials = parseOfficials(jsonObject);
     GameInfo info = parseInfo(jsonObject);
-    InactivePlayers inactivePlayers = parseInactivePlayers(jsonObject);
+    List<InactivePlayers> inactivePlayers = parseInactivePlayers(jsonObject);
     AvailableVideo video = parseAvailableVideo(jsonObject);
     
     GameStats stats = GameStats.newBuilder().setGameSummary(summary).setLineScore(score)
@@ -182,20 +177,21 @@ public class ParseUtil {
     JSONObject infoObject = (JSONObject) resultSets.get(0);
     JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
     JSONArray row = (JSONArray) rowSet.get(0);
-    String gameSummaryDateEst = (String) row.get(0);
+    String gameSummaryDateEst  = (String) row.get(0);
     long gameSummarySequence   = (Long) row.get(1);
-    long gameSummaryId         = (Long) row.get(2);
+    long gameSummaryId         = Long.parseLong(row.get(2).toString());
     long gameStatusId          = (Long) row.get(3);
-    String gameStatusText     = (String) row.get(4);
-    String gameCode           = (String) row.get(5);
-    long homeTeamId            = (Long) row.get(6);
+    String gameStatusText      = (String) row.get(4);
+    String gameCode            = (String) row.get(5);
+      System.err.println("id: " + row.get(6).toString());
+    long homeTeamId            = Long.parseLong(row.get(6).toString());
     long visitorTeamId         = (Long) row.get(7);
-    long season                = (Long) row.get(8);
+    long season                = Long.parseLong(row.get(8).toString());
     long livePeriod            = (Long) row.get(9);
-    String livePcTimeString = row.get(10).toString();
-    long livePcTime            = livePcTimeString.isEmpty() ? 0 : Long.parseLong(livePcTimeString));
-    String broadcasterAbbrev  = (String) row.get(11);
-    String livePeriodTimeBcast= (String) row.get(12);
+    String livePcTimeString    = row.get(10).toString();
+    long livePcTime            = livePcTimeString.isEmpty() ? 0 : Long.parseLong(livePcTimeString);
+    String broadcasterAbbrev   = (String) row.get(11);
+    String livePeriodTimeBcast = (String) row.get(12);
     long whStatus              = (Long) row.get(13);
 
     return GameSummary.newBuilder()
@@ -215,8 +211,9 @@ public class ParseUtil {
             .setWhStatus(whStatus)
             .build();
   }
-  public static LineScore parseLineScore(JSONObject jsonObject) {
-    return LineScore.newBuilder().build();
+  public static List<LineScore> parseLineScore(JSONObject jsonObject) {
+    return new ArrayList<LineScore>();
+      //LineScore.newBuilder().build();
       // TODO: LineScore contains two entries, one for each team.
   }
   public static SeasonSeries parseSeasonSeries(JSONObject jsonObject) {
@@ -224,7 +221,7 @@ public class ParseUtil {
     JSONObject infoObject = (JSONObject) resultSets.get(2);
     JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
     JSONArray row = (JSONArray) rowSet.get(0);
-    long seriesId = (Long) row.get(0);
+    long seriesId = Long.parseLong(row.get(0).toString());
     long homeTeamId = (Long) row.get(1);
     long visitorTeamId = (Long) row.get(2);
     String seriesDateEst = (String) row.get(3);
@@ -246,8 +243,8 @@ public class ParseUtil {
     JSONObject infoObject = (JSONObject) resultSets.get(3);
     JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
     JSONArray row = (JSONArray) rowSet.get(0);
-    long gameLastMeetingId = (Long) row.get(0);
-    long lastGameId = (Long) row.get(1);
+    long gameLastMeetingId = Long.parseLong(row.get(0).toString());
+    long lastGameId = Long.parseLong(row.get(1).toString());
     String lastGameDate = (String) row.get(2);
     long lastGameHomeTeamId = (Long) row.get(3);
     String lastGameHomeTeamCity = (String) row.get(4);
@@ -276,19 +273,21 @@ public class ParseUtil {
             .setLastGameVisitorTeamPoints(lastGameVisitorPoints)
             .build();
   }
-  public static PlayerStats parsePlayerStats(JSONObject jsonObject) {
-    return PlayerStats.newBuilder()
+  public static List<PlayerStats> parsePlayerStats(JSONObject jsonObject) {
+    return new ArrayList<PlayerStats>();
+    //return PlayerStats.newBuilder()
             // TODO: PlayerStats has many players, each with stats
             // which possibly have null values.
-            .build();
+            //.build();
   }
-  public static TeamStats parseTeamStats(JSONObject jsonObject) {
-    return TeamStats.newBuilder()
+  public static List<TeamStats> parseTeamStats(JSONObject jsonObject) {
+    //return TeamStats.newBuilder()
             // TODO: TeamStats has two teams, each with stats.
-            .build();
+            //.build();
+      return new ArrayList<TeamStats>();
   }
 
-  public static OtherStats parseOtherStats(JSONObject jsonObject) {
+  public static List<OtherStats> parseOtherStats(JSONObject jsonObject) {
 /*      JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
       JSONObject result = (JSONObject) resultSets.get(6);
       assert("OtherStats".equals(result.get("name")));
@@ -296,7 +295,7 @@ public class ParseUtil {
       long leadChanges = ;
       long leagueId = ;*/
 
-      OtherStats otherStats = OtherStats.newBuilder()
+      //OtherStats otherStats = OtherStats.newBuilder()
               /*.setLeagueId()
               .setSeasonId()
               .setOtherStatsTeamId()
@@ -308,16 +307,18 @@ public class ParseUtil {
               .setPtsFb()
               .setPtsPaint()
               .setTimesTied()*/
-              .build();
-      return otherStats;
+              //.build();
+      //return otherStats;
+      return new ArrayList<OtherStats>();
   }
 
-  public static Officials parseOfficials(JSONObject jsonObject) {
-      JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+  public static List<Officials> parseOfficials(JSONObject jsonObject) {
+      //JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
 
-      Officials officials = Officials.newBuilder()
+      /*Officials officials = Officials.newBuilder()
               .build();
-      return officials;
+      return officials;*/
+      return new ArrayList<Officials>();
   }
 
   public static GameInfo parseInfo(JSONObject jsonObject) {
@@ -335,16 +336,17 @@ public class ParseUtil {
               .build();
   }
 
-  public static InactivePlayers parseInactivePlayers(JSONObject jsonObject) {
+  public static List<InactivePlayers> parseInactivePlayers(JSONObject jsonObject) {
       JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
       JSONObject inactivePlayersObject = (JSONObject) resultSets.get(9);
       JSONArray rowSet = (JSONArray) inactivePlayersObject.get("rowSet");
       InactivePlayers.Builder builder = InactivePlayers.newBuilder();
-      return builder.build();
+      //return builder.build();
       /*for (Object o : rowSet) {
           JSONArray player = (JSONArray) o;
           builder.set
       }*/
+      return new ArrayList<InactivePlayers>();
   }
 
   public static AvailableVideo parseAvailableVideo(JSONObject jsonObject) {
@@ -355,12 +357,6 @@ public class ParseUtil {
       return AvailableVideo.newBuilder()
               .setVideoAvailableFlag((Long) row.get(0))
               .build();
-  }
-  
-
-  private static GameSummary parseGameSummary() {
-    // TODO Auto-generated method stub
-    return null;
   }
 
   private static String parseTextFile(String textString) {

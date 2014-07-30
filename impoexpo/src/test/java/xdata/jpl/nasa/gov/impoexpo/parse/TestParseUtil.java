@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class TestParseUtil {
 
@@ -23,7 +24,7 @@ public class TestParseUtil {
     @Test
     public void testParseLineScore() throws Exception {
         JSONObject gameJson = getGameJSON();
-        LineScore lineScore = ParseUtil.parseLineScore(gameJson);
+        List<LineScore> lineScore = ParseUtil.parseLineScore(gameJson);
     }
 
     @Test
@@ -41,25 +42,25 @@ public class TestParseUtil {
     @Test
     public void testParsePlayerStats() throws Exception {
         JSONObject gameJson = getGameJSON();
-        PlayerStats playerStats = ParseUtil.parsePlayerStats(gameJson);
+        List<PlayerStats> playerStats = ParseUtil.parsePlayerStats(gameJson);
     }
 
     @Test
     public void testParseTeamStats() throws Exception {
         JSONObject gameJson = getGameJSON();
-        TeamStats teamStats = ParseUtil.parseTeamStats(gameJson);
+        List<TeamStats> teamStats = ParseUtil.parseTeamStats(gameJson);
     }
 
     @Test
     public void testParseOtherStats() throws Exception {
         JSONObject gameJson = getGameJSON();
-        OtherStats otherStats = ParseUtil.parseOtherStats(gameJson);
+        List<OtherStats> otherStats = ParseUtil.parseOtherStats(gameJson);
     }
 
     @Test
     public void testParseOfficials() throws Exception {
         JSONObject gameJson = getGameJSON();
-        Officials officials = ParseUtil.parseOfficials(gameJson);
+        List<Officials> officials = ParseUtil.parseOfficials(gameJson);
     }
 
     @Test
@@ -71,7 +72,7 @@ public class TestParseUtil {
     @Test
     public void testParseInactivePlayers() throws Exception {
         JSONObject gameJson = getGameJSON();
-        InactivePlayers inactivePlayers = ParseUtil.parseInactivePlayers(gameJson);
+        List<InactivePlayers> inactivePlayers = ParseUtil.parseInactivePlayers(gameJson);
     }
 
     @Test
