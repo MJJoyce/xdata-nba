@@ -154,7 +154,7 @@ public class GameManager implements Manager {
           game.setRecap(recap);
           break;
         case 3: // switch to parseNotebook
-          notebook = ParseUtil.parseNotebook(list.get(i));
+          notebook = ParseUtil.parseNotebook(notebook, list.get(i));
           game.setNotebook(notebook);
           break;
         case 4: // switch to parseGameStats

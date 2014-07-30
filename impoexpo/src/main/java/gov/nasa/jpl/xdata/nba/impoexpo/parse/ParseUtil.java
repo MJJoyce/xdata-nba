@@ -19,12 +19,10 @@ package gov.nasa.jpl.xdata.nba.impoexpo.parse;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.avro.util.Utf8;
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
 import org.json.simple.JSONArray;
@@ -102,10 +100,9 @@ public class ParseUtil {
    * @return
    * @throws IOException 
    */
-  public static Notebook parseNotebook(String string) throws IOException {
+  public static Notebook parseNotebook(Notebook notebook, String string) throws IOException {
     LOG.info("Parsing Notebook: {}", string);
     BufferedReader reader = new BufferedReader(new FileReader(string));
-    Notebook notebook = Notebook.newBuilder().build();
     try {
       String line = reader.readLine();
       do {
