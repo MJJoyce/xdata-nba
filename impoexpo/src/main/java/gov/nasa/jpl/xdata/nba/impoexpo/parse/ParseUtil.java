@@ -186,20 +186,20 @@ public class ParseUtil {
     JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
     JSONArray row = (JSONArray) rowSet.get(0);
     String gameSummaryDateEst = (String) row.get(0);
-    int gameSummarySequence   = Integer.parseInt(row.get(1).toString());
-    int gameSummaryId         = Integer.parseInt((String) row.get(2));
-    int gameStatusId          = Integer.parseInt(row.get(3).toString());
+    long gameSummarySequence   = (Long) row.get(1);
+    long gameSummaryId         = (Long) row.get(2);
+    long gameStatusId          = (Long) row.get(3);
     String gameStatusText     = (String) row.get(4);
     String gameCode           = (String) row.get(5);
-    int homeTeamId            = Integer.parseInt(row.get(6).toString());
-    int visitorTeamId         = Integer.parseInt(row.get(7).toString());
-    int season                = Integer.parseInt(row.get(8).toString());
-    int livePeriod            = Integer.parseInt(row.get(9).toString());
+    long homeTeamId            = (Long) row.get(6);
+    long visitorTeamId         = (Long) row.get(7);
+    long season                = (Long) row.get(8);
+    long livePeriod            = (Long) row.get(9);
     String livePcTimeString = row.get(10).toString();
-    int livePcTime            = livePcTimeString.isEmpty() ? 0 : Integer.parseInt(livePcTimeString);
+    long livePcTime            = livePcTimeString.isEmpty() ? 0 : Long.parseLong(livePcTimeString));
     String broadcasterAbbrev  = (String) row.get(11);
     String livePeriodTimeBcast= (String) row.get(12);
-    int whStatus              = Integer.parseInt(row.get(13).toString());
+    long whStatus              = (Long) row.get(13);
 
     return GameSummary.newBuilder()
             .setGameSummaryDateEst(gameSummaryDateEst)
@@ -227,12 +227,12 @@ public class ParseUtil {
     JSONObject infoObject = (JSONObject) resultSets.get(2);
     JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
     JSONArray row = (JSONArray) rowSet.get(0);
-    int seriesId = Integer.parseInt(row.get(0).toString());
-    int homeTeamId = Integer.parseInt(row.get(1).toString());
-    int visitorTeamId = Integer.parseInt(row.get(2).toString());
+    long seriesId = (Long) row.get(0);
+    long homeTeamId = (Long) row.get(1);
+    long visitorTeamId = (Long) row.get(2);
     String seriesDateEst = (String) row.get(3);
-    int homeTeamWins = Integer.parseInt(row.get(4).toString());
-    int homeTeamLosses = Integer.parseInt(row.get(5).toString());
+    long homeTeamWins = (Long) row.get(4);
+    long homeTeamLosses = (Long) row.get(5);
     String seriesLeader = (String) row.get(6);
     return SeasonSeries.newBuilder()
             .setGameSeasonSeriesId(seriesId)
@@ -249,19 +249,19 @@ public class ParseUtil {
     JSONObject infoObject = (JSONObject) resultSets.get(3);
     JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
     JSONArray row = (JSONArray) rowSet.get(0);
-    int gameLastMeetingId = Integer.parseInt(row.get(0).toString());
-    int lastGameId = Integer.parseInt(row.get(1).toString());
+    long gameLastMeetingId = (Long) row.get(0);
+    long lastGameId = (Long) row.get(1);
     String lastGameDate = (String) row.get(2);
-    int lastGameHomeTeamId = Integer.parseInt(row.get(3).toString());
+    long lastGameHomeTeamId = (Long) row.get(3);
     String lastGameHomeTeamCity = (String) row.get(4);
     String lastGameHomeTeamName = (String) row.get(5);
     String lastGameHomeTeamAbbreviation = (String) row.get(6);
-    int lastGameHomeTeamPoints = Integer.parseInt(row.get(7).toString());
-    int lastGameVisitorId = Integer.parseInt(row.get(8).toString());
+    long lastGameHomeTeamPoints = (Long) row.get(7);
+    long lastGameVisitorId = (Long) row.get(8);
     String lastGameVisitorCity = (String) row.get(9);
     String lastGameVisitorName = (String) row.get(10);
     String lastGameVisitorCity1 = (String) row.get(11);
-    int lastGameVisitorPoints = Integer.parseInt(row.get(12).toString());
+    long lastGameVisitorPoints = (Long) row.get(12);
     return LastMeeting.newBuilder()
             .setGameLastMeetingId(gameLastMeetingId)
             .setLastGameId(lastGameId)
@@ -295,9 +295,9 @@ public class ParseUtil {
 /*      JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
       JSONObject result = (JSONObject) resultSets.get(6);
       assert("OtherStats".equals(result.get("name")));
-      int largestLead = ;
-      int leadChanges = ;
-      int leagueId = ;*/
+      long largestLead = ;
+      long leadChanges = ;
+      long leagueId = ;*/
 
       OtherStats otherStats = OtherStats.newBuilder()
               /*.setLeagueId()
@@ -329,7 +329,7 @@ public class ParseUtil {
       JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
       JSONArray row = (JSONArray) rowSet.get(0);
       String gameDate = (String) row.get(0);
-      int attendance = Integer.parseInt(row.get(1).toString());
+      long attendance = (Long) row.get(1);
       String gameTime = (String) row.get(2);
       return GameInfo.newBuilder()
               .setGameDate(gameDate)
@@ -356,7 +356,7 @@ public class ParseUtil {
       JSONArray rowSet = (JSONArray) availableVideoObject.get("rowSet");
       JSONArray row = (JSONArray) rowSet.get(0);
       return AvailableVideo.newBuilder()
-              .setVideoAvailableFlag(Integer.parseInt(row.get(0).toString()))
+              .setVideoAvailableFlag((Long) row.get(0))
               .build();
   }
   
