@@ -245,13 +245,50 @@ public class ParseUtil {
             .build();
   }
   public static LastMeeting parseLastMeeting(JSONObject jsonObject) {
-    return LastMeeting.newBuilder().build();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(3);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    JSONArray row = (JSONArray) rowSet.get(0);
+    int gameLastMeetingId = Integer.parseInt(row.get(0).toString());
+    int lastGameId = Integer.parseInt(row.get(1).toString());
+    String lastGameDate = (String) row.get(2);
+    int lastGameHomeTeamId = Integer.parseInt(row.get(3).toString());
+    String lastGameHomeTeamCity = (String) row.get(4);
+    String lastGameHomeTeamName = (String) row.get(5);
+    String lastGameHomeTeamAbbreviation = (String) row.get(6);
+    int lastGameHomeTeamPoints = Integer.parseInt(row.get(7).toString());
+    int lastGameVisitorId = Integer.parseInt(row.get(8).toString());
+    String lastGameVisitorCity = (String) row.get(9);
+    String lastGameVisitorName = (String) row.get(10);
+    String lastGameVisitorCity1 = (String) row.get(11);
+    int lastGameVisitorPoints = Integer.parseInt(row.get(12).toString());
+    return LastMeeting.newBuilder()
+            .setGameLastMeetingId(gameLastMeetingId)
+            .setLastGameId(lastGameId)
+            .setLastGameDateEst(lastGameDate)
+            .setLastGameHomeTeamId(lastGameHomeTeamId)
+            .setLastGameHomeTeamCity(lastGameHomeTeamCity)
+            .setLastGameHomeTeamName(lastGameHomeTeamName)
+            .setLastGameHomeTeamAbbreviation(lastGameHomeTeamAbbreviation)
+            .setLastGameHomeTeamPoints(lastGameHomeTeamPoints)
+            .setLastGameHomeTeamId(lastGameHomeTeamId)
+            .setLastGameVisitorTeamId(lastGameVisitorId)
+            .setLastGameVisitorTeamCity(lastGameVisitorCity)
+            .setLastGameVisitorTeamName(lastGameVisitorName)
+            .setLastGameVisitorTeamCity1(lastGameVisitorCity1)
+            .setLastGameVisitorTeamPoints(lastGameVisitorPoints)
+            .build();
   }
   public static PlayerStats parsePlayerStats(JSONObject jsonObject) {
-    return PlayerStats.newBuilder().build();
+    return PlayerStats.newBuilder()
+            // TODO: PlayerStats has many players, each with stats
+            // which possibly have null values.
+            .build();
   }
   public static TeamStats parseTeamStats(JSONObject jsonObject) {
-    return TeamStats.newBuilder().build();
+    return TeamStats.newBuilder()
+            // TODO: TeamStats has two teams, each with stats.
+            .build();
   }
 
   public static OtherStats parseOtherStats(JSONObject jsonObject) {
