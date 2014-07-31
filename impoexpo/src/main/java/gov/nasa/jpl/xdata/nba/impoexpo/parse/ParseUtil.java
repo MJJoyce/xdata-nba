@@ -408,12 +408,21 @@ public class ParseUtil {
   }
 
   public static List<Officials> parseOfficials(JSONObject jsonObject) {
-      //JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
-
-      /*Officials officials = Officials.newBuilder()
-              .build();
-      return officials;*/
-      return new ArrayList<Officials>();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(7);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    List<Officials> result = new ArrayList<Officials>();
+    for (Object rowObject : rowSet) {
+      JSONArray row = (JSONArray) rowObject;
+      result.add(Officials.newBuilder()
+          .setOfficialId(row.get(0) == null ? -1 : (Long) row.get(0))
+          .setOfficialFirstName(row.get(1) == null ? "" : (String) row.get(1))
+          .setOfficialLastName(row.get(2) == null ? "" : (String) row.get(2))
+          .setOfficialJerseyNum(row.get(3) == null ? -1 : Long.parseLong(row.get(3).toString()))
+          .build()
+      );
+    }
+    return result;
   }
 
   public static GameInfo parseInfo(JSONObject jsonObject) {
