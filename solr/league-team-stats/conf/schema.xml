@@ -10,6 +10,7 @@
     <field name="gp" type="int" indexed="true" stored="true" required="true"/>
     <field name="w" type="int" indexed="true" stored="true" required="true"/>
     <field name="l" type="int" indexed="true" stored="true" required="true"/>
+    <field name="win_pct" type="float" indexed="true" stored="true" required="true"/>
     <field name="w_pct" type="float" indexed="true" stored="true" required="true"/>
     <field name="min" type="float" indexed="true" stored="true" required="true"/>
     <field name="fgm" type="float" indexed="true" stored="true" required="true"/>

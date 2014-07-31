@@ -8,6 +8,14 @@
    <field name="game_id" type="string" indexed="true" stored="true"/>
    <field name="winner_id" type="string" indexed="true" stored="true"/>
    <field name="loser_id" type="string" indexed="true" stored="true"/>
+   <field name="winner_pos_cmt_count" type="int" indexed="true" stored="true" />
+   <field name="winner_neg_cmt_count" type="int" indexed="true" stored="true" />
+   <field name="winner_pos_pct" type="float" indexed="true" stored="true" />
+   <field name="winner_neg_pct" type="float" indexed="true" stored="true" />
+   <field name="loser_pos_cmt_count" type="int" indexed="true" stored="true" />
+   <field name="loser_neg_cmt_count" type="int" indexed="true" stored="true" />
+   <field name="loser_pos_pct" type="float" indexed="true" stored="true" />
+   <field name="loser_neg_pct" type="float" indexed="true" stored="true" />
  </fields>
 
  <uniqueKey>id</uniqueKey>
