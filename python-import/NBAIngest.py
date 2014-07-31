@@ -362,7 +362,7 @@ def load_game_stats(game_stats_dir):
         })
 
     solr_url = SOLR_URL + GAME_RESULTS_CORE + 'update?commit=true'
-    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    data = etl.prepareDocsForSolr(game_results, unmarshall=False, encoding='latin-1')
     etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GameResults ingestion complete')
