@@ -6,27 +6,28 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class GameStats extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GameStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameSummary\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameSummary\",\"fields\":[{\"name\":\"gameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameStatusText\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameCode\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"visitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"season\",\"type\":\"int\",\"default\":0},{\"name\":\"livePeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"livePcTime\",\"type\":\"int\",\"default\":0},{\"name\":\"natlTvBroadcasterAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"livePeriodTimeBcast\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"whStatus\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"lineScore\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LineScore\",\"fields\":[{\"name\":\"gameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"int\",\"default\":0},{\"name\":\"pts\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"seasonSeries\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SeasonSeries\",\"fields\":[{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"homeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"visitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"gameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamWins\",\"type\":\"int\",\"default\":0},{\"name\":\"homeTeamLosses\",\"type\":\"int\",\"default\":0},{\"name\":\"seriesLeader\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"lastMeeting\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LastMeeting\",\"fields\":[{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameHomeTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamPoints\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamId\",\"type\":\"int\",\"default\":0},{\"name\":\"lastGameVisitorTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamCity1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamPoints\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"playerStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"PlayerStats\",\"fields\":[{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerId\",\"type\":\"int\",\"default\":0},{\"name\":\"playerName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startPosition\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"comment\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"min\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"fgm\",\"type\":\"int\",\"default\":0},{\"name\":\"fga\",\"type\":\"int\",\"default\":0},{\"name\":\"fgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"fg3m\",\"type\":\"int\",\"default\":0},{\"name\":\"fg3a\",\"type\":\"int\",\"default\":0},{\"name\":\"fg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"ftm\",\"type\":\"int\",\"default\":0},{\"name\":\"fta\",\"type\":\"int\",\"default\":0},{\"name\":\"ftPct\",\"type\":\"int\",\"default\":0},{\"name\":\"oreb\",\"type\":\"int\",\"default\":0},{\"name\":\"dreb\",\"type\":\"int\",\"default\":0},{\"name\":\"reb\",\"type\":\"int\",\"default\":0},{\"name\":\"ast\",\"type\":\"int\",\"default\":0},{\"name\":\"stl\",\"type\":\"int\",\"default\":0},{\"name\":\"blk\",\"type\":\"int\",\"default\":0},{\"name\":\"to\",\"type\":\"int\",\"default\":0},{\"name\":\"pf\",\"type\":\"int\",\"default\":0},{\"name\":\"pts\",\"type\":\"int\",\"default\":0},{\"name\":\"plusMinus\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"teamStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TeamStats\",\"fields\":[{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"min\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"fgm\",\"type\":\"int\",\"default\":0},{\"name\":\"fga\",\"type\":\"int\",\"default\":0},{\"name\":\"fgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"fg3m\",\"type\":\"int\",\"default\":0},{\"name\":\"fg3a\",\"type\":\"int\",\"default\":0},{\"name\":\"fg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"ftm\",\"type\":\"int\",\"default\":0},{\"name\":\"fta\",\"type\":\"int\",\"default\":0},{\"name\":\"ftPct\",\"type\":\"int\",\"default\":0},{\"name\":\"oreb\",\"type\":\"int\",\"default\":0},{\"name\":\"dreb\",\"type\":\"int\",\"default\":0},{\"name\":\"reb\",\"type\":\"int\",\"default\":0},{\"name\":\"ast\",\"type\":\"int\",\"default\":0},{\"name\":\"stl\",\"type\":\"int\",\"default\":0},{\"name\":\"blk\",\"type\":\"int\",\"default\":0},{\"name\":\"to\",\"type\":\"int\",\"default\":0},{\"name\":\"pf\",\"type\":\"int\",\"default\":0},{\"name\":\"pts\",\"type\":\"int\",\"default\":0},{\"name\":\"plusMinus\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"otherStats\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"OtherStats\",\"fields\":[{\"name\":\"leagueId\",\"type\":\"int\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"int\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"int\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"int\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"officials\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Officials\",\"fields\":[{\"name\":\"officialId\",\"type\":\"int\",\"default\":0},{\"name\":\"firstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"jerseyNum\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"gameInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameInfo\",\"fields\":[{\"name\":\"gameDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"attendance\",\"type\":\"int\",\"default\":0},{\"name\":\"gameTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"inactivePlayers\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"InactivePlayers\",\"fields\":[{\"name\":\"playerId\",\"type\":\"int\",\"default\":0},{\"name\":\"firstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"jerseyNum\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"availableVideo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AvailableVideo\",\"fields\":[{\"name\":\"videoAvailableFlag\",\"type\":\"int\",\"default\":0}]}],\"default\":null},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"rangeType\",\"type\":\"int\",\"default\":0},{\"name\":\"startPeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"startRange\",\"type\":\"int\",\"default\":0},{\"name\":\"endPeriod\",\"type\":\"int\",\"default\":0},{\"name\":\"endRange\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GameStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAA\"},{\"name\":\"gameSummary\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameSummary\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"gameSummaryDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummarySequence\",\"type\":\"long\",\"default\":0},{\"name\":\"gameGameSummaryId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameStatusId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameStatusText\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameCode\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSummaryHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameSummaryVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"season\",\"type\":\"long\",\"default\":0},{\"name\":\"livePeriod\",\"type\":\"long\",\"default\":0},{\"name\":\"livePcTime\",\"type\":\"long\",\"default\":0},{\"name\":\"natlTvBroadcasterAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"livePeriodTimeBcast\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"whStatus\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"lineScore\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"LineScore\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAA\"},{\"name\":\"gameLineScoreDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameLineScoreSequence\",\"type\":\"long\",\"default\":0},{\"name\":\"gameLineScoreId\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScoreTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScoreTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScorePts\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"seasonSeries\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SeasonSeries\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"gameSeasonSeriesId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonSeriesHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonSeriesVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"gameSeasonSeriesDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"homeTeamWins\",\"type\":\"long\",\"default\":0},{\"name\":\"homeTeamLosses\",\"type\":\"long\",\"default\":0},{\"name\":\"seriesLeader\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"lastMeeting\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LastMeeting\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"gameLastMeetingId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameHomeTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameHomeTeamPoints\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameVisitorTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lastGameVisitorTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamCity1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastGameVisitorTeamPoints\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"playerStats\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"PlayerStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAAAA==\"},{\"name\":\"gamePlayerStatsId\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsPlayerId\",\"type\":\"long\",\"default\":0},{\"name\":\"playerName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startPosition\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"comment\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"playerStatsFgm\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsFga\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3m\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3a\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsftm\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsfta\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsftPct\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsoreb\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsdreb\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsreb\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsast\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsstl\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsblk\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsto\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatspf\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsPts\",\"type\":\"long\",\"default\":0},{\"name\":\"playerStatsPlusMinus\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"teamStats\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"TeamStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAAAA==\"},{\"name\":\"gameTeamStatsId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsFgm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsFga\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3m\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3a\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfta\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsoreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsdreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsast\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsstl\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsblk\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsto\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatspf\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPts\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPlusMinus\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"otherStats\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"OtherStats\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"leagueId\",\"type\":\"long\",\"default\":0},{\"name\":\"seasonId\",\"type\":\"long\",\"default\":0},{\"name\":\"otherStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"otherStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"otherStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsPaint\",\"type\":\"long\",\"default\":0},{\"name\":\"pts2ndChance\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsFb\",\"type\":\"long\",\"default\":0},{\"name\":\"largestLead\",\"type\":\"long\",\"default\":0},{\"name\":\"leadChanges\",\"type\":\"long\",\"default\":0},{\"name\":\"timesTied\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"officials\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"Officials\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"officialId\",\"type\":\"long\",\"default\":0},{\"name\":\"officialFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"officialJerseyNum\",\"type\":\"long\",\"default\":0}]}]}},{\"name\":\"gameInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"GameInfo\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"gameDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"attendance\",\"type\":\"long\",\"default\":0},{\"name\":\"gameTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}],\"default\":null},{\"name\":\"inactivePlayers\",\"type\":{\"type\":\"array\",\"items\":[\"null\",{\"type\":\"record\",\"name\":\"InactivePlayers\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"inactivePlayersPlayerId\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePlayersFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersJerseyNum\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePlayersTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePLayersTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null}]}]}},{\"name\":\"availableVideo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AvailableVideo\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"videoAvailableFlag\",\"type\":\"long\",\"default\":0}]}],\"default\":null},{\"name\":\"gameId\",\"type\":\"long\",\"default\":0},{\"name\":\"rangeType\",\"type\":\"long\",\"default\":0},{\"name\":\"startPeriod\",\"type\":\"long\",\"default\":0},{\"name\":\"startRange\",\"type\":\"long\",\"default\":0},{\"name\":\"endPeriod\",\"type\":\"long\",\"default\":0},{\"name\":\"endRange\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_SUMMARY(0, "gameSummary"),
-    LINE_SCORE(1, "lineScore"),
-    SEASON_SERIES(2, "seasonSeries"),
-    LAST_MEETING(3, "lastMeeting"),
-    PLAYER_STATS(4, "playerStats"),
-    TEAM_STATS(5, "teamStats"),
-    OTHER_STATS(6, "otherStats"),
-    OFFICIALS(7, "officials"),
-    GAME_INFO(8, "gameInfo"),
-    INACTIVE_PLAYERS(9, "inactivePlayers"),
-    AVAILABLE_VIDEO(10, "availableVideo"),
-    GAME_ID(11, "gameId"),
-    RANGE_TYPE(12, "rangeType"),
-    START_PERIOD(13, "startPeriod"),
-    START_RANGE(14, "startRange"),
-    END_PERIOD(15, "endPeriod"),
-    END_RANGE(16, "endRange"),
+    __G__DIRTY(0, "__g__dirty"),
+    GAME_SUMMARY(1, "gameSummary"),
+    LINE_SCORE(2, "lineScore"),
+    SEASON_SERIES(3, "seasonSeries"),
+    LAST_MEETING(4, "lastMeeting"),
+    PLAYER_STATS(5, "playerStats"),
+    TEAM_STATS(6, "teamStats"),
+    OTHER_STATS(7, "otherStats"),
+    OFFICIALS(8, "officials"),
+    GAME_INFO(9, "gameInfo"),
+    INACTIVE_PLAYERS(10, "inactivePlayers"),
+    AVAILABLE_VIDEO(11, "availableVideo"),
+    GAME_ID(12, "gameId"),
+    RANGE_TYPE(13, "rangeType"),
+    START_PERIOD(14, "startPeriod"),
+    START_RANGE(15, "startRange"),
+    END_PERIOD(16, "endPeriod"),
+    END_RANGE(17, "endRange"),
     ;
     /**
      * Field's index.
@@ -65,6 +66,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "gameSummary",
   "lineScore",
   "seasonSeries",
@@ -84,52 +86,47 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
   "endRange",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return GameStats._ALL_FIELDS.length;
-  }
-
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[3]);
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary gameSummary;
-  private gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore lineScore;
+  private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> lineScore;
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries seasonSeries;
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting lastMeeting;
-  private gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats playerStats;
-  private gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats teamStats;
-  private gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats otherStats;
-  private gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials officials;
+  private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> playerStats;
+  private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> teamStats;
+  private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> otherStats;
+  private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> officials;
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo gameInfo;
-  private gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers inactivePlayers;
+  private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> inactivePlayers;
   private gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo availableVideo;
-  private int gameId;
-  private int rangeType;
-  private int startPeriod;
-  private int startRange;
-  private int endPeriod;
-  private int endRange;
+  private long gameId;
+  private long rangeType;
+  private long startPeriod;
+  private long startRange;
+  private long endPeriod;
+  private long endRange;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameSummary;
-    case 1: return lineScore;
-    case 2: return seasonSeries;
-    case 3: return lastMeeting;
-    case 4: return playerStats;
-    case 5: return teamStats;
-    case 6: return otherStats;
-    case 7: return officials;
-    case 8: return gameInfo;
-    case 9: return inactivePlayers;
-    case 10: return availableVideo;
-    case 11: return gameId;
-    case 12: return rangeType;
-    case 13: return startPeriod;
-    case 14: return startRange;
-    case 15: return endPeriod;
-    case 16: return endRange;
+    case 0: return __g__dirty;
+    case 1: return gameSummary;
+    case 2: return lineScore;
+    case 3: return seasonSeries;
+    case 4: return lastMeeting;
+    case 5: return playerStats;
+    case 6: return teamStats;
+    case 7: return otherStats;
+    case 8: return officials;
+    case 9: return gameInfo;
+    case 10: return inactivePlayers;
+    case 11: return availableVideo;
+    case 12: return gameId;
+    case 13: return rangeType;
+    case 14: return startPeriod;
+    case 15: return startRange;
+    case 16: return endPeriod;
+    case 17: return endRange;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -138,23 +135,24 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameSummary = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary)(value); break;
-    case 1: lineScore = (gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore)(value); break;
-    case 2: seasonSeries = (gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries)(value); break;
-    case 3: lastMeeting = (gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting)(value); break;
-    case 4: playerStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats)(value); break;
-    case 5: teamStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats)(value); break;
-    case 6: otherStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats)(value); break;
-    case 7: officials = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials)(value); break;
-    case 8: gameInfo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo)(value); break;
-    case 9: inactivePlayers = (gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers)(value); break;
-    case 10: availableVideo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo)(value); break;
-    case 11: gameId = (java.lang.Integer)(value); break;
-    case 12: rangeType = (java.lang.Integer)(value); break;
-    case 13: startPeriod = (java.lang.Integer)(value); break;
-    case 14: startRange = (java.lang.Integer)(value); break;
-    case 15: endPeriod = (java.lang.Integer)(value); break;
-    case 16: endRange = (java.lang.Integer)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: gameSummary = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary)(value); break;
+    case 2: lineScore = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 3: seasonSeries = (gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries)(value); break;
+    case 4: lastMeeting = (gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting)(value); break;
+    case 5: playerStats = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 6: teamStats = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 7: otherStats = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 8: officials = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 9: gameInfo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo)(value); break;
+    case 10: inactivePlayers = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 11: availableVideo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo)(value); break;
+    case 12: gameId = (java.lang.Long)(value); break;
+    case 13: rangeType = (java.lang.Long)(value); break;
+    case 14: startPeriod = (java.lang.Long)(value); break;
+    case 15: startRange = (java.lang.Long)(value); break;
+    case 16: endPeriod = (java.lang.Long)(value); break;
+    case 17: endRange = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -172,7 +170,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setGameSummary(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary value) {
     this.gameSummary = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
@@ -180,13 +178,13 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isGameSummaryDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary value) {
-    return isDirty(0);
+    return isDirty(1);
   }
 
   /**
    * Gets the value of the 'lineScore' field.
    */
-  public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore getLineScore() {
+  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> getLineScore() {
     return lineScore;
   }
 
@@ -194,17 +192,17 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'lineScore' field.
    * @param value the value to set.
    */
-  public void setLineScore(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore value) {
-    this.lineScore = value;
-    setDirty(1);
+  public void setLineScore(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> value) {
+    this.lineScore = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
+    setDirty(2);
   }
   
   /**
    * Checks the dirty status of the 'lineScore' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isLineScoreDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore value) {
-    return isDirty(1);
+  public boolean isLineScoreDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> value) {
+    return isDirty(2);
   }
 
   /**
@@ -220,7 +218,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setSeasonSeries(gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries value) {
     this.seasonSeries = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
@@ -228,7 +226,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isSeasonSeriesDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries value) {
-    return isDirty(2);
+    return isDirty(3);
   }
 
   /**
@@ -244,7 +242,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setLastMeeting(gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting value) {
     this.lastMeeting = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
@@ -252,13 +250,13 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isLastMeetingDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting value) {
-    return isDirty(3);
+    return isDirty(4);
   }
 
   /**
    * Gets the value of the 'playerStats' field.
    */
-  public gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats getPlayerStats() {
+  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> getPlayerStats() {
     return playerStats;
   }
 
@@ -266,23 +264,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'playerStats' field.
    * @param value the value to set.
    */
-  public void setPlayerStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats value) {
-    this.playerStats = value;
-    setDirty(4);
+  public void setPlayerStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> value) {
+    this.playerStats = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
+    setDirty(5);
   }
   
   /**
    * Checks the dirty status of the 'playerStats' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPlayerStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats value) {
-    return isDirty(4);
+  public boolean isPlayerStatsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> value) {
+    return isDirty(5);
   }
 
   /**
    * Gets the value of the 'teamStats' field.
    */
-  public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats getTeamStats() {
+  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> getTeamStats() {
     return teamStats;
   }
 
@@ -290,23 +288,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'teamStats' field.
    * @param value the value to set.
    */
-  public void setTeamStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats value) {
-    this.teamStats = value;
-    setDirty(5);
+  public void setTeamStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> value) {
+    this.teamStats = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
+    setDirty(6);
   }
   
   /**
    * Checks the dirty status of the 'teamStats' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats value) {
-    return isDirty(5);
+  public boolean isTeamStatsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> value) {
+    return isDirty(6);
   }
 
   /**
    * Gets the value of the 'otherStats' field.
    */
-  public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats getOtherStats() {
+  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> getOtherStats() {
     return otherStats;
   }
 
@@ -314,23 +312,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'otherStats' field.
    * @param value the value to set.
    */
-  public void setOtherStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats value) {
-    this.otherStats = value;
-    setDirty(6);
+  public void setOtherStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> value) {
+    this.otherStats = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
+    setDirty(7);
   }
   
   /**
    * Checks the dirty status of the 'otherStats' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isOtherStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats value) {
-    return isDirty(6);
+  public boolean isOtherStatsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> value) {
+    return isDirty(7);
   }
 
   /**
    * Gets the value of the 'officials' field.
    */
-  public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials getOfficials() {
+  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> getOfficials() {
     return officials;
   }
 
@@ -338,17 +336,17 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'officials' field.
    * @param value the value to set.
    */
-  public void setOfficials(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials value) {
-    this.officials = value;
-    setDirty(7);
+  public void setOfficials(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> value) {
+    this.officials = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
+    setDirty(8);
   }
   
   /**
    * Checks the dirty status of the 'officials' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isOfficialsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials value) {
-    return isDirty(7);
+  public boolean isOfficialsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> value) {
+    return isDirty(8);
   }
 
   /**
@@ -364,7 +362,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setGameInfo(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo value) {
     this.gameInfo = value;
-    setDirty(8);
+    setDirty(9);
   }
   
   /**
@@ -372,13 +370,13 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isGameInfoDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo value) {
-    return isDirty(8);
+    return isDirty(9);
   }
 
   /**
    * Gets the value of the 'inactivePlayers' field.
    */
-  public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers getInactivePlayers() {
+  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> getInactivePlayers() {
     return inactivePlayers;
   }
 
@@ -386,17 +384,17 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'inactivePlayers' field.
    * @param value the value to set.
    */
-  public void setInactivePlayers(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers value) {
-    this.inactivePlayers = value;
-    setDirty(9);
+  public void setInactivePlayers(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> value) {
+    this.inactivePlayers = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
+    setDirty(10);
   }
   
   /**
    * Checks the dirty status of the 'inactivePlayers' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isInactivePlayersDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers value) {
-    return isDirty(9);
+  public boolean isInactivePlayersDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> value) {
+    return isDirty(10);
   }
 
   /**
@@ -412,7 +410,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setAvailableVideo(gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo value) {
     this.availableVideo = value;
-    setDirty(10);
+    setDirty(11);
   }
   
   /**
@@ -420,13 +418,13 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isAvailableVideoDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo value) {
-    return isDirty(10);
+    return isDirty(11);
   }
 
   /**
    * Gets the value of the 'gameId' field.
    */
-  public java.lang.Integer getGameId() {
+  public java.lang.Long getGameId() {
     return gameId;
   }
 
@@ -434,23 +432,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'gameId' field.
    * @param value the value to set.
    */
-  public void setGameId(java.lang.Integer value) {
+  public void setGameId(java.lang.Long value) {
     this.gameId = value;
-    setDirty(11);
+    setDirty(12);
   }
   
   /**
    * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameIdDirty(java.lang.Integer value) {
-    return isDirty(11);
+  public boolean isGameIdDirty(java.lang.Long value) {
+    return isDirty(12);
   }
 
   /**
    * Gets the value of the 'rangeType' field.
    */
-  public java.lang.Integer getRangeType() {
+  public java.lang.Long getRangeType() {
     return rangeType;
   }
 
@@ -458,23 +456,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'rangeType' field.
    * @param value the value to set.
    */
-  public void setRangeType(java.lang.Integer value) {
+  public void setRangeType(java.lang.Long value) {
     this.rangeType = value;
-    setDirty(12);
+    setDirty(13);
   }
   
   /**
    * Checks the dirty status of the 'rangeType' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isRangeTypeDirty(java.lang.Integer value) {
-    return isDirty(12);
+  public boolean isRangeTypeDirty(java.lang.Long value) {
+    return isDirty(13);
   }
 
   /**
    * Gets the value of the 'startPeriod' field.
    */
-  public java.lang.Integer getStartPeriod() {
+  public java.lang.Long getStartPeriod() {
     return startPeriod;
   }
 
@@ -482,23 +480,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'startPeriod' field.
    * @param value the value to set.
    */
-  public void setStartPeriod(java.lang.Integer value) {
+  public void setStartPeriod(java.lang.Long value) {
     this.startPeriod = value;
-    setDirty(13);
+    setDirty(14);
   }
   
   /**
    * Checks the dirty status of the 'startPeriod' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isStartPeriodDirty(java.lang.Integer value) {
-    return isDirty(13);
+  public boolean isStartPeriodDirty(java.lang.Long value) {
+    return isDirty(14);
   }
 
   /**
    * Gets the value of the 'startRange' field.
    */
-  public java.lang.Integer getStartRange() {
+  public java.lang.Long getStartRange() {
     return startRange;
   }
 
@@ -506,23 +504,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'startRange' field.
    * @param value the value to set.
    */
-  public void setStartRange(java.lang.Integer value) {
+  public void setStartRange(java.lang.Long value) {
     this.startRange = value;
-    setDirty(14);
+    setDirty(15);
   }
   
   /**
    * Checks the dirty status of the 'startRange' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isStartRangeDirty(java.lang.Integer value) {
-    return isDirty(14);
+  public boolean isStartRangeDirty(java.lang.Long value) {
+    return isDirty(15);
   }
 
   /**
    * Gets the value of the 'endPeriod' field.
    */
-  public java.lang.Integer getEndPeriod() {
+  public java.lang.Long getEndPeriod() {
     return endPeriod;
   }
 
@@ -530,23 +528,23 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'endPeriod' field.
    * @param value the value to set.
    */
-  public void setEndPeriod(java.lang.Integer value) {
+  public void setEndPeriod(java.lang.Long value) {
     this.endPeriod = value;
-    setDirty(15);
+    setDirty(16);
   }
   
   /**
    * Checks the dirty status of the 'endPeriod' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isEndPeriodDirty(java.lang.Integer value) {
-    return isDirty(15);
+  public boolean isEndPeriodDirty(java.lang.Long value) {
+    return isDirty(16);
   }
 
   /**
    * Gets the value of the 'endRange' field.
    */
-  public java.lang.Integer getEndRange() {
+  public java.lang.Long getEndRange() {
     return endRange;
   }
 
@@ -554,17 +552,17 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'endRange' field.
    * @param value the value to set.
    */
-  public void setEndRange(java.lang.Integer value) {
+  public void setEndRange(java.lang.Long value) {
     this.endRange = value;
-    setDirty(16);
+    setDirty(17);
   }
   
   /**
    * Checks the dirty status of the 'endRange' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isEndRangeDirty(java.lang.Integer value) {
-    return isDirty(16);
+  public boolean isEndRangeDirty(java.lang.Long value) {
+    return isDirty(17);
   }
 
   /** Creates a new GameStats RecordBuilder */
@@ -611,23 +609,24 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<GameStats>
     implements org.apache.avro.data.RecordBuilder<GameStats> {
 
+    private java.nio.ByteBuffer __g__dirty;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary gameSummary;
-    private gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore lineScore;
+    private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> lineScore;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries seasonSeries;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting lastMeeting;
-    private gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats playerStats;
-    private gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats teamStats;
-    private gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats otherStats;
-    private gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials officials;
+    private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> playerStats;
+    private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> teamStats;
+    private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> otherStats;
+    private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> officials;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo gameInfo;
-    private gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers inactivePlayers;
+    private java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> inactivePlayers;
     private gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo availableVideo;
-    private int gameId;
-    private int rangeType;
-    private int startPeriod;
-    private int startRange;
-    private int endPeriod;
-    private int endRange;
+    private long gameId;
+    private long rangeType;
+    private long startPeriod;
+    private long startRange;
+    private long endPeriod;
+    private long endRange;
 
     /** Creates a new Builder */
     private Builder() {
@@ -642,73 +641,77 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     /** Creates a Builder by copying an existing GameStats instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameSummary)) {
-        this.gameSummary = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary) data().deepCopy(fields()[0].schema(), other.gameSummary);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.lineScore)) {
-        this.lineScore = (gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore) data().deepCopy(fields()[1].schema(), other.lineScore);
+      if (isValidValue(fields()[1], other.gameSummary)) {
+        this.gameSummary = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary) data().deepCopy(fields()[1].schema(), other.gameSummary);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.seasonSeries)) {
-        this.seasonSeries = (gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries) data().deepCopy(fields()[2].schema(), other.seasonSeries);
+      if (isValidValue(fields()[2], other.lineScore)) {
+        this.lineScore = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore>) data().deepCopy(fields()[2].schema(), other.lineScore);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.lastMeeting)) {
-        this.lastMeeting = (gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting) data().deepCopy(fields()[3].schema(), other.lastMeeting);
+      if (isValidValue(fields()[3], other.seasonSeries)) {
+        this.seasonSeries = (gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries) data().deepCopy(fields()[3].schema(), other.seasonSeries);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.playerStats)) {
-        this.playerStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats) data().deepCopy(fields()[4].schema(), other.playerStats);
+      if (isValidValue(fields()[4], other.lastMeeting)) {
+        this.lastMeeting = (gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting) data().deepCopy(fields()[4].schema(), other.lastMeeting);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.teamStats)) {
-        this.teamStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats) data().deepCopy(fields()[5].schema(), other.teamStats);
+      if (isValidValue(fields()[5], other.playerStats)) {
+        this.playerStats = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats>) data().deepCopy(fields()[5].schema(), other.playerStats);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.otherStats)) {
-        this.otherStats = (gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats) data().deepCopy(fields()[6].schema(), other.otherStats);
+      if (isValidValue(fields()[6], other.teamStats)) {
+        this.teamStats = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats>) data().deepCopy(fields()[6].schema(), other.teamStats);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.officials)) {
-        this.officials = (gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials) data().deepCopy(fields()[7].schema(), other.officials);
+      if (isValidValue(fields()[7], other.otherStats)) {
+        this.otherStats = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats>) data().deepCopy(fields()[7].schema(), other.otherStats);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.gameInfo)) {
-        this.gameInfo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo) data().deepCopy(fields()[8].schema(), other.gameInfo);
+      if (isValidValue(fields()[8], other.officials)) {
+        this.officials = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials>) data().deepCopy(fields()[8].schema(), other.officials);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.inactivePlayers)) {
-        this.inactivePlayers = (gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers) data().deepCopy(fields()[9].schema(), other.inactivePlayers);
+      if (isValidValue(fields()[9], other.gameInfo)) {
+        this.gameInfo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo) data().deepCopy(fields()[9].schema(), other.gameInfo);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.availableVideo)) {
-        this.availableVideo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo) data().deepCopy(fields()[10].schema(), other.availableVideo);
+      if (isValidValue(fields()[10], other.inactivePlayers)) {
+        this.inactivePlayers = (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers>) data().deepCopy(fields()[10].schema(), other.inactivePlayers);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.gameId)) {
-        this.gameId = (java.lang.Integer) data().deepCopy(fields()[11].schema(), other.gameId);
+      if (isValidValue(fields()[11], other.availableVideo)) {
+        this.availableVideo = (gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo) data().deepCopy(fields()[11].schema(), other.availableVideo);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.rangeType)) {
-        this.rangeType = (java.lang.Integer) data().deepCopy(fields()[12].schema(), other.rangeType);
+      if (isValidValue(fields()[12], other.gameId)) {
+        this.gameId = (java.lang.Long) data().deepCopy(fields()[12].schema(), other.gameId);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.startPeriod)) {
-        this.startPeriod = (java.lang.Integer) data().deepCopy(fields()[13].schema(), other.startPeriod);
+      if (isValidValue(fields()[13], other.rangeType)) {
+        this.rangeType = (java.lang.Long) data().deepCopy(fields()[13].schema(), other.rangeType);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.startRange)) {
-        this.startRange = (java.lang.Integer) data().deepCopy(fields()[14].schema(), other.startRange);
+      if (isValidValue(fields()[14], other.startPeriod)) {
+        this.startPeriod = (java.lang.Long) data().deepCopy(fields()[14].schema(), other.startPeriod);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.endPeriod)) {
-        this.endPeriod = (java.lang.Integer) data().deepCopy(fields()[15].schema(), other.endPeriod);
+      if (isValidValue(fields()[15], other.startRange)) {
+        this.startRange = (java.lang.Long) data().deepCopy(fields()[15].schema(), other.startRange);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.endRange)) {
-        this.endRange = (java.lang.Integer) data().deepCopy(fields()[16].schema(), other.endRange);
+      if (isValidValue(fields()[16], other.endPeriod)) {
+        this.endPeriod = (java.lang.Long) data().deepCopy(fields()[16].schema(), other.endPeriod);
         fieldSetFlags()[16] = true;
+      }
+      if (isValidValue(fields()[17], other.endRange)) {
+        this.endRange = (java.lang.Long) data().deepCopy(fields()[17].schema(), other.endRange);
+        fieldSetFlags()[17] = true;
       }
     }
 
@@ -719,46 +722,46 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'gameSummary' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setGameSummary(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.gameSummary = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'gameSummary' field has been set */
     public boolean hasGameSummary() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'gameSummary' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearGameSummary() {
       gameSummary = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
     /** Gets the value of the 'lineScore' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore getLineScore() {
+    public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> getLineScore() {
       return lineScore;
     }
     
     /** Sets the value of the 'lineScore' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setLineScore(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore value) {
-      validate(fields()[1], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setLineScore(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> value) {
+      validate(fields()[2], value);
       this.lineScore = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'lineScore' field has been set */
     public boolean hasLineScore() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'lineScore' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearLineScore() {
       lineScore = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
@@ -769,21 +772,21 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'seasonSeries' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setSeasonSeries(gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.seasonSeries = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'seasonSeries' field has been set */
     public boolean hasSeasonSeries() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'seasonSeries' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearSeasonSeries() {
       seasonSeries = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -794,121 +797,121 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'lastMeeting' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setLastMeeting(gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.lastMeeting = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'lastMeeting' field has been set */
     public boolean hasLastMeeting() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'lastMeeting' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearLastMeeting() {
       lastMeeting = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
     /** Gets the value of the 'playerStats' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats getPlayerStats() {
+    public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> getPlayerStats() {
       return playerStats;
     }
     
     /** Sets the value of the 'playerStats' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setPlayerStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats value) {
-      validate(fields()[4], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setPlayerStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> value) {
+      validate(fields()[5], value);
       this.playerStats = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'playerStats' field has been set */
     public boolean hasPlayerStats() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'playerStats' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearPlayerStats() {
       playerStats = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
     
     /** Gets the value of the 'teamStats' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats getTeamStats() {
+    public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> getTeamStats() {
       return teamStats;
     }
     
     /** Sets the value of the 'teamStats' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setTeamStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats value) {
-      validate(fields()[5], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setTeamStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> value) {
+      validate(fields()[6], value);
       this.teamStats = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'teamStats' field has been set */
     public boolean hasTeamStats() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'teamStats' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearTeamStats() {
       teamStats = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
     
     /** Gets the value of the 'otherStats' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats getOtherStats() {
+    public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> getOtherStats() {
       return otherStats;
     }
     
     /** Sets the value of the 'otherStats' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setOtherStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats value) {
-      validate(fields()[6], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setOtherStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> value) {
+      validate(fields()[7], value);
       this.otherStats = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'otherStats' field has been set */
     public boolean hasOtherStats() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'otherStats' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearOtherStats() {
       otherStats = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
     
     /** Gets the value of the 'officials' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials getOfficials() {
+    public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> getOfficials() {
       return officials;
     }
     
     /** Sets the value of the 'officials' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setOfficials(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials value) {
-      validate(fields()[7], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setOfficials(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> value) {
+      validate(fields()[8], value);
       this.officials = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'officials' field has been set */
     public boolean hasOfficials() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'officials' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearOfficials() {
       officials = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
     
@@ -919,46 +922,46 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'gameInfo' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setGameInfo(gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.gameInfo = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'gameInfo' field has been set */
     public boolean hasGameInfo() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'gameInfo' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearGameInfo() {
       gameInfo = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
     
     /** Gets the value of the 'inactivePlayers' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers getInactivePlayers() {
+    public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> getInactivePlayers() {
       return inactivePlayers;
     }
     
     /** Sets the value of the 'inactivePlayers' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setInactivePlayers(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers value) {
-      validate(fields()[9], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setInactivePlayers(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> value) {
+      validate(fields()[10], value);
       this.inactivePlayers = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
     
     /** Checks whether the 'inactivePlayers' field has been set */
     public boolean hasInactivePlayers() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
     
     /** Clears the value of the 'inactivePlayers' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearInactivePlayers() {
       inactivePlayers = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
     
@@ -969,165 +972,165 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'availableVideo' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setAvailableVideo(gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.availableVideo = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
     
     /** Checks whether the 'availableVideo' field has been set */
     public boolean hasAvailableVideo() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
     
     /** Clears the value of the 'availableVideo' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearAvailableVideo() {
       availableVideo = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
     
     /** Gets the value of the 'gameId' field */
-    public java.lang.Integer getGameId() {
+    public java.lang.Long getGameId() {
       return gameId;
     }
     
     /** Sets the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setGameId(int value) {
-      validate(fields()[11], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setGameId(long value) {
+      validate(fields()[12], value);
       this.gameId = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this; 
     }
     
     /** Checks whether the 'gameId' field has been set */
     public boolean hasGameId() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
     
     /** Clears the value of the 'gameId' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearGameId() {
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
     
     /** Gets the value of the 'rangeType' field */
-    public java.lang.Integer getRangeType() {
+    public java.lang.Long getRangeType() {
       return rangeType;
     }
     
     /** Sets the value of the 'rangeType' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setRangeType(int value) {
-      validate(fields()[12], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setRangeType(long value) {
+      validate(fields()[13], value);
       this.rangeType = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this; 
     }
     
     /** Checks whether the 'rangeType' field has been set */
     public boolean hasRangeType() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
     
     /** Clears the value of the 'rangeType' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearRangeType() {
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
     
     /** Gets the value of the 'startPeriod' field */
-    public java.lang.Integer getStartPeriod() {
+    public java.lang.Long getStartPeriod() {
       return startPeriod;
     }
     
     /** Sets the value of the 'startPeriod' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setStartPeriod(int value) {
-      validate(fields()[13], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setStartPeriod(long value) {
+      validate(fields()[14], value);
       this.startPeriod = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this; 
     }
     
     /** Checks whether the 'startPeriod' field has been set */
     public boolean hasStartPeriod() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
     
     /** Clears the value of the 'startPeriod' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearStartPeriod() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
     
     /** Gets the value of the 'startRange' field */
-    public java.lang.Integer getStartRange() {
+    public java.lang.Long getStartRange() {
       return startRange;
     }
     
     /** Sets the value of the 'startRange' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setStartRange(int value) {
-      validate(fields()[14], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setStartRange(long value) {
+      validate(fields()[15], value);
       this.startRange = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this; 
     }
     
     /** Checks whether the 'startRange' field has been set */
     public boolean hasStartRange() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
     
     /** Clears the value of the 'startRange' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearStartRange() {
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
     
     /** Gets the value of the 'endPeriod' field */
-    public java.lang.Integer getEndPeriod() {
+    public java.lang.Long getEndPeriod() {
       return endPeriod;
     }
     
     /** Sets the value of the 'endPeriod' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setEndPeriod(int value) {
-      validate(fields()[15], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setEndPeriod(long value) {
+      validate(fields()[16], value);
       this.endPeriod = value;
-      fieldSetFlags()[15] = true;
+      fieldSetFlags()[16] = true;
       return this; 
     }
     
     /** Checks whether the 'endPeriod' field has been set */
     public boolean hasEndPeriod() {
-      return fieldSetFlags()[15];
+      return fieldSetFlags()[16];
     }
     
     /** Clears the value of the 'endPeriod' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearEndPeriod() {
-      fieldSetFlags()[15] = false;
+      fieldSetFlags()[16] = false;
       return this;
     }
     
     /** Gets the value of the 'endRange' field */
-    public java.lang.Integer getEndRange() {
+    public java.lang.Long getEndRange() {
       return endRange;
     }
     
     /** Sets the value of the 'endRange' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setEndRange(int value) {
-      validate(fields()[16], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder setEndRange(long value) {
+      validate(fields()[17], value);
       this.endRange = value;
-      fieldSetFlags()[16] = true;
+      fieldSetFlags()[17] = true;
       return this; 
     }
     
     /** Checks whether the 'endRange' field has been set */
     public boolean hasEndRange() {
-      return fieldSetFlags()[16];
+      return fieldSetFlags()[17];
     }
     
     /** Clears the value of the 'endRange' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameStats.Builder clearEndRange() {
-      fieldSetFlags()[16] = false;
+      fieldSetFlags()[17] = false;
       return this;
     }
     
@@ -1135,23 +1138,24 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
     public GameStats build() {
       try {
         GameStats record = new GameStats();
-        record.gameSummary = fieldSetFlags()[0] ? this.gameSummary : (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary) defaultValue(fields()[0]);
-        record.lineScore = fieldSetFlags()[1] ? this.lineScore : (gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore) defaultValue(fields()[1]);
-        record.seasonSeries = fieldSetFlags()[2] ? this.seasonSeries : (gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries) defaultValue(fields()[2]);
-        record.lastMeeting = fieldSetFlags()[3] ? this.lastMeeting : (gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting) defaultValue(fields()[3]);
-        record.playerStats = fieldSetFlags()[4] ? this.playerStats : (gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats) defaultValue(fields()[4]);
-        record.teamStats = fieldSetFlags()[5] ? this.teamStats : (gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats) defaultValue(fields()[5]);
-        record.otherStats = fieldSetFlags()[6] ? this.otherStats : (gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats) defaultValue(fields()[6]);
-        record.officials = fieldSetFlags()[7] ? this.officials : (gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials) defaultValue(fields()[7]);
-        record.gameInfo = fieldSetFlags()[8] ? this.gameInfo : (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo) defaultValue(fields()[8]);
-        record.inactivePlayers = fieldSetFlags()[9] ? this.inactivePlayers : (gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers) defaultValue(fields()[9]);
-        record.availableVideo = fieldSetFlags()[10] ? this.availableVideo : (gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo) defaultValue(fields()[10]);
-        record.gameId = fieldSetFlags()[11] ? this.gameId : (java.lang.Integer) defaultValue(fields()[11]);
-        record.rangeType = fieldSetFlags()[12] ? this.rangeType : (java.lang.Integer) defaultValue(fields()[12]);
-        record.startPeriod = fieldSetFlags()[13] ? this.startPeriod : (java.lang.Integer) defaultValue(fields()[13]);
-        record.startRange = fieldSetFlags()[14] ? this.startRange : (java.lang.Integer) defaultValue(fields()[14]);
-        record.endPeriod = fieldSetFlags()[15] ? this.endPeriod : (java.lang.Integer) defaultValue(fields()[15]);
-        record.endRange = fieldSetFlags()[16] ? this.endRange : (java.lang.Integer) defaultValue(fields()[16]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[3]);
+        record.gameSummary = fieldSetFlags()[1] ? this.gameSummary : (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary) defaultValue(fields()[1]);
+        record.lineScore = fieldSetFlags()[2] ? this.lineScore : (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[2]));
+        record.seasonSeries = fieldSetFlags()[3] ? this.seasonSeries : (gov.nasa.jpl.xdata.nba.impoexpo.structs.SeasonSeries) defaultValue(fields()[3]);
+        record.lastMeeting = fieldSetFlags()[4] ? this.lastMeeting : (gov.nasa.jpl.xdata.nba.impoexpo.structs.LastMeeting) defaultValue(fields()[4]);
+        record.playerStats = fieldSetFlags()[5] ? this.playerStats : (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[5]));
+        record.teamStats = fieldSetFlags()[6] ? this.teamStats : (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[6]));
+        record.otherStats = fieldSetFlags()[7] ? this.otherStats : (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[7]));
+        record.officials = fieldSetFlags()[8] ? this.officials : (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[8]));
+        record.gameInfo = fieldSetFlags()[9] ? this.gameInfo : (gov.nasa.jpl.xdata.nba.impoexpo.structs.GameInfo) defaultValue(fields()[9]);
+        record.inactivePlayers = fieldSetFlags()[10] ? this.inactivePlayers : (java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[10]));
+        record.availableVideo = fieldSetFlags()[11] ? this.availableVideo : (gov.nasa.jpl.xdata.nba.impoexpo.structs.AvailableVideo) defaultValue(fields()[11]);
+        record.gameId = fieldSetFlags()[12] ? this.gameId : (java.lang.Long) defaultValue(fields()[12]);
+        record.rangeType = fieldSetFlags()[13] ? this.rangeType : (java.lang.Long) defaultValue(fields()[13]);
+        record.startPeriod = fieldSetFlags()[14] ? this.startPeriod : (java.lang.Long) defaultValue(fields()[14]);
+        record.startRange = fieldSetFlags()[15] ? this.startRange : (java.lang.Long) defaultValue(fields()[15]);
+        record.endPeriod = fieldSetFlags()[16] ? this.endPeriod : (java.lang.Long) defaultValue(fields()[16]);
+        record.endRange = fieldSetFlags()[17] ? this.endRange : (java.lang.Long) defaultValue(fields()[17]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -1173,7 +1177,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'gameSummary' field.
 		   */
 	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.GameSummary getGameSummary() {
@@ -1199,7 +1203,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'lineScore' field.
 		   */
-	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore getLineScore() {
+	  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> getLineScore() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1207,7 +1211,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'lineScore' field.
 		   * @param value the value to set.
 	   */
-	  public void setLineScore(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore value) {
+	  public void setLineScore(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1215,7 +1219,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'lineScore' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isLineScoreDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore value) {
+	  public boolean isLineScoreDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore> value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1268,7 +1272,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'playerStats' field.
 		   */
-	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats getPlayerStats() {
+	  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> getPlayerStats() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1276,7 +1280,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'playerStats' field.
 		   * @param value the value to set.
 	   */
-	  public void setPlayerStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats value) {
+	  public void setPlayerStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1284,14 +1288,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'playerStats' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPlayerStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats value) {
+	  public boolean isPlayerStatsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.PlayerStats> value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'teamStats' field.
 		   */
-	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats getTeamStats() {
+	  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> getTeamStats() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1299,7 +1303,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'teamStats' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats value) {
+	  public void setTeamStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1307,14 +1311,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'teamStats' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats value) {
+	  public boolean isTeamStatsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats> value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'otherStats' field.
 		   */
-	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats getOtherStats() {
+	  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> getOtherStats() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1322,7 +1326,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'otherStats' field.
 		   * @param value the value to set.
 	   */
-	  public void setOtherStats(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats value) {
+	  public void setOtherStats(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1330,14 +1334,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'otherStats' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isOtherStatsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats value) {
+	  public boolean isOtherStatsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.OtherStats> value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'officials' field.
 		   */
-	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials getOfficials() {
+	  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> getOfficials() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1345,7 +1349,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'officials' field.
 		   * @param value the value to set.
 	   */
-	  public void setOfficials(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials value) {
+	  public void setOfficials(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1353,7 +1357,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'officials' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isOfficialsDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials value) {
+	  public boolean isOfficialsDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.Officials> value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1383,7 +1387,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'inactivePlayers' field.
 		   */
-	  public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers getInactivePlayers() {
+	  public java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> getInactivePlayers() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1391,7 +1395,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'inactivePlayers' field.
 		   * @param value the value to set.
 	   */
-	  public void setInactivePlayers(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers value) {
+	  public void setInactivePlayers(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1399,7 +1403,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'inactivePlayers' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isInactivePlayersDirty(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers value) {
+	  public boolean isInactivePlayersDirty(java.util.List<gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers> value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1429,7 +1433,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'gameId' field.
 		   */
-	  public java.lang.Integer getGameId() {
+	  public java.lang.Long getGameId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1437,7 +1441,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'gameId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameId(java.lang.Integer value) {
+	  public void setGameId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1445,14 +1449,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameIdDirty(java.lang.Integer value) {
+	  public boolean isGameIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'rangeType' field.
 		   */
-	  public java.lang.Integer getRangeType() {
+	  public java.lang.Long getRangeType() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1460,7 +1464,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'rangeType' field.
 		   * @param value the value to set.
 	   */
-	  public void setRangeType(java.lang.Integer value) {
+	  public void setRangeType(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1468,14 +1472,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'rangeType' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isRangeTypeDirty(java.lang.Integer value) {
+	  public boolean isRangeTypeDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'startPeriod' field.
 		   */
-	  public java.lang.Integer getStartPeriod() {
+	  public java.lang.Long getStartPeriod() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1483,7 +1487,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'startPeriod' field.
 		   * @param value the value to set.
 	   */
-	  public void setStartPeriod(java.lang.Integer value) {
+	  public void setStartPeriod(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1491,14 +1495,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'startPeriod' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isStartPeriodDirty(java.lang.Integer value) {
+	  public boolean isStartPeriodDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'startRange' field.
 		   */
-	  public java.lang.Integer getStartRange() {
+	  public java.lang.Long getStartRange() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1506,7 +1510,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'startRange' field.
 		   * @param value the value to set.
 	   */
-	  public void setStartRange(java.lang.Integer value) {
+	  public void setStartRange(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1514,14 +1518,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'startRange' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isStartRangeDirty(java.lang.Integer value) {
+	  public boolean isStartRangeDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'endPeriod' field.
 		   */
-	  public java.lang.Integer getEndPeriod() {
+	  public java.lang.Long getEndPeriod() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1529,7 +1533,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'endPeriod' field.
 		   * @param value the value to set.
 	   */
-	  public void setEndPeriod(java.lang.Integer value) {
+	  public void setEndPeriod(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1537,14 +1541,14 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'endPeriod' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isEndPeriodDirty(java.lang.Integer value) {
+	  public boolean isEndPeriodDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'endRange' field.
 		   */
-	  public java.lang.Integer getEndRange() {
+	  public java.lang.Long getEndRange() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1552,7 +1556,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'endRange' field.
 		   * @param value the value to set.
 	   */
-	  public void setEndRange(java.lang.Integer value) {
+	  public void setEndRange(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1560,7 +1564,7 @@ public class GameStats extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'endRange' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isEndRangeDirty(java.lang.Integer value) {
+	  public boolean isEndRangeDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

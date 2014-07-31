@@ -48,7 +48,7 @@ public class GameManager implements Manager {
 
   private final static Logger LOG = LoggerFactory.getLogger(GameManager.class.getName()); 
 
-  private DataStore<Integer, Game> dataStore;
+  private DataStore<Long, Game> dataStore;
 
   private static final String USAGE = 
       "NBAManager -aquire <previewText> <recapText> <notebookText> <gameStatsJSON>\n" +
@@ -71,7 +71,7 @@ public class GameManager implements Manager {
     //Data store objects are created from a factory. It is necessary to 
     //provide the key and value class. The datastore class is optional, 
     //and if not specified it will be read from the properties file
-    dataStore = DataStoreFactory.getDataStore(Integer.class, Game.class,
+    dataStore = DataStoreFactory.getDataStore(Long.class, Game.class,
         new Configuration());
   }
 
@@ -136,30 +136,30 @@ public class GameManager implements Manager {
       for (String string : inputFiles) {
         list.add(string);
       }
-      Game game = null;
-      Preview preview = null;
-      Recap recap = null;
-      Notebook notebook = null;
-      GameStats gameStats = null;
+      Game game = Game.newBuilder().build();
+      Preview preview = Preview.newBuilder().build();
+      Recap recap = Recap.newBuilder().build();
+      Notebook notebook = Notebook.newBuilder().build();
+      GameStats gameStats = GameStats.newBuilder().build();
       // we start at arg 1 as arg 0 is '-aquire'
       for (int i = 1; i < list.size(); i++) {
         
-        switch (list.indexOf(i)) {
+        switch (i) {
         case 1: // switch to parsePreview
-          preview = ParseUtil.parsePreview(list.get(i));
+          preview = ParseUtil.parsePreview(preview, list.get(i));
           game.setPreview(preview);
           break;
         case 2: // switch to parseRecap
-          recap = ParseUtil.parseRecap(list.get(i));
+          recap = ParseUtil.parseRecap(recap, list.get(i));
           game.setRecap(recap);
           break;
         case 3: // switch to parseNotebook
-          notebook = ParseUtil.parseNotebook(list.get(i));
+          notebook = ParseUtil.parseNotebook(notebook, list.get(i));
           game.setNotebook(notebook);
           break;
         case 4: // switch to parseGameStats
           try {
-            gameStats = ParseUtil.parseGameStats(list.get(i));
+            gameStats = ParseUtil.parseGameStats(gameStats, list.get(i));
           } catch (ParseException e) {
             e.printStackTrace();
             break;
@@ -186,20 +186,20 @@ public class GameManager implements Manager {
 
 
 
-  private void storeGame(Integer integer, Game game) {
-    LOG.info("Storing Game with id: " + integer + " in: " + 
+  private void storeGame(Long mLong, Game game) {
+    LOG.info("Storing Game with id: " + mLong + " in: " +
         dataStore.getBeanFactory().getClass().getName());
-    dataStore.put(integer, game);
+    dataStore.put(mLong, game);
 
   }
 
   @Override
   public void deleteByQuery(Object key, Object value) {
     //Constructs a query from the dataStore. The matching rows to this query will be deleted
-    Query<Integer, Game> query = dataStore.newQuery();
+    Query<Long, Game> query = dataStore.newQuery();
     //set the properties of query
-    query.setStartKey((Integer) key);
-    query.setEndKey((Integer) value);
+    query.setStartKey((Long) key);
+    query.setEndKey((Long) value);
 
     dataStore.deleteByQuery(query);
     LOG.info("Games with keys between " + key.toString() + " and " + value.toString() + " are deleted");
@@ -208,7 +208,7 @@ public class GameManager implements Manager {
 
   @Override
   public void delete(Object key) {
-    dataStore.delete((Integer) key);
+    dataStore.delete((Long) key);
     dataStore.flush(); //write changes may need to be flushed before
     //they are committed 
     LOG.info("Games with key:" + key.toString() + " deleted");
@@ -217,10 +217,10 @@ public class GameManager implements Manager {
 
   @Override
   public void query(Object key, Object value) {
-    org.apache.gora.query.Query<Integer, Game> query = dataStore.newQuery();
-    query.setStartKey((Integer) key);
-    query.setEndKey((Integer) value);
-    Result<Integer, Game> result = query.execute();
+    org.apache.gora.query.Query<Long, Game> query = dataStore.newQuery();
+    query.setStartKey((Long) key);
+    query.setEndKey((Long) value);
+    Result<Long, Game> result = query.execute();
     try {
       printResult(result);
     } catch (IOException e) {
@@ -233,9 +233,9 @@ public class GameManager implements Manager {
 
   @Override
   public void query(Object key) {
-    org.apache.gora.query.Query<Integer, Game> query = dataStore.newQuery();
-    query.setStartKey((Integer) key);
-    Result<Integer, Game> result = query.execute();
+    org.apache.gora.query.Query<Long, Game> query = dataStore.newQuery();
+    query.setStartKey((Long) key);
+    Result<Long, Game> result = query.execute();
     try {
       printResult(result);
     } catch (IOException e) {
@@ -247,7 +247,7 @@ public class GameManager implements Manager {
 
   @Override
   public void get(Object key) {
-    Game game = dataStore.get((Integer) key);
+    Game game = dataStore.get((Long) key);
     printGame(game);
 
   }
@@ -261,10 +261,10 @@ public class GameManager implements Manager {
     }
   }
 
-  private void printResult(Result<Integer, Game> result) throws IOException, Exception {
+  private void printResult(Result<Long, Game> result) throws Exception {
 
     while(result.next()) { //advances the Result object and breaks if at end
-      Integer resultKey = result.getKey(); //obtain current key
+      Long resultKey = result.getKey(); //obtain current key
       Game resultGame = result.get(); //obtain current value object
 
       //print the results

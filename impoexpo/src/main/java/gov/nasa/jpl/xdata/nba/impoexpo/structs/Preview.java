@@ -6,11 +6,12 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class Preview extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Preview\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"previewText\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Preview\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"previewText\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    PREVIEW_TEXT(0, "previewText"),
+    __G__DIRTY(0, "__g__dirty"),
+    PREVIEW_TEXT(1, "previewText"),
     ;
     /**
      * Field's index.
@@ -49,23 +50,19 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "previewText",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return Preview._ALL_FIELDS.length;
-  }
-
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[1]);
   private java.lang.CharSequence previewText;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return previewText;
+    case 0: return __g__dirty;
+    case 1: return previewText;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -74,7 +71,8 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: previewText = (java.lang.CharSequence)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: previewText = (java.lang.CharSequence)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -92,7 +90,7 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
    */
   public void setPreviewText(java.lang.CharSequence value) {
     this.previewText = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
@@ -100,7 +98,7 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
    * @param value the value to set.
    */
   public boolean isPreviewTextDirty(java.lang.CharSequence value) {
-    return isDirty(0);
+    return isDirty(1);
   }
 
   /** Creates a new Preview RecordBuilder */
@@ -147,6 +145,7 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Preview>
     implements org.apache.avro.data.RecordBuilder<Preview> {
 
+    private java.nio.ByteBuffer __g__dirty;
     private java.lang.CharSequence previewText;
 
     /** Creates a new Builder */
@@ -162,9 +161,13 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
     /** Creates a Builder by copying an existing Preview instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview.SCHEMA$);
-      if (isValidValue(fields()[0], other.previewText)) {
-        this.previewText = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.previewText);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.previewText)) {
+        this.previewText = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.previewText);
+        fieldSetFlags()[1] = true;
       }
     }
 
@@ -175,21 +178,21 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
     
     /** Sets the value of the 'previewText' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview.Builder setPreviewText(java.lang.CharSequence value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.previewText = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'previewText' field has been set */
     public boolean hasPreviewText() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'previewText' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Preview.Builder clearPreviewText() {
       previewText = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
@@ -197,7 +200,8 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
     public Preview build() {
       try {
         Preview record = new Preview();
-        record.previewText = fieldSetFlags()[0] ? this.previewText : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[1]);
+        record.previewText = fieldSetFlags()[1] ? this.previewText : (java.lang.CharSequence) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -219,7 +223,7 @@ public class Preview extends org.apache.gora.persistency.impl.PersistentBase imp
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'previewText' field.
 		   */
 	  public java.lang.CharSequence getPreviewText() {

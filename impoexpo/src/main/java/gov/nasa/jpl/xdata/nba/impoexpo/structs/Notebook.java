@@ -6,25 +6,26 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class Notebook extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Notebook\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"teamNotebook\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notebookAuthor\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"publishingBody\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"postedDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theFacts\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theQuotes\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"default\":[]},{\"name\":\"theStat\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theTurningPoint\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"hot\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"not\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notable\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"upNext\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theLead\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"goodMove\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"badMove\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Notebook\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"teamNotebook\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notebookAuthor\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"publishingBody\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"postedDate\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theFacts\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theQuotes\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"default\":[]},{\"name\":\"theStat\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theTurningPoint\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"hot\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"not\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"notable\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"upNext\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"theLead\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"goodMove\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"badMove\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    TEAM_NOTEBOOK(0, "teamNotebook"),
-    NOTEBOOK_AUTHOR(1, "notebookAuthor"),
-    PUBLISHING_BODY(2, "publishingBody"),
-    POSTED_DATE(3, "postedDate"),
-    THE_FACTS(4, "theFacts"),
-    THE_QUOTES(5, "theQuotes"),
-    THE_STAT(6, "theStat"),
-    THE_TURNING_POINT(7, "theTurningPoint"),
-    HOT(8, "hot"),
-    NOT(9, "not"),
-    NOTABLE(10, "notable"),
-    UP_NEXT(11, "upNext"),
-    THE_LEAD(12, "theLead"),
-    GOOD_MOVE(13, "goodMove"),
-    BAD_MOVE(14, "badMove"),
+    __G__DIRTY(0, "__g__dirty"),
+    TEAM_NOTEBOOK(1, "teamNotebook"),
+    NOTEBOOK_AUTHOR(2, "notebookAuthor"),
+    PUBLISHING_BODY(3, "publishingBody"),
+    POSTED_DATE(4, "postedDate"),
+    THE_FACTS(5, "theFacts"),
+    THE_QUOTES(6, "theQuotes"),
+    THE_STAT(7, "theStat"),
+    THE_TURNING_POINT(8, "theTurningPoint"),
+    HOT(9, "hot"),
+    NOT(10, "not"),
+    NOTABLE(11, "notable"),
+    UP_NEXT(12, "upNext"),
+    THE_LEAD(13, "theLead"),
+    GOOD_MOVE(14, "goodMove"),
+    BAD_MOVE(15, "badMove"),
     ;
     /**
      * Field's index.
@@ -63,6 +64,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
   };
 
   public static final String[] _ALL_FIELDS = {
+  "__g__dirty",
   "teamNotebook",
   "notebookAuthor",
   "publishingBody",
@@ -80,14 +82,8 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
   "badMove",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return Notebook._ALL_FIELDS.length;
-  }
-
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[3]);
   private java.lang.CharSequence teamNotebook;
   private java.lang.CharSequence notebookAuthor;
   private java.lang.CharSequence publishingBody;
@@ -107,21 +103,22 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return teamNotebook;
-    case 1: return notebookAuthor;
-    case 2: return publishingBody;
-    case 3: return postedDate;
-    case 4: return theFacts;
-    case 5: return theQuotes;
-    case 6: return theStat;
-    case 7: return theTurningPoint;
-    case 8: return hot;
-    case 9: return not;
-    case 10: return notable;
-    case 11: return upNext;
-    case 12: return theLead;
-    case 13: return goodMove;
-    case 14: return badMove;
+    case 0: return __g__dirty;
+    case 1: return teamNotebook;
+    case 2: return notebookAuthor;
+    case 3: return publishingBody;
+    case 4: return postedDate;
+    case 5: return theFacts;
+    case 6: return theQuotes;
+    case 7: return theStat;
+    case 8: return theTurningPoint;
+    case 9: return hot;
+    case 10: return not;
+    case 11: return notable;
+    case 12: return upNext;
+    case 13: return theLead;
+    case 14: return goodMove;
+    case 15: return badMove;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -130,21 +127,22 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: teamNotebook = (java.lang.CharSequence)(value); break;
-    case 1: notebookAuthor = (java.lang.CharSequence)(value); break;
-    case 2: publishingBody = (java.lang.CharSequence)(value); break;
-    case 3: postedDate = (java.lang.CharSequence)(value); break;
-    case 4: theFacts = (java.lang.CharSequence)(value); break;
-    case 5: theQuotes = (java.util.List<java.lang.CharSequence>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
-    case 6: theStat = (java.lang.CharSequence)(value); break;
-    case 7: theTurningPoint = (java.lang.CharSequence)(value); break;
-    case 8: hot = (java.lang.CharSequence)(value); break;
-    case 9: not = (java.lang.CharSequence)(value); break;
-    case 10: notable = (java.lang.CharSequence)(value); break;
-    case 11: upNext = (java.lang.CharSequence)(value); break;
-    case 12: theLead = (java.lang.CharSequence)(value); break;
-    case 13: goodMove = (java.lang.CharSequence)(value); break;
-    case 14: badMove = (java.lang.CharSequence)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: teamNotebook = (java.lang.CharSequence)(value); break;
+    case 2: notebookAuthor = (java.lang.CharSequence)(value); break;
+    case 3: publishingBody = (java.lang.CharSequence)(value); break;
+    case 4: postedDate = (java.lang.CharSequence)(value); break;
+    case 5: theFacts = (java.lang.CharSequence)(value); break;
+    case 6: theQuotes = (java.util.List<java.lang.CharSequence>)((value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)value)); break;
+    case 7: theStat = (java.lang.CharSequence)(value); break;
+    case 8: theTurningPoint = (java.lang.CharSequence)(value); break;
+    case 9: hot = (java.lang.CharSequence)(value); break;
+    case 10: not = (java.lang.CharSequence)(value); break;
+    case 11: notable = (java.lang.CharSequence)(value); break;
+    case 12: upNext = (java.lang.CharSequence)(value); break;
+    case 13: theLead = (java.lang.CharSequence)(value); break;
+    case 14: goodMove = (java.lang.CharSequence)(value); break;
+    case 15: badMove = (java.lang.CharSequence)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -162,7 +160,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setTeamNotebook(java.lang.CharSequence value) {
     this.teamNotebook = value;
-    setDirty(0);
+    setDirty(1);
   }
   
   /**
@@ -170,7 +168,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isTeamNotebookDirty(java.lang.CharSequence value) {
-    return isDirty(0);
+    return isDirty(1);
   }
 
   /**
@@ -186,7 +184,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setNotebookAuthor(java.lang.CharSequence value) {
     this.notebookAuthor = value;
-    setDirty(1);
+    setDirty(2);
   }
   
   /**
@@ -194,7 +192,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isNotebookAuthorDirty(java.lang.CharSequence value) {
-    return isDirty(1);
+    return isDirty(2);
   }
 
   /**
@@ -210,7 +208,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setPublishingBody(java.lang.CharSequence value) {
     this.publishingBody = value;
-    setDirty(2);
+    setDirty(3);
   }
   
   /**
@@ -218,7 +216,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isPublishingBodyDirty(java.lang.CharSequence value) {
-    return isDirty(2);
+    return isDirty(3);
   }
 
   /**
@@ -234,7 +232,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setPostedDate(java.lang.CharSequence value) {
     this.postedDate = value;
-    setDirty(3);
+    setDirty(4);
   }
   
   /**
@@ -242,7 +240,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isPostedDateDirty(java.lang.CharSequence value) {
-    return isDirty(3);
+    return isDirty(4);
   }
 
   /**
@@ -258,7 +256,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setTheFacts(java.lang.CharSequence value) {
     this.theFacts = value;
-    setDirty(4);
+    setDirty(5);
   }
   
   /**
@@ -266,7 +264,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isTheFactsDirty(java.lang.CharSequence value) {
-    return isDirty(4);
+    return isDirty(5);
   }
 
   /**
@@ -282,7 +280,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setTheQuotes(java.util.List<java.lang.CharSequence> value) {
     this.theQuotes = (value instanceof org.apache.gora.persistency.Dirtyable) ? value : new org.apache.gora.persistency.impl.DirtyListWrapper(value);
-    setDirty(5);
+    setDirty(6);
   }
   
   /**
@@ -290,7 +288,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isTheQuotesDirty(java.util.List<java.lang.CharSequence> value) {
-    return isDirty(5);
+    return isDirty(6);
   }
 
   /**
@@ -306,7 +304,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setTheStat(java.lang.CharSequence value) {
     this.theStat = value;
-    setDirty(6);
+    setDirty(7);
   }
   
   /**
@@ -314,7 +312,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isTheStatDirty(java.lang.CharSequence value) {
-    return isDirty(6);
+    return isDirty(7);
   }
 
   /**
@@ -330,7 +328,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setTheTurningPoint(java.lang.CharSequence value) {
     this.theTurningPoint = value;
-    setDirty(7);
+    setDirty(8);
   }
   
   /**
@@ -338,7 +336,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isTheTurningPointDirty(java.lang.CharSequence value) {
-    return isDirty(7);
+    return isDirty(8);
   }
 
   /**
@@ -354,7 +352,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setHot(java.lang.CharSequence value) {
     this.hot = value;
-    setDirty(8);
+    setDirty(9);
   }
   
   /**
@@ -362,7 +360,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isHotDirty(java.lang.CharSequence value) {
-    return isDirty(8);
+    return isDirty(9);
   }
 
   /**
@@ -378,7 +376,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setNot(java.lang.CharSequence value) {
     this.not = value;
-    setDirty(9);
+    setDirty(10);
   }
   
   /**
@@ -386,7 +384,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isNotDirty(java.lang.CharSequence value) {
-    return isDirty(9);
+    return isDirty(10);
   }
 
   /**
@@ -402,7 +400,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setNotable(java.lang.CharSequence value) {
     this.notable = value;
-    setDirty(10);
+    setDirty(11);
   }
   
   /**
@@ -410,7 +408,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isNotableDirty(java.lang.CharSequence value) {
-    return isDirty(10);
+    return isDirty(11);
   }
 
   /**
@@ -426,7 +424,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setUpNext(java.lang.CharSequence value) {
     this.upNext = value;
-    setDirty(11);
+    setDirty(12);
   }
   
   /**
@@ -434,7 +432,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isUpNextDirty(java.lang.CharSequence value) {
-    return isDirty(11);
+    return isDirty(12);
   }
 
   /**
@@ -450,7 +448,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setTheLead(java.lang.CharSequence value) {
     this.theLead = value;
-    setDirty(12);
+    setDirty(13);
   }
   
   /**
@@ -458,7 +456,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isTheLeadDirty(java.lang.CharSequence value) {
-    return isDirty(12);
+    return isDirty(13);
   }
 
   /**
@@ -474,7 +472,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setGoodMove(java.lang.CharSequence value) {
     this.goodMove = value;
-    setDirty(13);
+    setDirty(14);
   }
   
   /**
@@ -482,7 +480,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isGoodMoveDirty(java.lang.CharSequence value) {
-    return isDirty(13);
+    return isDirty(14);
   }
 
   /**
@@ -498,7 +496,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    */
   public void setBadMove(java.lang.CharSequence value) {
     this.badMove = value;
-    setDirty(14);
+    setDirty(15);
   }
   
   /**
@@ -506,7 +504,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
    * @param value the value to set.
    */
   public boolean isBadMoveDirty(java.lang.CharSequence value) {
-    return isDirty(14);
+    return isDirty(15);
   }
 
   /** Creates a new Notebook RecordBuilder */
@@ -553,6 +551,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Notebook>
     implements org.apache.avro.data.RecordBuilder<Notebook> {
 
+    private java.nio.ByteBuffer __g__dirty;
     private java.lang.CharSequence teamNotebook;
     private java.lang.CharSequence notebookAuthor;
     private java.lang.CharSequence publishingBody;
@@ -582,65 +581,69 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     /** Creates a Builder by copying an existing Notebook instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.SCHEMA$);
-      if (isValidValue(fields()[0], other.teamNotebook)) {
-        this.teamNotebook = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.teamNotebook);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.notebookAuthor)) {
-        this.notebookAuthor = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.notebookAuthor);
+      if (isValidValue(fields()[1], other.teamNotebook)) {
+        this.teamNotebook = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.teamNotebook);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.publishingBody)) {
-        this.publishingBody = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.publishingBody);
+      if (isValidValue(fields()[2], other.notebookAuthor)) {
+        this.notebookAuthor = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.notebookAuthor);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.postedDate)) {
-        this.postedDate = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.postedDate);
+      if (isValidValue(fields()[3], other.publishingBody)) {
+        this.publishingBody = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.publishingBody);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.theFacts)) {
-        this.theFacts = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.theFacts);
+      if (isValidValue(fields()[4], other.postedDate)) {
+        this.postedDate = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.postedDate);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.theQuotes)) {
-        this.theQuotes = (java.util.List<java.lang.CharSequence>) data().deepCopy(fields()[5].schema(), other.theQuotes);
+      if (isValidValue(fields()[5], other.theFacts)) {
+        this.theFacts = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.theFacts);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.theStat)) {
-        this.theStat = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.theStat);
+      if (isValidValue(fields()[6], other.theQuotes)) {
+        this.theQuotes = (java.util.List<java.lang.CharSequence>) data().deepCopy(fields()[6].schema(), other.theQuotes);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.theTurningPoint)) {
-        this.theTurningPoint = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.theTurningPoint);
+      if (isValidValue(fields()[7], other.theStat)) {
+        this.theStat = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.theStat);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.hot)) {
-        this.hot = (java.lang.CharSequence) data().deepCopy(fields()[8].schema(), other.hot);
+      if (isValidValue(fields()[8], other.theTurningPoint)) {
+        this.theTurningPoint = (java.lang.CharSequence) data().deepCopy(fields()[8].schema(), other.theTurningPoint);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.not)) {
-        this.not = (java.lang.CharSequence) data().deepCopy(fields()[9].schema(), other.not);
+      if (isValidValue(fields()[9], other.hot)) {
+        this.hot = (java.lang.CharSequence) data().deepCopy(fields()[9].schema(), other.hot);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.notable)) {
-        this.notable = (java.lang.CharSequence) data().deepCopy(fields()[10].schema(), other.notable);
+      if (isValidValue(fields()[10], other.not)) {
+        this.not = (java.lang.CharSequence) data().deepCopy(fields()[10].schema(), other.not);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.upNext)) {
-        this.upNext = (java.lang.CharSequence) data().deepCopy(fields()[11].schema(), other.upNext);
+      if (isValidValue(fields()[11], other.notable)) {
+        this.notable = (java.lang.CharSequence) data().deepCopy(fields()[11].schema(), other.notable);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.theLead)) {
-        this.theLead = (java.lang.CharSequence) data().deepCopy(fields()[12].schema(), other.theLead);
+      if (isValidValue(fields()[12], other.upNext)) {
+        this.upNext = (java.lang.CharSequence) data().deepCopy(fields()[12].schema(), other.upNext);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.goodMove)) {
-        this.goodMove = (java.lang.CharSequence) data().deepCopy(fields()[13].schema(), other.goodMove);
+      if (isValidValue(fields()[13], other.theLead)) {
+        this.theLead = (java.lang.CharSequence) data().deepCopy(fields()[13].schema(), other.theLead);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.badMove)) {
-        this.badMove = (java.lang.CharSequence) data().deepCopy(fields()[14].schema(), other.badMove);
+      if (isValidValue(fields()[14], other.goodMove)) {
+        this.goodMove = (java.lang.CharSequence) data().deepCopy(fields()[14].schema(), other.goodMove);
         fieldSetFlags()[14] = true;
+      }
+      if (isValidValue(fields()[15], other.badMove)) {
+        this.badMove = (java.lang.CharSequence) data().deepCopy(fields()[15].schema(), other.badMove);
+        fieldSetFlags()[15] = true;
       }
     }
 
@@ -651,21 +654,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'teamNotebook' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setTeamNotebook(java.lang.CharSequence value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.teamNotebook = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'teamNotebook' field has been set */
     public boolean hasTeamNotebook() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'teamNotebook' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearTeamNotebook() {
       teamNotebook = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
     
@@ -676,21 +679,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'notebookAuthor' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setNotebookAuthor(java.lang.CharSequence value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.notebookAuthor = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'notebookAuthor' field has been set */
     public boolean hasNotebookAuthor() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'notebookAuthor' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearNotebookAuthor() {
       notebookAuthor = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
     
@@ -701,21 +704,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'publishingBody' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setPublishingBody(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.publishingBody = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'publishingBody' field has been set */
     public boolean hasPublishingBody() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'publishingBody' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearPublishingBody() {
       publishingBody = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
     
@@ -726,21 +729,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'postedDate' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setPostedDate(java.lang.CharSequence value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.postedDate = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'postedDate' field has been set */
     public boolean hasPostedDate() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'postedDate' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearPostedDate() {
       postedDate = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
     
@@ -751,21 +754,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'theFacts' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setTheFacts(java.lang.CharSequence value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.theFacts = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'theFacts' field has been set */
     public boolean hasTheFacts() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'theFacts' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearTheFacts() {
       theFacts = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
     
@@ -776,21 +779,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'theQuotes' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setTheQuotes(java.util.List<java.lang.CharSequence> value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.theQuotes = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'theQuotes' field has been set */
     public boolean hasTheQuotes() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'theQuotes' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearTheQuotes() {
       theQuotes = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
     
@@ -801,21 +804,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'theStat' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setTheStat(java.lang.CharSequence value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.theStat = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'theStat' field has been set */
     public boolean hasTheStat() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'theStat' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearTheStat() {
       theStat = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
     
@@ -826,21 +829,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'theTurningPoint' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setTheTurningPoint(java.lang.CharSequence value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.theTurningPoint = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'theTurningPoint' field has been set */
     public boolean hasTheTurningPoint() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'theTurningPoint' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearTheTurningPoint() {
       theTurningPoint = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
     
@@ -851,21 +854,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'hot' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setHot(java.lang.CharSequence value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.hot = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'hot' field has been set */
     public boolean hasHot() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'hot' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearHot() {
       hot = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
     
@@ -876,21 +879,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'not' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setNot(java.lang.CharSequence value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.not = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
     
     /** Checks whether the 'not' field has been set */
     public boolean hasNot() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
     
     /** Clears the value of the 'not' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearNot() {
       not = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
     
@@ -901,21 +904,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'notable' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setNotable(java.lang.CharSequence value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.notable = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
     
     /** Checks whether the 'notable' field has been set */
     public boolean hasNotable() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
     
     /** Clears the value of the 'notable' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearNotable() {
       notable = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
     
@@ -926,21 +929,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'upNext' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setUpNext(java.lang.CharSequence value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.upNext = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this; 
     }
     
     /** Checks whether the 'upNext' field has been set */
     public boolean hasUpNext() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
     
     /** Clears the value of the 'upNext' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearUpNext() {
       upNext = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
     
@@ -951,21 +954,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'theLead' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setTheLead(java.lang.CharSequence value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.theLead = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this; 
     }
     
     /** Checks whether the 'theLead' field has been set */
     public boolean hasTheLead() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
     
     /** Clears the value of the 'theLead' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearTheLead() {
       theLead = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
     
@@ -976,21 +979,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'goodMove' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setGoodMove(java.lang.CharSequence value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.goodMove = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this; 
     }
     
     /** Checks whether the 'goodMove' field has been set */
     public boolean hasGoodMove() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
     
     /** Clears the value of the 'goodMove' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearGoodMove() {
       goodMove = null;
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
     
@@ -1001,21 +1004,21 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     
     /** Sets the value of the 'badMove' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder setBadMove(java.lang.CharSequence value) {
-      validate(fields()[14], value);
+      validate(fields()[15], value);
       this.badMove = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this; 
     }
     
     /** Checks whether the 'badMove' field has been set */
     public boolean hasBadMove() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
     
     /** Clears the value of the 'badMove' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.Notebook.Builder clearBadMove() {
       badMove = null;
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
     
@@ -1023,21 +1026,22 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
     public Notebook build() {
       try {
         Notebook record = new Notebook();
-        record.teamNotebook = fieldSetFlags()[0] ? this.teamNotebook : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.notebookAuthor = fieldSetFlags()[1] ? this.notebookAuthor : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.publishingBody = fieldSetFlags()[2] ? this.publishingBody : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.postedDate = fieldSetFlags()[3] ? this.postedDate : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.theFacts = fieldSetFlags()[4] ? this.theFacts : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.theQuotes = fieldSetFlags()[5] ? this.theQuotes : (java.util.List<java.lang.CharSequence>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[5]));
-        record.theStat = fieldSetFlags()[6] ? this.theStat : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.theTurningPoint = fieldSetFlags()[7] ? this.theTurningPoint : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.hot = fieldSetFlags()[8] ? this.hot : (java.lang.CharSequence) defaultValue(fields()[8]);
-        record.not = fieldSetFlags()[9] ? this.not : (java.lang.CharSequence) defaultValue(fields()[9]);
-        record.notable = fieldSetFlags()[10] ? this.notable : (java.lang.CharSequence) defaultValue(fields()[10]);
-        record.upNext = fieldSetFlags()[11] ? this.upNext : (java.lang.CharSequence) defaultValue(fields()[11]);
-        record.theLead = fieldSetFlags()[12] ? this.theLead : (java.lang.CharSequence) defaultValue(fields()[12]);
-        record.goodMove = fieldSetFlags()[13] ? this.goodMove : (java.lang.CharSequence) defaultValue(fields()[13]);
-        record.badMove = fieldSetFlags()[14] ? this.badMove : (java.lang.CharSequence) defaultValue(fields()[14]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[3]);
+        record.teamNotebook = fieldSetFlags()[1] ? this.teamNotebook : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.notebookAuthor = fieldSetFlags()[2] ? this.notebookAuthor : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.publishingBody = fieldSetFlags()[3] ? this.publishingBody : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.postedDate = fieldSetFlags()[4] ? this.postedDate : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.theFacts = fieldSetFlags()[5] ? this.theFacts : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.theQuotes = fieldSetFlags()[6] ? this.theQuotes : (java.util.List<java.lang.CharSequence>) new org.apache.gora.persistency.impl.DirtyListWrapper((java.util.List)defaultValue(fields()[6]));
+        record.theStat = fieldSetFlags()[7] ? this.theStat : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.theTurningPoint = fieldSetFlags()[8] ? this.theTurningPoint : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.hot = fieldSetFlags()[9] ? this.hot : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.not = fieldSetFlags()[10] ? this.not : (java.lang.CharSequence) defaultValue(fields()[10]);
+        record.notable = fieldSetFlags()[11] ? this.notable : (java.lang.CharSequence) defaultValue(fields()[11]);
+        record.upNext = fieldSetFlags()[12] ? this.upNext : (java.lang.CharSequence) defaultValue(fields()[12]);
+        record.theLead = fieldSetFlags()[13] ? this.theLead : (java.lang.CharSequence) defaultValue(fields()[13]);
+        record.goodMove = fieldSetFlags()[14] ? this.goodMove : (java.lang.CharSequence) defaultValue(fields()[14]);
+        record.badMove = fieldSetFlags()[15] ? this.badMove : (java.lang.CharSequence) defaultValue(fields()[15]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -1059,7 +1063,7 @@ public class Notebook extends org.apache.gora.persistency.impl.PersistentBase im
   
       private Tombstone() { }
   
-	  		  /**
+	  				  /**
 	   * Gets the value of the 'teamNotebook' field.
 		   */
 	  public java.lang.CharSequence getTeamNotebook() {

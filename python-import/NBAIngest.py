@@ -7,7 +7,6 @@ import json
 import logging
 import multiprocessing
 import os
-import urllib2
 
 from GamePlayers import parse_game_players_file
 from GameCommentary import parse_commentary_files
@@ -17,6 +16,7 @@ from GameStats import parse_game_stats_file
 from GamePlayerStats import parse_game_players_stats_file
 import LeagueTeamStats
 
+import etl.etllib as etl
 import SentimentAnalyser
 
 logger = logging.getLogger('nba_ingest_logger')
@@ -128,9 +128,8 @@ def load_game_players(game_players_dir):
 
     # Send single hit to Solr here
     solr_url = SOLR_URL + GAME_PLAYERS_CORE + 'update?commit=true'
-    data = json.dumps(results)
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False)
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GamePlayers ingestions complete')
 
@@ -192,11 +191,9 @@ def load_commentary(commentary_dirs):
     # Join result set
     results = list(itertools.chain.from_iterable(results))
 
-    # Send single hit to Solr
     solr_url = SOLR_URL + GAME_COMMENTARY_CORE + 'update?commit=true'
-    data = json.dumps(results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('Commentary ingestions complete')
 
@@ -241,10 +238,8 @@ def load_game_comments(game_comments_dir):
 
     # Send single hit to Solr here
     solr_url = SOLR_URL + GAME_COMMENTS_CORE + 'update?commit=true'
-    data = json.dumps(results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GameComments ingestions complete')
 
@@ -291,8 +286,7 @@ def load_game_play_by_plays(game_play_by_play_dir):
         else:
             data = json.dumps(results[i*files_per_split:(i+1)*files_per_split])
 
-        req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-        urllib2.urlopen(req)
+        etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GamePlayByPlay ingestions complete')
 
@@ -330,9 +324,8 @@ def load_game_stats(game_stats_dir):
     results = list(itertools.chain.from_iterable(results))
 
     solr_url = SOLR_URL + GAME_STATS_CORE + 'update?commit=true'
-    data = json.dumps(results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GameStats ingestions complete')
     logger.info('Processing GameStats results for GameResults core update')
@@ -369,9 +362,8 @@ def load_game_stats(game_stats_dir):
         })
 
     solr_url = SOLR_URL + GAME_RESULTS_CORE + 'update?commit=true'
-    data = json.dumps(game_results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('GameResults ingestion complete')
 
@@ -409,9 +401,8 @@ def load_game_player_stats(game_stats_dir):
     results = list(itertools.chain.from_iterable(results))
 
     solr_url = SOLR_URL + GAME_PLAYER_STATS_CORE + 'update?commit=true'
-    data = json.dumps(results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
 def load_league_team_stats(league_game_stats_file):
     logger.info('Starting LeagueTeamStats ingestion: ' + league_game_stats_file)
@@ -419,9 +410,8 @@ def load_league_team_stats(league_game_stats_file):
     results = LeagueTeamStats.parse_game_team_data_file(league_game_stats_file)
 
     solr_url = SOLR_URL + LEAGUE_TEAM_STATS_CORE + 'update?commit=true'
-    data = json.dumps(results, encoding='latin-1')
-    req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-    urllib2.urlopen(req)
+    data = etl.prepareDocsForSolr(results, unmarshall=False, encoding='latin-1')
+    etl.postJsonDocToSolr(solr_url, data)
 
     logger.info('Finished LeagueTeamStats ingestion: ' + league_game_stats_file)
 

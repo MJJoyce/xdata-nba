@@ -1,62 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="game" version="1.5">
+<schema name="game-players" version="1.5">
 
  <fields>
    <field name="_version_" type="long" indexed="true" stored="true" required="true"/>
    <field name="id" type="string" indexed="true" stored="true" required="true"/>
-   <!-- Preview Fields -->
-   <field name="preview" type="" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="previewText" type="string" indexed="true" stored="true"/>
-   <!-- Recap Fields -->
-   <field name="recap" type="" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="recapText" type="string" indexed="true" stored="true"/>
-   <!-- Notebook Fields -->
-   <field name="notebook" type="" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="notebookText" type="string" indexed="true" stored="true"/>
-   <!-- GameStats Fields -->
-   <field name="gameStats" type="" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="gameSummary" type="" indexed="true" stored="true"/> <!-- NESTED RECORD-->
-   <field name="gameDateEst" type="" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
-   <field name="" type="string" indexed="true" stored="true"/>
+   <field name="game_id" type="string" indexed="true" stored="true"/>
+   <field name="player_id" type="int" indexed="true" stored="true"/>
+   <field name="player_name" type="string" indexed="true" stored="true"/>
+   <field name="team_id" type="int" indexed="true" stored="true"/>
+   <field name="team_city" type="string" indexed="true" stored="true"/>
  </fields>
 
  <uniqueKey>id</uniqueKey>

@@ -6,18 +6,19 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class InactivePlayers extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InactivePlayers\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"playerId\",\"type\":\"int\",\"default\":0},{\"name\":\"firstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"lastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"jerseyNum\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InactivePlayers\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAA=\"},{\"name\":\"inactivePlayersPlayerId\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePlayersFirstName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersLastName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersJerseyNum\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePlayersTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"inactivePLayersTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"inactivePlayersTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    PLAYER_ID(0, "playerId"),
-    FIRST_NAME(1, "firstName"),
-    LAST_NAME(2, "lastName"),
-    JERSEY_NUM(3, "jerseyNum"),
-    TEAM_ID(4, "teamId"),
-    TEAM_CITY(5, "teamCity"),
-    TEAM_NAME(6, "teamName"),
-    TEAM_ABBREVIATION(7, "teamAbbreviation"),
+    __G__DIRTY(0, "__g__dirty"),
+    INACTIVE_PLAYERS_PLAYER_ID(1, "inactivePlayersPlayerId"),
+    INACTIVE_PLAYERS_FIRST_NAME(2, "inactivePlayersFirstName"),
+    INACTIVE_PLAYERS_LAST_NAME(3, "inactivePlayersLastName"),
+    INACTIVE_PLAYERS_JERSEY_NUM(4, "inactivePlayersJerseyNum"),
+    INACTIVE_PLAYERS_TEAM_ID(5, "inactivePlayersTeamId"),
+    INACTIVE_PLAYERS_TEAM_CITY(6, "inactivePLayersTeamCity"),
+    INACTIVE_PLAYERS_TEAM_NAME(7, "inactivePlayersTeamName"),
+    INACTIVE_PLAYERS_TEAM_ABBREVIATION(8, "inactivePlayersTeamAbbreviation"),
     ;
     /**
      * Field's index.
@@ -56,44 +57,40 @@ public class InactivePlayers extends org.apache.gora.persistency.impl.Persistent
   };
 
   public static final String[] _ALL_FIELDS = {
-  "playerId",
-  "firstName",
-  "lastName",
-  "jerseyNum",
-  "teamId",
-  "teamCity",
-  "teamName",
-  "teamAbbreviation",
+  "__g__dirty",
+  "inactivePlayersPlayerId",
+  "inactivePlayersFirstName",
+  "inactivePlayersLastName",
+  "inactivePlayersJerseyNum",
+  "inactivePlayersTeamId",
+  "inactivePLayersTeamCity",
+  "inactivePlayersTeamName",
+  "inactivePlayersTeamAbbreviation",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return InactivePlayers._ALL_FIELDS.length;
-  }
-
-  private int playerId;
-  private java.lang.CharSequence firstName;
-  private java.lang.CharSequence lastName;
-  private int jerseyNum;
-  private int teamId;
-  private java.lang.CharSequence teamCity;
-  private java.lang.CharSequence teamName;
-  private java.lang.CharSequence teamAbbreviation;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[2]);
+  private long inactivePlayersPlayerId;
+  private java.lang.CharSequence inactivePlayersFirstName;
+  private java.lang.CharSequence inactivePlayersLastName;
+  private long inactivePlayersJerseyNum;
+  private long inactivePlayersTeamId;
+  private java.lang.CharSequence inactivePLayersTeamCity;
+  private java.lang.CharSequence inactivePlayersTeamName;
+  private java.lang.CharSequence inactivePlayersTeamAbbreviation;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return playerId;
-    case 1: return firstName;
-    case 2: return lastName;
-    case 3: return jerseyNum;
-    case 4: return teamId;
-    case 5: return teamCity;
-    case 6: return teamName;
-    case 7: return teamAbbreviation;
+    case 0: return __g__dirty;
+    case 1: return inactivePlayersPlayerId;
+    case 2: return inactivePlayersFirstName;
+    case 3: return inactivePlayersLastName;
+    case 4: return inactivePlayersJerseyNum;
+    case 5: return inactivePlayersTeamId;
+    case 6: return inactivePLayersTeamCity;
+    case 7: return inactivePlayersTeamName;
+    case 8: return inactivePlayersTeamAbbreviation;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -102,208 +99,209 @@ public class InactivePlayers extends org.apache.gora.persistency.impl.Persistent
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: playerId = (java.lang.Integer)(value); break;
-    case 1: firstName = (java.lang.CharSequence)(value); break;
-    case 2: lastName = (java.lang.CharSequence)(value); break;
-    case 3: jerseyNum = (java.lang.Integer)(value); break;
-    case 4: teamId = (java.lang.Integer)(value); break;
-    case 5: teamCity = (java.lang.CharSequence)(value); break;
-    case 6: teamName = (java.lang.CharSequence)(value); break;
-    case 7: teamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: inactivePlayersPlayerId = (java.lang.Long)(value); break;
+    case 2: inactivePlayersFirstName = (java.lang.CharSequence)(value); break;
+    case 3: inactivePlayersLastName = (java.lang.CharSequence)(value); break;
+    case 4: inactivePlayersJerseyNum = (java.lang.Long)(value); break;
+    case 5: inactivePlayersTeamId = (java.lang.Long)(value); break;
+    case 6: inactivePLayersTeamCity = (java.lang.CharSequence)(value); break;
+    case 7: inactivePlayersTeamName = (java.lang.CharSequence)(value); break;
+    case 8: inactivePlayersTeamAbbreviation = (java.lang.CharSequence)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'playerId' field.
+   * Gets the value of the 'inactivePlayersPlayerId' field.
    */
-  public java.lang.Integer getPlayerId() {
-    return playerId;
+  public java.lang.Long getInactivePlayersPlayerId() {
+    return inactivePlayersPlayerId;
   }
 
   /**
-   * Sets the value of the 'playerId' field.
+   * Sets the value of the 'inactivePlayersPlayerId' field.
    * @param value the value to set.
    */
-  public void setPlayerId(java.lang.Integer value) {
-    this.playerId = value;
-    setDirty(0);
-  }
-  
-  /**
-   * Checks the dirty status of the 'playerId' field. A field is dirty if it represents a change that has not yet been written to the database.
-   * @param value the value to set.
-   */
-  public boolean isPlayerIdDirty(java.lang.Integer value) {
-    return isDirty(0);
-  }
-
-  /**
-   * Gets the value of the 'firstName' field.
-   */
-  public java.lang.CharSequence getFirstName() {
-    return firstName;
-  }
-
-  /**
-   * Sets the value of the 'firstName' field.
-   * @param value the value to set.
-   */
-  public void setFirstName(java.lang.CharSequence value) {
-    this.firstName = value;
+  public void setInactivePlayersPlayerId(java.lang.Long value) {
+    this.inactivePlayersPlayerId = value;
     setDirty(1);
   }
   
   /**
-   * Checks the dirty status of the 'firstName' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePlayersPlayerId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFirstNameDirty(java.lang.CharSequence value) {
+  public boolean isInactivePlayersPlayerIdDirty(java.lang.Long value) {
     return isDirty(1);
   }
 
   /**
-   * Gets the value of the 'lastName' field.
+   * Gets the value of the 'inactivePlayersFirstName' field.
    */
-  public java.lang.CharSequence getLastName() {
-    return lastName;
+  public java.lang.CharSequence getInactivePlayersFirstName() {
+    return inactivePlayersFirstName;
   }
 
   /**
-   * Sets the value of the 'lastName' field.
+   * Sets the value of the 'inactivePlayersFirstName' field.
    * @param value the value to set.
    */
-  public void setLastName(java.lang.CharSequence value) {
-    this.lastName = value;
+  public void setInactivePlayersFirstName(java.lang.CharSequence value) {
+    this.inactivePlayersFirstName = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'lastName' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePlayersFirstName' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isLastNameDirty(java.lang.CharSequence value) {
+  public boolean isInactivePlayersFirstNameDirty(java.lang.CharSequence value) {
     return isDirty(2);
   }
 
   /**
-   * Gets the value of the 'jerseyNum' field.
+   * Gets the value of the 'inactivePlayersLastName' field.
    */
-  public java.lang.Integer getJerseyNum() {
-    return jerseyNum;
+  public java.lang.CharSequence getInactivePlayersLastName() {
+    return inactivePlayersLastName;
   }
 
   /**
-   * Sets the value of the 'jerseyNum' field.
+   * Sets the value of the 'inactivePlayersLastName' field.
    * @param value the value to set.
    */
-  public void setJerseyNum(java.lang.Integer value) {
-    this.jerseyNum = value;
+  public void setInactivePlayersLastName(java.lang.CharSequence value) {
+    this.inactivePlayersLastName = value;
     setDirty(3);
   }
   
   /**
-   * Checks the dirty status of the 'jerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePlayersLastName' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isJerseyNumDirty(java.lang.Integer value) {
+  public boolean isInactivePlayersLastNameDirty(java.lang.CharSequence value) {
     return isDirty(3);
   }
 
   /**
-   * Gets the value of the 'teamId' field.
+   * Gets the value of the 'inactivePlayersJerseyNum' field.
    */
-  public java.lang.Integer getTeamId() {
-    return teamId;
+  public java.lang.Long getInactivePlayersJerseyNum() {
+    return inactivePlayersJerseyNum;
   }
 
   /**
-   * Sets the value of the 'teamId' field.
+   * Sets the value of the 'inactivePlayersJerseyNum' field.
    * @param value the value to set.
    */
-  public void setTeamId(java.lang.Integer value) {
-    this.teamId = value;
+  public void setInactivePlayersJerseyNum(java.lang.Long value) {
+    this.inactivePlayersJerseyNum = value;
     setDirty(4);
   }
   
   /**
-   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePlayersJerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamIdDirty(java.lang.Integer value) {
+  public boolean isInactivePlayersJerseyNumDirty(java.lang.Long value) {
     return isDirty(4);
   }
 
   /**
-   * Gets the value of the 'teamCity' field.
+   * Gets the value of the 'inactivePlayersTeamId' field.
    */
-  public java.lang.CharSequence getTeamCity() {
-    return teamCity;
+  public java.lang.Long getInactivePlayersTeamId() {
+    return inactivePlayersTeamId;
   }
 
   /**
-   * Sets the value of the 'teamCity' field.
+   * Sets the value of the 'inactivePlayersTeamId' field.
    * @param value the value to set.
    */
-  public void setTeamCity(java.lang.CharSequence value) {
-    this.teamCity = value;
+  public void setInactivePlayersTeamId(java.lang.Long value) {
+    this.inactivePlayersTeamId = value;
     setDirty(5);
   }
   
   /**
-   * Checks the dirty status of the 'teamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePlayersTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamCityDirty(java.lang.CharSequence value) {
+  public boolean isInactivePlayersTeamIdDirty(java.lang.Long value) {
     return isDirty(5);
   }
 
   /**
-   * Gets the value of the 'teamName' field.
+   * Gets the value of the 'inactivePLayersTeamCity' field.
    */
-  public java.lang.CharSequence getTeamName() {
-    return teamName;
+  public java.lang.CharSequence getInactivePLayersTeamCity() {
+    return inactivePLayersTeamCity;
   }
 
   /**
-   * Sets the value of the 'teamName' field.
+   * Sets the value of the 'inactivePLayersTeamCity' field.
    * @param value the value to set.
    */
-  public void setTeamName(java.lang.CharSequence value) {
-    this.teamName = value;
+  public void setInactivePLayersTeamCity(java.lang.CharSequence value) {
+    this.inactivePLayersTeamCity = value;
     setDirty(6);
   }
   
   /**
-   * Checks the dirty status of the 'teamName' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePLayersTeamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamNameDirty(java.lang.CharSequence value) {
+  public boolean isInactivePLayersTeamCityDirty(java.lang.CharSequence value) {
     return isDirty(6);
   }
 
   /**
-   * Gets the value of the 'teamAbbreviation' field.
+   * Gets the value of the 'inactivePlayersTeamName' field.
    */
-  public java.lang.CharSequence getTeamAbbreviation() {
-    return teamAbbreviation;
+  public java.lang.CharSequence getInactivePlayersTeamName() {
+    return inactivePlayersTeamName;
   }
 
   /**
-   * Sets the value of the 'teamAbbreviation' field.
+   * Sets the value of the 'inactivePlayersTeamName' field.
    * @param value the value to set.
    */
-  public void setTeamAbbreviation(java.lang.CharSequence value) {
-    this.teamAbbreviation = value;
+  public void setInactivePlayersTeamName(java.lang.CharSequence value) {
+    this.inactivePlayersTeamName = value;
     setDirty(7);
   }
   
   /**
-   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'inactivePlayersTeamName' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+  public boolean isInactivePlayersTeamNameDirty(java.lang.CharSequence value) {
     return isDirty(7);
+  }
+
+  /**
+   * Gets the value of the 'inactivePlayersTeamAbbreviation' field.
+   */
+  public java.lang.CharSequence getInactivePlayersTeamAbbreviation() {
+    return inactivePlayersTeamAbbreviation;
+  }
+
+  /**
+   * Sets the value of the 'inactivePlayersTeamAbbreviation' field.
+   * @param value the value to set.
+   */
+  public void setInactivePlayersTeamAbbreviation(java.lang.CharSequence value) {
+    this.inactivePlayersTeamAbbreviation = value;
+    setDirty(8);
+  }
+  
+  /**
+   * Checks the dirty status of the 'inactivePlayersTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * @param value the value to set.
+   */
+  public boolean isInactivePlayersTeamAbbreviationDirty(java.lang.CharSequence value) {
+    return isDirty(8);
   }
 
   /** Creates a new InactivePlayers RecordBuilder */
@@ -350,14 +348,15 @@ public class InactivePlayers extends org.apache.gora.persistency.impl.Persistent
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<InactivePlayers>
     implements org.apache.avro.data.RecordBuilder<InactivePlayers> {
 
-    private int playerId;
-    private java.lang.CharSequence firstName;
-    private java.lang.CharSequence lastName;
-    private int jerseyNum;
-    private int teamId;
-    private java.lang.CharSequence teamCity;
-    private java.lang.CharSequence teamName;
-    private java.lang.CharSequence teamAbbreviation;
+    private java.nio.ByteBuffer __g__dirty;
+    private long inactivePlayersPlayerId;
+    private java.lang.CharSequence inactivePlayersFirstName;
+    private java.lang.CharSequence inactivePlayersLastName;
+    private long inactivePlayersJerseyNum;
+    private long inactivePlayersTeamId;
+    private java.lang.CharSequence inactivePLayersTeamCity;
+    private java.lang.CharSequence inactivePlayersTeamName;
+    private java.lang.CharSequence inactivePlayersTeamAbbreviation;
 
     /** Creates a new Builder */
     private Builder() {
@@ -372,234 +371,238 @@ public class InactivePlayers extends org.apache.gora.persistency.impl.Persistent
     /** Creates a Builder by copying an existing InactivePlayers instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.SCHEMA$);
-      if (isValidValue(fields()[0], other.playerId)) {
-        this.playerId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.playerId);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.firstName)) {
-        this.firstName = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.firstName);
+      if (isValidValue(fields()[1], other.inactivePlayersPlayerId)) {
+        this.inactivePlayersPlayerId = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.inactivePlayersPlayerId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.lastName)) {
-        this.lastName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.lastName);
+      if (isValidValue(fields()[2], other.inactivePlayersFirstName)) {
+        this.inactivePlayersFirstName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.inactivePlayersFirstName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.jerseyNum)) {
-        this.jerseyNum = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.jerseyNum);
+      if (isValidValue(fields()[3], other.inactivePlayersLastName)) {
+        this.inactivePlayersLastName = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.inactivePlayersLastName);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.teamId)) {
-        this.teamId = (java.lang.Integer) data().deepCopy(fields()[4].schema(), other.teamId);
+      if (isValidValue(fields()[4], other.inactivePlayersJerseyNum)) {
+        this.inactivePlayersJerseyNum = (java.lang.Long) data().deepCopy(fields()[4].schema(), other.inactivePlayersJerseyNum);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.teamCity)) {
-        this.teamCity = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.teamCity);
+      if (isValidValue(fields()[5], other.inactivePlayersTeamId)) {
+        this.inactivePlayersTeamId = (java.lang.Long) data().deepCopy(fields()[5].schema(), other.inactivePlayersTeamId);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.teamName)) {
-        this.teamName = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.teamName);
+      if (isValidValue(fields()[6], other.inactivePLayersTeamCity)) {
+        this.inactivePLayersTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.inactivePLayersTeamCity);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.teamAbbreviation)) {
-        this.teamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.teamAbbreviation);
+      if (isValidValue(fields()[7], other.inactivePlayersTeamName)) {
+        this.inactivePlayersTeamName = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.inactivePlayersTeamName);
         fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.inactivePlayersTeamAbbreviation)) {
+        this.inactivePlayersTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[8].schema(), other.inactivePlayersTeamAbbreviation);
+        fieldSetFlags()[8] = true;
       }
     }
 
-    /** Gets the value of the 'playerId' field */
-    public java.lang.Integer getPlayerId() {
-      return playerId;
+    /** Gets the value of the 'inactivePlayersPlayerId' field */
+    public java.lang.Long getInactivePlayersPlayerId() {
+      return inactivePlayersPlayerId;
     }
     
-    /** Sets the value of the 'playerId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setPlayerId(int value) {
-      validate(fields()[0], value);
-      this.playerId = value;
-      fieldSetFlags()[0] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'playerId' field has been set */
-    public boolean hasPlayerId() {
-      return fieldSetFlags()[0];
-    }
-    
-    /** Clears the value of the 'playerId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearPlayerId() {
-      fieldSetFlags()[0] = false;
-      return this;
-    }
-    
-    /** Gets the value of the 'firstName' field */
-    public java.lang.CharSequence getFirstName() {
-      return firstName;
-    }
-    
-    /** Sets the value of the 'firstName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setFirstName(java.lang.CharSequence value) {
+    /** Sets the value of the 'inactivePlayersPlayerId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersPlayerId(long value) {
       validate(fields()[1], value);
-      this.firstName = value;
+      this.inactivePlayersPlayerId = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'firstName' field has been set */
-    public boolean hasFirstName() {
+    /** Checks whether the 'inactivePlayersPlayerId' field has been set */
+    public boolean hasInactivePlayersPlayerId() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'firstName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearFirstName() {
-      firstName = null;
+    /** Clears the value of the 'inactivePlayersPlayerId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersPlayerId() {
       fieldSetFlags()[1] = false;
       return this;
     }
     
-    /** Gets the value of the 'lastName' field */
-    public java.lang.CharSequence getLastName() {
-      return lastName;
+    /** Gets the value of the 'inactivePlayersFirstName' field */
+    public java.lang.CharSequence getInactivePlayersFirstName() {
+      return inactivePlayersFirstName;
     }
     
-    /** Sets the value of the 'lastName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setLastName(java.lang.CharSequence value) {
+    /** Sets the value of the 'inactivePlayersFirstName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersFirstName(java.lang.CharSequence value) {
       validate(fields()[2], value);
-      this.lastName = value;
+      this.inactivePlayersFirstName = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'lastName' field has been set */
-    public boolean hasLastName() {
+    /** Checks whether the 'inactivePlayersFirstName' field has been set */
+    public boolean hasInactivePlayersFirstName() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'lastName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearLastName() {
-      lastName = null;
+    /** Clears the value of the 'inactivePlayersFirstName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersFirstName() {
+      inactivePlayersFirstName = null;
       fieldSetFlags()[2] = false;
       return this;
     }
     
-    /** Gets the value of the 'jerseyNum' field */
-    public java.lang.Integer getJerseyNum() {
-      return jerseyNum;
+    /** Gets the value of the 'inactivePlayersLastName' field */
+    public java.lang.CharSequence getInactivePlayersLastName() {
+      return inactivePlayersLastName;
     }
     
-    /** Sets the value of the 'jerseyNum' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setJerseyNum(int value) {
+    /** Sets the value of the 'inactivePlayersLastName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersLastName(java.lang.CharSequence value) {
       validate(fields()[3], value);
-      this.jerseyNum = value;
+      this.inactivePlayersLastName = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'jerseyNum' field has been set */
-    public boolean hasJerseyNum() {
+    /** Checks whether the 'inactivePlayersLastName' field has been set */
+    public boolean hasInactivePlayersLastName() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'jerseyNum' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearJerseyNum() {
+    /** Clears the value of the 'inactivePlayersLastName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersLastName() {
+      inactivePlayersLastName = null;
       fieldSetFlags()[3] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamId' field */
-    public java.lang.Integer getTeamId() {
-      return teamId;
+    /** Gets the value of the 'inactivePlayersJerseyNum' field */
+    public java.lang.Long getInactivePlayersJerseyNum() {
+      return inactivePlayersJerseyNum;
     }
     
-    /** Sets the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setTeamId(int value) {
+    /** Sets the value of the 'inactivePlayersJerseyNum' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersJerseyNum(long value) {
       validate(fields()[4], value);
-      this.teamId = value;
+      this.inactivePlayersJerseyNum = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamId' field has been set */
-    public boolean hasTeamId() {
+    /** Checks whether the 'inactivePlayersJerseyNum' field has been set */
+    public boolean hasInactivePlayersJerseyNum() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearTeamId() {
+    /** Clears the value of the 'inactivePlayersJerseyNum' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersJerseyNum() {
       fieldSetFlags()[4] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamCity' field */
-    public java.lang.CharSequence getTeamCity() {
-      return teamCity;
+    /** Gets the value of the 'inactivePlayersTeamId' field */
+    public java.lang.Long getInactivePlayersTeamId() {
+      return inactivePlayersTeamId;
     }
     
-    /** Sets the value of the 'teamCity' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setTeamCity(java.lang.CharSequence value) {
+    /** Sets the value of the 'inactivePlayersTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersTeamId(long value) {
       validate(fields()[5], value);
-      this.teamCity = value;
+      this.inactivePlayersTeamId = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamCity' field has been set */
-    public boolean hasTeamCity() {
+    /** Checks whether the 'inactivePlayersTeamId' field has been set */
+    public boolean hasInactivePlayersTeamId() {
       return fieldSetFlags()[5];
     }
     
-    /** Clears the value of the 'teamCity' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearTeamCity() {
-      teamCity = null;
+    /** Clears the value of the 'inactivePlayersTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersTeamId() {
       fieldSetFlags()[5] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamName' field */
-    public java.lang.CharSequence getTeamName() {
-      return teamName;
+    /** Gets the value of the 'inactivePLayersTeamCity' field */
+    public java.lang.CharSequence getInactivePLayersTeamCity() {
+      return inactivePLayersTeamCity;
     }
     
-    /** Sets the value of the 'teamName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setTeamName(java.lang.CharSequence value) {
+    /** Sets the value of the 'inactivePLayersTeamCity' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePLayersTeamCity(java.lang.CharSequence value) {
       validate(fields()[6], value);
-      this.teamName = value;
+      this.inactivePLayersTeamCity = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamName' field has been set */
-    public boolean hasTeamName() {
+    /** Checks whether the 'inactivePLayersTeamCity' field has been set */
+    public boolean hasInactivePLayersTeamCity() {
       return fieldSetFlags()[6];
     }
     
-    /** Clears the value of the 'teamName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearTeamName() {
-      teamName = null;
+    /** Clears the value of the 'inactivePLayersTeamCity' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePLayersTeamCity() {
+      inactivePLayersTeamCity = null;
       fieldSetFlags()[6] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamAbbreviation' field */
-    public java.lang.CharSequence getTeamAbbreviation() {
-      return teamAbbreviation;
+    /** Gets the value of the 'inactivePlayersTeamName' field */
+    public java.lang.CharSequence getInactivePlayersTeamName() {
+      return inactivePlayersTeamName;
     }
     
-    /** Sets the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setTeamAbbreviation(java.lang.CharSequence value) {
+    /** Sets the value of the 'inactivePlayersTeamName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersTeamName(java.lang.CharSequence value) {
       validate(fields()[7], value);
-      this.teamAbbreviation = value;
+      this.inactivePlayersTeamName = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamAbbreviation' field has been set */
-    public boolean hasTeamAbbreviation() {
+    /** Checks whether the 'inactivePlayersTeamName' field has been set */
+    public boolean hasInactivePlayersTeamName() {
       return fieldSetFlags()[7];
     }
     
-    /** Clears the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearTeamAbbreviation() {
-      teamAbbreviation = null;
+    /** Clears the value of the 'inactivePlayersTeamName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersTeamName() {
+      inactivePlayersTeamName = null;
       fieldSetFlags()[7] = false;
+      return this;
+    }
+    
+    /** Gets the value of the 'inactivePlayersTeamAbbreviation' field */
+    public java.lang.CharSequence getInactivePlayersTeamAbbreviation() {
+      return inactivePlayersTeamAbbreviation;
+    }
+    
+    /** Sets the value of the 'inactivePlayersTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder setInactivePlayersTeamAbbreviation(java.lang.CharSequence value) {
+      validate(fields()[8], value);
+      this.inactivePlayersTeamAbbreviation = value;
+      fieldSetFlags()[8] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'inactivePlayersTeamAbbreviation' field has been set */
+    public boolean hasInactivePlayersTeamAbbreviation() {
+      return fieldSetFlags()[8];
+    }
+    
+    /** Clears the value of the 'inactivePlayersTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.InactivePlayers.Builder clearInactivePlayersTeamAbbreviation() {
+      inactivePlayersTeamAbbreviation = null;
+      fieldSetFlags()[8] = false;
       return this;
     }
     
@@ -607,14 +610,15 @@ public class InactivePlayers extends org.apache.gora.persistency.impl.Persistent
     public InactivePlayers build() {
       try {
         InactivePlayers record = new InactivePlayers();
-        record.playerId = fieldSetFlags()[0] ? this.playerId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.lastName = fieldSetFlags()[2] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.jerseyNum = fieldSetFlags()[3] ? this.jerseyNum : (java.lang.Integer) defaultValue(fields()[3]);
-        record.teamId = fieldSetFlags()[4] ? this.teamId : (java.lang.Integer) defaultValue(fields()[4]);
-        record.teamCity = fieldSetFlags()[5] ? this.teamCity : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.teamName = fieldSetFlags()[6] ? this.teamName : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.teamAbbreviation = fieldSetFlags()[7] ? this.teamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[2]);
+        record.inactivePlayersPlayerId = fieldSetFlags()[1] ? this.inactivePlayersPlayerId : (java.lang.Long) defaultValue(fields()[1]);
+        record.inactivePlayersFirstName = fieldSetFlags()[2] ? this.inactivePlayersFirstName : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.inactivePlayersLastName = fieldSetFlags()[3] ? this.inactivePlayersLastName : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.inactivePlayersJerseyNum = fieldSetFlags()[4] ? this.inactivePlayersJerseyNum : (java.lang.Long) defaultValue(fields()[4]);
+        record.inactivePlayersTeamId = fieldSetFlags()[5] ? this.inactivePlayersTeamId : (java.lang.Long) defaultValue(fields()[5]);
+        record.inactivePLayersTeamCity = fieldSetFlags()[6] ? this.inactivePLayersTeamCity : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.inactivePlayersTeamName = fieldSetFlags()[7] ? this.inactivePlayersTeamName : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.inactivePlayersTeamAbbreviation = fieldSetFlags()[8] ? this.inactivePlayersTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[8]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -636,187 +640,187 @@ public class InactivePlayers extends org.apache.gora.persistency.impl.Persistent
   
       private Tombstone() { }
   
-	  		  /**
-	   * Gets the value of the 'playerId' field.
+	  				  /**
+	   * Gets the value of the 'inactivePlayersPlayerId' field.
 		   */
-	  public java.lang.Integer getPlayerId() {
+	  public java.lang.Long getInactivePlayersPlayerId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'playerId' field.
+	   * Sets the value of the 'inactivePlayersPlayerId' field.
 		   * @param value the value to set.
 	   */
-	  public void setPlayerId(java.lang.Integer value) {
+	  public void setInactivePlayersPlayerId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'playerId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersPlayerId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPlayerIdDirty(java.lang.Integer value) {
+	  public boolean isInactivePlayersPlayerIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'firstName' field.
+	   * Gets the value of the 'inactivePlayersFirstName' field.
 		   */
-	  public java.lang.CharSequence getFirstName() {
+	  public java.lang.CharSequence getInactivePlayersFirstName() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'firstName' field.
+	   * Sets the value of the 'inactivePlayersFirstName' field.
 		   * @param value the value to set.
 	   */
-	  public void setFirstName(java.lang.CharSequence value) {
+	  public void setInactivePlayersFirstName(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'firstName' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersFirstName' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFirstNameDirty(java.lang.CharSequence value) {
+	  public boolean isInactivePlayersFirstNameDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'lastName' field.
+	   * Gets the value of the 'inactivePlayersLastName' field.
 		   */
-	  public java.lang.CharSequence getLastName() {
+	  public java.lang.CharSequence getInactivePlayersLastName() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'lastName' field.
+	   * Sets the value of the 'inactivePlayersLastName' field.
 		   * @param value the value to set.
 	   */
-	  public void setLastName(java.lang.CharSequence value) {
+	  public void setInactivePlayersLastName(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'lastName' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersLastName' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isLastNameDirty(java.lang.CharSequence value) {
+	  public boolean isInactivePlayersLastNameDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'jerseyNum' field.
+	   * Gets the value of the 'inactivePlayersJerseyNum' field.
 		   */
-	  public java.lang.Integer getJerseyNum() {
+	  public java.lang.Long getInactivePlayersJerseyNum() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'jerseyNum' field.
+	   * Sets the value of the 'inactivePlayersJerseyNum' field.
 		   * @param value the value to set.
 	   */
-	  public void setJerseyNum(java.lang.Integer value) {
+	  public void setInactivePlayersJerseyNum(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'jerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersJerseyNum' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isJerseyNumDirty(java.lang.Integer value) {
+	  public boolean isInactivePlayersJerseyNumDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamId' field.
+	   * Gets the value of the 'inactivePlayersTeamId' field.
 		   */
-	  public java.lang.Integer getTeamId() {
+	  public java.lang.Long getInactivePlayersTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamId' field.
+	   * Sets the value of the 'inactivePlayersTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamId(java.lang.Integer value) {
+	  public void setInactivePlayersTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamIdDirty(java.lang.Integer value) {
+	  public boolean isInactivePlayersTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamCity' field.
+	   * Gets the value of the 'inactivePLayersTeamCity' field.
 		   */
-	  public java.lang.CharSequence getTeamCity() {
+	  public java.lang.CharSequence getInactivePLayersTeamCity() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamCity' field.
+	   * Sets the value of the 'inactivePLayersTeamCity' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamCity(java.lang.CharSequence value) {
+	  public void setInactivePLayersTeamCity(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePLayersTeamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamCityDirty(java.lang.CharSequence value) {
+	  public boolean isInactivePLayersTeamCityDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamName' field.
+	   * Gets the value of the 'inactivePlayersTeamName' field.
 		   */
-	  public java.lang.CharSequence getTeamName() {
+	  public java.lang.CharSequence getInactivePlayersTeamName() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamName' field.
+	   * Sets the value of the 'inactivePlayersTeamName' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamName(java.lang.CharSequence value) {
+	  public void setInactivePlayersTeamName(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamName' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersTeamName' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamNameDirty(java.lang.CharSequence value) {
+	  public boolean isInactivePlayersTeamNameDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamAbbreviation' field.
+	   * Gets the value of the 'inactivePlayersTeamAbbreviation' field.
 		   */
-	  public java.lang.CharSequence getTeamAbbreviation() {
+	  public java.lang.CharSequence getInactivePlayersTeamAbbreviation() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamAbbreviation' field.
+	   * Sets the value of the 'inactivePlayersTeamAbbreviation' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamAbbreviation(java.lang.CharSequence value) {
+	  public void setInactivePlayersTeamAbbreviation(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'inactivePlayersTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+	  public boolean isInactivePlayersTeamAbbreviationDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

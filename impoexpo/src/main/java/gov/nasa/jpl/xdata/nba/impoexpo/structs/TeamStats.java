@@ -6,35 +6,36 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TeamStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"min\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"fgm\",\"type\":\"int\",\"default\":0},{\"name\":\"fga\",\"type\":\"int\",\"default\":0},{\"name\":\"fgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"fg3m\",\"type\":\"int\",\"default\":0},{\"name\":\"fg3a\",\"type\":\"int\",\"default\":0},{\"name\":\"fg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"ftm\",\"type\":\"int\",\"default\":0},{\"name\":\"fta\",\"type\":\"int\",\"default\":0},{\"name\":\"ftPct\",\"type\":\"int\",\"default\":0},{\"name\":\"oreb\",\"type\":\"int\",\"default\":0},{\"name\":\"dreb\",\"type\":\"int\",\"default\":0},{\"name\":\"reb\",\"type\":\"int\",\"default\":0},{\"name\":\"ast\",\"type\":\"int\",\"default\":0},{\"name\":\"stl\",\"type\":\"int\",\"default\":0},{\"name\":\"blk\",\"type\":\"int\",\"default\":0},{\"name\":\"to\",\"type\":\"int\",\"default\":0},{\"name\":\"pf\",\"type\":\"int\",\"default\":0},{\"name\":\"pts\",\"type\":\"int\",\"default\":0},{\"name\":\"plusMinus\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TeamStats\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAAAA==\"},{\"name\":\"gameTeamStatsId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsTeamName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsTeamCity\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsMin\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamStatsFgm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsFga\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfgPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3m\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3a\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfg3Pct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftm\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsfta\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsftPct\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsoreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsdreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsreb\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsast\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsstl\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsblk\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsto\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatspf\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPts\",\"type\":\"long\",\"default\":0},{\"name\":\"teamStatsPlusMinus\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_ID(0, "gameId"),
-    TEAM_ID(1, "teamId"),
-    TEAM_NAME(2, "teamName"),
-    TEAM_ABBREVIATION(3, "teamAbbreviation"),
-    TEAM_CITY(4, "teamCity"),
-    MIN(5, "min"),
-    FGM(6, "fgm"),
-    FGA(7, "fga"),
-    FG_PCT(8, "fgPct"),
-    FG3M(9, "fg3m"),
-    FG3A(10, "fg3a"),
-    FG3PCT(11, "fg3Pct"),
-    FTM(12, "ftm"),
-    FTA(13, "fta"),
-    FT_PCT(14, "ftPct"),
-    OREB(15, "oreb"),
-    DREB(16, "dreb"),
-    REB(17, "reb"),
-    AST(18, "ast"),
-    STL(19, "stl"),
-    BLK(20, "blk"),
-    TO(21, "to"),
-    PF(22, "pf"),
-    PTS(23, "pts"),
-    PLUS_MINUS(24, "plusMinus"),
+    __G__DIRTY(0, "__g__dirty"),
+    GAME_TEAM_STATS_ID(1, "gameTeamStatsId"),
+    TEAM_STATS_TEAM_ID(2, "teamStatsTeamId"),
+    TEAM_STATS_TEAM_NAME(3, "teamStatsTeamName"),
+    TEAM_STATS_TEAM_ABBREVIATION(4, "teamStatsTeamAbbreviation"),
+    TEAM_STATS_TEAM_CITY(5, "teamStatsTeamCity"),
+    TEAM_STATS_MIN(6, "teamStatsMin"),
+    TEAM_STATS_FGM(7, "teamStatsFgm"),
+    TEAM_STATS_FGA(8, "teamStatsFga"),
+    TEAM_STATSFG_PCT(9, "teamStatsfgPct"),
+    TEAM_STATSFG3M(10, "teamStatsfg3m"),
+    TEAM_STATSFG3A(11, "teamStatsfg3a"),
+    TEAM_STATSFG3PCT(12, "teamStatsfg3Pct"),
+    TEAM_STATSFTM(13, "teamStatsftm"),
+    TEAM_STATSFTA(14, "teamStatsfta"),
+    TEAM_STATSFT_PCT(15, "teamStatsftPct"),
+    TEAM_STATSOREB(16, "teamStatsoreb"),
+    TEAM_STATSDREB(17, "teamStatsdreb"),
+    TEAM_STATSREB(18, "teamStatsreb"),
+    TEAM_STATSAST(19, "teamStatsast"),
+    TEAM_STATSSTL(20, "teamStatsstl"),
+    TEAM_STATSBLK(21, "teamStatsblk"),
+    TEAM_STATSTO(22, "teamStatsto"),
+    TEAM_STATSPF(23, "teamStatspf"),
+    TEAM_STATS_PTS(24, "teamStatsPts"),
+    TEAM_STATS_PLUS_MINUS(25, "teamStatsPlusMinus"),
     ;
     /**
      * Field's index.
@@ -73,95 +74,91 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   };
 
   public static final String[] _ALL_FIELDS = {
-  "gameId",
-  "teamId",
-  "teamName",
-  "teamAbbreviation",
-  "teamCity",
-  "min",
-  "fgm",
-  "fga",
-  "fgPct",
-  "fg3m",
-  "fg3a",
-  "fg3Pct",
-  "ftm",
-  "fta",
-  "ftPct",
-  "oreb",
-  "dreb",
-  "reb",
-  "ast",
-  "stl",
-  "blk",
-  "to",
-  "pf",
-  "pts",
-  "plusMinus",
+  "__g__dirty",
+  "gameTeamStatsId",
+  "teamStatsTeamId",
+  "teamStatsTeamName",
+  "teamStatsTeamAbbreviation",
+  "teamStatsTeamCity",
+  "teamStatsMin",
+  "teamStatsFgm",
+  "teamStatsFga",
+  "teamStatsfgPct",
+  "teamStatsfg3m",
+  "teamStatsfg3a",
+  "teamStatsfg3Pct",
+  "teamStatsftm",
+  "teamStatsfta",
+  "teamStatsftPct",
+  "teamStatsoreb",
+  "teamStatsdreb",
+  "teamStatsreb",
+  "teamStatsast",
+  "teamStatsstl",
+  "teamStatsblk",
+  "teamStatsto",
+  "teamStatspf",
+  "teamStatsPts",
+  "teamStatsPlusMinus",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return TeamStats._ALL_FIELDS.length;
-  }
-
-  private int gameId;
-  private int teamId;
-  private java.lang.CharSequence teamName;
-  private java.lang.CharSequence teamAbbreviation;
-  private java.lang.CharSequence teamCity;
-  private java.lang.CharSequence min;
-  private int fgm;
-  private int fga;
-  private long fgPct;
-  private int fg3m;
-  private int fg3a;
-  private long fg3Pct;
-  private int ftm;
-  private int fta;
-  private int ftPct;
-  private int oreb;
-  private int dreb;
-  private int reb;
-  private int ast;
-  private int stl;
-  private int blk;
-  private int to;
-  private int pf;
-  private int pts;
-  private int plusMinus;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[4]);
+  private long gameTeamStatsId;
+  private long teamStatsTeamId;
+  private java.lang.CharSequence teamStatsTeamName;
+  private java.lang.CharSequence teamStatsTeamAbbreviation;
+  private java.lang.CharSequence teamStatsTeamCity;
+  private java.lang.CharSequence teamStatsMin;
+  private long teamStatsFgm;
+  private long teamStatsFga;
+  private long teamStatsfgPct;
+  private long teamStatsfg3m;
+  private long teamStatsfg3a;
+  private long teamStatsfg3Pct;
+  private long teamStatsftm;
+  private long teamStatsfta;
+  private long teamStatsftPct;
+  private long teamStatsoreb;
+  private long teamStatsdreb;
+  private long teamStatsreb;
+  private long teamStatsast;
+  private long teamStatsstl;
+  private long teamStatsblk;
+  private long teamStatsto;
+  private long teamStatspf;
+  private long teamStatsPts;
+  private long teamStatsPlusMinus;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameId;
-    case 1: return teamId;
-    case 2: return teamName;
-    case 3: return teamAbbreviation;
-    case 4: return teamCity;
-    case 5: return min;
-    case 6: return fgm;
-    case 7: return fga;
-    case 8: return fgPct;
-    case 9: return fg3m;
-    case 10: return fg3a;
-    case 11: return fg3Pct;
-    case 12: return ftm;
-    case 13: return fta;
-    case 14: return ftPct;
-    case 15: return oreb;
-    case 16: return dreb;
-    case 17: return reb;
-    case 18: return ast;
-    case 19: return stl;
-    case 20: return blk;
-    case 21: return to;
-    case 22: return pf;
-    case 23: return pts;
-    case 24: return plusMinus;
+    case 0: return __g__dirty;
+    case 1: return gameTeamStatsId;
+    case 2: return teamStatsTeamId;
+    case 3: return teamStatsTeamName;
+    case 4: return teamStatsTeamAbbreviation;
+    case 5: return teamStatsTeamCity;
+    case 6: return teamStatsMin;
+    case 7: return teamStatsFgm;
+    case 8: return teamStatsFga;
+    case 9: return teamStatsfgPct;
+    case 10: return teamStatsfg3m;
+    case 11: return teamStatsfg3a;
+    case 12: return teamStatsfg3Pct;
+    case 13: return teamStatsftm;
+    case 14: return teamStatsfta;
+    case 15: return teamStatsftPct;
+    case 16: return teamStatsoreb;
+    case 17: return teamStatsdreb;
+    case 18: return teamStatsreb;
+    case 19: return teamStatsast;
+    case 20: return teamStatsstl;
+    case 21: return teamStatsblk;
+    case 22: return teamStatsto;
+    case 23: return teamStatspf;
+    case 24: return teamStatsPts;
+    case 25: return teamStatsPlusMinus;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -170,633 +167,634 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameId = (java.lang.Integer)(value); break;
-    case 1: teamId = (java.lang.Integer)(value); break;
-    case 2: teamName = (java.lang.CharSequence)(value); break;
-    case 3: teamAbbreviation = (java.lang.CharSequence)(value); break;
-    case 4: teamCity = (java.lang.CharSequence)(value); break;
-    case 5: min = (java.lang.CharSequence)(value); break;
-    case 6: fgm = (java.lang.Integer)(value); break;
-    case 7: fga = (java.lang.Integer)(value); break;
-    case 8: fgPct = (java.lang.Long)(value); break;
-    case 9: fg3m = (java.lang.Integer)(value); break;
-    case 10: fg3a = (java.lang.Integer)(value); break;
-    case 11: fg3Pct = (java.lang.Long)(value); break;
-    case 12: ftm = (java.lang.Integer)(value); break;
-    case 13: fta = (java.lang.Integer)(value); break;
-    case 14: ftPct = (java.lang.Integer)(value); break;
-    case 15: oreb = (java.lang.Integer)(value); break;
-    case 16: dreb = (java.lang.Integer)(value); break;
-    case 17: reb = (java.lang.Integer)(value); break;
-    case 18: ast = (java.lang.Integer)(value); break;
-    case 19: stl = (java.lang.Integer)(value); break;
-    case 20: blk = (java.lang.Integer)(value); break;
-    case 21: to = (java.lang.Integer)(value); break;
-    case 22: pf = (java.lang.Integer)(value); break;
-    case 23: pts = (java.lang.Integer)(value); break;
-    case 24: plusMinus = (java.lang.Integer)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: gameTeamStatsId = (java.lang.Long)(value); break;
+    case 2: teamStatsTeamId = (java.lang.Long)(value); break;
+    case 3: teamStatsTeamName = (java.lang.CharSequence)(value); break;
+    case 4: teamStatsTeamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 5: teamStatsTeamCity = (java.lang.CharSequence)(value); break;
+    case 6: teamStatsMin = (java.lang.CharSequence)(value); break;
+    case 7: teamStatsFgm = (java.lang.Long)(value); break;
+    case 8: teamStatsFga = (java.lang.Long)(value); break;
+    case 9: teamStatsfgPct = (java.lang.Long)(value); break;
+    case 10: teamStatsfg3m = (java.lang.Long)(value); break;
+    case 11: teamStatsfg3a = (java.lang.Long)(value); break;
+    case 12: teamStatsfg3Pct = (java.lang.Long)(value); break;
+    case 13: teamStatsftm = (java.lang.Long)(value); break;
+    case 14: teamStatsfta = (java.lang.Long)(value); break;
+    case 15: teamStatsftPct = (java.lang.Long)(value); break;
+    case 16: teamStatsoreb = (java.lang.Long)(value); break;
+    case 17: teamStatsdreb = (java.lang.Long)(value); break;
+    case 18: teamStatsreb = (java.lang.Long)(value); break;
+    case 19: teamStatsast = (java.lang.Long)(value); break;
+    case 20: teamStatsstl = (java.lang.Long)(value); break;
+    case 21: teamStatsblk = (java.lang.Long)(value); break;
+    case 22: teamStatsto = (java.lang.Long)(value); break;
+    case 23: teamStatspf = (java.lang.Long)(value); break;
+    case 24: teamStatsPts = (java.lang.Long)(value); break;
+    case 25: teamStatsPlusMinus = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'gameId' field.
+   * Gets the value of the 'gameTeamStatsId' field.
    */
-  public java.lang.Integer getGameId() {
-    return gameId;
+  public java.lang.Long getGameTeamStatsId() {
+    return gameTeamStatsId;
   }
 
   /**
-   * Sets the value of the 'gameId' field.
+   * Sets the value of the 'gameTeamStatsId' field.
    * @param value the value to set.
    */
-  public void setGameId(java.lang.Integer value) {
-    this.gameId = value;
-    setDirty(0);
-  }
-  
-  /**
-   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
-   * @param value the value to set.
-   */
-  public boolean isGameIdDirty(java.lang.Integer value) {
-    return isDirty(0);
-  }
-
-  /**
-   * Gets the value of the 'teamId' field.
-   */
-  public java.lang.Integer getTeamId() {
-    return teamId;
-  }
-
-  /**
-   * Sets the value of the 'teamId' field.
-   * @param value the value to set.
-   */
-  public void setTeamId(java.lang.Integer value) {
-    this.teamId = value;
+  public void setGameTeamStatsId(java.lang.Long value) {
+    this.gameTeamStatsId = value;
     setDirty(1);
   }
   
   /**
-   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameTeamStatsId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamIdDirty(java.lang.Integer value) {
+  public boolean isGameTeamStatsIdDirty(java.lang.Long value) {
     return isDirty(1);
   }
 
   /**
-   * Gets the value of the 'teamName' field.
+   * Gets the value of the 'teamStatsTeamId' field.
    */
-  public java.lang.CharSequence getTeamName() {
-    return teamName;
+  public java.lang.Long getTeamStatsTeamId() {
+    return teamStatsTeamId;
   }
 
   /**
-   * Sets the value of the 'teamName' field.
+   * Sets the value of the 'teamStatsTeamId' field.
    * @param value the value to set.
    */
-  public void setTeamName(java.lang.CharSequence value) {
-    this.teamName = value;
+  public void setTeamStatsTeamId(java.lang.Long value) {
+    this.teamStatsTeamId = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'teamName' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamNameDirty(java.lang.CharSequence value) {
+  public boolean isTeamStatsTeamIdDirty(java.lang.Long value) {
     return isDirty(2);
   }
 
   /**
-   * Gets the value of the 'teamAbbreviation' field.
+   * Gets the value of the 'teamStatsTeamName' field.
    */
-  public java.lang.CharSequence getTeamAbbreviation() {
-    return teamAbbreviation;
+  public java.lang.CharSequence getTeamStatsTeamName() {
+    return teamStatsTeamName;
   }
 
   /**
-   * Sets the value of the 'teamAbbreviation' field.
+   * Sets the value of the 'teamStatsTeamName' field.
    * @param value the value to set.
    */
-  public void setTeamAbbreviation(java.lang.CharSequence value) {
-    this.teamAbbreviation = value;
+  public void setTeamStatsTeamName(java.lang.CharSequence value) {
+    this.teamStatsTeamName = value;
     setDirty(3);
   }
   
   /**
-   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsTeamName' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+  public boolean isTeamStatsTeamNameDirty(java.lang.CharSequence value) {
     return isDirty(3);
   }
 
   /**
-   * Gets the value of the 'teamCity' field.
+   * Gets the value of the 'teamStatsTeamAbbreviation' field.
    */
-  public java.lang.CharSequence getTeamCity() {
-    return teamCity;
+  public java.lang.CharSequence getTeamStatsTeamAbbreviation() {
+    return teamStatsTeamAbbreviation;
   }
 
   /**
-   * Sets the value of the 'teamCity' field.
+   * Sets the value of the 'teamStatsTeamAbbreviation' field.
    * @param value the value to set.
    */
-  public void setTeamCity(java.lang.CharSequence value) {
-    this.teamCity = value;
+  public void setTeamStatsTeamAbbreviation(java.lang.CharSequence value) {
+    this.teamStatsTeamAbbreviation = value;
     setDirty(4);
   }
   
   /**
-   * Checks the dirty status of the 'teamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamCityDirty(java.lang.CharSequence value) {
+  public boolean isTeamStatsTeamAbbreviationDirty(java.lang.CharSequence value) {
     return isDirty(4);
   }
 
   /**
-   * Gets the value of the 'min' field.
+   * Gets the value of the 'teamStatsTeamCity' field.
    */
-  public java.lang.CharSequence getMin() {
-    return min;
+  public java.lang.CharSequence getTeamStatsTeamCity() {
+    return teamStatsTeamCity;
   }
 
   /**
-   * Sets the value of the 'min' field.
+   * Sets the value of the 'teamStatsTeamCity' field.
    * @param value the value to set.
    */
-  public void setMin(java.lang.CharSequence value) {
-    this.min = value;
+  public void setTeamStatsTeamCity(java.lang.CharSequence value) {
+    this.teamStatsTeamCity = value;
     setDirty(5);
   }
   
   /**
-   * Checks the dirty status of the 'min' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsTeamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isMinDirty(java.lang.CharSequence value) {
+  public boolean isTeamStatsTeamCityDirty(java.lang.CharSequence value) {
     return isDirty(5);
   }
 
   /**
-   * Gets the value of the 'fgm' field.
+   * Gets the value of the 'teamStatsMin' field.
    */
-  public java.lang.Integer getFgm() {
-    return fgm;
+  public java.lang.CharSequence getTeamStatsMin() {
+    return teamStatsMin;
   }
 
   /**
-   * Sets the value of the 'fgm' field.
+   * Sets the value of the 'teamStatsMin' field.
    * @param value the value to set.
    */
-  public void setFgm(java.lang.Integer value) {
-    this.fgm = value;
+  public void setTeamStatsMin(java.lang.CharSequence value) {
+    this.teamStatsMin = value;
     setDirty(6);
   }
   
   /**
-   * Checks the dirty status of the 'fgm' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsMin' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFgmDirty(java.lang.Integer value) {
+  public boolean isTeamStatsMinDirty(java.lang.CharSequence value) {
     return isDirty(6);
   }
 
   /**
-   * Gets the value of the 'fga' field.
+   * Gets the value of the 'teamStatsFgm' field.
    */
-  public java.lang.Integer getFga() {
-    return fga;
+  public java.lang.Long getTeamStatsFgm() {
+    return teamStatsFgm;
   }
 
   /**
-   * Sets the value of the 'fga' field.
+   * Sets the value of the 'teamStatsFgm' field.
    * @param value the value to set.
    */
-  public void setFga(java.lang.Integer value) {
-    this.fga = value;
+  public void setTeamStatsFgm(java.lang.Long value) {
+    this.teamStatsFgm = value;
     setDirty(7);
   }
   
   /**
-   * Checks the dirty status of the 'fga' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsFgm' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFgaDirty(java.lang.Integer value) {
+  public boolean isTeamStatsFgmDirty(java.lang.Long value) {
     return isDirty(7);
   }
 
   /**
-   * Gets the value of the 'fgPct' field.
+   * Gets the value of the 'teamStatsFga' field.
    */
-  public java.lang.Long getFgPct() {
-    return fgPct;
+  public java.lang.Long getTeamStatsFga() {
+    return teamStatsFga;
   }
 
   /**
-   * Sets the value of the 'fgPct' field.
+   * Sets the value of the 'teamStatsFga' field.
    * @param value the value to set.
    */
-  public void setFgPct(java.lang.Long value) {
-    this.fgPct = value;
+  public void setTeamStatsFga(java.lang.Long value) {
+    this.teamStatsFga = value;
     setDirty(8);
   }
   
   /**
-   * Checks the dirty status of the 'fgPct' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsFga' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFgPctDirty(java.lang.Long value) {
+  public boolean isTeamStatsFgaDirty(java.lang.Long value) {
     return isDirty(8);
   }
 
   /**
-   * Gets the value of the 'fg3m' field.
+   * Gets the value of the 'teamStatsfgPct' field.
    */
-  public java.lang.Integer getFg3m() {
-    return fg3m;
+  public java.lang.Long getTeamStatsfgPct() {
+    return teamStatsfgPct;
   }
 
   /**
-   * Sets the value of the 'fg3m' field.
+   * Sets the value of the 'teamStatsfgPct' field.
    * @param value the value to set.
    */
-  public void setFg3m(java.lang.Integer value) {
-    this.fg3m = value;
+  public void setTeamStatsfgPct(java.lang.Long value) {
+    this.teamStatsfgPct = value;
     setDirty(9);
   }
   
   /**
-   * Checks the dirty status of the 'fg3m' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsfgPct' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFg3mDirty(java.lang.Integer value) {
+  public boolean isTeamStatsfgPctDirty(java.lang.Long value) {
     return isDirty(9);
   }
 
   /**
-   * Gets the value of the 'fg3a' field.
+   * Gets the value of the 'teamStatsfg3m' field.
    */
-  public java.lang.Integer getFg3a() {
-    return fg3a;
+  public java.lang.Long getTeamStatsfg3m() {
+    return teamStatsfg3m;
   }
 
   /**
-   * Sets the value of the 'fg3a' field.
+   * Sets the value of the 'teamStatsfg3m' field.
    * @param value the value to set.
    */
-  public void setFg3a(java.lang.Integer value) {
-    this.fg3a = value;
+  public void setTeamStatsfg3m(java.lang.Long value) {
+    this.teamStatsfg3m = value;
     setDirty(10);
   }
   
   /**
-   * Checks the dirty status of the 'fg3a' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsfg3m' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFg3aDirty(java.lang.Integer value) {
+  public boolean isTeamStatsfg3mDirty(java.lang.Long value) {
     return isDirty(10);
   }
 
   /**
-   * Gets the value of the 'fg3Pct' field.
+   * Gets the value of the 'teamStatsfg3a' field.
    */
-  public java.lang.Long getFg3Pct() {
-    return fg3Pct;
+  public java.lang.Long getTeamStatsfg3a() {
+    return teamStatsfg3a;
   }
 
   /**
-   * Sets the value of the 'fg3Pct' field.
+   * Sets the value of the 'teamStatsfg3a' field.
    * @param value the value to set.
    */
-  public void setFg3Pct(java.lang.Long value) {
-    this.fg3Pct = value;
+  public void setTeamStatsfg3a(java.lang.Long value) {
+    this.teamStatsfg3a = value;
     setDirty(11);
   }
   
   /**
-   * Checks the dirty status of the 'fg3Pct' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsfg3a' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFg3PctDirty(java.lang.Long value) {
+  public boolean isTeamStatsfg3aDirty(java.lang.Long value) {
     return isDirty(11);
   }
 
   /**
-   * Gets the value of the 'ftm' field.
+   * Gets the value of the 'teamStatsfg3Pct' field.
    */
-  public java.lang.Integer getFtm() {
-    return ftm;
+  public java.lang.Long getTeamStatsfg3Pct() {
+    return teamStatsfg3Pct;
   }
 
   /**
-   * Sets the value of the 'ftm' field.
+   * Sets the value of the 'teamStatsfg3Pct' field.
    * @param value the value to set.
    */
-  public void setFtm(java.lang.Integer value) {
-    this.ftm = value;
+  public void setTeamStatsfg3Pct(java.lang.Long value) {
+    this.teamStatsfg3Pct = value;
     setDirty(12);
   }
   
   /**
-   * Checks the dirty status of the 'ftm' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsfg3Pct' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFtmDirty(java.lang.Integer value) {
+  public boolean isTeamStatsfg3PctDirty(java.lang.Long value) {
     return isDirty(12);
   }
 
   /**
-   * Gets the value of the 'fta' field.
+   * Gets the value of the 'teamStatsftm' field.
    */
-  public java.lang.Integer getFta() {
-    return fta;
+  public java.lang.Long getTeamStatsftm() {
+    return teamStatsftm;
   }
 
   /**
-   * Sets the value of the 'fta' field.
+   * Sets the value of the 'teamStatsftm' field.
    * @param value the value to set.
    */
-  public void setFta(java.lang.Integer value) {
-    this.fta = value;
+  public void setTeamStatsftm(java.lang.Long value) {
+    this.teamStatsftm = value;
     setDirty(13);
   }
   
   /**
-   * Checks the dirty status of the 'fta' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsftm' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFtaDirty(java.lang.Integer value) {
+  public boolean isTeamStatsftmDirty(java.lang.Long value) {
     return isDirty(13);
   }
 
   /**
-   * Gets the value of the 'ftPct' field.
+   * Gets the value of the 'teamStatsfta' field.
    */
-  public java.lang.Integer getFtPct() {
-    return ftPct;
+  public java.lang.Long getTeamStatsfta() {
+    return teamStatsfta;
   }
 
   /**
-   * Sets the value of the 'ftPct' field.
+   * Sets the value of the 'teamStatsfta' field.
    * @param value the value to set.
    */
-  public void setFtPct(java.lang.Integer value) {
-    this.ftPct = value;
+  public void setTeamStatsfta(java.lang.Long value) {
+    this.teamStatsfta = value;
     setDirty(14);
   }
   
   /**
-   * Checks the dirty status of the 'ftPct' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsfta' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isFtPctDirty(java.lang.Integer value) {
+  public boolean isTeamStatsftaDirty(java.lang.Long value) {
     return isDirty(14);
   }
 
   /**
-   * Gets the value of the 'oreb' field.
+   * Gets the value of the 'teamStatsftPct' field.
    */
-  public java.lang.Integer getOreb() {
-    return oreb;
+  public java.lang.Long getTeamStatsftPct() {
+    return teamStatsftPct;
   }
 
   /**
-   * Sets the value of the 'oreb' field.
+   * Sets the value of the 'teamStatsftPct' field.
    * @param value the value to set.
    */
-  public void setOreb(java.lang.Integer value) {
-    this.oreb = value;
+  public void setTeamStatsftPct(java.lang.Long value) {
+    this.teamStatsftPct = value;
     setDirty(15);
   }
   
   /**
-   * Checks the dirty status of the 'oreb' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsftPct' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isOrebDirty(java.lang.Integer value) {
+  public boolean isTeamStatsftPctDirty(java.lang.Long value) {
     return isDirty(15);
   }
 
   /**
-   * Gets the value of the 'dreb' field.
+   * Gets the value of the 'teamStatsoreb' field.
    */
-  public java.lang.Integer getDreb() {
-    return dreb;
+  public java.lang.Long getTeamStatsoreb() {
+    return teamStatsoreb;
   }
 
   /**
-   * Sets the value of the 'dreb' field.
+   * Sets the value of the 'teamStatsoreb' field.
    * @param value the value to set.
    */
-  public void setDreb(java.lang.Integer value) {
-    this.dreb = value;
+  public void setTeamStatsoreb(java.lang.Long value) {
+    this.teamStatsoreb = value;
     setDirty(16);
   }
   
   /**
-   * Checks the dirty status of the 'dreb' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsoreb' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isDrebDirty(java.lang.Integer value) {
+  public boolean isTeamStatsorebDirty(java.lang.Long value) {
     return isDirty(16);
   }
 
   /**
-   * Gets the value of the 'reb' field.
+   * Gets the value of the 'teamStatsdreb' field.
    */
-  public java.lang.Integer getReb() {
-    return reb;
+  public java.lang.Long getTeamStatsdreb() {
+    return teamStatsdreb;
   }
 
   /**
-   * Sets the value of the 'reb' field.
+   * Sets the value of the 'teamStatsdreb' field.
    * @param value the value to set.
    */
-  public void setReb(java.lang.Integer value) {
-    this.reb = value;
+  public void setTeamStatsdreb(java.lang.Long value) {
+    this.teamStatsdreb = value;
     setDirty(17);
   }
   
   /**
-   * Checks the dirty status of the 'reb' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsdreb' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isRebDirty(java.lang.Integer value) {
+  public boolean isTeamStatsdrebDirty(java.lang.Long value) {
     return isDirty(17);
   }
 
   /**
-   * Gets the value of the 'ast' field.
+   * Gets the value of the 'teamStatsreb' field.
    */
-  public java.lang.Integer getAst() {
-    return ast;
+  public java.lang.Long getTeamStatsreb() {
+    return teamStatsreb;
   }
 
   /**
-   * Sets the value of the 'ast' field.
+   * Sets the value of the 'teamStatsreb' field.
    * @param value the value to set.
    */
-  public void setAst(java.lang.Integer value) {
-    this.ast = value;
+  public void setTeamStatsreb(java.lang.Long value) {
+    this.teamStatsreb = value;
     setDirty(18);
   }
   
   /**
-   * Checks the dirty status of the 'ast' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsreb' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isAstDirty(java.lang.Integer value) {
+  public boolean isTeamStatsrebDirty(java.lang.Long value) {
     return isDirty(18);
   }
 
   /**
-   * Gets the value of the 'stl' field.
+   * Gets the value of the 'teamStatsast' field.
    */
-  public java.lang.Integer getStl() {
-    return stl;
+  public java.lang.Long getTeamStatsast() {
+    return teamStatsast;
   }
 
   /**
-   * Sets the value of the 'stl' field.
+   * Sets the value of the 'teamStatsast' field.
    * @param value the value to set.
    */
-  public void setStl(java.lang.Integer value) {
-    this.stl = value;
+  public void setTeamStatsast(java.lang.Long value) {
+    this.teamStatsast = value;
     setDirty(19);
   }
   
   /**
-   * Checks the dirty status of the 'stl' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsast' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isStlDirty(java.lang.Integer value) {
+  public boolean isTeamStatsastDirty(java.lang.Long value) {
     return isDirty(19);
   }
 
   /**
-   * Gets the value of the 'blk' field.
+   * Gets the value of the 'teamStatsstl' field.
    */
-  public java.lang.Integer getBlk() {
-    return blk;
+  public java.lang.Long getTeamStatsstl() {
+    return teamStatsstl;
   }
 
   /**
-   * Sets the value of the 'blk' field.
+   * Sets the value of the 'teamStatsstl' field.
    * @param value the value to set.
    */
-  public void setBlk(java.lang.Integer value) {
-    this.blk = value;
+  public void setTeamStatsstl(java.lang.Long value) {
+    this.teamStatsstl = value;
     setDirty(20);
   }
   
   /**
-   * Checks the dirty status of the 'blk' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsstl' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isBlkDirty(java.lang.Integer value) {
+  public boolean isTeamStatsstlDirty(java.lang.Long value) {
     return isDirty(20);
   }
 
   /**
-   * Gets the value of the 'to' field.
+   * Gets the value of the 'teamStatsblk' field.
    */
-  public java.lang.Integer getTo() {
-    return to;
+  public java.lang.Long getTeamStatsblk() {
+    return teamStatsblk;
   }
 
   /**
-   * Sets the value of the 'to' field.
+   * Sets the value of the 'teamStatsblk' field.
    * @param value the value to set.
    */
-  public void setTo(java.lang.Integer value) {
-    this.to = value;
+  public void setTeamStatsblk(java.lang.Long value) {
+    this.teamStatsblk = value;
     setDirty(21);
   }
   
   /**
-   * Checks the dirty status of the 'to' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsblk' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isToDirty(java.lang.Integer value) {
+  public boolean isTeamStatsblkDirty(java.lang.Long value) {
     return isDirty(21);
   }
 
   /**
-   * Gets the value of the 'pf' field.
+   * Gets the value of the 'teamStatsto' field.
    */
-  public java.lang.Integer getPf() {
-    return pf;
+  public java.lang.Long getTeamStatsto() {
+    return teamStatsto;
   }
 
   /**
-   * Sets the value of the 'pf' field.
+   * Sets the value of the 'teamStatsto' field.
    * @param value the value to set.
    */
-  public void setPf(java.lang.Integer value) {
-    this.pf = value;
+  public void setTeamStatsto(java.lang.Long value) {
+    this.teamStatsto = value;
     setDirty(22);
   }
   
   /**
-   * Checks the dirty status of the 'pf' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsto' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPfDirty(java.lang.Integer value) {
+  public boolean isTeamStatstoDirty(java.lang.Long value) {
     return isDirty(22);
   }
 
   /**
-   * Gets the value of the 'pts' field.
+   * Gets the value of the 'teamStatspf' field.
    */
-  public java.lang.Integer getPts() {
-    return pts;
+  public java.lang.Long getTeamStatspf() {
+    return teamStatspf;
   }
 
   /**
-   * Sets the value of the 'pts' field.
+   * Sets the value of the 'teamStatspf' field.
    * @param value the value to set.
    */
-  public void setPts(java.lang.Integer value) {
-    this.pts = value;
+  public void setTeamStatspf(java.lang.Long value) {
+    this.teamStatspf = value;
     setDirty(23);
   }
   
   /**
-   * Checks the dirty status of the 'pts' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatspf' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsDirty(java.lang.Integer value) {
+  public boolean isTeamStatspfDirty(java.lang.Long value) {
     return isDirty(23);
   }
 
   /**
-   * Gets the value of the 'plusMinus' field.
+   * Gets the value of the 'teamStatsPts' field.
    */
-  public java.lang.Integer getPlusMinus() {
-    return plusMinus;
+  public java.lang.Long getTeamStatsPts() {
+    return teamStatsPts;
   }
 
   /**
-   * Sets the value of the 'plusMinus' field.
+   * Sets the value of the 'teamStatsPts' field.
    * @param value the value to set.
    */
-  public void setPlusMinus(java.lang.Integer value) {
-    this.plusMinus = value;
+  public void setTeamStatsPts(java.lang.Long value) {
+    this.teamStatsPts = value;
     setDirty(24);
   }
   
   /**
-   * Checks the dirty status of the 'plusMinus' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'teamStatsPts' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPlusMinusDirty(java.lang.Integer value) {
+  public boolean isTeamStatsPtsDirty(java.lang.Long value) {
     return isDirty(24);
+  }
+
+  /**
+   * Gets the value of the 'teamStatsPlusMinus' field.
+   */
+  public java.lang.Long getTeamStatsPlusMinus() {
+    return teamStatsPlusMinus;
+  }
+
+  /**
+   * Sets the value of the 'teamStatsPlusMinus' field.
+   * @param value the value to set.
+   */
+  public void setTeamStatsPlusMinus(java.lang.Long value) {
+    this.teamStatsPlusMinus = value;
+    setDirty(25);
+  }
+  
+  /**
+   * Checks the dirty status of the 'teamStatsPlusMinus' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * @param value the value to set.
+   */
+  public boolean isTeamStatsPlusMinusDirty(java.lang.Long value) {
+    return isDirty(25);
   }
 
   /** Creates a new TeamStats RecordBuilder */
@@ -843,31 +841,32 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TeamStats>
     implements org.apache.avro.data.RecordBuilder<TeamStats> {
 
-    private int gameId;
-    private int teamId;
-    private java.lang.CharSequence teamName;
-    private java.lang.CharSequence teamAbbreviation;
-    private java.lang.CharSequence teamCity;
-    private java.lang.CharSequence min;
-    private int fgm;
-    private int fga;
-    private long fgPct;
-    private int fg3m;
-    private int fg3a;
-    private long fg3Pct;
-    private int ftm;
-    private int fta;
-    private int ftPct;
-    private int oreb;
-    private int dreb;
-    private int reb;
-    private int ast;
-    private int stl;
-    private int blk;
-    private int to;
-    private int pf;
-    private int pts;
-    private int plusMinus;
+    private java.nio.ByteBuffer __g__dirty;
+    private long gameTeamStatsId;
+    private long teamStatsTeamId;
+    private java.lang.CharSequence teamStatsTeamName;
+    private java.lang.CharSequence teamStatsTeamAbbreviation;
+    private java.lang.CharSequence teamStatsTeamCity;
+    private java.lang.CharSequence teamStatsMin;
+    private long teamStatsFgm;
+    private long teamStatsFga;
+    private long teamStatsfgPct;
+    private long teamStatsfg3m;
+    private long teamStatsfg3a;
+    private long teamStatsfg3Pct;
+    private long teamStatsftm;
+    private long teamStatsfta;
+    private long teamStatsftPct;
+    private long teamStatsoreb;
+    private long teamStatsdreb;
+    private long teamStatsreb;
+    private long teamStatsast;
+    private long teamStatsstl;
+    private long teamStatsblk;
+    private long teamStatsto;
+    private long teamStatspf;
+    private long teamStatsPts;
+    private long teamStatsPlusMinus;
 
     /** Creates a new Builder */
     private Builder() {
@@ -882,709 +881,713 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     /** Creates a Builder by copying an existing TeamStats instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameId)) {
-        this.gameId = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.gameId);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.teamId)) {
-        this.teamId = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.teamId);
+      if (isValidValue(fields()[1], other.gameTeamStatsId)) {
+        this.gameTeamStatsId = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.gameTeamStatsId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.teamName)) {
-        this.teamName = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.teamName);
+      if (isValidValue(fields()[2], other.teamStatsTeamId)) {
+        this.teamStatsTeamId = (java.lang.Long) data().deepCopy(fields()[2].schema(), other.teamStatsTeamId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.teamAbbreviation)) {
-        this.teamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.teamAbbreviation);
+      if (isValidValue(fields()[3], other.teamStatsTeamName)) {
+        this.teamStatsTeamName = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.teamStatsTeamName);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.teamCity)) {
-        this.teamCity = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamCity);
+      if (isValidValue(fields()[4], other.teamStatsTeamAbbreviation)) {
+        this.teamStatsTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamStatsTeamAbbreviation);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.min)) {
-        this.min = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.min);
+      if (isValidValue(fields()[5], other.teamStatsTeamCity)) {
+        this.teamStatsTeamCity = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.teamStatsTeamCity);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.fgm)) {
-        this.fgm = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.fgm);
+      if (isValidValue(fields()[6], other.teamStatsMin)) {
+        this.teamStatsMin = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.teamStatsMin);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.fga)) {
-        this.fga = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.fga);
+      if (isValidValue(fields()[7], other.teamStatsFgm)) {
+        this.teamStatsFgm = (java.lang.Long) data().deepCopy(fields()[7].schema(), other.teamStatsFgm);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.fgPct)) {
-        this.fgPct = (java.lang.Long) data().deepCopy(fields()[8].schema(), other.fgPct);
+      if (isValidValue(fields()[8], other.teamStatsFga)) {
+        this.teamStatsFga = (java.lang.Long) data().deepCopy(fields()[8].schema(), other.teamStatsFga);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.fg3m)) {
-        this.fg3m = (java.lang.Integer) data().deepCopy(fields()[9].schema(), other.fg3m);
+      if (isValidValue(fields()[9], other.teamStatsfgPct)) {
+        this.teamStatsfgPct = (java.lang.Long) data().deepCopy(fields()[9].schema(), other.teamStatsfgPct);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.fg3a)) {
-        this.fg3a = (java.lang.Integer) data().deepCopy(fields()[10].schema(), other.fg3a);
+      if (isValidValue(fields()[10], other.teamStatsfg3m)) {
+        this.teamStatsfg3m = (java.lang.Long) data().deepCopy(fields()[10].schema(), other.teamStatsfg3m);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.fg3Pct)) {
-        this.fg3Pct = (java.lang.Long) data().deepCopy(fields()[11].schema(), other.fg3Pct);
+      if (isValidValue(fields()[11], other.teamStatsfg3a)) {
+        this.teamStatsfg3a = (java.lang.Long) data().deepCopy(fields()[11].schema(), other.teamStatsfg3a);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.ftm)) {
-        this.ftm = (java.lang.Integer) data().deepCopy(fields()[12].schema(), other.ftm);
+      if (isValidValue(fields()[12], other.teamStatsfg3Pct)) {
+        this.teamStatsfg3Pct = (java.lang.Long) data().deepCopy(fields()[12].schema(), other.teamStatsfg3Pct);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.fta)) {
-        this.fta = (java.lang.Integer) data().deepCopy(fields()[13].schema(), other.fta);
+      if (isValidValue(fields()[13], other.teamStatsftm)) {
+        this.teamStatsftm = (java.lang.Long) data().deepCopy(fields()[13].schema(), other.teamStatsftm);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.ftPct)) {
-        this.ftPct = (java.lang.Integer) data().deepCopy(fields()[14].schema(), other.ftPct);
+      if (isValidValue(fields()[14], other.teamStatsfta)) {
+        this.teamStatsfta = (java.lang.Long) data().deepCopy(fields()[14].schema(), other.teamStatsfta);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.oreb)) {
-        this.oreb = (java.lang.Integer) data().deepCopy(fields()[15].schema(), other.oreb);
+      if (isValidValue(fields()[15], other.teamStatsftPct)) {
+        this.teamStatsftPct = (java.lang.Long) data().deepCopy(fields()[15].schema(), other.teamStatsftPct);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.dreb)) {
-        this.dreb = (java.lang.Integer) data().deepCopy(fields()[16].schema(), other.dreb);
+      if (isValidValue(fields()[16], other.teamStatsoreb)) {
+        this.teamStatsoreb = (java.lang.Long) data().deepCopy(fields()[16].schema(), other.teamStatsoreb);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.reb)) {
-        this.reb = (java.lang.Integer) data().deepCopy(fields()[17].schema(), other.reb);
+      if (isValidValue(fields()[17], other.teamStatsdreb)) {
+        this.teamStatsdreb = (java.lang.Long) data().deepCopy(fields()[17].schema(), other.teamStatsdreb);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.ast)) {
-        this.ast = (java.lang.Integer) data().deepCopy(fields()[18].schema(), other.ast);
+      if (isValidValue(fields()[18], other.teamStatsreb)) {
+        this.teamStatsreb = (java.lang.Long) data().deepCopy(fields()[18].schema(), other.teamStatsreb);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.stl)) {
-        this.stl = (java.lang.Integer) data().deepCopy(fields()[19].schema(), other.stl);
+      if (isValidValue(fields()[19], other.teamStatsast)) {
+        this.teamStatsast = (java.lang.Long) data().deepCopy(fields()[19].schema(), other.teamStatsast);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.blk)) {
-        this.blk = (java.lang.Integer) data().deepCopy(fields()[20].schema(), other.blk);
+      if (isValidValue(fields()[20], other.teamStatsstl)) {
+        this.teamStatsstl = (java.lang.Long) data().deepCopy(fields()[20].schema(), other.teamStatsstl);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.to)) {
-        this.to = (java.lang.Integer) data().deepCopy(fields()[21].schema(), other.to);
+      if (isValidValue(fields()[21], other.teamStatsblk)) {
+        this.teamStatsblk = (java.lang.Long) data().deepCopy(fields()[21].schema(), other.teamStatsblk);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.pf)) {
-        this.pf = (java.lang.Integer) data().deepCopy(fields()[22].schema(), other.pf);
+      if (isValidValue(fields()[22], other.teamStatsto)) {
+        this.teamStatsto = (java.lang.Long) data().deepCopy(fields()[22].schema(), other.teamStatsto);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.pts)) {
-        this.pts = (java.lang.Integer) data().deepCopy(fields()[23].schema(), other.pts);
+      if (isValidValue(fields()[23], other.teamStatspf)) {
+        this.teamStatspf = (java.lang.Long) data().deepCopy(fields()[23].schema(), other.teamStatspf);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.plusMinus)) {
-        this.plusMinus = (java.lang.Integer) data().deepCopy(fields()[24].schema(), other.plusMinus);
+      if (isValidValue(fields()[24], other.teamStatsPts)) {
+        this.teamStatsPts = (java.lang.Long) data().deepCopy(fields()[24].schema(), other.teamStatsPts);
         fieldSetFlags()[24] = true;
+      }
+      if (isValidValue(fields()[25], other.teamStatsPlusMinus)) {
+        this.teamStatsPlusMinus = (java.lang.Long) data().deepCopy(fields()[25].schema(), other.teamStatsPlusMinus);
+        fieldSetFlags()[25] = true;
       }
     }
 
-    /** Gets the value of the 'gameId' field */
-    public java.lang.Integer getGameId() {
-      return gameId;
+    /** Gets the value of the 'gameTeamStatsId' field */
+    public java.lang.Long getGameTeamStatsId() {
+      return gameTeamStatsId;
     }
     
-    /** Sets the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setGameId(int value) {
-      validate(fields()[0], value);
-      this.gameId = value;
-      fieldSetFlags()[0] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'gameId' field has been set */
-    public boolean hasGameId() {
-      return fieldSetFlags()[0];
-    }
-    
-    /** Clears the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearGameId() {
-      fieldSetFlags()[0] = false;
-      return this;
-    }
-    
-    /** Gets the value of the 'teamId' field */
-    public java.lang.Integer getTeamId() {
-      return teamId;
-    }
-    
-    /** Sets the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamId(int value) {
+    /** Sets the value of the 'gameTeamStatsId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setGameTeamStatsId(long value) {
       validate(fields()[1], value);
-      this.teamId = value;
+      this.gameTeamStatsId = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamId' field has been set */
-    public boolean hasTeamId() {
+    /** Checks whether the 'gameTeamStatsId' field has been set */
+    public boolean hasGameTeamStatsId() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamId() {
+    /** Clears the value of the 'gameTeamStatsId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearGameTeamStatsId() {
       fieldSetFlags()[1] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamName' field */
-    public java.lang.CharSequence getTeamName() {
-      return teamName;
+    /** Gets the value of the 'teamStatsTeamId' field */
+    public java.lang.Long getTeamStatsTeamId() {
+      return teamStatsTeamId;
     }
     
-    /** Sets the value of the 'teamName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamName(java.lang.CharSequence value) {
+    /** Sets the value of the 'teamStatsTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamId(long value) {
       validate(fields()[2], value);
-      this.teamName = value;
+      this.teamStatsTeamId = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamName' field has been set */
-    public boolean hasTeamName() {
+    /** Checks whether the 'teamStatsTeamId' field has been set */
+    public boolean hasTeamStatsTeamId() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'teamName' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamName() {
-      teamName = null;
+    /** Clears the value of the 'teamStatsTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamId() {
       fieldSetFlags()[2] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamAbbreviation' field */
-    public java.lang.CharSequence getTeamAbbreviation() {
-      return teamAbbreviation;
+    /** Gets the value of the 'teamStatsTeamName' field */
+    public java.lang.CharSequence getTeamStatsTeamName() {
+      return teamStatsTeamName;
     }
     
-    /** Sets the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamAbbreviation(java.lang.CharSequence value) {
+    /** Sets the value of the 'teamStatsTeamName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamName(java.lang.CharSequence value) {
       validate(fields()[3], value);
-      this.teamAbbreviation = value;
+      this.teamStatsTeamName = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamAbbreviation' field has been set */
-    public boolean hasTeamAbbreviation() {
+    /** Checks whether the 'teamStatsTeamName' field has been set */
+    public boolean hasTeamStatsTeamName() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamAbbreviation() {
-      teamAbbreviation = null;
+    /** Clears the value of the 'teamStatsTeamName' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamName() {
+      teamStatsTeamName = null;
       fieldSetFlags()[3] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamCity' field */
-    public java.lang.CharSequence getTeamCity() {
-      return teamCity;
+    /** Gets the value of the 'teamStatsTeamAbbreviation' field */
+    public java.lang.CharSequence getTeamStatsTeamAbbreviation() {
+      return teamStatsTeamAbbreviation;
     }
     
-    /** Sets the value of the 'teamCity' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamCity(java.lang.CharSequence value) {
+    /** Sets the value of the 'teamStatsTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamAbbreviation(java.lang.CharSequence value) {
       validate(fields()[4], value);
-      this.teamCity = value;
+      this.teamStatsTeamAbbreviation = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamCity' field has been set */
-    public boolean hasTeamCity() {
+    /** Checks whether the 'teamStatsTeamAbbreviation' field has been set */
+    public boolean hasTeamStatsTeamAbbreviation() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'teamCity' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamCity() {
-      teamCity = null;
+    /** Clears the value of the 'teamStatsTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamAbbreviation() {
+      teamStatsTeamAbbreviation = null;
       fieldSetFlags()[4] = false;
       return this;
     }
     
-    /** Gets the value of the 'min' field */
-    public java.lang.CharSequence getMin() {
-      return min;
+    /** Gets the value of the 'teamStatsTeamCity' field */
+    public java.lang.CharSequence getTeamStatsTeamCity() {
+      return teamStatsTeamCity;
     }
     
-    /** Sets the value of the 'min' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setMin(java.lang.CharSequence value) {
+    /** Sets the value of the 'teamStatsTeamCity' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsTeamCity(java.lang.CharSequence value) {
       validate(fields()[5], value);
-      this.min = value;
+      this.teamStatsTeamCity = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
     
-    /** Checks whether the 'min' field has been set */
-    public boolean hasMin() {
+    /** Checks whether the 'teamStatsTeamCity' field has been set */
+    public boolean hasTeamStatsTeamCity() {
       return fieldSetFlags()[5];
     }
     
-    /** Clears the value of the 'min' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearMin() {
-      min = null;
+    /** Clears the value of the 'teamStatsTeamCity' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsTeamCity() {
+      teamStatsTeamCity = null;
       fieldSetFlags()[5] = false;
       return this;
     }
     
-    /** Gets the value of the 'fgm' field */
-    public java.lang.Integer getFgm() {
-      return fgm;
+    /** Gets the value of the 'teamStatsMin' field */
+    public java.lang.CharSequence getTeamStatsMin() {
+      return teamStatsMin;
     }
     
-    /** Sets the value of the 'fgm' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFgm(int value) {
+    /** Sets the value of the 'teamStatsMin' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsMin(java.lang.CharSequence value) {
       validate(fields()[6], value);
-      this.fgm = value;
+      this.teamStatsMin = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
     
-    /** Checks whether the 'fgm' field has been set */
-    public boolean hasFgm() {
+    /** Checks whether the 'teamStatsMin' field has been set */
+    public boolean hasTeamStatsMin() {
       return fieldSetFlags()[6];
     }
     
-    /** Clears the value of the 'fgm' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFgm() {
+    /** Clears the value of the 'teamStatsMin' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsMin() {
+      teamStatsMin = null;
       fieldSetFlags()[6] = false;
       return this;
     }
     
-    /** Gets the value of the 'fga' field */
-    public java.lang.Integer getFga() {
-      return fga;
+    /** Gets the value of the 'teamStatsFgm' field */
+    public java.lang.Long getTeamStatsFgm() {
+      return teamStatsFgm;
     }
     
-    /** Sets the value of the 'fga' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFga(int value) {
+    /** Sets the value of the 'teamStatsFgm' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsFgm(long value) {
       validate(fields()[7], value);
-      this.fga = value;
+      this.teamStatsFgm = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
     
-    /** Checks whether the 'fga' field has been set */
-    public boolean hasFga() {
+    /** Checks whether the 'teamStatsFgm' field has been set */
+    public boolean hasTeamStatsFgm() {
       return fieldSetFlags()[7];
     }
     
-    /** Clears the value of the 'fga' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFga() {
+    /** Clears the value of the 'teamStatsFgm' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsFgm() {
       fieldSetFlags()[7] = false;
       return this;
     }
     
-    /** Gets the value of the 'fgPct' field */
-    public java.lang.Long getFgPct() {
-      return fgPct;
+    /** Gets the value of the 'teamStatsFga' field */
+    public java.lang.Long getTeamStatsFga() {
+      return teamStatsFga;
     }
     
-    /** Sets the value of the 'fgPct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFgPct(long value) {
+    /** Sets the value of the 'teamStatsFga' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsFga(long value) {
       validate(fields()[8], value);
-      this.fgPct = value;
+      this.teamStatsFga = value;
       fieldSetFlags()[8] = true;
       return this; 
     }
     
-    /** Checks whether the 'fgPct' field has been set */
-    public boolean hasFgPct() {
+    /** Checks whether the 'teamStatsFga' field has been set */
+    public boolean hasTeamStatsFga() {
       return fieldSetFlags()[8];
     }
     
-    /** Clears the value of the 'fgPct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFgPct() {
+    /** Clears the value of the 'teamStatsFga' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsFga() {
       fieldSetFlags()[8] = false;
       return this;
     }
     
-    /** Gets the value of the 'fg3m' field */
-    public java.lang.Integer getFg3m() {
-      return fg3m;
+    /** Gets the value of the 'teamStatsfgPct' field */
+    public java.lang.Long getTeamStatsfgPct() {
+      return teamStatsfgPct;
     }
     
-    /** Sets the value of the 'fg3m' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFg3m(int value) {
+    /** Sets the value of the 'teamStatsfgPct' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfgPct(long value) {
       validate(fields()[9], value);
-      this.fg3m = value;
+      this.teamStatsfgPct = value;
       fieldSetFlags()[9] = true;
       return this; 
     }
     
-    /** Checks whether the 'fg3m' field has been set */
-    public boolean hasFg3m() {
+    /** Checks whether the 'teamStatsfgPct' field has been set */
+    public boolean hasTeamStatsfgPct() {
       return fieldSetFlags()[9];
     }
     
-    /** Clears the value of the 'fg3m' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFg3m() {
+    /** Clears the value of the 'teamStatsfgPct' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfgPct() {
       fieldSetFlags()[9] = false;
       return this;
     }
     
-    /** Gets the value of the 'fg3a' field */
-    public java.lang.Integer getFg3a() {
-      return fg3a;
+    /** Gets the value of the 'teamStatsfg3m' field */
+    public java.lang.Long getTeamStatsfg3m() {
+      return teamStatsfg3m;
     }
     
-    /** Sets the value of the 'fg3a' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFg3a(int value) {
+    /** Sets the value of the 'teamStatsfg3m' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3m(long value) {
       validate(fields()[10], value);
-      this.fg3a = value;
+      this.teamStatsfg3m = value;
       fieldSetFlags()[10] = true;
       return this; 
     }
     
-    /** Checks whether the 'fg3a' field has been set */
-    public boolean hasFg3a() {
+    /** Checks whether the 'teamStatsfg3m' field has been set */
+    public boolean hasTeamStatsfg3m() {
       return fieldSetFlags()[10];
     }
     
-    /** Clears the value of the 'fg3a' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFg3a() {
+    /** Clears the value of the 'teamStatsfg3m' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfg3m() {
       fieldSetFlags()[10] = false;
       return this;
     }
     
-    /** Gets the value of the 'fg3Pct' field */
-    public java.lang.Long getFg3Pct() {
-      return fg3Pct;
+    /** Gets the value of the 'teamStatsfg3a' field */
+    public java.lang.Long getTeamStatsfg3a() {
+      return teamStatsfg3a;
     }
     
-    /** Sets the value of the 'fg3Pct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFg3Pct(long value) {
+    /** Sets the value of the 'teamStatsfg3a' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3a(long value) {
       validate(fields()[11], value);
-      this.fg3Pct = value;
+      this.teamStatsfg3a = value;
       fieldSetFlags()[11] = true;
       return this; 
     }
     
-    /** Checks whether the 'fg3Pct' field has been set */
-    public boolean hasFg3Pct() {
+    /** Checks whether the 'teamStatsfg3a' field has been set */
+    public boolean hasTeamStatsfg3a() {
       return fieldSetFlags()[11];
     }
     
-    /** Clears the value of the 'fg3Pct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFg3Pct() {
+    /** Clears the value of the 'teamStatsfg3a' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfg3a() {
       fieldSetFlags()[11] = false;
       return this;
     }
     
-    /** Gets the value of the 'ftm' field */
-    public java.lang.Integer getFtm() {
-      return ftm;
+    /** Gets the value of the 'teamStatsfg3Pct' field */
+    public java.lang.Long getTeamStatsfg3Pct() {
+      return teamStatsfg3Pct;
     }
     
-    /** Sets the value of the 'ftm' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFtm(int value) {
+    /** Sets the value of the 'teamStatsfg3Pct' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfg3Pct(long value) {
       validate(fields()[12], value);
-      this.ftm = value;
+      this.teamStatsfg3Pct = value;
       fieldSetFlags()[12] = true;
       return this; 
     }
     
-    /** Checks whether the 'ftm' field has been set */
-    public boolean hasFtm() {
+    /** Checks whether the 'teamStatsfg3Pct' field has been set */
+    public boolean hasTeamStatsfg3Pct() {
       return fieldSetFlags()[12];
     }
     
-    /** Clears the value of the 'ftm' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFtm() {
+    /** Clears the value of the 'teamStatsfg3Pct' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfg3Pct() {
       fieldSetFlags()[12] = false;
       return this;
     }
     
-    /** Gets the value of the 'fta' field */
-    public java.lang.Integer getFta() {
-      return fta;
+    /** Gets the value of the 'teamStatsftm' field */
+    public java.lang.Long getTeamStatsftm() {
+      return teamStatsftm;
     }
     
-    /** Sets the value of the 'fta' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFta(int value) {
+    /** Sets the value of the 'teamStatsftm' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsftm(long value) {
       validate(fields()[13], value);
-      this.fta = value;
+      this.teamStatsftm = value;
       fieldSetFlags()[13] = true;
       return this; 
     }
     
-    /** Checks whether the 'fta' field has been set */
-    public boolean hasFta() {
+    /** Checks whether the 'teamStatsftm' field has been set */
+    public boolean hasTeamStatsftm() {
       return fieldSetFlags()[13];
     }
     
-    /** Clears the value of the 'fta' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFta() {
+    /** Clears the value of the 'teamStatsftm' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsftm() {
       fieldSetFlags()[13] = false;
       return this;
     }
     
-    /** Gets the value of the 'ftPct' field */
-    public java.lang.Integer getFtPct() {
-      return ftPct;
+    /** Gets the value of the 'teamStatsfta' field */
+    public java.lang.Long getTeamStatsfta() {
+      return teamStatsfta;
     }
     
-    /** Sets the value of the 'ftPct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setFtPct(int value) {
+    /** Sets the value of the 'teamStatsfta' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsfta(long value) {
       validate(fields()[14], value);
-      this.ftPct = value;
+      this.teamStatsfta = value;
       fieldSetFlags()[14] = true;
       return this; 
     }
     
-    /** Checks whether the 'ftPct' field has been set */
-    public boolean hasFtPct() {
+    /** Checks whether the 'teamStatsfta' field has been set */
+    public boolean hasTeamStatsfta() {
       return fieldSetFlags()[14];
     }
     
-    /** Clears the value of the 'ftPct' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearFtPct() {
+    /** Clears the value of the 'teamStatsfta' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsfta() {
       fieldSetFlags()[14] = false;
       return this;
     }
     
-    /** Gets the value of the 'oreb' field */
-    public java.lang.Integer getOreb() {
-      return oreb;
+    /** Gets the value of the 'teamStatsftPct' field */
+    public java.lang.Long getTeamStatsftPct() {
+      return teamStatsftPct;
     }
     
-    /** Sets the value of the 'oreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setOreb(int value) {
+    /** Sets the value of the 'teamStatsftPct' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsftPct(long value) {
       validate(fields()[15], value);
-      this.oreb = value;
+      this.teamStatsftPct = value;
       fieldSetFlags()[15] = true;
       return this; 
     }
     
-    /** Checks whether the 'oreb' field has been set */
-    public boolean hasOreb() {
+    /** Checks whether the 'teamStatsftPct' field has been set */
+    public boolean hasTeamStatsftPct() {
       return fieldSetFlags()[15];
     }
     
-    /** Clears the value of the 'oreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearOreb() {
+    /** Clears the value of the 'teamStatsftPct' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsftPct() {
       fieldSetFlags()[15] = false;
       return this;
     }
     
-    /** Gets the value of the 'dreb' field */
-    public java.lang.Integer getDreb() {
-      return dreb;
+    /** Gets the value of the 'teamStatsoreb' field */
+    public java.lang.Long getTeamStatsoreb() {
+      return teamStatsoreb;
     }
     
-    /** Sets the value of the 'dreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setDreb(int value) {
+    /** Sets the value of the 'teamStatsoreb' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsoreb(long value) {
       validate(fields()[16], value);
-      this.dreb = value;
+      this.teamStatsoreb = value;
       fieldSetFlags()[16] = true;
       return this; 
     }
     
-    /** Checks whether the 'dreb' field has been set */
-    public boolean hasDreb() {
+    /** Checks whether the 'teamStatsoreb' field has been set */
+    public boolean hasTeamStatsoreb() {
       return fieldSetFlags()[16];
     }
     
-    /** Clears the value of the 'dreb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearDreb() {
+    /** Clears the value of the 'teamStatsoreb' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsoreb() {
       fieldSetFlags()[16] = false;
       return this;
     }
     
-    /** Gets the value of the 'reb' field */
-    public java.lang.Integer getReb() {
-      return reb;
+    /** Gets the value of the 'teamStatsdreb' field */
+    public java.lang.Long getTeamStatsdreb() {
+      return teamStatsdreb;
     }
     
-    /** Sets the value of the 'reb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setReb(int value) {
+    /** Sets the value of the 'teamStatsdreb' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsdreb(long value) {
       validate(fields()[17], value);
-      this.reb = value;
+      this.teamStatsdreb = value;
       fieldSetFlags()[17] = true;
       return this; 
     }
     
-    /** Checks whether the 'reb' field has been set */
-    public boolean hasReb() {
+    /** Checks whether the 'teamStatsdreb' field has been set */
+    public boolean hasTeamStatsdreb() {
       return fieldSetFlags()[17];
     }
     
-    /** Clears the value of the 'reb' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearReb() {
+    /** Clears the value of the 'teamStatsdreb' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsdreb() {
       fieldSetFlags()[17] = false;
       return this;
     }
     
-    /** Gets the value of the 'ast' field */
-    public java.lang.Integer getAst() {
-      return ast;
+    /** Gets the value of the 'teamStatsreb' field */
+    public java.lang.Long getTeamStatsreb() {
+      return teamStatsreb;
     }
     
-    /** Sets the value of the 'ast' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setAst(int value) {
+    /** Sets the value of the 'teamStatsreb' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsreb(long value) {
       validate(fields()[18], value);
-      this.ast = value;
+      this.teamStatsreb = value;
       fieldSetFlags()[18] = true;
       return this; 
     }
     
-    /** Checks whether the 'ast' field has been set */
-    public boolean hasAst() {
+    /** Checks whether the 'teamStatsreb' field has been set */
+    public boolean hasTeamStatsreb() {
       return fieldSetFlags()[18];
     }
     
-    /** Clears the value of the 'ast' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearAst() {
+    /** Clears the value of the 'teamStatsreb' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsreb() {
       fieldSetFlags()[18] = false;
       return this;
     }
     
-    /** Gets the value of the 'stl' field */
-    public java.lang.Integer getStl() {
-      return stl;
+    /** Gets the value of the 'teamStatsast' field */
+    public java.lang.Long getTeamStatsast() {
+      return teamStatsast;
     }
     
-    /** Sets the value of the 'stl' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setStl(int value) {
+    /** Sets the value of the 'teamStatsast' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsast(long value) {
       validate(fields()[19], value);
-      this.stl = value;
+      this.teamStatsast = value;
       fieldSetFlags()[19] = true;
       return this; 
     }
     
-    /** Checks whether the 'stl' field has been set */
-    public boolean hasStl() {
+    /** Checks whether the 'teamStatsast' field has been set */
+    public boolean hasTeamStatsast() {
       return fieldSetFlags()[19];
     }
     
-    /** Clears the value of the 'stl' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearStl() {
+    /** Clears the value of the 'teamStatsast' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsast() {
       fieldSetFlags()[19] = false;
       return this;
     }
     
-    /** Gets the value of the 'blk' field */
-    public java.lang.Integer getBlk() {
-      return blk;
+    /** Gets the value of the 'teamStatsstl' field */
+    public java.lang.Long getTeamStatsstl() {
+      return teamStatsstl;
     }
     
-    /** Sets the value of the 'blk' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setBlk(int value) {
+    /** Sets the value of the 'teamStatsstl' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsstl(long value) {
       validate(fields()[20], value);
-      this.blk = value;
+      this.teamStatsstl = value;
       fieldSetFlags()[20] = true;
       return this; 
     }
     
-    /** Checks whether the 'blk' field has been set */
-    public boolean hasBlk() {
+    /** Checks whether the 'teamStatsstl' field has been set */
+    public boolean hasTeamStatsstl() {
       return fieldSetFlags()[20];
     }
     
-    /** Clears the value of the 'blk' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearBlk() {
+    /** Clears the value of the 'teamStatsstl' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsstl() {
       fieldSetFlags()[20] = false;
       return this;
     }
     
-    /** Gets the value of the 'to' field */
-    public java.lang.Integer getTo() {
-      return to;
+    /** Gets the value of the 'teamStatsblk' field */
+    public java.lang.Long getTeamStatsblk() {
+      return teamStatsblk;
     }
     
-    /** Sets the value of the 'to' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTo(int value) {
+    /** Sets the value of the 'teamStatsblk' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsblk(long value) {
       validate(fields()[21], value);
-      this.to = value;
+      this.teamStatsblk = value;
       fieldSetFlags()[21] = true;
       return this; 
     }
     
-    /** Checks whether the 'to' field has been set */
-    public boolean hasTo() {
+    /** Checks whether the 'teamStatsblk' field has been set */
+    public boolean hasTeamStatsblk() {
       return fieldSetFlags()[21];
     }
     
-    /** Clears the value of the 'to' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTo() {
+    /** Clears the value of the 'teamStatsblk' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsblk() {
       fieldSetFlags()[21] = false;
       return this;
     }
     
-    /** Gets the value of the 'pf' field */
-    public java.lang.Integer getPf() {
-      return pf;
+    /** Gets the value of the 'teamStatsto' field */
+    public java.lang.Long getTeamStatsto() {
+      return teamStatsto;
     }
     
-    /** Sets the value of the 'pf' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setPf(int value) {
+    /** Sets the value of the 'teamStatsto' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsto(long value) {
       validate(fields()[22], value);
-      this.pf = value;
+      this.teamStatsto = value;
       fieldSetFlags()[22] = true;
       return this; 
     }
     
-    /** Checks whether the 'pf' field has been set */
-    public boolean hasPf() {
+    /** Checks whether the 'teamStatsto' field has been set */
+    public boolean hasTeamStatsto() {
       return fieldSetFlags()[22];
     }
     
-    /** Clears the value of the 'pf' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearPf() {
+    /** Clears the value of the 'teamStatsto' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsto() {
       fieldSetFlags()[22] = false;
       return this;
     }
     
-    /** Gets the value of the 'pts' field */
-    public java.lang.Integer getPts() {
-      return pts;
+    /** Gets the value of the 'teamStatspf' field */
+    public java.lang.Long getTeamStatspf() {
+      return teamStatspf;
     }
     
-    /** Sets the value of the 'pts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setPts(int value) {
+    /** Sets the value of the 'teamStatspf' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatspf(long value) {
       validate(fields()[23], value);
-      this.pts = value;
+      this.teamStatspf = value;
       fieldSetFlags()[23] = true;
       return this; 
     }
     
-    /** Checks whether the 'pts' field has been set */
-    public boolean hasPts() {
+    /** Checks whether the 'teamStatspf' field has been set */
+    public boolean hasTeamStatspf() {
       return fieldSetFlags()[23];
     }
     
-    /** Clears the value of the 'pts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearPts() {
+    /** Clears the value of the 'teamStatspf' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatspf() {
       fieldSetFlags()[23] = false;
       return this;
     }
     
-    /** Gets the value of the 'plusMinus' field */
-    public java.lang.Integer getPlusMinus() {
-      return plusMinus;
+    /** Gets the value of the 'teamStatsPts' field */
+    public java.lang.Long getTeamStatsPts() {
+      return teamStatsPts;
     }
     
-    /** Sets the value of the 'plusMinus' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setPlusMinus(int value) {
+    /** Sets the value of the 'teamStatsPts' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsPts(long value) {
       validate(fields()[24], value);
-      this.plusMinus = value;
+      this.teamStatsPts = value;
       fieldSetFlags()[24] = true;
       return this; 
     }
     
-    /** Checks whether the 'plusMinus' field has been set */
-    public boolean hasPlusMinus() {
+    /** Checks whether the 'teamStatsPts' field has been set */
+    public boolean hasTeamStatsPts() {
       return fieldSetFlags()[24];
     }
     
-    /** Clears the value of the 'plusMinus' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearPlusMinus() {
+    /** Clears the value of the 'teamStatsPts' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsPts() {
       fieldSetFlags()[24] = false;
+      return this;
+    }
+    
+    /** Gets the value of the 'teamStatsPlusMinus' field */
+    public java.lang.Long getTeamStatsPlusMinus() {
+      return teamStatsPlusMinus;
+    }
+    
+    /** Sets the value of the 'teamStatsPlusMinus' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder setTeamStatsPlusMinus(long value) {
+      validate(fields()[25], value);
+      this.teamStatsPlusMinus = value;
+      fieldSetFlags()[25] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'teamStatsPlusMinus' field has been set */
+    public boolean hasTeamStatsPlusMinus() {
+      return fieldSetFlags()[25];
+    }
+    
+    /** Clears the value of the 'teamStatsPlusMinus' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.TeamStats.Builder clearTeamStatsPlusMinus() {
+      fieldSetFlags()[25] = false;
       return this;
     }
     
@@ -1592,31 +1595,32 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
     public TeamStats build() {
       try {
         TeamStats record = new TeamStats();
-        record.gameId = fieldSetFlags()[0] ? this.gameId : (java.lang.Integer) defaultValue(fields()[0]);
-        record.teamId = fieldSetFlags()[1] ? this.teamId : (java.lang.Integer) defaultValue(fields()[1]);
-        record.teamName = fieldSetFlags()[2] ? this.teamName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.teamAbbreviation = fieldSetFlags()[3] ? this.teamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.teamCity = fieldSetFlags()[4] ? this.teamCity : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.min = fieldSetFlags()[5] ? this.min : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.fgm = fieldSetFlags()[6] ? this.fgm : (java.lang.Integer) defaultValue(fields()[6]);
-        record.fga = fieldSetFlags()[7] ? this.fga : (java.lang.Integer) defaultValue(fields()[7]);
-        record.fgPct = fieldSetFlags()[8] ? this.fgPct : (java.lang.Long) defaultValue(fields()[8]);
-        record.fg3m = fieldSetFlags()[9] ? this.fg3m : (java.lang.Integer) defaultValue(fields()[9]);
-        record.fg3a = fieldSetFlags()[10] ? this.fg3a : (java.lang.Integer) defaultValue(fields()[10]);
-        record.fg3Pct = fieldSetFlags()[11] ? this.fg3Pct : (java.lang.Long) defaultValue(fields()[11]);
-        record.ftm = fieldSetFlags()[12] ? this.ftm : (java.lang.Integer) defaultValue(fields()[12]);
-        record.fta = fieldSetFlags()[13] ? this.fta : (java.lang.Integer) defaultValue(fields()[13]);
-        record.ftPct = fieldSetFlags()[14] ? this.ftPct : (java.lang.Integer) defaultValue(fields()[14]);
-        record.oreb = fieldSetFlags()[15] ? this.oreb : (java.lang.Integer) defaultValue(fields()[15]);
-        record.dreb = fieldSetFlags()[16] ? this.dreb : (java.lang.Integer) defaultValue(fields()[16]);
-        record.reb = fieldSetFlags()[17] ? this.reb : (java.lang.Integer) defaultValue(fields()[17]);
-        record.ast = fieldSetFlags()[18] ? this.ast : (java.lang.Integer) defaultValue(fields()[18]);
-        record.stl = fieldSetFlags()[19] ? this.stl : (java.lang.Integer) defaultValue(fields()[19]);
-        record.blk = fieldSetFlags()[20] ? this.blk : (java.lang.Integer) defaultValue(fields()[20]);
-        record.to = fieldSetFlags()[21] ? this.to : (java.lang.Integer) defaultValue(fields()[21]);
-        record.pf = fieldSetFlags()[22] ? this.pf : (java.lang.Integer) defaultValue(fields()[22]);
-        record.pts = fieldSetFlags()[23] ? this.pts : (java.lang.Integer) defaultValue(fields()[23]);
-        record.plusMinus = fieldSetFlags()[24] ? this.plusMinus : (java.lang.Integer) defaultValue(fields()[24]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[4]);
+        record.gameTeamStatsId = fieldSetFlags()[1] ? this.gameTeamStatsId : (java.lang.Long) defaultValue(fields()[1]);
+        record.teamStatsTeamId = fieldSetFlags()[2] ? this.teamStatsTeamId : (java.lang.Long) defaultValue(fields()[2]);
+        record.teamStatsTeamName = fieldSetFlags()[3] ? this.teamStatsTeamName : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.teamStatsTeamAbbreviation = fieldSetFlags()[4] ? this.teamStatsTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.teamStatsTeamCity = fieldSetFlags()[5] ? this.teamStatsTeamCity : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.teamStatsMin = fieldSetFlags()[6] ? this.teamStatsMin : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.teamStatsFgm = fieldSetFlags()[7] ? this.teamStatsFgm : (java.lang.Long) defaultValue(fields()[7]);
+        record.teamStatsFga = fieldSetFlags()[8] ? this.teamStatsFga : (java.lang.Long) defaultValue(fields()[8]);
+        record.teamStatsfgPct = fieldSetFlags()[9] ? this.teamStatsfgPct : (java.lang.Long) defaultValue(fields()[9]);
+        record.teamStatsfg3m = fieldSetFlags()[10] ? this.teamStatsfg3m : (java.lang.Long) defaultValue(fields()[10]);
+        record.teamStatsfg3a = fieldSetFlags()[11] ? this.teamStatsfg3a : (java.lang.Long) defaultValue(fields()[11]);
+        record.teamStatsfg3Pct = fieldSetFlags()[12] ? this.teamStatsfg3Pct : (java.lang.Long) defaultValue(fields()[12]);
+        record.teamStatsftm = fieldSetFlags()[13] ? this.teamStatsftm : (java.lang.Long) defaultValue(fields()[13]);
+        record.teamStatsfta = fieldSetFlags()[14] ? this.teamStatsfta : (java.lang.Long) defaultValue(fields()[14]);
+        record.teamStatsftPct = fieldSetFlags()[15] ? this.teamStatsftPct : (java.lang.Long) defaultValue(fields()[15]);
+        record.teamStatsoreb = fieldSetFlags()[16] ? this.teamStatsoreb : (java.lang.Long) defaultValue(fields()[16]);
+        record.teamStatsdreb = fieldSetFlags()[17] ? this.teamStatsdreb : (java.lang.Long) defaultValue(fields()[17]);
+        record.teamStatsreb = fieldSetFlags()[18] ? this.teamStatsreb : (java.lang.Long) defaultValue(fields()[18]);
+        record.teamStatsast = fieldSetFlags()[19] ? this.teamStatsast : (java.lang.Long) defaultValue(fields()[19]);
+        record.teamStatsstl = fieldSetFlags()[20] ? this.teamStatsstl : (java.lang.Long) defaultValue(fields()[20]);
+        record.teamStatsblk = fieldSetFlags()[21] ? this.teamStatsblk : (java.lang.Long) defaultValue(fields()[21]);
+        record.teamStatsto = fieldSetFlags()[22] ? this.teamStatsto : (java.lang.Long) defaultValue(fields()[22]);
+        record.teamStatspf = fieldSetFlags()[23] ? this.teamStatspf : (java.lang.Long) defaultValue(fields()[23]);
+        record.teamStatsPts = fieldSetFlags()[24] ? this.teamStatsPts : (java.lang.Long) defaultValue(fields()[24]);
+        record.teamStatsPlusMinus = fieldSetFlags()[25] ? this.teamStatsPlusMinus : (java.lang.Long) defaultValue(fields()[25]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -1638,578 +1642,578 @@ public class TeamStats extends org.apache.gora.persistency.impl.PersistentBase i
   
       private Tombstone() { }
   
-	  		  /**
-	   * Gets the value of the 'gameId' field.
+	  				  /**
+	   * Gets the value of the 'gameTeamStatsId' field.
 		   */
-	  public java.lang.Integer getGameId() {
+	  public java.lang.Long getGameTeamStatsId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameId' field.
+	   * Sets the value of the 'gameTeamStatsId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameId(java.lang.Integer value) {
+	  public void setGameTeamStatsId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameTeamStatsId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameIdDirty(java.lang.Integer value) {
+	  public boolean isGameTeamStatsIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamId' field.
+	   * Gets the value of the 'teamStatsTeamId' field.
 		   */
-	  public java.lang.Integer getTeamId() {
+	  public java.lang.Long getTeamStatsTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamId' field.
+	   * Sets the value of the 'teamStatsTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamId(java.lang.Integer value) {
+	  public void setTeamStatsTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamIdDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamName' field.
+	   * Gets the value of the 'teamStatsTeamName' field.
 		   */
-	  public java.lang.CharSequence getTeamName() {
+	  public java.lang.CharSequence getTeamStatsTeamName() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamName' field.
+	   * Sets the value of the 'teamStatsTeamName' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamName(java.lang.CharSequence value) {
+	  public void setTeamStatsTeamName(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamName' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsTeamName' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamNameDirty(java.lang.CharSequence value) {
+	  public boolean isTeamStatsTeamNameDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamAbbreviation' field.
+	   * Gets the value of the 'teamStatsTeamAbbreviation' field.
 		   */
-	  public java.lang.CharSequence getTeamAbbreviation() {
+	  public java.lang.CharSequence getTeamStatsTeamAbbreviation() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamAbbreviation' field.
+	   * Sets the value of the 'teamStatsTeamAbbreviation' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamAbbreviation(java.lang.CharSequence value) {
+	  public void setTeamStatsTeamAbbreviation(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+	  public boolean isTeamStatsTeamAbbreviationDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamCity' field.
+	   * Gets the value of the 'teamStatsTeamCity' field.
 		   */
-	  public java.lang.CharSequence getTeamCity() {
+	  public java.lang.CharSequence getTeamStatsTeamCity() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamCity' field.
+	   * Sets the value of the 'teamStatsTeamCity' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamCity(java.lang.CharSequence value) {
+	  public void setTeamStatsTeamCity(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsTeamCity' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamCityDirty(java.lang.CharSequence value) {
+	  public boolean isTeamStatsTeamCityDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'min' field.
+	   * Gets the value of the 'teamStatsMin' field.
 		   */
-	  public java.lang.CharSequence getMin() {
+	  public java.lang.CharSequence getTeamStatsMin() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'min' field.
+	   * Sets the value of the 'teamStatsMin' field.
 		   * @param value the value to set.
 	   */
-	  public void setMin(java.lang.CharSequence value) {
+	  public void setTeamStatsMin(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'min' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsMin' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isMinDirty(java.lang.CharSequence value) {
+	  public boolean isTeamStatsMinDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fgm' field.
+	   * Gets the value of the 'teamStatsFgm' field.
 		   */
-	  public java.lang.Integer getFgm() {
+	  public java.lang.Long getTeamStatsFgm() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fgm' field.
+	   * Sets the value of the 'teamStatsFgm' field.
 		   * @param value the value to set.
 	   */
-	  public void setFgm(java.lang.Integer value) {
+	  public void setTeamStatsFgm(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fgm' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsFgm' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFgmDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsFgmDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fga' field.
+	   * Gets the value of the 'teamStatsFga' field.
 		   */
-	  public java.lang.Integer getFga() {
+	  public java.lang.Long getTeamStatsFga() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fga' field.
+	   * Sets the value of the 'teamStatsFga' field.
 		   * @param value the value to set.
 	   */
-	  public void setFga(java.lang.Integer value) {
+	  public void setTeamStatsFga(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fga' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsFga' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFgaDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsFgaDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fgPct' field.
+	   * Gets the value of the 'teamStatsfgPct' field.
 		   */
-	  public java.lang.Long getFgPct() {
+	  public java.lang.Long getTeamStatsfgPct() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fgPct' field.
+	   * Sets the value of the 'teamStatsfgPct' field.
 		   * @param value the value to set.
 	   */
-	  public void setFgPct(java.lang.Long value) {
+	  public void setTeamStatsfgPct(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fgPct' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsfgPct' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFgPctDirty(java.lang.Long value) {
+	  public boolean isTeamStatsfgPctDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fg3m' field.
+	   * Gets the value of the 'teamStatsfg3m' field.
 		   */
-	  public java.lang.Integer getFg3m() {
+	  public java.lang.Long getTeamStatsfg3m() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fg3m' field.
+	   * Sets the value of the 'teamStatsfg3m' field.
 		   * @param value the value to set.
 	   */
-	  public void setFg3m(java.lang.Integer value) {
+	  public void setTeamStatsfg3m(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fg3m' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsfg3m' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFg3mDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsfg3mDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fg3a' field.
+	   * Gets the value of the 'teamStatsfg3a' field.
 		   */
-	  public java.lang.Integer getFg3a() {
+	  public java.lang.Long getTeamStatsfg3a() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fg3a' field.
+	   * Sets the value of the 'teamStatsfg3a' field.
 		   * @param value the value to set.
 	   */
-	  public void setFg3a(java.lang.Integer value) {
+	  public void setTeamStatsfg3a(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fg3a' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsfg3a' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFg3aDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsfg3aDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fg3Pct' field.
+	   * Gets the value of the 'teamStatsfg3Pct' field.
 		   */
-	  public java.lang.Long getFg3Pct() {
+	  public java.lang.Long getTeamStatsfg3Pct() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fg3Pct' field.
+	   * Sets the value of the 'teamStatsfg3Pct' field.
 		   * @param value the value to set.
 	   */
-	  public void setFg3Pct(java.lang.Long value) {
+	  public void setTeamStatsfg3Pct(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fg3Pct' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsfg3Pct' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFg3PctDirty(java.lang.Long value) {
+	  public boolean isTeamStatsfg3PctDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'ftm' field.
+	   * Gets the value of the 'teamStatsftm' field.
 		   */
-	  public java.lang.Integer getFtm() {
+	  public java.lang.Long getTeamStatsftm() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'ftm' field.
+	   * Sets the value of the 'teamStatsftm' field.
 		   * @param value the value to set.
 	   */
-	  public void setFtm(java.lang.Integer value) {
+	  public void setTeamStatsftm(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'ftm' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsftm' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFtmDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsftmDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'fta' field.
+	   * Gets the value of the 'teamStatsfta' field.
 		   */
-	  public java.lang.Integer getFta() {
+	  public java.lang.Long getTeamStatsfta() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'fta' field.
+	   * Sets the value of the 'teamStatsfta' field.
 		   * @param value the value to set.
 	   */
-	  public void setFta(java.lang.Integer value) {
+	  public void setTeamStatsfta(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'fta' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsfta' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFtaDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsftaDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'ftPct' field.
+	   * Gets the value of the 'teamStatsftPct' field.
 		   */
-	  public java.lang.Integer getFtPct() {
+	  public java.lang.Long getTeamStatsftPct() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'ftPct' field.
+	   * Sets the value of the 'teamStatsftPct' field.
 		   * @param value the value to set.
 	   */
-	  public void setFtPct(java.lang.Integer value) {
+	  public void setTeamStatsftPct(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'ftPct' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsftPct' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isFtPctDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsftPctDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'oreb' field.
+	   * Gets the value of the 'teamStatsoreb' field.
 		   */
-	  public java.lang.Integer getOreb() {
+	  public java.lang.Long getTeamStatsoreb() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'oreb' field.
+	   * Sets the value of the 'teamStatsoreb' field.
 		   * @param value the value to set.
 	   */
-	  public void setOreb(java.lang.Integer value) {
+	  public void setTeamStatsoreb(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'oreb' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsoreb' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isOrebDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsorebDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'dreb' field.
+	   * Gets the value of the 'teamStatsdreb' field.
 		   */
-	  public java.lang.Integer getDreb() {
+	  public java.lang.Long getTeamStatsdreb() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'dreb' field.
+	   * Sets the value of the 'teamStatsdreb' field.
 		   * @param value the value to set.
 	   */
-	  public void setDreb(java.lang.Integer value) {
+	  public void setTeamStatsdreb(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'dreb' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsdreb' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isDrebDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsdrebDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'reb' field.
+	   * Gets the value of the 'teamStatsreb' field.
 		   */
-	  public java.lang.Integer getReb() {
+	  public java.lang.Long getTeamStatsreb() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'reb' field.
+	   * Sets the value of the 'teamStatsreb' field.
 		   * @param value the value to set.
 	   */
-	  public void setReb(java.lang.Integer value) {
+	  public void setTeamStatsreb(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'reb' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsreb' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isRebDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsrebDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'ast' field.
+	   * Gets the value of the 'teamStatsast' field.
 		   */
-	  public java.lang.Integer getAst() {
+	  public java.lang.Long getTeamStatsast() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'ast' field.
+	   * Sets the value of the 'teamStatsast' field.
 		   * @param value the value to set.
 	   */
-	  public void setAst(java.lang.Integer value) {
+	  public void setTeamStatsast(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'ast' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsast' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isAstDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsastDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'stl' field.
+	   * Gets the value of the 'teamStatsstl' field.
 		   */
-	  public java.lang.Integer getStl() {
+	  public java.lang.Long getTeamStatsstl() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'stl' field.
+	   * Sets the value of the 'teamStatsstl' field.
 		   * @param value the value to set.
 	   */
-	  public void setStl(java.lang.Integer value) {
+	  public void setTeamStatsstl(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'stl' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsstl' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isStlDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsstlDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'blk' field.
+	   * Gets the value of the 'teamStatsblk' field.
 		   */
-	  public java.lang.Integer getBlk() {
+	  public java.lang.Long getTeamStatsblk() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'blk' field.
+	   * Sets the value of the 'teamStatsblk' field.
 		   * @param value the value to set.
 	   */
-	  public void setBlk(java.lang.Integer value) {
+	  public void setTeamStatsblk(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'blk' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsblk' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isBlkDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsblkDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'to' field.
+	   * Gets the value of the 'teamStatsto' field.
 		   */
-	  public java.lang.Integer getTo() {
+	  public java.lang.Long getTeamStatsto() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'to' field.
+	   * Sets the value of the 'teamStatsto' field.
 		   * @param value the value to set.
 	   */
-	  public void setTo(java.lang.Integer value) {
+	  public void setTeamStatsto(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'to' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsto' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isToDirty(java.lang.Integer value) {
+	  public boolean isTeamStatstoDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'pf' field.
+	   * Gets the value of the 'teamStatspf' field.
 		   */
-	  public java.lang.Integer getPf() {
+	  public java.lang.Long getTeamStatspf() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'pf' field.
+	   * Sets the value of the 'teamStatspf' field.
 		   * @param value the value to set.
 	   */
-	  public void setPf(java.lang.Integer value) {
+	  public void setTeamStatspf(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'pf' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatspf' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPfDirty(java.lang.Integer value) {
+	  public boolean isTeamStatspfDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'pts' field.
+	   * Gets the value of the 'teamStatsPts' field.
 		   */
-	  public java.lang.Integer getPts() {
+	  public java.lang.Long getTeamStatsPts() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'pts' field.
+	   * Sets the value of the 'teamStatsPts' field.
 		   * @param value the value to set.
 	   */
-	  public void setPts(java.lang.Integer value) {
+	  public void setTeamStatsPts(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'pts' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsPts' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsPtsDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'plusMinus' field.
+	   * Gets the value of the 'teamStatsPlusMinus' field.
 		   */
-	  public java.lang.Integer getPlusMinus() {
+	  public java.lang.Long getTeamStatsPlusMinus() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'plusMinus' field.
+	   * Sets the value of the 'teamStatsPlusMinus' field.
 		   * @param value the value to set.
 	   */
-	  public void setPlusMinus(java.lang.Integer value) {
+	  public void setTeamStatsPlusMinus(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'plusMinus' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'teamStatsPlusMinus' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPlusMinusDirty(java.lang.Integer value) {
+	  public boolean isTeamStatsPlusMinusDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	

@@ -6,32 +6,33 @@
 package gov.nasa.jpl.xdata.nba.impoexpo.structs;  
 @SuppressWarnings("all")
 public class LineScore extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineScore\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"gameDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameSequence\",\"type\":\"int\",\"default\":0},{\"name\":\"gameId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamId\",\"type\":\"int\",\"default\":0},{\"name\":\"teamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"int\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"int\",\"default\":0},{\"name\":\"pts\",\"type\":\"int\",\"default\":0}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineScore\",\"namespace\":\"gov.nasa.jpl.xdata.nba.impoexpo.structs\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AAAA\"},{\"name\":\"gameLineScoreDateEst\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"gameLineScoreSequence\",\"type\":\"long\",\"default\":0},{\"name\":\"gameLineScoreId\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScoreTeamId\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScoreTeamAbbreviation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamCityName\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"teamWinsLosses\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"ptsQtr1\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr2\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr3\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsQtr4\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt1\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt2\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt3\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt4\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt5\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt6\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt7\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt8\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt9\",\"type\":\"long\",\"default\":0},{\"name\":\"ptsOt10\",\"type\":\"long\",\"default\":0},{\"name\":\"lineScorePts\",\"type\":\"long\",\"default\":0}]}");
 
   /** Enum containing all data bean's fields. */
   public static enum Field {
-    GAME_DATE_EST(0, "gameDateEst"),
-    GAME_SEQUENCE(1, "gameSequence"),
-    GAME_ID(2, "gameId"),
-    TEAM_ID(3, "teamId"),
-    TEAM_ABBREVIATION(4, "teamAbbreviation"),
-    TEAM_CITY_NAME(5, "teamCityName"),
-    TEAM_WINS_LOSSES(6, "teamWinsLosses"),
-    PTS_QTR1(7, "ptsQtr1"),
-    PTS_QTR2(8, "ptsQtr2"),
-    PTS_QTR3(9, "ptsQtr3"),
-    PTS_QTR4(10, "ptsQtr4"),
-    PTS_OT1(11, "ptsOt1"),
-    PTS_OT2(12, "ptsOt2"),
-    PTS_OT3(13, "ptsOt3"),
-    PTS_OT4(14, "ptsOt4"),
-    PTS_OT5(15, "ptsOt5"),
-    PTS_OT6(16, "ptsOt6"),
-    PTS_OT7(17, "ptsOt7"),
-    PTS_OT8(18, "ptsOt8"),
-    PTS_OT9(19, "ptsOt9"),
-    PTS_OT10(20, "ptsOt10"),
-    PTS(21, "pts"),
+    __G__DIRTY(0, "__g__dirty"),
+    GAME_LINE_SCORE_DATE_EST(1, "gameLineScoreDateEst"),
+    GAME_LINE_SCORE_SEQUENCE(2, "gameLineScoreSequence"),
+    GAME_LINE_SCORE_ID(3, "gameLineScoreId"),
+    LINE_SCORE_TEAM_ID(4, "lineScoreTeamId"),
+    LINE_SCORE_TEAM_ABBREVIATION(5, "lineScoreTeamAbbreviation"),
+    TEAM_CITY_NAME(6, "teamCityName"),
+    TEAM_WINS_LOSSES(7, "teamWinsLosses"),
+    PTS_QTR1(8, "ptsQtr1"),
+    PTS_QTR2(9, "ptsQtr2"),
+    PTS_QTR3(10, "ptsQtr3"),
+    PTS_QTR4(11, "ptsQtr4"),
+    PTS_OT1(12, "ptsOt1"),
+    PTS_OT2(13, "ptsOt2"),
+    PTS_OT3(14, "ptsOt3"),
+    PTS_OT4(15, "ptsOt4"),
+    PTS_OT5(16, "ptsOt5"),
+    PTS_OT6(17, "ptsOt6"),
+    PTS_OT7(18, "ptsOt7"),
+    PTS_OT8(19, "ptsOt8"),
+    PTS_OT9(20, "ptsOt9"),
+    PTS_OT10(21, "ptsOt10"),
+    LINE_SCORE_PTS(22, "lineScorePts"),
     ;
     /**
      * Field's index.
@@ -70,11 +71,12 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   };
 
   public static final String[] _ALL_FIELDS = {
-  "gameDateEst",
-  "gameSequence",
-  "gameId",
-  "teamId",
-  "teamAbbreviation",
+  "__g__dirty",
+  "gameLineScoreDateEst",
+  "gameLineScoreSequence",
+  "gameLineScoreId",
+  "lineScoreTeamId",
+  "lineScoreTeamAbbreviation",
   "teamCityName",
   "teamWinsLosses",
   "ptsQtr1",
@@ -91,65 +93,60 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   "ptsOt8",
   "ptsOt9",
   "ptsOt10",
-  "pts",
+  "lineScorePts",
   };
 
-  /**
-   * Gets the total field count.
-   * @return int field count
-   */
-  public int getFieldsCount() {
-    return LineScore._ALL_FIELDS.length;
-  }
-
-  private java.lang.CharSequence gameDateEst;
-  private int gameSequence;
-  private int gameId;
-  private int teamId;
-  private java.lang.CharSequence teamAbbreviation;
+  /** Bytes used to represent weather or not a field is dirty. */
+  private java.nio.ByteBuffer __g__dirty = java.nio.ByteBuffer.wrap(new byte[3]);
+  private java.lang.CharSequence gameLineScoreDateEst;
+  private long gameLineScoreSequence;
+  private long gameLineScoreId;
+  private long lineScoreTeamId;
+  private java.lang.CharSequence lineScoreTeamAbbreviation;
   private java.lang.CharSequence teamCityName;
   private java.lang.CharSequence teamWinsLosses;
-  private int ptsQtr1;
-  private int ptsQtr2;
-  private int ptsQtr3;
-  private int ptsQtr4;
-  private int ptsOt1;
-  private int ptsOt2;
-  private int ptsOt3;
-  private int ptsOt4;
-  private int ptsOt5;
-  private int ptsOt6;
-  private int ptsOt7;
-  private int ptsOt8;
-  private int ptsOt9;
-  private int ptsOt10;
-  private int pts;
+  private long ptsQtr1;
+  private long ptsQtr2;
+  private long ptsQtr3;
+  private long ptsQtr4;
+  private long ptsOt1;
+  private long ptsOt2;
+  private long ptsOt3;
+  private long ptsOt4;
+  private long ptsOt5;
+  private long ptsOt6;
+  private long ptsOt7;
+  private long ptsOt8;
+  private long ptsOt9;
+  private long ptsOt10;
+  private long lineScorePts;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gameDateEst;
-    case 1: return gameSequence;
-    case 2: return gameId;
-    case 3: return teamId;
-    case 4: return teamAbbreviation;
-    case 5: return teamCityName;
-    case 6: return teamWinsLosses;
-    case 7: return ptsQtr1;
-    case 8: return ptsQtr2;
-    case 9: return ptsQtr3;
-    case 10: return ptsQtr4;
-    case 11: return ptsOt1;
-    case 12: return ptsOt2;
-    case 13: return ptsOt3;
-    case 14: return ptsOt4;
-    case 15: return ptsOt5;
-    case 16: return ptsOt6;
-    case 17: return ptsOt7;
-    case 18: return ptsOt8;
-    case 19: return ptsOt9;
-    case 20: return ptsOt10;
-    case 21: return pts;
+    case 0: return __g__dirty;
+    case 1: return gameLineScoreDateEst;
+    case 2: return gameLineScoreSequence;
+    case 3: return gameLineScoreId;
+    case 4: return lineScoreTeamId;
+    case 5: return lineScoreTeamAbbreviation;
+    case 6: return teamCityName;
+    case 7: return teamWinsLosses;
+    case 8: return ptsQtr1;
+    case 9: return ptsQtr2;
+    case 10: return ptsQtr3;
+    case 11: return ptsQtr4;
+    case 12: return ptsOt1;
+    case 13: return ptsOt2;
+    case 14: return ptsOt3;
+    case 15: return ptsOt4;
+    case 16: return ptsOt5;
+    case 17: return ptsOt6;
+    case 18: return ptsOt7;
+    case 19: return ptsOt8;
+    case 20: return ptsOt9;
+    case 21: return ptsOt10;
+    case 22: return lineScorePts;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -158,150 +155,151 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
-    case 0: gameDateEst = (java.lang.CharSequence)(value); break;
-    case 1: gameSequence = (java.lang.Integer)(value); break;
-    case 2: gameId = (java.lang.Integer)(value); break;
-    case 3: teamId = (java.lang.Integer)(value); break;
-    case 4: teamAbbreviation = (java.lang.CharSequence)(value); break;
-    case 5: teamCityName = (java.lang.CharSequence)(value); break;
-    case 6: teamWinsLosses = (java.lang.CharSequence)(value); break;
-    case 7: ptsQtr1 = (java.lang.Integer)(value); break;
-    case 8: ptsQtr2 = (java.lang.Integer)(value); break;
-    case 9: ptsQtr3 = (java.lang.Integer)(value); break;
-    case 10: ptsQtr4 = (java.lang.Integer)(value); break;
-    case 11: ptsOt1 = (java.lang.Integer)(value); break;
-    case 12: ptsOt2 = (java.lang.Integer)(value); break;
-    case 13: ptsOt3 = (java.lang.Integer)(value); break;
-    case 14: ptsOt4 = (java.lang.Integer)(value); break;
-    case 15: ptsOt5 = (java.lang.Integer)(value); break;
-    case 16: ptsOt6 = (java.lang.Integer)(value); break;
-    case 17: ptsOt7 = (java.lang.Integer)(value); break;
-    case 18: ptsOt8 = (java.lang.Integer)(value); break;
-    case 19: ptsOt9 = (java.lang.Integer)(value); break;
-    case 20: ptsOt10 = (java.lang.Integer)(value); break;
-    case 21: pts = (java.lang.Integer)(value); break;
+    case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
+    case 1: gameLineScoreDateEst = (java.lang.CharSequence)(value); break;
+    case 2: gameLineScoreSequence = (java.lang.Long)(value); break;
+    case 3: gameLineScoreId = (java.lang.Long)(value); break;
+    case 4: lineScoreTeamId = (java.lang.Long)(value); break;
+    case 5: lineScoreTeamAbbreviation = (java.lang.CharSequence)(value); break;
+    case 6: teamCityName = (java.lang.CharSequence)(value); break;
+    case 7: teamWinsLosses = (java.lang.CharSequence)(value); break;
+    case 8: ptsQtr1 = (java.lang.Long)(value); break;
+    case 9: ptsQtr2 = (java.lang.Long)(value); break;
+    case 10: ptsQtr3 = (java.lang.Long)(value); break;
+    case 11: ptsQtr4 = (java.lang.Long)(value); break;
+    case 12: ptsOt1 = (java.lang.Long)(value); break;
+    case 13: ptsOt2 = (java.lang.Long)(value); break;
+    case 14: ptsOt3 = (java.lang.Long)(value); break;
+    case 15: ptsOt4 = (java.lang.Long)(value); break;
+    case 16: ptsOt5 = (java.lang.Long)(value); break;
+    case 17: ptsOt6 = (java.lang.Long)(value); break;
+    case 18: ptsOt7 = (java.lang.Long)(value); break;
+    case 19: ptsOt8 = (java.lang.Long)(value); break;
+    case 20: ptsOt9 = (java.lang.Long)(value); break;
+    case 21: ptsOt10 = (java.lang.Long)(value); break;
+    case 22: lineScorePts = (java.lang.Long)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'gameDateEst' field.
+   * Gets the value of the 'gameLineScoreDateEst' field.
    */
-  public java.lang.CharSequence getGameDateEst() {
-    return gameDateEst;
+  public java.lang.CharSequence getGameLineScoreDateEst() {
+    return gameLineScoreDateEst;
   }
 
   /**
-   * Sets the value of the 'gameDateEst' field.
+   * Sets the value of the 'gameLineScoreDateEst' field.
    * @param value the value to set.
    */
-  public void setGameDateEst(java.lang.CharSequence value) {
-    this.gameDateEst = value;
-    setDirty(0);
-  }
-  
-  /**
-   * Checks the dirty status of the 'gameDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
-   * @param value the value to set.
-   */
-  public boolean isGameDateEstDirty(java.lang.CharSequence value) {
-    return isDirty(0);
-  }
-
-  /**
-   * Gets the value of the 'gameSequence' field.
-   */
-  public java.lang.Integer getGameSequence() {
-    return gameSequence;
-  }
-
-  /**
-   * Sets the value of the 'gameSequence' field.
-   * @param value the value to set.
-   */
-  public void setGameSequence(java.lang.Integer value) {
-    this.gameSequence = value;
+  public void setGameLineScoreDateEst(java.lang.CharSequence value) {
+    this.gameLineScoreDateEst = value;
     setDirty(1);
   }
   
   /**
-   * Checks the dirty status of the 'gameSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLineScoreDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameSequenceDirty(java.lang.Integer value) {
+  public boolean isGameLineScoreDateEstDirty(java.lang.CharSequence value) {
     return isDirty(1);
   }
 
   /**
-   * Gets the value of the 'gameId' field.
+   * Gets the value of the 'gameLineScoreSequence' field.
    */
-  public java.lang.Integer getGameId() {
-    return gameId;
+  public java.lang.Long getGameLineScoreSequence() {
+    return gameLineScoreSequence;
   }
 
   /**
-   * Sets the value of the 'gameId' field.
+   * Sets the value of the 'gameLineScoreSequence' field.
    * @param value the value to set.
    */
-  public void setGameId(java.lang.Integer value) {
-    this.gameId = value;
+  public void setGameLineScoreSequence(java.lang.Long value) {
+    this.gameLineScoreSequence = value;
     setDirty(2);
   }
   
   /**
-   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLineScoreSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isGameIdDirty(java.lang.Integer value) {
+  public boolean isGameLineScoreSequenceDirty(java.lang.Long value) {
     return isDirty(2);
   }
 
   /**
-   * Gets the value of the 'teamId' field.
+   * Gets the value of the 'gameLineScoreId' field.
    */
-  public java.lang.Integer getTeamId() {
-    return teamId;
+  public java.lang.Long getGameLineScoreId() {
+    return gameLineScoreId;
   }
 
   /**
-   * Sets the value of the 'teamId' field.
+   * Sets the value of the 'gameLineScoreId' field.
    * @param value the value to set.
    */
-  public void setTeamId(java.lang.Integer value) {
-    this.teamId = value;
+  public void setGameLineScoreId(java.lang.Long value) {
+    this.gameLineScoreId = value;
     setDirty(3);
   }
   
   /**
-   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'gameLineScoreId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamIdDirty(java.lang.Integer value) {
+  public boolean isGameLineScoreIdDirty(java.lang.Long value) {
     return isDirty(3);
   }
 
   /**
-   * Gets the value of the 'teamAbbreviation' field.
+   * Gets the value of the 'lineScoreTeamId' field.
    */
-  public java.lang.CharSequence getTeamAbbreviation() {
-    return teamAbbreviation;
+  public java.lang.Long getLineScoreTeamId() {
+    return lineScoreTeamId;
   }
 
   /**
-   * Sets the value of the 'teamAbbreviation' field.
+   * Sets the value of the 'lineScoreTeamId' field.
    * @param value the value to set.
    */
-  public void setTeamAbbreviation(java.lang.CharSequence value) {
-    this.teamAbbreviation = value;
+  public void setLineScoreTeamId(java.lang.Long value) {
+    this.lineScoreTeamId = value;
     setDirty(4);
   }
   
   /**
-   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'lineScoreTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+  public boolean isLineScoreTeamIdDirty(java.lang.Long value) {
     return isDirty(4);
+  }
+
+  /**
+   * Gets the value of the 'lineScoreTeamAbbreviation' field.
+   */
+  public java.lang.CharSequence getLineScoreTeamAbbreviation() {
+    return lineScoreTeamAbbreviation;
+  }
+
+  /**
+   * Sets the value of the 'lineScoreTeamAbbreviation' field.
+   * @param value the value to set.
+   */
+  public void setLineScoreTeamAbbreviation(java.lang.CharSequence value) {
+    this.lineScoreTeamAbbreviation = value;
+    setDirty(5);
+  }
+  
+  /**
+   * Checks the dirty status of the 'lineScoreTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * @param value the value to set.
+   */
+  public boolean isLineScoreTeamAbbreviationDirty(java.lang.CharSequence value) {
+    return isDirty(5);
   }
 
   /**
@@ -317,7 +315,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamCityName(java.lang.CharSequence value) {
     this.teamCityName = value;
-    setDirty(5);
+    setDirty(6);
   }
   
   /**
@@ -325,7 +323,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamCityNameDirty(java.lang.CharSequence value) {
-    return isDirty(5);
+    return isDirty(6);
   }
 
   /**
@@ -341,7 +339,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    */
   public void setTeamWinsLosses(java.lang.CharSequence value) {
     this.teamWinsLosses = value;
-    setDirty(6);
+    setDirty(7);
   }
   
   /**
@@ -349,13 +347,13 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * @param value the value to set.
    */
   public boolean isTeamWinsLossesDirty(java.lang.CharSequence value) {
-    return isDirty(6);
+    return isDirty(7);
   }
 
   /**
    * Gets the value of the 'ptsQtr1' field.
    */
-  public java.lang.Integer getPtsQtr1() {
+  public java.lang.Long getPtsQtr1() {
     return ptsQtr1;
   }
 
@@ -363,23 +361,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsQtr1' field.
    * @param value the value to set.
    */
-  public void setPtsQtr1(java.lang.Integer value) {
+  public void setPtsQtr1(java.lang.Long value) {
     this.ptsQtr1 = value;
-    setDirty(7);
+    setDirty(8);
   }
   
   /**
    * Checks the dirty status of the 'ptsQtr1' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsQtr1Dirty(java.lang.Integer value) {
-    return isDirty(7);
+  public boolean isPtsQtr1Dirty(java.lang.Long value) {
+    return isDirty(8);
   }
 
   /**
    * Gets the value of the 'ptsQtr2' field.
    */
-  public java.lang.Integer getPtsQtr2() {
+  public java.lang.Long getPtsQtr2() {
     return ptsQtr2;
   }
 
@@ -387,23 +385,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsQtr2' field.
    * @param value the value to set.
    */
-  public void setPtsQtr2(java.lang.Integer value) {
+  public void setPtsQtr2(java.lang.Long value) {
     this.ptsQtr2 = value;
-    setDirty(8);
+    setDirty(9);
   }
   
   /**
    * Checks the dirty status of the 'ptsQtr2' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsQtr2Dirty(java.lang.Integer value) {
-    return isDirty(8);
+  public boolean isPtsQtr2Dirty(java.lang.Long value) {
+    return isDirty(9);
   }
 
   /**
    * Gets the value of the 'ptsQtr3' field.
    */
-  public java.lang.Integer getPtsQtr3() {
+  public java.lang.Long getPtsQtr3() {
     return ptsQtr3;
   }
 
@@ -411,23 +409,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsQtr3' field.
    * @param value the value to set.
    */
-  public void setPtsQtr3(java.lang.Integer value) {
+  public void setPtsQtr3(java.lang.Long value) {
     this.ptsQtr3 = value;
-    setDirty(9);
+    setDirty(10);
   }
   
   /**
    * Checks the dirty status of the 'ptsQtr3' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsQtr3Dirty(java.lang.Integer value) {
-    return isDirty(9);
+  public boolean isPtsQtr3Dirty(java.lang.Long value) {
+    return isDirty(10);
   }
 
   /**
    * Gets the value of the 'ptsQtr4' field.
    */
-  public java.lang.Integer getPtsQtr4() {
+  public java.lang.Long getPtsQtr4() {
     return ptsQtr4;
   }
 
@@ -435,23 +433,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsQtr4' field.
    * @param value the value to set.
    */
-  public void setPtsQtr4(java.lang.Integer value) {
+  public void setPtsQtr4(java.lang.Long value) {
     this.ptsQtr4 = value;
-    setDirty(10);
+    setDirty(11);
   }
   
   /**
    * Checks the dirty status of the 'ptsQtr4' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsQtr4Dirty(java.lang.Integer value) {
-    return isDirty(10);
+  public boolean isPtsQtr4Dirty(java.lang.Long value) {
+    return isDirty(11);
   }
 
   /**
    * Gets the value of the 'ptsOt1' field.
    */
-  public java.lang.Integer getPtsOt1() {
+  public java.lang.Long getPtsOt1() {
     return ptsOt1;
   }
 
@@ -459,23 +457,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt1' field.
    * @param value the value to set.
    */
-  public void setPtsOt1(java.lang.Integer value) {
+  public void setPtsOt1(java.lang.Long value) {
     this.ptsOt1 = value;
-    setDirty(11);
+    setDirty(12);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt1' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt1Dirty(java.lang.Integer value) {
-    return isDirty(11);
+  public boolean isPtsOt1Dirty(java.lang.Long value) {
+    return isDirty(12);
   }
 
   /**
    * Gets the value of the 'ptsOt2' field.
    */
-  public java.lang.Integer getPtsOt2() {
+  public java.lang.Long getPtsOt2() {
     return ptsOt2;
   }
 
@@ -483,23 +481,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt2' field.
    * @param value the value to set.
    */
-  public void setPtsOt2(java.lang.Integer value) {
+  public void setPtsOt2(java.lang.Long value) {
     this.ptsOt2 = value;
-    setDirty(12);
+    setDirty(13);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt2' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt2Dirty(java.lang.Integer value) {
-    return isDirty(12);
+  public boolean isPtsOt2Dirty(java.lang.Long value) {
+    return isDirty(13);
   }
 
   /**
    * Gets the value of the 'ptsOt3' field.
    */
-  public java.lang.Integer getPtsOt3() {
+  public java.lang.Long getPtsOt3() {
     return ptsOt3;
   }
 
@@ -507,23 +505,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt3' field.
    * @param value the value to set.
    */
-  public void setPtsOt3(java.lang.Integer value) {
+  public void setPtsOt3(java.lang.Long value) {
     this.ptsOt3 = value;
-    setDirty(13);
+    setDirty(14);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt3' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt3Dirty(java.lang.Integer value) {
-    return isDirty(13);
+  public boolean isPtsOt3Dirty(java.lang.Long value) {
+    return isDirty(14);
   }
 
   /**
    * Gets the value of the 'ptsOt4' field.
    */
-  public java.lang.Integer getPtsOt4() {
+  public java.lang.Long getPtsOt4() {
     return ptsOt4;
   }
 
@@ -531,23 +529,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt4' field.
    * @param value the value to set.
    */
-  public void setPtsOt4(java.lang.Integer value) {
+  public void setPtsOt4(java.lang.Long value) {
     this.ptsOt4 = value;
-    setDirty(14);
+    setDirty(15);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt4' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt4Dirty(java.lang.Integer value) {
-    return isDirty(14);
+  public boolean isPtsOt4Dirty(java.lang.Long value) {
+    return isDirty(15);
   }
 
   /**
    * Gets the value of the 'ptsOt5' field.
    */
-  public java.lang.Integer getPtsOt5() {
+  public java.lang.Long getPtsOt5() {
     return ptsOt5;
   }
 
@@ -555,23 +553,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt5' field.
    * @param value the value to set.
    */
-  public void setPtsOt5(java.lang.Integer value) {
+  public void setPtsOt5(java.lang.Long value) {
     this.ptsOt5 = value;
-    setDirty(15);
+    setDirty(16);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt5' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt5Dirty(java.lang.Integer value) {
-    return isDirty(15);
+  public boolean isPtsOt5Dirty(java.lang.Long value) {
+    return isDirty(16);
   }
 
   /**
    * Gets the value of the 'ptsOt6' field.
    */
-  public java.lang.Integer getPtsOt6() {
+  public java.lang.Long getPtsOt6() {
     return ptsOt6;
   }
 
@@ -579,23 +577,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt6' field.
    * @param value the value to set.
    */
-  public void setPtsOt6(java.lang.Integer value) {
+  public void setPtsOt6(java.lang.Long value) {
     this.ptsOt6 = value;
-    setDirty(16);
+    setDirty(17);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt6' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt6Dirty(java.lang.Integer value) {
-    return isDirty(16);
+  public boolean isPtsOt6Dirty(java.lang.Long value) {
+    return isDirty(17);
   }
 
   /**
    * Gets the value of the 'ptsOt7' field.
    */
-  public java.lang.Integer getPtsOt7() {
+  public java.lang.Long getPtsOt7() {
     return ptsOt7;
   }
 
@@ -603,23 +601,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt7' field.
    * @param value the value to set.
    */
-  public void setPtsOt7(java.lang.Integer value) {
+  public void setPtsOt7(java.lang.Long value) {
     this.ptsOt7 = value;
-    setDirty(17);
+    setDirty(18);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt7' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt7Dirty(java.lang.Integer value) {
-    return isDirty(17);
+  public boolean isPtsOt7Dirty(java.lang.Long value) {
+    return isDirty(18);
   }
 
   /**
    * Gets the value of the 'ptsOt8' field.
    */
-  public java.lang.Integer getPtsOt8() {
+  public java.lang.Long getPtsOt8() {
     return ptsOt8;
   }
 
@@ -627,23 +625,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt8' field.
    * @param value the value to set.
    */
-  public void setPtsOt8(java.lang.Integer value) {
+  public void setPtsOt8(java.lang.Long value) {
     this.ptsOt8 = value;
-    setDirty(18);
+    setDirty(19);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt8' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt8Dirty(java.lang.Integer value) {
-    return isDirty(18);
+  public boolean isPtsOt8Dirty(java.lang.Long value) {
+    return isDirty(19);
   }
 
   /**
    * Gets the value of the 'ptsOt9' field.
    */
-  public java.lang.Integer getPtsOt9() {
+  public java.lang.Long getPtsOt9() {
     return ptsOt9;
   }
 
@@ -651,23 +649,23 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt9' field.
    * @param value the value to set.
    */
-  public void setPtsOt9(java.lang.Integer value) {
+  public void setPtsOt9(java.lang.Long value) {
     this.ptsOt9 = value;
-    setDirty(19);
+    setDirty(20);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt9' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt9Dirty(java.lang.Integer value) {
-    return isDirty(19);
+  public boolean isPtsOt9Dirty(java.lang.Long value) {
+    return isDirty(20);
   }
 
   /**
    * Gets the value of the 'ptsOt10' field.
    */
-  public java.lang.Integer getPtsOt10() {
+  public java.lang.Long getPtsOt10() {
     return ptsOt10;
   }
 
@@ -675,41 +673,41 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
    * Sets the value of the 'ptsOt10' field.
    * @param value the value to set.
    */
-  public void setPtsOt10(java.lang.Integer value) {
+  public void setPtsOt10(java.lang.Long value) {
     this.ptsOt10 = value;
-    setDirty(20);
+    setDirty(21);
   }
   
   /**
    * Checks the dirty status of the 'ptsOt10' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsOt10Dirty(java.lang.Integer value) {
-    return isDirty(20);
+  public boolean isPtsOt10Dirty(java.lang.Long value) {
+    return isDirty(21);
   }
 
   /**
-   * Gets the value of the 'pts' field.
+   * Gets the value of the 'lineScorePts' field.
    */
-  public java.lang.Integer getPts() {
-    return pts;
+  public java.lang.Long getLineScorePts() {
+    return lineScorePts;
   }
 
   /**
-   * Sets the value of the 'pts' field.
+   * Sets the value of the 'lineScorePts' field.
    * @param value the value to set.
    */
-  public void setPts(java.lang.Integer value) {
-    this.pts = value;
-    setDirty(21);
+  public void setLineScorePts(java.lang.Long value) {
+    this.lineScorePts = value;
+    setDirty(22);
   }
   
   /**
-   * Checks the dirty status of the 'pts' field. A field is dirty if it represents a change that has not yet been written to the database.
+   * Checks the dirty status of the 'lineScorePts' field. A field is dirty if it represents a change that has not yet been written to the database.
    * @param value the value to set.
    */
-  public boolean isPtsDirty(java.lang.Integer value) {
-    return isDirty(21);
+  public boolean isLineScorePtsDirty(java.lang.Long value) {
+    return isDirty(22);
   }
 
   /** Creates a new LineScore RecordBuilder */
@@ -756,28 +754,29 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<LineScore>
     implements org.apache.avro.data.RecordBuilder<LineScore> {
 
-    private java.lang.CharSequence gameDateEst;
-    private int gameSequence;
-    private int gameId;
-    private int teamId;
-    private java.lang.CharSequence teamAbbreviation;
+    private java.nio.ByteBuffer __g__dirty;
+    private java.lang.CharSequence gameLineScoreDateEst;
+    private long gameLineScoreSequence;
+    private long gameLineScoreId;
+    private long lineScoreTeamId;
+    private java.lang.CharSequence lineScoreTeamAbbreviation;
     private java.lang.CharSequence teamCityName;
     private java.lang.CharSequence teamWinsLosses;
-    private int ptsQtr1;
-    private int ptsQtr2;
-    private int ptsQtr3;
-    private int ptsQtr4;
-    private int ptsOt1;
-    private int ptsOt2;
-    private int ptsOt3;
-    private int ptsOt4;
-    private int ptsOt5;
-    private int ptsOt6;
-    private int ptsOt7;
-    private int ptsOt8;
-    private int ptsOt9;
-    private int ptsOt10;
-    private int pts;
+    private long ptsQtr1;
+    private long ptsQtr2;
+    private long ptsQtr3;
+    private long ptsQtr4;
+    private long ptsOt1;
+    private long ptsOt2;
+    private long ptsOt3;
+    private long ptsOt4;
+    private long ptsOt5;
+    private long ptsOt6;
+    private long ptsOt7;
+    private long ptsOt8;
+    private long ptsOt9;
+    private long ptsOt10;
+    private long lineScorePts;
 
     /** Creates a new Builder */
     private Builder() {
@@ -792,215 +791,219 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     /** Creates a Builder by copying an existing LineScore instance */
     private Builder(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore other) {
             super(gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.SCHEMA$);
-      if (isValidValue(fields()[0], other.gameDateEst)) {
-        this.gameDateEst = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.gameDateEst);
+      if (isValidValue(fields()[0], other.__g__dirty)) {
+        this.__g__dirty = (java.nio.ByteBuffer) data().deepCopy(fields()[0].schema(), other.__g__dirty);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.gameSequence)) {
-        this.gameSequence = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.gameSequence);
+      if (isValidValue(fields()[1], other.gameLineScoreDateEst)) {
+        this.gameLineScoreDateEst = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.gameLineScoreDateEst);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.gameId)) {
-        this.gameId = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.gameId);
+      if (isValidValue(fields()[2], other.gameLineScoreSequence)) {
+        this.gameLineScoreSequence = (java.lang.Long) data().deepCopy(fields()[2].schema(), other.gameLineScoreSequence);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.teamId)) {
-        this.teamId = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.teamId);
+      if (isValidValue(fields()[3], other.gameLineScoreId)) {
+        this.gameLineScoreId = (java.lang.Long) data().deepCopy(fields()[3].schema(), other.gameLineScoreId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.teamAbbreviation)) {
-        this.teamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.teamAbbreviation);
+      if (isValidValue(fields()[4], other.lineScoreTeamId)) {
+        this.lineScoreTeamId = (java.lang.Long) data().deepCopy(fields()[4].schema(), other.lineScoreTeamId);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.teamCityName)) {
-        this.teamCityName = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.teamCityName);
+      if (isValidValue(fields()[5], other.lineScoreTeamAbbreviation)) {
+        this.lineScoreTeamAbbreviation = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.lineScoreTeamAbbreviation);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.teamWinsLosses)) {
-        this.teamWinsLosses = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.teamWinsLosses);
+      if (isValidValue(fields()[6], other.teamCityName)) {
+        this.teamCityName = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.teamCityName);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.ptsQtr1)) {
-        this.ptsQtr1 = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.ptsQtr1);
+      if (isValidValue(fields()[7], other.teamWinsLosses)) {
+        this.teamWinsLosses = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.teamWinsLosses);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.ptsQtr2)) {
-        this.ptsQtr2 = (java.lang.Integer) data().deepCopy(fields()[8].schema(), other.ptsQtr2);
+      if (isValidValue(fields()[8], other.ptsQtr1)) {
+        this.ptsQtr1 = (java.lang.Long) data().deepCopy(fields()[8].schema(), other.ptsQtr1);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.ptsQtr3)) {
-        this.ptsQtr3 = (java.lang.Integer) data().deepCopy(fields()[9].schema(), other.ptsQtr3);
+      if (isValidValue(fields()[9], other.ptsQtr2)) {
+        this.ptsQtr2 = (java.lang.Long) data().deepCopy(fields()[9].schema(), other.ptsQtr2);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.ptsQtr4)) {
-        this.ptsQtr4 = (java.lang.Integer) data().deepCopy(fields()[10].schema(), other.ptsQtr4);
+      if (isValidValue(fields()[10], other.ptsQtr3)) {
+        this.ptsQtr3 = (java.lang.Long) data().deepCopy(fields()[10].schema(), other.ptsQtr3);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.ptsOt1)) {
-        this.ptsOt1 = (java.lang.Integer) data().deepCopy(fields()[11].schema(), other.ptsOt1);
+      if (isValidValue(fields()[11], other.ptsQtr4)) {
+        this.ptsQtr4 = (java.lang.Long) data().deepCopy(fields()[11].schema(), other.ptsQtr4);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.ptsOt2)) {
-        this.ptsOt2 = (java.lang.Integer) data().deepCopy(fields()[12].schema(), other.ptsOt2);
+      if (isValidValue(fields()[12], other.ptsOt1)) {
+        this.ptsOt1 = (java.lang.Long) data().deepCopy(fields()[12].schema(), other.ptsOt1);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.ptsOt3)) {
-        this.ptsOt3 = (java.lang.Integer) data().deepCopy(fields()[13].schema(), other.ptsOt3);
+      if (isValidValue(fields()[13], other.ptsOt2)) {
+        this.ptsOt2 = (java.lang.Long) data().deepCopy(fields()[13].schema(), other.ptsOt2);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.ptsOt4)) {
-        this.ptsOt4 = (java.lang.Integer) data().deepCopy(fields()[14].schema(), other.ptsOt4);
+      if (isValidValue(fields()[14], other.ptsOt3)) {
+        this.ptsOt3 = (java.lang.Long) data().deepCopy(fields()[14].schema(), other.ptsOt3);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.ptsOt5)) {
-        this.ptsOt5 = (java.lang.Integer) data().deepCopy(fields()[15].schema(), other.ptsOt5);
+      if (isValidValue(fields()[15], other.ptsOt4)) {
+        this.ptsOt4 = (java.lang.Long) data().deepCopy(fields()[15].schema(), other.ptsOt4);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.ptsOt6)) {
-        this.ptsOt6 = (java.lang.Integer) data().deepCopy(fields()[16].schema(), other.ptsOt6);
+      if (isValidValue(fields()[16], other.ptsOt5)) {
+        this.ptsOt5 = (java.lang.Long) data().deepCopy(fields()[16].schema(), other.ptsOt5);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.ptsOt7)) {
-        this.ptsOt7 = (java.lang.Integer) data().deepCopy(fields()[17].schema(), other.ptsOt7);
+      if (isValidValue(fields()[17], other.ptsOt6)) {
+        this.ptsOt6 = (java.lang.Long) data().deepCopy(fields()[17].schema(), other.ptsOt6);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.ptsOt8)) {
-        this.ptsOt8 = (java.lang.Integer) data().deepCopy(fields()[18].schema(), other.ptsOt8);
+      if (isValidValue(fields()[18], other.ptsOt7)) {
+        this.ptsOt7 = (java.lang.Long) data().deepCopy(fields()[18].schema(), other.ptsOt7);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.ptsOt9)) {
-        this.ptsOt9 = (java.lang.Integer) data().deepCopy(fields()[19].schema(), other.ptsOt9);
+      if (isValidValue(fields()[19], other.ptsOt8)) {
+        this.ptsOt8 = (java.lang.Long) data().deepCopy(fields()[19].schema(), other.ptsOt8);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.ptsOt10)) {
-        this.ptsOt10 = (java.lang.Integer) data().deepCopy(fields()[20].schema(), other.ptsOt10);
+      if (isValidValue(fields()[20], other.ptsOt9)) {
+        this.ptsOt9 = (java.lang.Long) data().deepCopy(fields()[20].schema(), other.ptsOt9);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.pts)) {
-        this.pts = (java.lang.Integer) data().deepCopy(fields()[21].schema(), other.pts);
+      if (isValidValue(fields()[21], other.ptsOt10)) {
+        this.ptsOt10 = (java.lang.Long) data().deepCopy(fields()[21].schema(), other.ptsOt10);
         fieldSetFlags()[21] = true;
+      }
+      if (isValidValue(fields()[22], other.lineScorePts)) {
+        this.lineScorePts = (java.lang.Long) data().deepCopy(fields()[22].schema(), other.lineScorePts);
+        fieldSetFlags()[22] = true;
       }
     }
 
-    /** Gets the value of the 'gameDateEst' field */
-    public java.lang.CharSequence getGameDateEst() {
-      return gameDateEst;
+    /** Gets the value of the 'gameLineScoreDateEst' field */
+    public java.lang.CharSequence getGameLineScoreDateEst() {
+      return gameLineScoreDateEst;
     }
     
-    /** Sets the value of the 'gameDateEst' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameDateEst(java.lang.CharSequence value) {
-      validate(fields()[0], value);
-      this.gameDateEst = value;
-      fieldSetFlags()[0] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'gameDateEst' field has been set */
-    public boolean hasGameDateEst() {
-      return fieldSetFlags()[0];
-    }
-    
-    /** Clears the value of the 'gameDateEst' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameDateEst() {
-      gameDateEst = null;
-      fieldSetFlags()[0] = false;
-      return this;
-    }
-    
-    /** Gets the value of the 'gameSequence' field */
-    public java.lang.Integer getGameSequence() {
-      return gameSequence;
-    }
-    
-    /** Sets the value of the 'gameSequence' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameSequence(int value) {
+    /** Sets the value of the 'gameLineScoreDateEst' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameLineScoreDateEst(java.lang.CharSequence value) {
       validate(fields()[1], value);
-      this.gameSequence = value;
+      this.gameLineScoreDateEst = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameSequence' field has been set */
-    public boolean hasGameSequence() {
+    /** Checks whether the 'gameLineScoreDateEst' field has been set */
+    public boolean hasGameLineScoreDateEst() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'gameSequence' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameSequence() {
+    /** Clears the value of the 'gameLineScoreDateEst' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameLineScoreDateEst() {
+      gameLineScoreDateEst = null;
       fieldSetFlags()[1] = false;
       return this;
     }
     
-    /** Gets the value of the 'gameId' field */
-    public java.lang.Integer getGameId() {
-      return gameId;
+    /** Gets the value of the 'gameLineScoreSequence' field */
+    public java.lang.Long getGameLineScoreSequence() {
+      return gameLineScoreSequence;
     }
     
-    /** Sets the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameId(int value) {
+    /** Sets the value of the 'gameLineScoreSequence' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameLineScoreSequence(long value) {
       validate(fields()[2], value);
-      this.gameId = value;
+      this.gameLineScoreSequence = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'gameId' field has been set */
-    public boolean hasGameId() {
+    /** Checks whether the 'gameLineScoreSequence' field has been set */
+    public boolean hasGameLineScoreSequence() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'gameId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameId() {
+    /** Clears the value of the 'gameLineScoreSequence' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameLineScoreSequence() {
       fieldSetFlags()[2] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamId' field */
-    public java.lang.Integer getTeamId() {
-      return teamId;
+    /** Gets the value of the 'gameLineScoreId' field */
+    public java.lang.Long getGameLineScoreId() {
+      return gameLineScoreId;
     }
     
-    /** Sets the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setTeamId(int value) {
+    /** Sets the value of the 'gameLineScoreId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setGameLineScoreId(long value) {
       validate(fields()[3], value);
-      this.teamId = value;
+      this.gameLineScoreId = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamId' field has been set */
-    public boolean hasTeamId() {
+    /** Checks whether the 'gameLineScoreId' field has been set */
+    public boolean hasGameLineScoreId() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'teamId' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearTeamId() {
+    /** Clears the value of the 'gameLineScoreId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearGameLineScoreId() {
       fieldSetFlags()[3] = false;
       return this;
     }
     
-    /** Gets the value of the 'teamAbbreviation' field */
-    public java.lang.CharSequence getTeamAbbreviation() {
-      return teamAbbreviation;
+    /** Gets the value of the 'lineScoreTeamId' field */
+    public java.lang.Long getLineScoreTeamId() {
+      return lineScoreTeamId;
     }
     
-    /** Sets the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setTeamAbbreviation(java.lang.CharSequence value) {
+    /** Sets the value of the 'lineScoreTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setLineScoreTeamId(long value) {
       validate(fields()[4], value);
-      this.teamAbbreviation = value;
+      this.lineScoreTeamId = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'teamAbbreviation' field has been set */
-    public boolean hasTeamAbbreviation() {
+    /** Checks whether the 'lineScoreTeamId' field has been set */
+    public boolean hasLineScoreTeamId() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'teamAbbreviation' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearTeamAbbreviation() {
-      teamAbbreviation = null;
+    /** Clears the value of the 'lineScoreTeamId' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearLineScoreTeamId() {
       fieldSetFlags()[4] = false;
+      return this;
+    }
+    
+    /** Gets the value of the 'lineScoreTeamAbbreviation' field */
+    public java.lang.CharSequence getLineScoreTeamAbbreviation() {
+      return lineScoreTeamAbbreviation;
+    }
+    
+    /** Sets the value of the 'lineScoreTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setLineScoreTeamAbbreviation(java.lang.CharSequence value) {
+      validate(fields()[5], value);
+      this.lineScoreTeamAbbreviation = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'lineScoreTeamAbbreviation' field has been set */
+    public boolean hasLineScoreTeamAbbreviation() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'lineScoreTeamAbbreviation' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearLineScoreTeamAbbreviation() {
+      lineScoreTeamAbbreviation = null;
+      fieldSetFlags()[5] = false;
       return this;
     }
     
@@ -1011,21 +1014,21 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamCityName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setTeamCityName(java.lang.CharSequence value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.teamCityName = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'teamCityName' field has been set */
     public boolean hasTeamCityName() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'teamCityName' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearTeamCityName() {
       teamCityName = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
     
@@ -1036,381 +1039,381 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     
     /** Sets the value of the 'teamWinsLosses' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setTeamWinsLosses(java.lang.CharSequence value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.teamWinsLosses = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'teamWinsLosses' field has been set */
     public boolean hasTeamWinsLosses() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'teamWinsLosses' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearTeamWinsLosses() {
       teamWinsLosses = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsQtr1' field */
-    public java.lang.Integer getPtsQtr1() {
+    public java.lang.Long getPtsQtr1() {
       return ptsQtr1;
     }
     
     /** Sets the value of the 'ptsQtr1' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr1(int value) {
-      validate(fields()[7], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr1(long value) {
+      validate(fields()[8], value);
       this.ptsQtr1 = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsQtr1' field has been set */
     public boolean hasPtsQtr1() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'ptsQtr1' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsQtr1() {
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsQtr2' field */
-    public java.lang.Integer getPtsQtr2() {
+    public java.lang.Long getPtsQtr2() {
       return ptsQtr2;
     }
     
     /** Sets the value of the 'ptsQtr2' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr2(int value) {
-      validate(fields()[8], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr2(long value) {
+      validate(fields()[9], value);
       this.ptsQtr2 = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsQtr2' field has been set */
     public boolean hasPtsQtr2() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'ptsQtr2' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsQtr2() {
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsQtr3' field */
-    public java.lang.Integer getPtsQtr3() {
+    public java.lang.Long getPtsQtr3() {
       return ptsQtr3;
     }
     
     /** Sets the value of the 'ptsQtr3' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr3(int value) {
-      validate(fields()[9], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr3(long value) {
+      validate(fields()[10], value);
       this.ptsQtr3 = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsQtr3' field has been set */
     public boolean hasPtsQtr3() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
     
     /** Clears the value of the 'ptsQtr3' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsQtr3() {
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsQtr4' field */
-    public java.lang.Integer getPtsQtr4() {
+    public java.lang.Long getPtsQtr4() {
       return ptsQtr4;
     }
     
     /** Sets the value of the 'ptsQtr4' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr4(int value) {
-      validate(fields()[10], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsQtr4(long value) {
+      validate(fields()[11], value);
       this.ptsQtr4 = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsQtr4' field has been set */
     public boolean hasPtsQtr4() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
     
     /** Clears the value of the 'ptsQtr4' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsQtr4() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt1' field */
-    public java.lang.Integer getPtsOt1() {
+    public java.lang.Long getPtsOt1() {
       return ptsOt1;
     }
     
     /** Sets the value of the 'ptsOt1' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt1(int value) {
-      validate(fields()[11], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt1(long value) {
+      validate(fields()[12], value);
       this.ptsOt1 = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt1' field has been set */
     public boolean hasPtsOt1() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
     
     /** Clears the value of the 'ptsOt1' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt1() {
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt2' field */
-    public java.lang.Integer getPtsOt2() {
+    public java.lang.Long getPtsOt2() {
       return ptsOt2;
     }
     
     /** Sets the value of the 'ptsOt2' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt2(int value) {
-      validate(fields()[12], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt2(long value) {
+      validate(fields()[13], value);
       this.ptsOt2 = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt2' field has been set */
     public boolean hasPtsOt2() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
     
     /** Clears the value of the 'ptsOt2' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt2() {
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt3' field */
-    public java.lang.Integer getPtsOt3() {
+    public java.lang.Long getPtsOt3() {
       return ptsOt3;
     }
     
     /** Sets the value of the 'ptsOt3' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt3(int value) {
-      validate(fields()[13], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt3(long value) {
+      validate(fields()[14], value);
       this.ptsOt3 = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt3' field has been set */
     public boolean hasPtsOt3() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
     
     /** Clears the value of the 'ptsOt3' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt3() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt4' field */
-    public java.lang.Integer getPtsOt4() {
+    public java.lang.Long getPtsOt4() {
       return ptsOt4;
     }
     
     /** Sets the value of the 'ptsOt4' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt4(int value) {
-      validate(fields()[14], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt4(long value) {
+      validate(fields()[15], value);
       this.ptsOt4 = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt4' field has been set */
     public boolean hasPtsOt4() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
     
     /** Clears the value of the 'ptsOt4' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt4() {
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt5' field */
-    public java.lang.Integer getPtsOt5() {
+    public java.lang.Long getPtsOt5() {
       return ptsOt5;
     }
     
     /** Sets the value of the 'ptsOt5' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt5(int value) {
-      validate(fields()[15], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt5(long value) {
+      validate(fields()[16], value);
       this.ptsOt5 = value;
-      fieldSetFlags()[15] = true;
+      fieldSetFlags()[16] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt5' field has been set */
     public boolean hasPtsOt5() {
-      return fieldSetFlags()[15];
+      return fieldSetFlags()[16];
     }
     
     /** Clears the value of the 'ptsOt5' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt5() {
-      fieldSetFlags()[15] = false;
+      fieldSetFlags()[16] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt6' field */
-    public java.lang.Integer getPtsOt6() {
+    public java.lang.Long getPtsOt6() {
       return ptsOt6;
     }
     
     /** Sets the value of the 'ptsOt6' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt6(int value) {
-      validate(fields()[16], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt6(long value) {
+      validate(fields()[17], value);
       this.ptsOt6 = value;
-      fieldSetFlags()[16] = true;
+      fieldSetFlags()[17] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt6' field has been set */
     public boolean hasPtsOt6() {
-      return fieldSetFlags()[16];
+      return fieldSetFlags()[17];
     }
     
     /** Clears the value of the 'ptsOt6' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt6() {
-      fieldSetFlags()[16] = false;
+      fieldSetFlags()[17] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt7' field */
-    public java.lang.Integer getPtsOt7() {
+    public java.lang.Long getPtsOt7() {
       return ptsOt7;
     }
     
     /** Sets the value of the 'ptsOt7' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt7(int value) {
-      validate(fields()[17], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt7(long value) {
+      validate(fields()[18], value);
       this.ptsOt7 = value;
-      fieldSetFlags()[17] = true;
+      fieldSetFlags()[18] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt7' field has been set */
     public boolean hasPtsOt7() {
-      return fieldSetFlags()[17];
+      return fieldSetFlags()[18];
     }
     
     /** Clears the value of the 'ptsOt7' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt7() {
-      fieldSetFlags()[17] = false;
+      fieldSetFlags()[18] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt8' field */
-    public java.lang.Integer getPtsOt8() {
+    public java.lang.Long getPtsOt8() {
       return ptsOt8;
     }
     
     /** Sets the value of the 'ptsOt8' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt8(int value) {
-      validate(fields()[18], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt8(long value) {
+      validate(fields()[19], value);
       this.ptsOt8 = value;
-      fieldSetFlags()[18] = true;
+      fieldSetFlags()[19] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt8' field has been set */
     public boolean hasPtsOt8() {
-      return fieldSetFlags()[18];
+      return fieldSetFlags()[19];
     }
     
     /** Clears the value of the 'ptsOt8' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt8() {
-      fieldSetFlags()[18] = false;
+      fieldSetFlags()[19] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt9' field */
-    public java.lang.Integer getPtsOt9() {
+    public java.lang.Long getPtsOt9() {
       return ptsOt9;
     }
     
     /** Sets the value of the 'ptsOt9' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt9(int value) {
-      validate(fields()[19], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt9(long value) {
+      validate(fields()[20], value);
       this.ptsOt9 = value;
-      fieldSetFlags()[19] = true;
+      fieldSetFlags()[20] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt9' field has been set */
     public boolean hasPtsOt9() {
-      return fieldSetFlags()[19];
+      return fieldSetFlags()[20];
     }
     
     /** Clears the value of the 'ptsOt9' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt9() {
-      fieldSetFlags()[19] = false;
+      fieldSetFlags()[20] = false;
       return this;
     }
     
     /** Gets the value of the 'ptsOt10' field */
-    public java.lang.Integer getPtsOt10() {
+    public java.lang.Long getPtsOt10() {
       return ptsOt10;
     }
     
     /** Sets the value of the 'ptsOt10' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt10(int value) {
-      validate(fields()[20], value);
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPtsOt10(long value) {
+      validate(fields()[21], value);
       this.ptsOt10 = value;
-      fieldSetFlags()[20] = true;
+      fieldSetFlags()[21] = true;
       return this; 
     }
     
     /** Checks whether the 'ptsOt10' field has been set */
     public boolean hasPtsOt10() {
-      return fieldSetFlags()[20];
+      return fieldSetFlags()[21];
     }
     
     /** Clears the value of the 'ptsOt10' field */
     public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPtsOt10() {
-      fieldSetFlags()[20] = false;
+      fieldSetFlags()[21] = false;
       return this;
     }
     
-    /** Gets the value of the 'pts' field */
-    public java.lang.Integer getPts() {
-      return pts;
+    /** Gets the value of the 'lineScorePts' field */
+    public java.lang.Long getLineScorePts() {
+      return lineScorePts;
     }
     
-    /** Sets the value of the 'pts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setPts(int value) {
-      validate(fields()[21], value);
-      this.pts = value;
-      fieldSetFlags()[21] = true;
+    /** Sets the value of the 'lineScorePts' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder setLineScorePts(long value) {
+      validate(fields()[22], value);
+      this.lineScorePts = value;
+      fieldSetFlags()[22] = true;
       return this; 
     }
     
-    /** Checks whether the 'pts' field has been set */
-    public boolean hasPts() {
-      return fieldSetFlags()[21];
+    /** Checks whether the 'lineScorePts' field has been set */
+    public boolean hasLineScorePts() {
+      return fieldSetFlags()[22];
     }
     
-    /** Clears the value of the 'pts' field */
-    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearPts() {
-      fieldSetFlags()[21] = false;
+    /** Clears the value of the 'lineScorePts' field */
+    public gov.nasa.jpl.xdata.nba.impoexpo.structs.LineScore.Builder clearLineScorePts() {
+      fieldSetFlags()[22] = false;
       return this;
     }
     
@@ -1418,28 +1421,29 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
     public LineScore build() {
       try {
         LineScore record = new LineScore();
-        record.gameDateEst = fieldSetFlags()[0] ? this.gameDateEst : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.gameSequence = fieldSetFlags()[1] ? this.gameSequence : (java.lang.Integer) defaultValue(fields()[1]);
-        record.gameId = fieldSetFlags()[2] ? this.gameId : (java.lang.Integer) defaultValue(fields()[2]);
-        record.teamId = fieldSetFlags()[3] ? this.teamId : (java.lang.Integer) defaultValue(fields()[3]);
-        record.teamAbbreviation = fieldSetFlags()[4] ? this.teamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.teamCityName = fieldSetFlags()[5] ? this.teamCityName : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.teamWinsLosses = fieldSetFlags()[6] ? this.teamWinsLosses : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.ptsQtr1 = fieldSetFlags()[7] ? this.ptsQtr1 : (java.lang.Integer) defaultValue(fields()[7]);
-        record.ptsQtr2 = fieldSetFlags()[8] ? this.ptsQtr2 : (java.lang.Integer) defaultValue(fields()[8]);
-        record.ptsQtr3 = fieldSetFlags()[9] ? this.ptsQtr3 : (java.lang.Integer) defaultValue(fields()[9]);
-        record.ptsQtr4 = fieldSetFlags()[10] ? this.ptsQtr4 : (java.lang.Integer) defaultValue(fields()[10]);
-        record.ptsOt1 = fieldSetFlags()[11] ? this.ptsOt1 : (java.lang.Integer) defaultValue(fields()[11]);
-        record.ptsOt2 = fieldSetFlags()[12] ? this.ptsOt2 : (java.lang.Integer) defaultValue(fields()[12]);
-        record.ptsOt3 = fieldSetFlags()[13] ? this.ptsOt3 : (java.lang.Integer) defaultValue(fields()[13]);
-        record.ptsOt4 = fieldSetFlags()[14] ? this.ptsOt4 : (java.lang.Integer) defaultValue(fields()[14]);
-        record.ptsOt5 = fieldSetFlags()[15] ? this.ptsOt5 : (java.lang.Integer) defaultValue(fields()[15]);
-        record.ptsOt6 = fieldSetFlags()[16] ? this.ptsOt6 : (java.lang.Integer) defaultValue(fields()[16]);
-        record.ptsOt7 = fieldSetFlags()[17] ? this.ptsOt7 : (java.lang.Integer) defaultValue(fields()[17]);
-        record.ptsOt8 = fieldSetFlags()[18] ? this.ptsOt8 : (java.lang.Integer) defaultValue(fields()[18]);
-        record.ptsOt9 = fieldSetFlags()[19] ? this.ptsOt9 : (java.lang.Integer) defaultValue(fields()[19]);
-        record.ptsOt10 = fieldSetFlags()[20] ? this.ptsOt10 : (java.lang.Integer) defaultValue(fields()[20]);
-        record.pts = fieldSetFlags()[21] ? this.pts : (java.lang.Integer) defaultValue(fields()[21]);
+        record.__g__dirty = fieldSetFlags()[0] ? this.__g__dirty : (java.nio.ByteBuffer) java.nio.ByteBuffer.wrap(new byte[3]);
+        record.gameLineScoreDateEst = fieldSetFlags()[1] ? this.gameLineScoreDateEst : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.gameLineScoreSequence = fieldSetFlags()[2] ? this.gameLineScoreSequence : (java.lang.Long) defaultValue(fields()[2]);
+        record.gameLineScoreId = fieldSetFlags()[3] ? this.gameLineScoreId : (java.lang.Long) defaultValue(fields()[3]);
+        record.lineScoreTeamId = fieldSetFlags()[4] ? this.lineScoreTeamId : (java.lang.Long) defaultValue(fields()[4]);
+        record.lineScoreTeamAbbreviation = fieldSetFlags()[5] ? this.lineScoreTeamAbbreviation : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.teamCityName = fieldSetFlags()[6] ? this.teamCityName : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.teamWinsLosses = fieldSetFlags()[7] ? this.teamWinsLosses : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.ptsQtr1 = fieldSetFlags()[8] ? this.ptsQtr1 : (java.lang.Long) defaultValue(fields()[8]);
+        record.ptsQtr2 = fieldSetFlags()[9] ? this.ptsQtr2 : (java.lang.Long) defaultValue(fields()[9]);
+        record.ptsQtr3 = fieldSetFlags()[10] ? this.ptsQtr3 : (java.lang.Long) defaultValue(fields()[10]);
+        record.ptsQtr4 = fieldSetFlags()[11] ? this.ptsQtr4 : (java.lang.Long) defaultValue(fields()[11]);
+        record.ptsOt1 = fieldSetFlags()[12] ? this.ptsOt1 : (java.lang.Long) defaultValue(fields()[12]);
+        record.ptsOt2 = fieldSetFlags()[13] ? this.ptsOt2 : (java.lang.Long) defaultValue(fields()[13]);
+        record.ptsOt3 = fieldSetFlags()[14] ? this.ptsOt3 : (java.lang.Long) defaultValue(fields()[14]);
+        record.ptsOt4 = fieldSetFlags()[15] ? this.ptsOt4 : (java.lang.Long) defaultValue(fields()[15]);
+        record.ptsOt5 = fieldSetFlags()[16] ? this.ptsOt5 : (java.lang.Long) defaultValue(fields()[16]);
+        record.ptsOt6 = fieldSetFlags()[17] ? this.ptsOt6 : (java.lang.Long) defaultValue(fields()[17]);
+        record.ptsOt7 = fieldSetFlags()[18] ? this.ptsOt7 : (java.lang.Long) defaultValue(fields()[18]);
+        record.ptsOt8 = fieldSetFlags()[19] ? this.ptsOt8 : (java.lang.Long) defaultValue(fields()[19]);
+        record.ptsOt9 = fieldSetFlags()[20] ? this.ptsOt9 : (java.lang.Long) defaultValue(fields()[20]);
+        record.ptsOt10 = fieldSetFlags()[21] ? this.ptsOt10 : (java.lang.Long) defaultValue(fields()[21]);
+        record.lineScorePts = fieldSetFlags()[22] ? this.lineScorePts : (java.lang.Long) defaultValue(fields()[22]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
@@ -1461,118 +1465,118 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
   
       private Tombstone() { }
   
-	  		  /**
-	   * Gets the value of the 'gameDateEst' field.
+	  				  /**
+	   * Gets the value of the 'gameLineScoreDateEst' field.
 		   */
-	  public java.lang.CharSequence getGameDateEst() {
+	  public java.lang.CharSequence getGameLineScoreDateEst() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameDateEst' field.
+	   * Sets the value of the 'gameLineScoreDateEst' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameDateEst(java.lang.CharSequence value) {
+	  public void setGameLineScoreDateEst(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLineScoreDateEst' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameDateEstDirty(java.lang.CharSequence value) {
+	  public boolean isGameLineScoreDateEstDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'gameSequence' field.
+	   * Gets the value of the 'gameLineScoreSequence' field.
 		   */
-	  public java.lang.Integer getGameSequence() {
+	  public java.lang.Long getGameLineScoreSequence() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameSequence' field.
+	   * Sets the value of the 'gameLineScoreSequence' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameSequence(java.lang.Integer value) {
+	  public void setGameLineScoreSequence(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLineScoreSequence' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameSequenceDirty(java.lang.Integer value) {
+	  public boolean isGameLineScoreSequenceDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'gameId' field.
+	   * Gets the value of the 'gameLineScoreId' field.
 		   */
-	  public java.lang.Integer getGameId() {
+	  public java.lang.Long getGameLineScoreId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'gameId' field.
+	   * Sets the value of the 'gameLineScoreId' field.
 		   * @param value the value to set.
 	   */
-	  public void setGameId(java.lang.Integer value) {
+	  public void setGameLineScoreId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'gameId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'gameLineScoreId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isGameIdDirty(java.lang.Integer value) {
+	  public boolean isGameLineScoreIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamId' field.
+	   * Gets the value of the 'lineScoreTeamId' field.
 		   */
-	  public java.lang.Integer getTeamId() {
+	  public java.lang.Long getLineScoreTeamId() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamId' field.
+	   * Sets the value of the 'lineScoreTeamId' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamId(java.lang.Integer value) {
+	  public void setLineScoreTeamId(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamId' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'lineScoreTeamId' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamIdDirty(java.lang.Integer value) {
+	  public boolean isLineScoreTeamIdDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'teamAbbreviation' field.
+	   * Gets the value of the 'lineScoreTeamAbbreviation' field.
 		   */
-	  public java.lang.CharSequence getTeamAbbreviation() {
+	  public java.lang.CharSequence getLineScoreTeamAbbreviation() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'teamAbbreviation' field.
+	   * Sets the value of the 'lineScoreTeamAbbreviation' field.
 		   * @param value the value to set.
 	   */
-	  public void setTeamAbbreviation(java.lang.CharSequence value) {
+	  public void setLineScoreTeamAbbreviation(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'teamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'lineScoreTeamAbbreviation' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isTeamAbbreviationDirty(java.lang.CharSequence value) {
+	  public boolean isLineScoreTeamAbbreviationDirty(java.lang.CharSequence value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
@@ -1625,7 +1629,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 				  /**
 	   * Gets the value of the 'ptsQtr1' field.
 		   */
-	  public java.lang.Integer getPtsQtr1() {
+	  public java.lang.Long getPtsQtr1() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1633,7 +1637,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsQtr1' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsQtr1(java.lang.Integer value) {
+	  public void setPtsQtr1(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1641,14 +1645,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsQtr1' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsQtr1Dirty(java.lang.Integer value) {
+	  public boolean isPtsQtr1Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsQtr2' field.
 		   */
-	  public java.lang.Integer getPtsQtr2() {
+	  public java.lang.Long getPtsQtr2() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1656,7 +1660,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsQtr2' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsQtr2(java.lang.Integer value) {
+	  public void setPtsQtr2(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1664,14 +1668,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsQtr2' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsQtr2Dirty(java.lang.Integer value) {
+	  public boolean isPtsQtr2Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsQtr3' field.
 		   */
-	  public java.lang.Integer getPtsQtr3() {
+	  public java.lang.Long getPtsQtr3() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1679,7 +1683,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsQtr3' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsQtr3(java.lang.Integer value) {
+	  public void setPtsQtr3(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1687,14 +1691,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsQtr3' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsQtr3Dirty(java.lang.Integer value) {
+	  public boolean isPtsQtr3Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsQtr4' field.
 		   */
-	  public java.lang.Integer getPtsQtr4() {
+	  public java.lang.Long getPtsQtr4() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1702,7 +1706,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsQtr4' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsQtr4(java.lang.Integer value) {
+	  public void setPtsQtr4(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1710,14 +1714,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsQtr4' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsQtr4Dirty(java.lang.Integer value) {
+	  public boolean isPtsQtr4Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt1' field.
 		   */
-	  public java.lang.Integer getPtsOt1() {
+	  public java.lang.Long getPtsOt1() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1725,7 +1729,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt1' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt1(java.lang.Integer value) {
+	  public void setPtsOt1(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1733,14 +1737,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt1' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt1Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt1Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt2' field.
 		   */
-	  public java.lang.Integer getPtsOt2() {
+	  public java.lang.Long getPtsOt2() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1748,7 +1752,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt2' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt2(java.lang.Integer value) {
+	  public void setPtsOt2(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1756,14 +1760,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt2' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt2Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt2Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt3' field.
 		   */
-	  public java.lang.Integer getPtsOt3() {
+	  public java.lang.Long getPtsOt3() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1771,7 +1775,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt3' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt3(java.lang.Integer value) {
+	  public void setPtsOt3(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1779,14 +1783,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt3' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt3Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt3Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt4' field.
 		   */
-	  public java.lang.Integer getPtsOt4() {
+	  public java.lang.Long getPtsOt4() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1794,7 +1798,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt4' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt4(java.lang.Integer value) {
+	  public void setPtsOt4(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1802,14 +1806,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt4' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt4Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt4Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt5' field.
 		   */
-	  public java.lang.Integer getPtsOt5() {
+	  public java.lang.Long getPtsOt5() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1817,7 +1821,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt5' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt5(java.lang.Integer value) {
+	  public void setPtsOt5(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1825,14 +1829,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt5' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt5Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt5Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt6' field.
 		   */
-	  public java.lang.Integer getPtsOt6() {
+	  public java.lang.Long getPtsOt6() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1840,7 +1844,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt6' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt6(java.lang.Integer value) {
+	  public void setPtsOt6(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1848,14 +1852,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt6' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt6Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt6Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt7' field.
 		   */
-	  public java.lang.Integer getPtsOt7() {
+	  public java.lang.Long getPtsOt7() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1863,7 +1867,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt7' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt7(java.lang.Integer value) {
+	  public void setPtsOt7(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1871,14 +1875,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt7' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt7Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt7Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt8' field.
 		   */
-	  public java.lang.Integer getPtsOt8() {
+	  public java.lang.Long getPtsOt8() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1886,7 +1890,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt8' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt8(java.lang.Integer value) {
+	  public void setPtsOt8(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1894,14 +1898,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt8' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt8Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt8Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt9' field.
 		   */
-	  public java.lang.Integer getPtsOt9() {
+	  public java.lang.Long getPtsOt9() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1909,7 +1913,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt9' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt9(java.lang.Integer value) {
+	  public void setPtsOt9(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1917,14 +1921,14 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt9' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt9Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt9Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
 	   * Gets the value of the 'ptsOt10' field.
 		   */
-	  public java.lang.Integer getPtsOt10() {
+	  public java.lang.Long getPtsOt10() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
@@ -1932,7 +1936,7 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Sets the value of the 'ptsOt10' field.
 		   * @param value the value to set.
 	   */
-	  public void setPtsOt10(java.lang.Integer value) {
+	  public void setPtsOt10(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
@@ -1940,30 +1944,30 @@ public class LineScore extends org.apache.gora.persistency.impl.PersistentBase i
 	   * Checks the dirty status of the 'ptsOt10' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsOt10Dirty(java.lang.Integer value) {
+	  public boolean isPtsOt10Dirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
 				  /**
-	   * Gets the value of the 'pts' field.
+	   * Gets the value of the 'lineScorePts' field.
 		   */
-	  public java.lang.Integer getPts() {
+	  public java.lang.Long getLineScorePts() {
 	    throw new java.lang.UnsupportedOperationException("Get is not supported on tombstones");
 	  }
 	
 	  /**
-	   * Sets the value of the 'pts' field.
+	   * Sets the value of the 'lineScorePts' field.
 		   * @param value the value to set.
 	   */
-	  public void setPts(java.lang.Integer value) {
+	  public void setLineScorePts(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("Set is not supported on tombstones");
 	  }
 	  
 	  /**
-	   * Checks the dirty status of the 'pts' field. A field is dirty if it represents a change that has not yet been written to the database.
+	   * Checks the dirty status of the 'lineScorePts' field. A field is dirty if it represents a change that has not yet been written to the database.
 		   * @param value the value to set.
 	   */
-	  public boolean isPtsDirty(java.lang.Integer value) {
+	  public boolean isLineScorePtsDirty(java.lang.Long value) {
 	    throw new java.lang.UnsupportedOperationException("IsDirty is not supported on tombstones");
 	  }
 	
