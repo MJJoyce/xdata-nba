@@ -50,7 +50,7 @@ def process_team_cmts_per_game(team_id):
     # Get list of game IDs that team has lost
     q_loss = TEAM_LOSS_QUERY.format(team_id=urllib.quote(team_id.encode('utf-8')))
     team_loss_list = requests.get(q_loss).json()['response']['docs']
-    
+
     # Get list of game IDs that team has won
     q_win = TEAM_WIN_QUERY.format(team_id=urllib.quote(team_id.encode('utf-8')))
     team_win_list = requests.get(q_win).json()['response']['docs']
@@ -88,56 +88,55 @@ def process_team_cmts(team_id, team_game_list, status):
 
         # Set all pos/neg fields
         team_cmts_per_game.append({
-            'id': game_id,
-            status+'_pos_cmt_count': {"add" : 0},
-            status+'_neg_cmt_count': {"add" : 0},
-            status+'_pos_pct': {"add" : 0},
-            status+'_neg_pct': {"add" : 0}
+            "id": game_id,
+            status+"_pos_cmt_count": {"set" : 0},
+            status+"_neg_cmt_count": {"set" : 0},
+            status+"_pos_pct": {"set" : 0},
+            status+"_neg_pct": {"set" : 0}
             })
 
         # Calculate totals for pos/neg comments
+        pos, neg, pos_pct, neg_pct = 0, 0, 0, 0
         for tgc in team_comments:
-            if tgc['sentiment'] == 'pos':
-                team_cmts_per_game[-1][status+'_pos_cmt_count'] += 1
+            if tgc["sentiment"] == "pos":
+                pos += 1
             else:
-                team_cmts_per_game[-1][status+'_neg_cmt_count'] += 1
+                neg += 1
 
-        pos = team_cmts_per_game[-1][status+'_pos_cmt_count']
-        neg = team_cmts_per_game[-1][status+'_neg_cmt_count']
+        # Format for solr update 
         total = pos + neg
+        team_cmts_per_game[-1][status+"_pos_cmt_count"] = {"set" : pos}
+        team_cmts_per_game[-1][status+"_neg_cmt_count"] = {"set" : neg}
+
+        # Calculate neg/pos cmt percentage
         if total != 0:
-            team_cmts_per_game[-1][status+'_pos_pct'] = pos / float(total)
-            team_cmts_per_game[-1][status+'_neg_pct'] = neg / float(total)
-    
+            pos_pct = pos / float(total)
+            neg_pct = neg / float(total)
+            team_cmts_per_game[-1][status+"_pos_pct"] = {"set" : pos_pct}
+            team_cmts_per_game[-1][status+"_neg_pct"] = {"set" : neg_pct}
+
     return team_cmts_per_game
 
 
 # Get a list of all TEAM IDs that have win/lose data in the game-result data.
 team_result = requests.get(TEAM_ID_QUERY).json()
-
-winning_team_list = team_result['facet_counts']['facet_fields']['winner_id']
-lossing_team_list = team_result['facet_counts']['facet_fields']['loser_id']
+winning_team_list = team_result["facet_counts"]["facet_fields"]["winner_id"]
+lossing_team_list = team_result["facet_counts"]["facet_fields"]["loser_id"]
 wlist = winning_team_list[::2]
 llist = lossing_team_list[::2]
 team_list = list(set(wlist + llist))
-team_list = [u'1610612766', u'1610612737']#, u'1610612762']
-print team_list
 
+# thread process
 thread_pool = multiprocessing.Pool(TOTAL_THREADS)
 results = thread_pool.map(process_team_cmts_per_game, team_list)
 thread_pool.close()
 thread_pool.join()
-# print len(results[0]),len(results[1])
-# print type(results), len(results)
-print results
 
+# Prepare data to ingest into Solr
 results = list(itertools.chain.from_iterable(results))
-print len(results)
-solr_url = 'http://localhost:8983/solr/game-comments-results/update?commit=true'
+solr_url = 'http://localhost:8983/solr/game-results/update?commit=true'
 data = json.dumps(results)
-# print data
-# print results[1], len(data)
-# req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
-# print req
-# urllib2.urlopen(req)
 
+# Create request and send request to Solr
+req = urllib2.Request(solr_url, data, {'Content-Type': 'application/json'})
+urllib2.urlopen(req)
