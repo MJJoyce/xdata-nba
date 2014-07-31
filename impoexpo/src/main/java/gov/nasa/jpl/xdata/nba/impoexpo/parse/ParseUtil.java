@@ -143,7 +143,7 @@ public class ParseUtil {
     return notebook;
   }
 
-  public static GameStats parseGameStats(GameStats gameStats, String string) throws IOException, ParseException {
+  public static GameStats parseGameStats(GameStats.Builder gameStats, String string) throws IOException, ParseException {
     LOG.info("Parsing GameStats: {}", string);
     FileReader reader = new FileReader(string);
 
@@ -163,12 +163,12 @@ public class ParseUtil {
     List<InactivePlayers> inactivePlayers = parseInactivePlayers(jsonObject);
     AvailableVideo video = parseAvailableVideo(jsonObject);
     
-    GameStats stats = GameStats.newBuilder().setGameSummary(summary).setLineScore(score)
+    gameStats.setGameSummary(summary).setLineScore(score)
         .setSeasonSeries(series).setLastMeeting(meeting).setPlayerStats(playerStats)
         .setTeamStats(teamStats).setOtherStats(otherStats).setOfficials(officials)
         .setGameInfo(info).setInactivePlayers(inactivePlayers).setAvailableVideo(video).build();
     
-    return stats;
+    return gameStats.build();
     
   }
 
@@ -183,7 +183,6 @@ public class ParseUtil {
     long gameStatusId          = (Long) row.get(3);
     String gameStatusText      = (String) row.get(4);
     String gameCode            = (String) row.get(5);
-      System.err.println("id: " + row.get(6).toString());
     long homeTeamId            = Long.parseLong(row.get(6).toString());
     long visitorTeamId         = (Long) row.get(7);
     long season                = Long.parseLong(row.get(8).toString());
@@ -212,9 +211,39 @@ public class ParseUtil {
             .build();
   }
   public static List<LineScore> parseLineScore(JSONObject jsonObject) {
-    return new ArrayList<LineScore>();
-      //LineScore.newBuilder().build();
-      // TODO: LineScore contains two entries, one for each team.
+      JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+      JSONObject infoObject = (JSONObject) resultSets.get(1);
+      JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+      List<LineScore> result = new ArrayList<LineScore>();
+      for (int i = 0; i < 2; i++) {
+        JSONArray row = (JSONArray) rowSet.get(i);
+        result.add(LineScore.newBuilder()
+                .setGameLineScoreDateEst((String) row.get(0))
+                .setGameLineScoreSequence((Long) row.get(1))
+                .setGameLineScoreId(Long.parseLong((String) row.get(2)))
+                .setLineScoreTeamId((Long) row.get(3))
+                .setLineScoreTeamAbbreviation((String) row.get(4))
+                .setTeamCityName((String) row.get(5))
+                .setTeamWinsLosses((String) row.get(6))
+                .setPtsQtr1((Long) row.get(7))
+                .setPtsQtr2((Long) row.get(8))
+                .setPtsQtr3((Long) row.get(9))
+                .setPtsQtr4((Long) row.get(10))
+                .setPtsOt1((Long) row.get(11))
+                .setPtsOt2((Long) row.get(12))
+                .setPtsOt3((Long) row.get(13))
+                .setPtsOt4((Long) row.get(14))
+                .setPtsOt5((Long) row.get(15))
+                .setPtsOt6((Long) row.get(16))
+                .setPtsOt7((Long) row.get(17))
+                .setPtsOt8((Long) row.get(18))
+                .setPtsOt9((Long) row.get(19))
+                .setPtsOt10((Long) row.get(20))
+                .setLineScorePts((Long) row.get(21))
+                .build()
+        );
+      }
+      return result;
   }
   public static SeasonSeries parseSeasonSeries(JSONObject jsonObject) {
     JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
@@ -274,51 +303,126 @@ public class ParseUtil {
             .build();
   }
   public static List<PlayerStats> parsePlayerStats(JSONObject jsonObject) {
-    return new ArrayList<PlayerStats>();
-    //return PlayerStats.newBuilder()
-            // TODO: PlayerStats has many players, each with stats
-            // which possibly have null values.
-            //.build();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(4);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    List<PlayerStats> result = new ArrayList<PlayerStats>();
+    for (Object rowObject : rowSet) {
+      JSONArray row = (JSONArray) rowObject;
+      result.add(PlayerStats.newBuilder()
+          .setGamePlayerStatsId     (row.get(0) == null ? -1 : Long.parseLong((String) row.get(0)))
+          .setPlayerStatsTeamId     (row.get(1) == null ? -1 : (Long) row.get(1))
+          .setPlayerStatsTeamAbbreviation(row.get(2) == null ? "" : (String) row.get(2))
+          .setPlayerStatsTeamCity   (row.get(3) == null ? "" : (String) row.get(3))
+          .setPlayerStatsPlayerId   (row.get(4) == null ? -1 : (Long) row.get(4))
+          .setPlayerName            (row.get(5) == null ? "" : (String) row.get(5))
+          .setStartPosition         (row.get(6) == null ? "" : (String) row.get(6))
+          .setComment               (row.get(7) == null ? "" : (String) row.get(7))
+          .setPlayerStatsMin        (row.get(8) == null ? "" : (String) row.get(8))
+          .setPlayerStatsFgm        (row.get(9) == null ? -1 : (Long) row.get(9))
+          .setPlayerStatsFga        (row.get(10) == null ? -1 : (Long) row.get(10))
+          .setPlayerStatsfgPct      (row.get(11) == null ? -1 : Math.round((Double.parseDouble(row.get(11).toString())) * 100))
+          .setPlayerStatsfg3m       (row.get(12) == null ? -1 : (Long) row.get(12))
+          .setPlayerStatsfg3a       (row.get(13) == null ? -1 : (Long) row.get(13))
+          .setPlayerStatsfg3Pct     (row.get(14) == null ? -1 : Math.round((Double.parseDouble(row.get(14).toString())) * 100))
+          .setPlayerStatsftm        (row.get(15) == null ? -1 : (Long) row.get(15))
+          .setPlayerStatsfta        (row.get(16) == null ? -1 : (Long) row.get(16))
+          .setPlayerStatsftPct      (row.get(17) == null ? -1 : Math.round((Double.parseDouble(row.get(17).toString())) * 100))
+          .setPlayerStatsoreb       (row.get(18) == null ? -1 : (Long) row.get(18))
+          .setPlayerStatsdreb       (row.get(19) == null ? -1 : (Long) row.get(19))
+          .setPlayerStatsreb        (row.get(20) == null ? -1 : (Long) row.get(20))
+          .setPlayerStatsast        (row.get(21) == null ? -1 : (Long) row.get(21))
+          .setPlayerStatsstl        (row.get(22) == null ? -1 : (Long) row.get(22))
+          .setPlayerStatsblk        (row.get(23) == null ? -1 : (Long) row.get(23))
+          .setPlayerStatsto         (row.get(24) == null ? -1 : (Long) row.get(24))
+          .setPlayerStatspf         (row.get(25) == null ? -1 : (Long) row.get(25))
+          .setPlayerStatsPts        (row.get(26) == null ? -1 : (Long) row.get(26))
+          .setPlayerStatsPlusMinus  (row.get(27) == null ? -1 : (Long) row.get(27))
+          .build()
+      );
+    }
+    return result;
   }
   public static List<TeamStats> parseTeamStats(JSONObject jsonObject) {
-    //return TeamStats.newBuilder()
-            // TODO: TeamStats has two teams, each with stats.
-            //.build();
-      return new ArrayList<TeamStats>();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(5);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    List<TeamStats> result = new ArrayList<TeamStats>();
+    for (Object rowObject : rowSet) {
+      JSONArray row = (JSONArray) rowObject;
+      result.add(TeamStats.newBuilder()
+              .setGameTeamStatsId(row.get(0) == null ? -1 : Long.parseLong((String) row.get(0)))
+              .setTeamStatsTeamId(row.get(1) == null ? -1 : (Long) row.get(1))
+              .setTeamStatsTeamName(row.get(2) == null ? "" : (String) row.get(2))
+              .setTeamStatsTeamAbbreviation(row.get(3) == null ? "" : (String) row.get(3))
+              .setTeamStatsTeamCity(row.get(4) == null ? "" : (String) row.get(4))
+              .setTeamStatsMin(row.get(5) == null ? "" : (String) row.get(5))
+              .setTeamStatsFgm(row.get(6) == null ? -1 : (Long) row.get(6))
+              .setTeamStatsFga(row.get(7) == null ? -1 : (Long) row.get(7))
+              .setTeamStatsfgPct(row.get(8) == null ? -1 : Math.round((Double.parseDouble(row.get(8).toString())) * 100))
+              .setTeamStatsfg3m(row.get(9) == null ? -1 : (Long) row.get(9))
+              .setTeamStatsfg3a(row.get(10) == null ? -1 : (Long) row.get(10))
+              .setTeamStatsfg3Pct(row.get(11) == null ? -1 : Math.round((Double.parseDouble(row.get(11).toString())) * 100))
+              .setTeamStatsftm(row.get(12) == null ? -1 : (Long) row.get(12))
+              .setTeamStatsfta(row.get(13) == null ? -1 : (Long) row.get(13))
+              .setTeamStatsftPct(row.get(14) == null ? -1 : Math.round((Double.parseDouble(row.get(14).toString())) * 100))
+              .setTeamStatsoreb(row.get(15) == null ? -1 : (Long) row.get(15))
+              .setTeamStatsdreb(row.get(16) == null ? -1 : (Long) row.get(16))
+              .setTeamStatsreb(row.get(17) == null ? -1 : (Long) row.get(17))
+              .setTeamStatsast(row.get(18) == null ? -1 : (Long) row.get(18))
+              .setTeamStatsstl(row.get(19) == null ? -1 : (Long) row.get(19))
+              .setTeamStatsblk(row.get(20) == null ? -1 : (Long) row.get(20))
+              .setTeamStatsto(row.get(21) == null ? -1 : (Long) row.get(21))
+              .setTeamStatspf(row.get(22) == null ? -1 : (Long) row.get(22))
+              .setTeamStatsPts(row.get(23) == null ? -1 : (Long) row.get(23))
+              .setTeamStatsPlusMinus(row.get(24) == null ? -1 : (Long) row.get(24))
+              .build()
+      );
+    }
+    return result;
   }
 
   public static List<OtherStats> parseOtherStats(JSONObject jsonObject) {
-/*      JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
-      JSONObject result = (JSONObject) resultSets.get(6);
-      assert("OtherStats".equals(result.get("name")));
-      long largestLead = ;
-      long leadChanges = ;
-      long leagueId = ;*/
-
-      //OtherStats otherStats = OtherStats.newBuilder()
-              /*.setLeagueId()
-              .setSeasonId()
-              .setOtherStatsTeamId()
-              .setLargestLead()
-              .setLeadChanges()
-              .setOtherStatsTeamAbbreviation()
-              .setOtherStatsTeamCity()
-              .setPts2ndChance()
-              .setPtsFb()
-              .setPtsPaint()
-              .setTimesTied()*/
-              //.build();
-      //return otherStats;
-      return new ArrayList<OtherStats>();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(6);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    List<OtherStats> result = new ArrayList<OtherStats>();
+    for (Object rowObject : rowSet) {
+      JSONArray row = (JSONArray) rowObject;
+      result.add(OtherStats.newBuilder()
+              .setLeagueId(row.get(0) == null ? -1 : Long.parseLong(row.get(0).toString()))
+              .setSeasonId(row.get(1) == null ? -1 : Long.parseLong(row.get(1).toString()))
+              .setOtherStatsTeamId(row.get(2) == null ? -1 : (Long) row.get(2))
+              .setOtherStatsTeamAbbreviation(row.get(3) == null ? "" : (String) row.get(3))
+              .setOtherStatsTeamCity(row.get(4) == null ? "" : (String) row.get(4))
+              .setPtsPaint(row.get(5) == null ? -1 : (Long) row.get(5))
+              .setPts2ndChance(row.get(6) == null ? -1 : (Long) row.get(6))
+              .setPtsFb(row.get(7) == null ? -1 : (Long) row.get(7))
+              .setLargestLead(row.get(8) == null ? -1 : (Long) row.get(8))
+              .setLeadChanges(row.get(9) == null ? -1 : (Long) row.get(9))
+              .setTimesTied(row.get(10) == null ? -1 : (Long) row.get(10))
+              .build()
+      );
+    }
+    return result;
   }
 
   public static List<Officials> parseOfficials(JSONObject jsonObject) {
-      //JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
-
-      /*Officials officials = Officials.newBuilder()
-              .build();
-      return officials;*/
-      return new ArrayList<Officials>();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(7);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    List<Officials> result = new ArrayList<Officials>();
+    for (Object rowObject : rowSet) {
+      JSONArray row = (JSONArray) rowObject;
+      result.add(Officials.newBuilder()
+          .setOfficialId(row.get(0) == null ? -1 : (Long) row.get(0))
+          .setOfficialFirstName(row.get(1) == null ? "" : (String) row.get(1))
+          .setOfficialLastName(row.get(2) == null ? "" : (String) row.get(2))
+          .setOfficialJerseyNum(row.get(3) == null ? -1 : Long.parseLong(row.get(3).toString()))
+          .build()
+      );
+    }
+    return result;
   }
 
   public static GameInfo parseInfo(JSONObject jsonObject) {

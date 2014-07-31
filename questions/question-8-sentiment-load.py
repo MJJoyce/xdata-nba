@@ -48,7 +48,6 @@ def process_cmntr_data(cmntr):
     # Check every comment the user made and increment the pos/neg count
     # for the proper game_ids. This lets us look at a commenters' overall
     # sentiment on a per game basis.
-    pos, neg = 0, 0
     for c in cmnts:
         if c['sentiment'] == 'pos':
             comments_per_game[c['game_id']]['pos'] += 1

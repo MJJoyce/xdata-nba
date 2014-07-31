@@ -28,6 +28,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.gora.query.Query;
 import org.apache.gora.query.Result;
@@ -132,15 +133,13 @@ public class GameManager implements Manager {
         throw new IOException("Wrong number of arguments: Expected 4, got: " 
             + (inputFiles.length - 1));
       }
-      ArrayList<String> list = new ArrayList<String>();
-      for (String string : inputFiles) {
-        list.add(string);
-      }
+      List<String> list = Arrays.asList(inputFiles);
+
       Game game = Game.newBuilder().build();
       Preview preview = Preview.newBuilder().build();
       Recap recap = Recap.newBuilder().build();
       Notebook notebook = Notebook.newBuilder().build();
-      GameStats gameStats = GameStats.newBuilder().build();
+      GameStats gameStats;
       // we start at arg 1 as arg 0 is '-aquire'
       for (int i = 1; i < list.size(); i++) {
         
@@ -159,7 +158,7 @@ public class GameManager implements Manager {
           break;
         case 4: // switch to parseGameStats
           try {
-            gameStats = ParseUtil.parseGameStats(gameStats, list.get(i));
+            gameStats = ParseUtil.parseGameStats(GameStats.newBuilder(), list.get(i));
           } catch (ParseException e) {
             e.printStackTrace();
             break;
