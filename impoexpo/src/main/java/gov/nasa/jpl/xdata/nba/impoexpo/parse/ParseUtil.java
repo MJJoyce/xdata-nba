@@ -383,28 +383,28 @@ public class ParseUtil {
   }
 
   public static List<OtherStats> parseOtherStats(JSONObject jsonObject) {
-/*      JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
-      JSONObject result = (JSONObject) resultSets.get(6);
-      assert("OtherStats".equals(result.get("name")));
-      long largestLead = ;
-      long leadChanges = ;
-      long leagueId = ;*/
-
-      //OtherStats otherStats = OtherStats.newBuilder()
-              /*.setLeagueId()
-              .setSeasonId()
-              .setOtherStatsTeamId()
-              .setLargestLead()
-              .setLeadChanges()
-              .setOtherStatsTeamAbbreviation()
-              .setOtherStatsTeamCity()
-              .setPts2ndChance()
-              .setPtsFb()
-              .setPtsPaint()
-              .setTimesTied()*/
-              //.build();
-      //return otherStats;
-      return new ArrayList<OtherStats>();
+    JSONArray resultSets = (JSONArray) jsonObject.get("resultSets");
+    JSONObject infoObject = (JSONObject) resultSets.get(6);
+    JSONArray rowSet = (JSONArray) infoObject.get("rowSet");
+    List<OtherStats> result = new ArrayList<OtherStats>();
+    for (Object rowObject : rowSet) {
+      JSONArray row = (JSONArray) rowObject;
+      result.add(OtherStats.newBuilder()
+              .setLeagueId(row.get(0) == null ? -1 : Long.parseLong(row.get(0).toString()))
+              .setSeasonId(row.get(1) == null ? -1 : Long.parseLong(row.get(1).toString()))
+              .setOtherStatsTeamId(row.get(2) == null ? -1 : (Long) row.get(2))
+              .setOtherStatsTeamAbbreviation(row.get(3) == null ? "" : (String) row.get(3))
+              .setOtherStatsTeamCity(row.get(4) == null ? "" : (String) row.get(4))
+              .setPtsPaint(row.get(5) == null ? -1 : (Long) row.get(5))
+              .setPts2ndChance(row.get(6) == null ? -1 : (Long) row.get(6))
+              .setPtsFb(row.get(7) == null ? -1 : (Long) row.get(7))
+              .setLargestLead(row.get(8) == null ? -1 : (Long) row.get(8))
+              .setLeadChanges(row.get(9) == null ? -1 : (Long) row.get(9))
+              .setTimesTied(row.get(10) == null ? -1 : (Long) row.get(10))
+              .build()
+      );
+    }
+    return result;
   }
 
   public static List<Officials> parseOfficials(JSONObject jsonObject) {
